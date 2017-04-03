@@ -54,8 +54,10 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    return 160;
+    CGFloat heightForRow;
+    GOSchoolLocationTableViewCell *cell= [[GOSchoolLocationTableViewCell alloc]init];
+    heightForRow = cell.mainView.frame.size.height;
+    return heightForRow;
 }
 
 - (void)didReceiveMemoryWarning {

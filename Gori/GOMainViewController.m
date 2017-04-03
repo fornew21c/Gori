@@ -175,8 +175,10 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    return 160;
+    CGFloat heightForRow;
+    GOMainTableViewCell *cell= [[GOMainTableViewCell alloc]init];
+    heightForRow = cell.mainView.frame.size.height;
+    return heightForRow;
 }
 
 /**************** searchController Protocol ********************************/

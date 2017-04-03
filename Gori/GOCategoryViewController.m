@@ -52,9 +52,10 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    
-    return 160;
+    CGFloat heightForRow;
+    GOCategoryTableViewCell *cell= [[GOCategoryTableViewCell alloc]init];
+    heightForRow = cell.mainView.frame.size.height;
+    return heightForRow;
 }
 
 /**************** button Action ********************************/
