@@ -105,18 +105,18 @@
                                     <action selector="districtSchoolSelection:" destination="pb7-pp-PdP" eventType="valueChanged" id="3Jn-pc-1Su"/>
                                 </connections>
                             </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x78-dk-ruY">
+                                <rect key="frame" x="0.0" y="112" width="391" height="555"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="ra6-zW-viV" kind="embed" id="StF-gZ-3Ja"/>
+                                </connections>
+                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="40T-FA-txW">
                                 <rect key="frame" x="0.0" y="112" width="375" height="555"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="zvr-39-7Qm" kind="embed" id="zav-PW-MN8"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x78-dk-ruY">
-                                <rect key="frame" x="0.0" y="112" width="375" height="555"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <connections>
-                                    <segue destination="ra6-zW-viV" kind="embed" id="StF-gZ-3Ja"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNy-f0-yeE">
@@ -132,9 +132,9 @@
                     </view>
                     <connections>
                         <outlet property="backToMainViewButton" destination="GNy-f0-yeE" id="jnt-AF-sXJ"/>
-                        <outlet property="districtLocationView" destination="x78-dk-ruY" id="nMb-Ej-PUk"/>
+                        <outlet property="districtLocationView" destination="x78-dk-ruY" id="3O1-87-jye"/>
                         <outlet property="locationSelection" destination="0sx-lX-8rI" id="QNz-mS-tJ2"/>
-                        <outlet property="schoolLocationView" destination="40T-FA-txW" id="YKz-Zn-TjU"/>
+                        <outlet property="schoolLocationView" destination="40T-FA-txW" id="2rL-zs-ozf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yyx-4a-Rxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -150,7 +150,7 @@
                         <viewControllerLayoutGuide type="bottom" id="nzD-vQ-jo8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="neb-Pu-pNn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="555"/>
+                        <rect key="frame" x="0.0" y="0.0" width="391" height="555"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5NG-i0-05o">

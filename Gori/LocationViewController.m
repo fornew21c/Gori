@@ -9,10 +9,12 @@
 #import "LocationViewController.h"
 
 @interface LocationViewController ()
+
+
 @property (weak, nonatomic) IBOutlet UIView *schoolLocationView;
 @property (weak, nonatomic) IBOutlet UIView *districtLocationView;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *locationSelection;
 @property (weak, nonatomic) IBOutlet UIButton *backToMainViewButton;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *locationSelection;
 
 @end
 
