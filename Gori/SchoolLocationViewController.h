@@ -1,5 +1,5 @@
 //
-//  LocationViewController.h
+//  SchoolLocationViewController.h
 //  Gori
 //
 //  Created by ji jun young on 2017. 4. 3..
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LocationViewController : UIViewController
+@interface SchoolLocationViewController : UIViewController
 
 @end

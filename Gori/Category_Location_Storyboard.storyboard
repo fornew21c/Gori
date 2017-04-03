@@ -48,22 +48,113 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kuD-RY-fXS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-143.19999999999999" y="-98.50074962518741"/>
+            <point key="canvasLocation" x="-1954" y="302"/>
+        </scene>
+        <!--School Location View Controller-->
+        <scene sceneID="lqi-RA-slu">
+            <objects>
+                <viewController storyboardIdentifier="SchoolLocationViewController" id="zvr-39-7Qm" customClass="SchoolLocationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s1A-W5-hp1"/>
+                        <viewControllerLayoutGuide type="bottom" id="IRt-M3-cKO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="U2E-OC-rRA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="555"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q0D-ic-vtF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="555"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="zvr-39-7Qm" id="H1u-BF-x5z"/>
+                                    <outlet property="delegate" destination="zvr-39-7Qm" id="52d-Ws-yix"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="locationTableView" destination="Q0D-ic-vtF" id="fV6-Hk-7Ss"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fbc-me-cFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1132" y="-752.47376311844084"/>
         </scene>
         <!--Location View Controller-->
+        <scene sceneID="3Pf-Eq-Hoi">
+            <objects>
+                <viewController storyboardIdentifier="LocationViewController" id="pb7-pp-PdP" customClass="LocationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ihC-GQ-jGb"/>
+                        <viewControllerLayoutGuide type="bottom" id="ERo-gG-1JK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1wi-Jf-KG9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0sx-lX-8rI">
+                                <rect key="frame" x="127" y="55" width="121" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="districtSchoolSelection:" destination="pb7-pp-PdP" eventType="valueChanged" id="3Jn-pc-1Su"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="40T-FA-txW">
+                                <rect key="frame" x="0.0" y="112" width="375" height="555"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="zvr-39-7Qm" kind="embed" id="zav-PW-MN8"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x78-dk-ruY">
+                                <rect key="frame" x="0.0" y="112" width="375" height="555"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="ra6-zW-viV" kind="embed" id="StF-gZ-3Ja"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNy-f0-yeE">
+                                <rect key="frame" x="16" y="20" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="backToMainView:" destination="pb7-pp-PdP" eventType="touchUpInside" id="4Kb-RU-4Ku"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="backToMainViewButton" destination="GNy-f0-yeE" id="jnt-AF-sXJ"/>
+                        <outlet property="districtLocationView" destination="x78-dk-ruY" id="nMb-Ej-PUk"/>
+                        <outlet property="locationSelection" destination="0sx-lX-8rI" id="QNz-mS-tJ2"/>
+                        <outlet property="schoolLocationView" destination="40T-FA-txW" id="YKz-Zn-TjU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yyx-4a-Rxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1954.4000000000001" y="-409.7451274362819"/>
+        </scene>
+        <!--District Location View Controller-->
         <scene sceneID="zqJ-VW-lW3">
             <objects>
-                <viewController storyboardIdentifier="LocationViewController" id="ra6-zW-viV" customClass="LocationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DistrictLocationViewController" id="ra6-zW-viV" customClass="DistrictLocationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u2C-QG-JJj"/>
                         <viewControllerLayoutGuide type="bottom" id="nzD-vQ-jo8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="neb-Pu-pNn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="555"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5NG-i0-05o">
-                                <rect key="frame" x="0.0" y="65" width="375" height="602"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="555"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -71,25 +162,16 @@
                                     <outlet property="delegate" destination="ra6-zW-viV" id="b34-KL-Uez"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0s-TR-xeu">
-                                <rect key="frame" x="16" y="27" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <action selector="backToMainView:" destination="ra6-zW-viV" eventType="touchUpInside" id="Jwm-gG-FvD"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="backToMainViewButton" destination="s0s-TR-xeu" id="oCE-e5-ZPq"/>
                         <outlet property="locationTableView" destination="5NG-i0-05o" id="jRv-4a-85g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N02-zD-q2b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-812" y="-99.400299850074973"/>
+            <point key="canvasLocation" x="-1132" y="-150.67466266866569"/>
         </scene>
     </scenes>
 </document>

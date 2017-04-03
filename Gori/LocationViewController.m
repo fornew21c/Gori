@@ -2,18 +2,16 @@
 //  LocationViewController.m
 //  Gori
 //
-//  Created by ji jun young on 2017. 3. 31..
+//  Created by ji jun young on 2017. 4. 3..
 //  Copyright © 2017년 fornew21c. All rights reserved.
 //
 
 #import "LocationViewController.h"
-#import "LocationTableViewCell.h"
-#import "GODataCenter.h"
-#import "GOMainViewController.h"
 
 @interface LocationViewController ()
-<UITableViewDelegate, UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UITableView *locationTableView;
+@property (weak, nonatomic) IBOutlet UIView *schoolLocationView;
+@property (weak, nonatomic) IBOutlet UIView *districtLocationView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *locationSelection;
 @property (weak, nonatomic) IBOutlet UIButton *backToMainViewButton;
 
 @end
@@ -25,50 +23,50 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+/**************** setting Segmented Selection School and District **************************/
 
-/**************** tableviewDelegate ********************************/
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
-    return [GODataCenter sharedInstance].schoolLocationArray.count;
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    [GODataCenter sharedInstance].currentRow = indexPath.row;
-    LocationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    if (cell == nil) {
-        cell = [[LocationTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+- (IBAction)districtSchoolSelection:(UISegmentedControl *)sender {
+    if (sender.selectedSegmentIndex == 0) {
+        [UIView animateWithDuration:3 animations:^{
+            self.schoolLocationView.alpha = 1.0f;
+            self.districtLocationView.alpha = 0.0f;
+            
+        }];
     }
-    [cell settingText];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    return cell;
+    else{
+        [UIView animateWithDuration:3 animations:^{
+            self.schoolLocationView.alpha = 0.0f;
+            self.districtLocationView.alpha = 1.0f;
+        }];
+    }
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    return 160;
-}
+//
+//if (sender.selectedSegmentIndex == 0) {
+//    [UIView animateWithDuration:(0.5) animations:^{
+//        self.containerViewA.alpha = 1;
+//        self.containerViewB.alpha = 0;
+//    }];
+//} else {
+//    [UIView animateWithDuration:(0.5) animations:^{
+//        self.containerViewA.alpha = 0;
+//        self.containerViewB.alpha = 1;
+//    }];
+//}
 
 /**************** button Action ********************************/
 
 - (IBAction)backToMainView:(UIButton *)sender {
-
+    
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 /*
 #pragma mark - Navigation

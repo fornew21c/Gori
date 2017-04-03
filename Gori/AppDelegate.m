@@ -26,6 +26,7 @@
     [[GODataCenter sharedInstance] settingCategoryArray];
     [[GODataCenter sharedInstance] settingSchoolLocationArray];
     [[GODataCenter sharedInstance] settingCategoryDetailArray];
+    [[GODataCenter sharedInstance] settingDistrictLocationArray];
     return YES;
 }
 

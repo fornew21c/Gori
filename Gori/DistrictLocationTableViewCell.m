@@ -6,10 +6,10 @@
 //  Copyright © 2017년 fornew21c. All rights reserved.
 //
 
-#import "LocationTableViewCell.h"
+#import "DistrictLocationTableViewCell.h"
 #import "GODataCenter.h"
 
-@implementation LocationTableViewCell
+@implementation DistrictLocationTableViewCell
 
 - (void)makingCustomCellObject{
     
@@ -19,7 +19,7 @@
     
     UIImageView *titleImageView = [[UIImageView alloc]init];
     self.titleImageView = titleImageView;
-    self.titleImageView.image = [UIImage imageNamed:@"bodyImage1.jpg"];
+    self.titleImageView.image = [UIImage imageNamed:@"bodyImage2.jpg"];
     [self.mainView addSubview:self.titleImageView];
     
     
@@ -53,7 +53,7 @@
 
 
 - (void)settingText{
-    self.titleLabel.text = [[GODataCenter sharedInstance].schoolLocationArray objectAtIndex:[GODataCenter sharedInstance].currentRow];
+    self.titleLabel.text = [[GODataCenter sharedInstance].districtLoactionArray objectAtIndex:[GODataCenter sharedInstance].currentRow];
 }
 
 

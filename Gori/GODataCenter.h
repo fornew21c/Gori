@@ -16,6 +16,7 @@
 @property (nonatomic) NSArray *categoryArray;
 @property (nonatomic) NSArray *categoryDetailArray;
 @property (nonatomic) NSArray *schoolLocationArray;
+@property (nonatomic) NSArray *districtLoactionArray;
 
 @property (nonatomic) NSInteger currentRow;
 
@@ -25,5 +26,6 @@
 - (NSArray *)settingCategoryArray;
 - (NSArray *)settingCategoryDetailArray;
 - (NSArray *)settingSchoolLocationArray;
+- (NSArray *)settingDistrictLocationArray;
 
 @end

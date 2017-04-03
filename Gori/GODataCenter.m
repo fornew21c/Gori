@@ -60,9 +60,16 @@
 
 - (NSArray *)settingSchoolLocationArray{
     /**************** temporary Array for collectionviewCell Setting ********************************/
-    NSArray *schoolLocationArray = @[@"전체", @"고려대", @"연세대", @"이화여대", @"서울대", @"부산대", @"중앙대"];
+    NSArray *schoolLocationArray = @[@"전체", @"고려대", @"연세대", @"홍익대", @"서울대", @"이화여대", @"부산대", @"건국대", @"한양대", @"중앙대"];
     self.schoolLocationArray = schoolLocationArray;
     return self.schoolLocationArray;
+}
+
+- (NSArray *)settingDistrictLocationArray{
+    /**************** temporary Array for collectionviewCell Setting ********************************/
+    NSArray *districtLocationArray = @[@"전체", @"강남", @"신촌", @"종로", @"사당", @"잠실", @"혜화", @"용산", @"합정", @"목동"];
+    self.districtLoactionArray = districtLocationArray;
+    return self.districtLoactionArray;
 }
 
 

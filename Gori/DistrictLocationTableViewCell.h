@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LocationTableViewCell : UITableViewCell
+@interface DistrictLocationTableViewCell : UITableViewCell
 
 @property (nonatomic, weak) UIView *mainView;
 

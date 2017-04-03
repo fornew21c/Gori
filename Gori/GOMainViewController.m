@@ -39,6 +39,16 @@
     // Do any additional setup after loading the view.
     
     NSLog(@"TEST");
+    
+    /**************** navigationBar Logo Setting ********************************/
+    
+    UIImage *logo = [UIImage imageNamed:@"logoFinal.jpg"];
+    UIImageView *logoView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [logoView setImage:logo];
+    //set Content Mode Aspect Fit
+    [logoView setContentMode:UIViewContentModeScaleAspectFit];
+    self.navigationItem.titleView = logoView;
+    
     /**************** tableView Setting ********************************/
     
     UITableView *mainTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height-100) style:UITableViewStylePlain];
@@ -80,8 +90,8 @@
 
 - (IBAction)showLocationDetailView:(id)sender {
     UIStoryboard *Category_Location_Storyboard = [UIStoryboard storyboardWithName:@"Category_Location_Storyboard" bundle:nil];
-    LocationViewController *LocationViewController = [Category_Location_Storyboard instantiateViewControllerWithIdentifier:@"LocationViewController"];
-    [self presentViewController:LocationViewController animated:YES completion:nil];
+    LocationViewController *locationViewController = [Category_Location_Storyboard instantiateViewControllerWithIdentifier:@"LocationViewController"];
+    [self presentViewController:locationViewController animated:YES completion:nil];
 
     
 //    디테일뷰는 다른 뷰컨트롤러 생성 후 띄울 것이므로 주석 처리함
