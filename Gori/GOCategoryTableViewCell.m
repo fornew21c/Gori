@@ -1,15 +1,15 @@
 //
-//  LocationTableViewCell.m
+//  CategoryTableViewCell.m
 //  Gori
 //
 //  Created by ji jun young on 2017. 3. 31..
 //  Copyright © 2017년 fornew21c. All rights reserved.
 //
 
-#import "DistrictLocationTableViewCell.h"
+#import "GOCategoryTableViewCell.h"
 #import "GODataCenter.h"
 
-@implementation DistrictLocationTableViewCell
+@implementation GOCategoryTableViewCell
 
 - (void)makingCustomCellObject{
     
@@ -19,7 +19,7 @@
     
     UIImageView *titleImageView = [[UIImageView alloc]init];
     self.titleImageView = titleImageView;
-    self.titleImageView.image = [UIImage imageNamed:@"bodyImage2.jpg"];
+    self.titleImageView.image = [UIImage imageNamed:@"bodyImage1.jpg"];
     [self.mainView addSubview:self.titleImageView];
     
     
@@ -29,6 +29,13 @@
     //    self.titleLabel.text = [[DataCenter sharedInstance].titleArray objectAtIndex:[DataCenter sharedInstance].currentRow];
     self.titleLabel.font = [UIFont boldSystemFontOfSize:20.0f];
     [self.titleImageView addSubview:self.titleLabel];
+    
+    UILabel *titleDetailLabel = [[UILabel alloc]init];
+    self.titleDetailLabel = titleDetailLabel;
+    self.titleDetailLabel.textColor = [UIColor whiteColor];
+    //    self.titleLabel.text = [[DataCenter sharedInstance].titleArray objectAtIndex:[DataCenter sharedInstance].currentRow];
+    self.titleDetailLabel.font = [UIFont boldSystemFontOfSize:15.0f];
+    [self.titleImageView addSubview:self.titleDetailLabel];
     
 }
 
@@ -44,16 +51,21 @@
     self.titleLabel.frame = CGRectMake(0, 0, MARGIN * 20, MARGIN * 2);
     self.titleLabel.center = CGPointMake(self.titleImageView.frame.size.width / 2, self.titleImageView.frame.size.height / 2);
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
-
+    
+    self.titleDetailLabel.frame = CGRectMake(0, 0, MARGIN * 40, MARGIN * 2);
+    self.titleDetailLabel.center = CGPointMake(self.titleImageView.frame.size.width / 2, self.titleImageView.frame.size.height / 2 + (MARGIN * 5));
+    self.titleDetailLabel.textAlignment = NSTextAlignmentCenter;
+    
 }
 
 - (void)settingCustomCellObjectColor{
-    self.mainView.backgroundColor = [UIColor blackColor];
+    self.mainView.backgroundColor = [UIColor redColor];
 }
 
 
 - (void)settingText{
-    self.titleLabel.text = [[GODataCenter sharedInstance].districtLoactionArray objectAtIndex:[GODataCenter sharedInstance].currentRow];
+    self.titleLabel.text = [[GODataCenter sharedInstance].categoryArray objectAtIndex:[GODataCenter sharedInstance].currentRow];
+    self.titleDetailLabel.text = [[GODataCenter sharedInstance].categoryDetailArray objectAtIndex:[GODataCenter sharedInstance].currentRow];
 }
 
 
@@ -76,6 +88,7 @@
     [self settingCustomCellObject];
     
 }
+
 
 
 

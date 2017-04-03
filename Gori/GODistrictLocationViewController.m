@@ -6,18 +6,18 @@
 //  Copyright © 2017년 fornew21c. All rights reserved.
 //
 
-#import "DistrictLocationViewController.h"
-#import "DistrictLocationTableViewCell.h"
+#import "GODistrictLocationViewController.h"
+#import "GODistrictLocationTableViewCell.h"
 #import "GODataCenter.h"
 #import "GOMainViewController.h"
 
-@interface DistrictLocationViewController ()
+@interface GODistrictLocationViewController ()
 <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *locationTableView;
 
 @end
 
-@implementation DistrictLocationViewController
+@implementation GODistrictLocationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,9 +41,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     [GODataCenter sharedInstance].currentRow = indexPath.row;
-    DistrictLocationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    GODistrictLocationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil) {
-        cell = [[DistrictLocationTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [[GODistrictLocationTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     [cell settingText];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;

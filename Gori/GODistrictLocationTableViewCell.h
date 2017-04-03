@@ -1,5 +1,5 @@
 //
-//  CategoryTableViewCell.h
+//  LocationTableViewCell.h
 //  Gori
 //
 //  Created by ji jun young on 2017. 3. 31..
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CategoryTableViewCell : UITableViewCell
+@interface GODistrictLocationTableViewCell : UITableViewCell
 
 @property (nonatomic, weak) UIView *mainView;
 
@@ -16,10 +16,7 @@
 
 @property (nonatomic, weak) UILabel *titleLabel;
 
-@property (nonatomic, weak) UILabel *titleDetailLabel;
-
 - (void)settingText;
-
 
 
 @end

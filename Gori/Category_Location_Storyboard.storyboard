@@ -12,7 +12,7 @@
         <!--Category View Controller-->
         <scene sceneID="q0o-jS-CGH">
             <objects>
-                <viewController storyboardIdentifier="CategoryViewController" id="Kvi-pF-ndN" customClass="CategoryViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GOCategoryViewController" id="Kvi-pF-ndN" customClass="GOCategoryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="auJ-aP-Ec8"/>
                         <viewControllerLayoutGuide type="bottom" id="V04-ci-DSb"/>
@@ -53,7 +53,7 @@
         <!--School Location View Controller-->
         <scene sceneID="lqi-RA-slu">
             <objects>
-                <viewController storyboardIdentifier="SchoolLocationViewController" id="zvr-39-7Qm" customClass="SchoolLocationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GOSchoolLocationViewController" id="zvr-39-7Qm" customClass="GOSchoolLocationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s1A-W5-hp1"/>
                         <viewControllerLayoutGuide type="bottom" id="IRt-M3-cKO"/>
@@ -85,7 +85,7 @@
         <!--Location View Controller-->
         <scene sceneID="3Pf-Eq-Hoi">
             <objects>
-                <viewController storyboardIdentifier="LocationViewController" id="pb7-pp-PdP" customClass="LocationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GOLocationViewController" id="pb7-pp-PdP" customClass="GOLocationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ihC-GQ-jGb"/>
                         <viewControllerLayoutGuide type="bottom" id="ERo-gG-1JK"/>
@@ -144,7 +144,7 @@
         <!--District Location View Controller-->
         <scene sceneID="zqJ-VW-lW3">
             <objects>
-                <viewController storyboardIdentifier="DistrictLocationViewController" id="ra6-zW-viV" customClass="DistrictLocationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GODistrictLocationViewController" id="ra6-zW-viV" customClass="GODistrictLocationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u2C-QG-JJj"/>
                         <viewControllerLayoutGuide type="bottom" id="nzD-vQ-jo8"/>

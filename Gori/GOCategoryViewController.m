@@ -6,11 +6,11 @@
 //  Copyright © 2017년 fornew21c. All rights reserved.
 //
 
-#import "CategoryViewController.h"
+#import "GOCategoryViewController.h"
 #import "GODataCenter.h"
-#import "CategoryTableViewCell.h"
+#import "GOCategoryTableViewCell.h"
 
-@interface CategoryViewController ()
+@interface GOCategoryViewController ()
 <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIButton *backToMainViewButton;
 
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation CategoryViewController
+@implementation GOCategoryViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,9 +41,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     [GODataCenter sharedInstance].currentRow = indexPath.row;
-    CategoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    GOCategoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil) {
-        cell = [[CategoryTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [[GOCategoryTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     [cell settingText];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;

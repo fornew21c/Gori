@@ -6,19 +6,19 @@
 //  Copyright © 2017년 fornew21c. All rights reserved.
 //
 
-#import "SchoolLocationViewController.h"
-#import "SchoolLocationTableViewCell.h"
+#import "GOSchoolLocationViewController.h"
+#import "GOSchoolLocationTableViewCell.h"
 #import "GODataCenter.h"
 #import "GOMainViewController.h"
 
-@interface SchoolLocationViewController ()
+@interface GOSchoolLocationViewController ()
 <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *locationTableView;
 
 @end
 
-@implementation SchoolLocationViewController
+@implementation GOSchoolLocationViewController
 
 
 
@@ -43,9 +43,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     [GODataCenter sharedInstance].currentRow = indexPath.row;
-    SchoolLocationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    GOSchoolLocationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil) {
-        cell = [[SchoolLocationTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [[GOSchoolLocationTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     [cell settingText];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;

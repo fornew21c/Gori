@@ -6,9 +6,9 @@
 //  Copyright © 2017년 fornew21c. All rights reserved.
 //
 
-#import "LocationViewController.h"
+#import "GOLocationViewController.h"
 
-@interface LocationViewController ()
+@interface GOLocationViewController ()
 
 
 @property (weak, nonatomic) IBOutlet UIView *schoolLocationView;
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation LocationViewController
+@implementation GOLocationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

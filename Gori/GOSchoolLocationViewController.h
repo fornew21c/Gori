@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SchoolLocationViewController : UIViewController
+@interface GOSchoolLocationViewController : UIViewController
 
 @end

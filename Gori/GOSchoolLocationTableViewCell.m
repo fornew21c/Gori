@@ -6,10 +6,10 @@
 //  Copyright © 2017년 fornew21c. All rights reserved.
 //
 
-#import "SchoolLocationTableViewCell.h"
+#import "GOSchoolLocationTableViewCell.h"
 #import "GODataCenter.h"
 
-@implementation SchoolLocationTableViewCell
+@implementation GOSchoolLocationTableViewCell
 
 
 - (void)makingCustomCellObject{

@@ -9,8 +9,8 @@
 #import "GOMainViewController.h"
 #import "GOMainTableViewCell.h"
 #import "GODataCenter.h"
-#import "LocationViewController.h"
-#import "CategoryViewController.h"
+#import "GOLocationViewController.h"
+#import "GOCategoryViewController.h"
 
 
 @interface GOMainViewController ()
@@ -89,9 +89,9 @@
 /**************** button Action ********************************/
 
 - (IBAction)showLocationDetailView:(id)sender {
-    UIStoryboard *Category_Location_Storyboard = [UIStoryboard storyboardWithName:@"Category_Location_Storyboard" bundle:nil];
-    LocationViewController *locationViewController = [Category_Location_Storyboard instantiateViewControllerWithIdentifier:@"LocationViewController"];
-    [self presentViewController:locationViewController animated:YES completion:nil];
+    UIStoryboard *GOCategory_Location_Storyboard = [UIStoryboard storyboardWithName:@"Category_Location_Storyboard" bundle:nil];
+    GOLocationViewController *GOlocationViewController = [GOCategory_Location_Storyboard instantiateViewControllerWithIdentifier:@"GOLocationViewController"];
+    [self presentViewController:GOlocationViewController animated:YES completion:nil];
 
     
 //    디테일뷰는 다른 뷰컨트롤러 생성 후 띄울 것이므로 주석 처리함
@@ -119,8 +119,8 @@
 - (IBAction)showCategoryDetailView:(id)sender {
     
     UIStoryboard * Category_Location_Storyboard = [UIStoryboard storyboardWithName:@"Category_Location_Storyboard" bundle:nil];
-    CategoryViewController *CategoryViewController = [Category_Location_Storyboard instantiateViewControllerWithIdentifier:@"CategoryViewController"];
-    [self presentViewController:CategoryViewController animated:YES completion:nil];
+    GOCategoryViewController *GOCategoryViewController = [Category_Location_Storyboard instantiateViewControllerWithIdentifier:@"GOCategoryViewController"];
+    [self presentViewController:GOCategoryViewController animated:YES completion:nil];
     
 //    디테일뷰는 다른 뷰컨트롤러 생성 후 띄울 것이므로 주석 처리함
 //    if (self.viewIsPresented == NO) {
