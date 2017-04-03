@@ -45,7 +45,7 @@
 		418584661E91F1A30053EF40 /* bodyImage2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 418584601E91F1A30053EF40 /* bodyImage2.jpg */; };
 		418584671E91F1A30053EF40 /* footerImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 418584611E91F1A30053EF40 /* footerImage.jpg */; };
 		418584681E91F1A30053EF40 /* headerImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 418584621E91F1A30053EF40 /* headerImage.jpg */; };
-		91641F1D1E926CB500DC5B43 /* logoFinal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91641F1C1E926CB500DC5B43 /* logoFinal.jpg */; };
+		9132C17C1E92FAC1007C31EC /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9132C17B1E92FAC1007C31EC /* logo.png */; };
 		91641F201E92796400DC5B43 /* GOSchoolLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91641F1F1E92796400DC5B43 /* GOSchoolLocationViewController.m */; };
 		91641F231E92798600DC5B43 /* GOSchoolLocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91641F221E92798600DC5B43 /* GOSchoolLocationTableViewCell.m */; };
 		91641F261E927B8800DC5B43 /* GOLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91641F251E927B8800DC5B43 /* GOLocationViewController.m */; };
@@ -114,7 +114,7 @@
 		418584601E91F1A30053EF40 /* bodyImage2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bodyImage2.jpg; sourceTree = "<group>"; };
 		418584611E91F1A30053EF40 /* footerImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = footerImage.jpg; sourceTree = "<group>"; };
 		418584621E91F1A30053EF40 /* headerImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = headerImage.jpg; sourceTree = "<group>"; };
-		91641F1C1E926CB500DC5B43 /* logoFinal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logoFinal.jpg; sourceTree = "<group>"; };
+		9132C17B1E92FAC1007C31EC /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		91641F1E1E92796400DC5B43 /* GOSchoolLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOSchoolLocationViewController.h; sourceTree = "<group>"; };
 		91641F1F1E92796400DC5B43 /* GOSchoolLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOSchoolLocationViewController.m; sourceTree = "<group>"; };
 		91641F211E92798600DC5B43 /* GOSchoolLocationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOSchoolLocationTableViewCell.h; sourceTree = "<group>"; };
@@ -280,7 +280,7 @@
 				418584601E91F1A30053EF40 /* bodyImage2.jpg */,
 				418584611E91F1A30053EF40 /* footerImage.jpg */,
 				418584621E91F1A30053EF40 /* headerImage.jpg */,
-				91641F1C1E926CB500DC5B43 /* logoFinal.jpg */,
+				9132C17B1E92FAC1007C31EC /* logo.png */,
 			);
 			name = MainViewImage;
 			sourceTree = "<group>";
@@ -344,8 +344,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9132C17C1E92FAC1007C31EC /* logo.png in Resources */,
 				4153EE9F1E9239AC001EFF70 /* Category_Location_Storyboard.storyboard in Resources */,
-				91641F1D1E926CB500DC5B43 /* logoFinal.jpg in Resources */,
 				418584631E91F1A30053EF40 /* profile.jpg in Resources */,
 				4185840F1E91EDF70053EF40 /* LaunchScreen.storyboard in Resources */,
 				4153EEA11E923A49001EFF70 /* Main.storyboard in Resources */,

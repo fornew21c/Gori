@@ -42,7 +42,7 @@
     
     /**************** navigationBar Logo Setting ********************************/
     
-    UIImage *logo = [UIImage imageNamed:@"logoFinal.jpg"];
+    UIImage *logo = [UIImage imageNamed:@"logo.png"];
     UIImageView *logoView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
     [logoView setImage:logo];
     //set Content Mode Aspect Fit
