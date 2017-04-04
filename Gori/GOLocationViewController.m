@@ -33,6 +33,7 @@
             self.schoolLocationView.alpha = 1.0f;
             self.districtLocationView.alpha = 0.0f;
             NSLog(@"세그멘트 컨트롤 활성화");
+            NSLog(@"gittest");
         }];
     }
     else{
