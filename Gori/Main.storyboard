@@ -188,8 +188,6 @@
             </objects>
             <point key="canvasLocation" x="2745" y="-565"/>
         </scene>
-<<<<<<< HEAD
-=======
         <!--Main View Controller-->
         <scene sceneID="WmB-Gf-Edf">
             <objects>
@@ -218,7 +216,6 @@
             </objects>
             <point key="canvasLocation" x="5348" y="238"/>
         </scene>
->>>>>>> ed2ff2bc83a746443ccc2252f2177ebda90f9470
         <!--Navigation Controller-->
         <scene sceneID="nMu-J2-uM1">
             <objects>

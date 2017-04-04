@@ -39,6 +39,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    NSLog(@"GitCommitTest");
+    
     /**************** navigationBar Logo Setting ********************************/
     
     UIImage *logo = [UIImage imageNamed:@"logo.png"];
