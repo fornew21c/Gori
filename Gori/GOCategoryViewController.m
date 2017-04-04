@@ -1,33 +1,29 @@
 //
-//  LocationViewController.m
+//  CategoryViewController.m
 //  Gori
 //
 //  Created by ji jun young on 2017. 3. 31..
 //  Copyright © 2017년 fornew21c. All rights reserved.
 //
 
-#import "LocationViewController.h"
-#import "LocationTableViewCell.h"
+#import "GOCategoryViewController.h"
 #import "GODataCenter.h"
-#import "GOMainViewController.h"
+#import "GOCategoryTableViewCell.h"
 
-@interface LocationViewController ()
+@interface GOCategoryViewController ()
 <UITableViewDelegate, UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UITableView *locationTableView;
 @property (weak, nonatomic) IBOutlet UIButton *backToMainViewButton;
+
+
+@property (weak, nonatomic) IBOutlet UITableView *categoryTableView;
 
 @end
 
-@implementation LocationViewController
+@implementation GOCategoryViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /**************** tableviewDelegate ********************************/
@@ -39,16 +35,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return [GODataCenter sharedInstance].schoolLocationArray.count;
+    return [GODataCenter sharedInstance].categoryArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     [GODataCenter sharedInstance].currentRow = indexPath.row;
-    LocationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    GOCategoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil) {
-        cell = [[LocationTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [[GOCategoryTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     [cell settingText];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -57,18 +52,25 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    return 160;
+    CGFloat heightForRow;
+    GOCategoryTableViewCell *cell= [[GOCategoryTableViewCell alloc]init];
+    heightForRow = cell.mainView.frame.size.height;
+    return heightForRow;
 }
 
 /**************** button Action ********************************/
 
 - (IBAction)backToMainView:(UIButton *)sender {
-
+    
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 /*
 #pragma mark - Navigation

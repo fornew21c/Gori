@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CategoryTableViewCell : UITableViewCell
+@interface GOCategoryTableViewCell : UITableViewCell
 
 @property (nonatomic, weak) UIView *mainView;
 

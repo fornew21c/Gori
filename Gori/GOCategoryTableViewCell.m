@@ -6,10 +6,10 @@
 //  Copyright © 2017년 fornew21c. All rights reserved.
 //
 
-#import "CategoryTableViewCell.h"
+#import "GOCategoryTableViewCell.h"
 #import "GODataCenter.h"
 
-@implementation CategoryTableViewCell
+@implementation GOCategoryTableViewCell
 
 - (void)makingCustomCellObject{
     

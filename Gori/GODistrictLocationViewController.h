@@ -1,5 +1,5 @@
 //
-//  CategoryViewController.h
+//  LocationViewController.h
 //  Gori
 //
 //  Created by ji jun young on 2017. 3. 31..
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CategoryViewController : UIViewController
+@interface GODistrictLocationViewController : UIViewController
 
 @end

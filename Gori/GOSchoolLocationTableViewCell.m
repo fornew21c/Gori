@@ -1,15 +1,16 @@
 //
-//  LocationTableViewCell.m
+//  SchoolLocationTableViewCell.m
 //  Gori
 //
-//  Created by ji jun young on 2017. 3. 31..
+//  Created by ji jun young on 2017. 4. 3..
 //  Copyright © 2017년 fornew21c. All rights reserved.
 //
 
-#import "LocationTableViewCell.h"
+#import "GOSchoolLocationTableViewCell.h"
 #import "GODataCenter.h"
 
-@implementation LocationTableViewCell
+@implementation GOSchoolLocationTableViewCell
+
 
 - (void)makingCustomCellObject{
     
@@ -19,7 +20,7 @@
     
     UIImageView *titleImageView = [[UIImageView alloc]init];
     self.titleImageView = titleImageView;
-    self.titleImageView.image = [UIImage imageNamed:@"bodyImage1.jpg"];
+    self.titleImageView.image = [UIImage imageNamed:@"bodyImage.jpg"];
     [self.mainView addSubview:self.titleImageView];
     
     
@@ -44,7 +45,7 @@
     self.titleLabel.frame = CGRectMake(0, 0, MARGIN * 20, MARGIN * 2);
     self.titleLabel.center = CGPointMake(self.titleImageView.frame.size.width / 2, self.titleImageView.frame.size.height / 2);
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
-
+    
 }
 
 - (void)settingCustomCellObjectColor{
@@ -76,6 +77,7 @@
     [self settingCustomCellObject];
     
 }
+
 
 
 

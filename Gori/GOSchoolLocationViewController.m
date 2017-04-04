@@ -1,25 +1,26 @@
 //
-//  CategoryViewController.m
+//  SchoolLocationViewController.m
 //  Gori
 //
-//  Created by ji jun young on 2017. 3. 31..
+//  Created by ji jun young on 2017. 4. 3..
 //  Copyright © 2017년 fornew21c. All rights reserved.
 //
 
-#import "CategoryViewController.h"
+#import "GOSchoolLocationViewController.h"
+#import "GOSchoolLocationTableViewCell.h"
 #import "GODataCenter.h"
-#import "CategoryTableViewCell.h"
+#import "GOMainViewController.h"
 
-@interface CategoryViewController ()
+@interface GOSchoolLocationViewController ()
 <UITableViewDelegate, UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UIButton *backToMainViewButton;
 
-
-@property (weak, nonatomic) IBOutlet UITableView *categoryTableView;
+@property (weak, nonatomic) IBOutlet UITableView *locationTableView;
 
 @end
 
-@implementation CategoryViewController
+@implementation GOSchoolLocationViewController
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,15 +36,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return [GODataCenter sharedInstance].categoryArray.count;
+    return [GODataCenter sharedInstance].schoolLocationArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     [GODataCenter sharedInstance].currentRow = indexPath.row;
-    CategoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    GOSchoolLocationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil) {
-        cell = [[CategoryTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [[GOSchoolLocationTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     [cell settingText];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -52,19 +54,11 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    
-    return 160;
+    CGFloat heightForRow;
+    GOSchoolLocationTableViewCell *cell= [[GOSchoolLocationTableViewCell alloc]init];
+    heightForRow = cell.mainView.frame.size.height;
+    return heightForRow;
 }
-
-/**************** button Action ********************************/
-
-- (IBAction)backToMainView:(UIButton *)sender {
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
