@@ -31,7 +31,7 @@
             break;
     }
     
-    NSLog(@"git Test");
+    NSLog(@"git Test2222");
     return identifier;
 }
 
