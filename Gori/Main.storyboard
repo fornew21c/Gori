@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -391,45 +390,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJ5-y2-2dX">
-                                <rect key="frame" x="195" y="64" width="180" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="6gP-gn-7mt"/>
-                                </constraints>
-                                <state key="normal" title="전체 카테고리"/>
-                                <connections>
-                                    <action selector="showCategoryDetailView:" destination="aDU-HZ-EyT" eventType="touchUpInside" id="VZ6-fE-3xX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUF-Ju-yuv">
-                                <rect key="frame" x="0.0" y="64" width="180" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="9p0-k6-USE"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="yZk-18-t6u"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUF-Ju-yuv">
+                                <rect key="frame" x="32" y="72" width="59" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="전체 지역"/>
                                 <connections>
                                     <action selector="showLocationDetailView:" destination="aDU-HZ-EyT" eventType="touchUpInside" id="zHV-mZ-Q6m"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ort-Qo-vMU">
+                                <rect key="frame" x="0.0" y="110" width="375" height="557"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJ5-y2-2dX">
+                                <rect key="frame" x="267" y="72" width="82" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="전체 카테고리"/>
+                                <connections>
+                                    <action selector="showCategoryDetailView:" destination="aDU-HZ-EyT" eventType="touchUpInside" id="VZ6-fE-3xX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="HUF-Ju-yuv" firstAttribute="leading" secondItem="jjp-FA-TY0" secondAttribute="leadingMargin" constant="-16" id="GgG-e6-gkJ"/>
-                            <constraint firstItem="kJ5-y2-2dX" firstAttribute="leading" secondItem="HUF-Ju-yuv" secondAttribute="trailing" constant="15" id="PWS-ov-urW"/>
-                            <constraint firstItem="HUF-Ju-yuv" firstAttribute="top" secondItem="kZa-se-Mfa" secondAttribute="bottom" id="Pf4-z6-OHI"/>
-                            <constraint firstItem="kJ5-y2-2dX" firstAttribute="top" secondItem="HUF-Ju-yuv" secondAttribute="top" id="Vv8-sH-jpw"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tgD-bD-sFh"/>
                     <connections>
                         <outlet property="categoryButton" destination="kJ5-y2-2dX" id="GMJ-8Q-SP3"/>
                         <outlet property="locationButton" destination="HUF-Ju-yuv" id="BD0-TB-fyM"/>
+                        <outlet property="mainTableView" destination="Ort-Qo-vMU" id="6yD-qb-NqQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uqv-cU-fg4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3753" y="-588"/>
+            <point key="canvasLocation" x="3752.8000000000002" y="-588.75562218890559"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
