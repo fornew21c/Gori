@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		414848071E935C8400612B3C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 414848061E935C8400612B3C /* DetailViewController.m */; };
 		4153EE841E9238FD001EFF70 /* GODataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4153EE831E9238FD001EFF70 /* GODataCenter.m */; };
 		4153EE8E1E92393C001EFF70 /* GODistrictLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4153EE871E92393C001EFF70 /* GODistrictLocationViewController.m */; };
 		4153EE8F1E92393C001EFF70 /* GOCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4153EE891E92393C001EFF70 /* GOCategoryViewController.m */; };
@@ -33,7 +34,6 @@
 		418584341E91EE9E0053EF40 /* AMSlideMenuRightTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4185842C1E91EE9E0053EF40 /* AMSlideMenuRightTableViewController.m */; };
 		418584351E91EE9E0053EF40 /* UIViewController+AMSlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 4185842E1E91EE9E0053EF40 /* UIViewController+AMSlideMenu.m */; };
 		4185843A1E91EEFD0053EF40 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 418584371E91EEFD0053EF40 /* AppDelegate.m */; };
-		4185843B1E91EEFD0053EF40 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418584391E91EEFD0053EF40 /* ViewController.m */; };
 		418584561E91F15E0053EF40 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 418584521E91F15E0053EF40 /* MainVC.m */; };
 		418584571E91F15E0053EF40 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418584541E91F15E0053EF40 /* LoginViewController.m */; };
 		4185845A1E91F1770053EF40 /* icon-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 418584581E91F1770053EF40 /* icon-menu.png */; };
@@ -51,6 +51,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		414848051E935C8400612B3C /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		414848061E935C8400612B3C /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		4153EE821E9238FD001EFF70 /* GODataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GODataCenter.h; sourceTree = "<group>"; };
 		4153EE831E9238FD001EFF70 /* GODataCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GODataCenter.m; sourceTree = "<group>"; };
 		4153EE861E92393C001EFF70 /* GODistrictLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GODistrictLocationViewController.h; sourceTree = "<group>"; };
@@ -97,8 +99,6 @@
 		4185842E1E91EE9E0053EF40 /* UIViewController+AMSlideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AMSlideMenu.m"; sourceTree = "<group>"; };
 		418584361E91EEFD0053EF40 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		418584371E91EEFD0053EF40 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		418584381E91EEFD0053EF40 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		418584391E91EEFD0053EF40 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		418584511E91F15E0053EF40 /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
 		418584521E91F15E0053EF40 /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
 		418584531E91F15E0053EF40 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -135,6 +135,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		414848081E935C8E00612B3C /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				418584531E91F15E0053EF40 /* LoginViewController.h */,
+				418584541E91F15E0053EF40 /* LoginViewController.m */,
+			);
+			name = LoginView;
+			sourceTree = "<group>";
+		};
+		414848091E935C9F00612B3C /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				414848051E935C8400612B3C /* DetailViewController.h */,
+				414848061E935C8400612B3C /* DetailViewController.m */,
+			);
+			name = DetailView;
+			sourceTree = "<group>";
+		};
 		4153EE851E923904001EFF70 /* Category_LocationView */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,18 +195,16 @@
 		418583FE1E91EDF70053EF40 /* Gori */ = {
 			isa = PBXGroup;
 			children = (
+				414848091E935C9F00612B3C /* DetailView */,
+				414848081E935C8E00612B3C /* LoginView */,
 				4153EE851E923904001EFF70 /* Category_LocationView */,
 				4185845C1E91F1850053EF40 /* MainViewImage */,
 				4185844B1E91F1220053EF40 /* model */,
 				4185843E1E91F0E00053EF40 /* MainView */,
 				418584361E91EEFD0053EF40 /* AppDelegate.h */,
 				418584371E91EEFD0053EF40 /* AppDelegate.m */,
-				418584381E91EEFD0053EF40 /* ViewController.h */,
-				418584391E91EEFD0053EF40 /* ViewController.m */,
 				418584511E91F15E0053EF40 /* MainVC.h */,
 				418584521E91F15E0053EF40 /* MainVC.m */,
-				418584531E91F15E0053EF40 /* LoginViewController.h */,
-				418584541E91F15E0053EF40 /* LoginViewController.m */,
 				4153EEA01E923A49001EFF70 /* Main.storyboard */,
 				4153EE9E1E9239AC001EFF70 /* Category_Location_Storyboard.storyboard */,
 				4185840B1E91EDF70053EF40 /* Assets.xcassets */,
@@ -371,9 +387,9 @@
 				4153EE911E92393C001EFF70 /* GOCategoryTableViewCell.m in Sources */,
 				4153EE901E92393C001EFF70 /* GODistrictLocationTableViewCell.m in Sources */,
 				91641F261E927B8800DC5B43 /* GOLocationViewController.m in Sources */,
-				4185843B1E91EEFD0053EF40 /* ViewController.m in Sources */,
 				418584351E91EE9E0053EF40 /* UIViewController+AMSlideMenu.m in Sources */,
 				4153EE9A1E92399A001EFF70 /* GOMainViewController.m in Sources */,
+				414848071E935C8400612B3C /* DetailViewController.m in Sources */,
 				418584311E91EE9E0053EF40 /* AMSlideMenuLeftTableViewController.m in Sources */,
 				418584571E91F15E0053EF40 /* LoginViewController.m in Sources */,
 				418584321E91EE9E0053EF40 /* AMSlideMenuMainViewController.m in Sources */,

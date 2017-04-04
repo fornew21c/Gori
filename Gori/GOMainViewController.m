@@ -203,6 +203,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"didSelectRowAtIndexPath: %lu", indexPath.row);
+    [self performSegueWithIdentifier:@"detailSegue" sender:nil];
+}
 /*
 #pragma mark - Navigation
 
