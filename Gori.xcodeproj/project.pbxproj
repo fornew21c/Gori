@@ -34,7 +34,6 @@
 		418584351E91EE9E0053EF40 /* UIViewController+AMSlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 4185842E1E91EE9E0053EF40 /* UIViewController+AMSlideMenu.m */; };
 		4185843A1E91EEFD0053EF40 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 418584371E91EEFD0053EF40 /* AppDelegate.m */; };
 		4185843B1E91EEFD0053EF40 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418584391E91EEFD0053EF40 /* ViewController.m */; };
-		418584551E91F15E0053EF40 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418584501E91F15E0053EF40 /* MainViewController.m */; };
 		418584561E91F15E0053EF40 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 418584521E91F15E0053EF40 /* MainVC.m */; };
 		418584571E91F15E0053EF40 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418584541E91F15E0053EF40 /* LoginViewController.m */; };
 		4185845A1E91F1770053EF40 /* icon-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 418584581E91F1770053EF40 /* icon-menu.png */; };
@@ -96,8 +95,6 @@
 		418584371E91EEFD0053EF40 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		418584381E91EEFD0053EF40 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		418584391E91EEFD0053EF40 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		4185844F1E91F15E0053EF40 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		418584501E91F15E0053EF40 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		418584511E91F15E0053EF40 /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
 		418584521E91F15E0053EF40 /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
 		418584531E91F15E0053EF40 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -171,8 +168,6 @@
 				418584371E91EEFD0053EF40 /* AppDelegate.m */,
 				418584381E91EEFD0053EF40 /* ViewController.h */,
 				418584391E91EEFD0053EF40 /* ViewController.m */,
-				4185844F1E91F15E0053EF40 /* MainViewController.h */,
-				418584501E91F15E0053EF40 /* MainViewController.m */,
 				418584511E91F15E0053EF40 /* MainVC.h */,
 				418584521E91F15E0053EF40 /* MainVC.m */,
 				418584531E91F15E0053EF40 /* LoginViewController.h */,
@@ -350,7 +345,6 @@
 			files = (
 				418584301E91EE9E0053EF40 /* AMSlideMenuLeftMenuSegue.m in Sources */,
 				418584341E91EE9E0053EF40 /* AMSlideMenuRightTableViewController.m in Sources */,
-				418584551E91F15E0053EF40 /* MainViewController.m in Sources */,
 				4153EE9C1E92399A001EFF70 /* GOCollectionViewCell.m in Sources */,
 				4185843A1E91EEFD0053EF40 /* AppDelegate.m in Sources */,
 				418584561E91F15E0053EF40 /* MainVC.m in Sources */,
