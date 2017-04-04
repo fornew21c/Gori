@@ -31,6 +31,7 @@
             break;
     }
     
+    NSLog(@"git Test");
     return identifier;
 }
 
