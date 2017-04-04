@@ -96,13 +96,13 @@ typedef enum {
 
 /**
  * Override this method for customize left menu button.
- * @param Left button instance to encapsulate
+ * @param button instance to encapsulate
  */
 - (void)configureLeftMenuButton:(UIButton *)button;
 
 /**
  * Override this method for customize right menu button.
- * @param Left button instance to encapsulate
+ * @param button instance to encapsulate
  */
 - (void)configureRightMenuButton:(UIButton *)button;
 
@@ -224,7 +224,7 @@ typedef enum {
  * Call this method if you want to fix status bar with custom view
  * @method
  * Works ONLY for iOS > 7.0 !
- * @param UIView* that will be shown as background of status bar. Must be 20px height.
+ * @param view be shown as background of status bar. Must be 20px height.
  */
 - (void)fixStatusBarWithView:(UIView *)view;
 
@@ -287,17 +287,17 @@ typedef enum {
  */
 - (void)closeRightMenuAnimated:(BOOL)animated;
 
-/**
- * makes switch between active controller to input controller
- * @param Destination controller
- * @param Menu from where switch should be done
- */
+///**
+ //* makes switch between active controller to input controller
+ //* @param destination controller
+ //* @param menu from where switch should be done
+ //*/
 - (void)switchCurrentActiveControllerToController:(UINavigationController *)nvc
                                          fromMenu:(UITableViewController *)menu;
 
 /**
  * makes switch between active controller to input controller at indexPath in input menu
- * @param Menu enum from where switch should be done
+ * @param menu enum from where switch should be done
  * @param indexPath destination ViewController's indexPath in menu
  */
 - (void)openContentViewControllerForMenu:(AMSlideMenu)menu atIndexPath:(NSIndexPath *)indexPath;
