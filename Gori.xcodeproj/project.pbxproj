@@ -19,9 +19,6 @@
 		4153EE9D1E92399A001EFF70 /* GOCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4153EE991E92399A001EFF70 /* GOCollectionViewController.m */; };
 		4153EE9F1E9239AC001EFF70 /* Category_Location_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4153EE9E1E9239AC001EFF70 /* Category_Location_Storyboard.storyboard */; };
 		4153EEA11E923A49001EFF70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4153EEA01E923A49001EFF70 /* Main.storyboard */; };
-		4173E5D11E94950500306D01 /* FirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4173E5D01E94950500306D01 /* FirstTableViewCell.m */; };
-		4173E5D41E94A9C700306D01 /* SecondTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4173E5D31E94A9C700306D01 /* SecondTableViewCell.m */; };
-		4173E5D71E94C1AE00306D01 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4173E5D61E94C1AE00306D01 /* FirstViewController.m */; };
 		418584011E91EDF70053EF40 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 418584001E91EDF70053EF40 /* main.m */; };
 		4185840C1E91EDF70053EF40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4185840B1E91EDF70053EF40 /* Assets.xcassets */; };
 		4185840F1E91EDF70053EF40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4185840D1E91EDF70053EF40 /* LaunchScreen.storyboard */; };
@@ -76,12 +73,6 @@
 		4153EE991E92399A001EFF70 /* GOCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOCollectionViewController.m; sourceTree = "<group>"; };
 		4153EE9E1E9239AC001EFF70 /* Category_Location_Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Category_Location_Storyboard.storyboard; sourceTree = "<group>"; };
 		4153EEA01E923A49001EFF70 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		4173E5CF1E94950500306D01 /* FirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstTableViewCell.h; sourceTree = "<group>"; };
-		4173E5D01E94950500306D01 /* FirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstTableViewCell.m; sourceTree = "<group>"; };
-		4173E5D21E94A9C700306D01 /* SecondTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondTableViewCell.h; sourceTree = "<group>"; };
-		4173E5D31E94A9C700306D01 /* SecondTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondTableViewCell.m; sourceTree = "<group>"; };
-		4173E5D51E94C1AE00306D01 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		4173E5D61E94C1AE00306D01 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		418583FC1E91EDF70053EF40 /* Gori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		418584001E91EDF70053EF40 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4185840B1E91EDF70053EF40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,12 +149,6 @@
 			children = (
 				414848051E935C8400612B3C /* DetailViewController.h */,
 				414848061E935C8400612B3C /* DetailViewController.m */,
-				4173E5CF1E94950500306D01 /* FirstTableViewCell.h */,
-				4173E5D01E94950500306D01 /* FirstTableViewCell.m */,
-				4173E5D21E94A9C700306D01 /* SecondTableViewCell.h */,
-				4173E5D31E94A9C700306D01 /* SecondTableViewCell.m */,
-				4173E5D51E94C1AE00306D01 /* FirstViewController.h */,
-				4173E5D61E94C1AE00306D01 /* FirstViewController.m */,
 			);
 			name = DetailView;
 			sourceTree = "<group>";
@@ -395,7 +380,6 @@
 			files = (
 				418584301E91EE9E0053EF40 /* AMSlideMenuLeftMenuSegue.m in Sources */,
 				418584341E91EE9E0053EF40 /* AMSlideMenuRightTableViewController.m in Sources */,
-				4173E5D11E94950500306D01 /* FirstTableViewCell.m in Sources */,
 				4153EE9C1E92399A001EFF70 /* GOCollectionViewCell.m in Sources */,
 				4185843A1E91EEFD0053EF40 /* AppDelegate.m in Sources */,
 				418584561E91F15E0053EF40 /* MainVC.m in Sources */,
@@ -403,7 +387,6 @@
 				4153EE911E92393C001EFF70 /* GOCategoryTableViewCell.m in Sources */,
 				4153EE901E92393C001EFF70 /* GODistrictLocationTableViewCell.m in Sources */,
 				91641F261E927B8800DC5B43 /* GOLocationViewController.m in Sources */,
-				4173E5D71E94C1AE00306D01 /* FirstViewController.m in Sources */,
 				418584351E91EE9E0053EF40 /* UIViewController+AMSlideMenu.m in Sources */,
 				4153EE9A1E92399A001EFF70 /* GOMainViewController.m in Sources */,
 				414848071E935C8400612B3C /* DetailViewController.m in Sources */,
@@ -419,7 +402,6 @@
 				91641F201E92796400DC5B43 /* GOSchoolLocationViewController.m in Sources */,
 				418584011E91EDF70053EF40 /* main.m in Sources */,
 				4153EE8E1E92393C001EFF70 /* GODistrictLocationViewController.m in Sources */,
-				4173E5D41E94A9C700306D01 /* SecondTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
