@@ -7,8 +7,10 @@
 //
 
 #import "DetailViewController.h"
-#import "FirstTableViewCell.h"
-#import "SecondTableViewCell.h"
+//#import "FirstTableViewCell.h"
+//#import "SecondTableViewCell.h"
+//상단의 퍼스트, 세컨드 테이블뷰 셀은 파일을 찾을 수 없어 우선 주석 처리함
+
 
 @interface DetailViewController ()
 <UIScrollViewDelegate>

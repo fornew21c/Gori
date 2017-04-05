@@ -48,6 +48,9 @@
 		91641F201E92796400DC5B43 /* GOSchoolLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91641F1F1E92796400DC5B43 /* GOSchoolLocationViewController.m */; };
 		91641F231E92798600DC5B43 /* GOSchoolLocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91641F221E92798600DC5B43 /* GOSchoolLocationTableViewCell.m */; };
 		91641F261E927B8800DC5B43 /* GOLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91641F251E927B8800DC5B43 /* GOLocationViewController.m */; };
+		9178CAD71E9575540054B7FB /* SignIn_SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9178CAD61E9575540054B7FB /* SignIn_SignUp.storyboard */; };
+		919A8A081E9581F200E8EA22 /* GOSigninViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919A8A071E9581F200E8EA22 /* GOSigninViewController.m */; };
+		919A8A0B1E95820300E8EA22 /* GOSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919A8A0A1E95820300E8EA22 /* GOSignupViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +121,11 @@
 		91641F221E92798600DC5B43 /* GOSchoolLocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOSchoolLocationTableViewCell.m; sourceTree = "<group>"; };
 		91641F241E927B8800DC5B43 /* GOLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOLocationViewController.h; sourceTree = "<group>"; };
 		91641F251E927B8800DC5B43 /* GOLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOLocationViewController.m; sourceTree = "<group>"; };
+		9178CAD61E9575540054B7FB /* SignIn_SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn_SignUp.storyboard; sourceTree = "<group>"; };
+		919A8A061E9581F200E8EA22 /* GOSigninViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOSigninViewController.h; sourceTree = "<group>"; };
+		919A8A071E9581F200E8EA22 /* GOSigninViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOSigninViewController.m; sourceTree = "<group>"; };
+		919A8A091E95820300E8EA22 /* GOSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOSignupViewController.h; sourceTree = "<group>"; };
+		919A8A0A1E95820300E8EA22 /* GOSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOSignupViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +214,7 @@
 				418584511E91F15E0053EF40 /* MainVC.h */,
 				418584521E91F15E0053EF40 /* MainVC.m */,
 				4153EEA01E923A49001EFF70 /* Main.storyboard */,
+				9178CAD61E9575540054B7FB /* SignIn_SignUp.storyboard */,
 				4153EE9E1E9239AC001EFF70 /* Category_Location_Storyboard.storyboard */,
 				4185840B1E91EDF70053EF40 /* Assets.xcassets */,
 				4185840D1E91EDF70053EF40 /* LaunchScreen.storyboard */,
@@ -269,6 +278,7 @@
 				4153EE971E92399A001EFF70 /* GOCollectionViewCell.m */,
 				4153EE981E92399A001EFF70 /* GOCollectionViewController.h */,
 				4153EE991E92399A001EFF70 /* GOCollectionViewController.m */,
+				919A89FF1E95819700E8EA22 /* SignIn_SignUpView */,
 			);
 			name = MainView;
 			sourceTree = "<group>";
@@ -294,6 +304,17 @@
 				9132C17B1E92FAC1007C31EC /* logo.png */,
 			);
 			name = MainViewImage;
+			sourceTree = "<group>";
+		};
+		919A89FF1E95819700E8EA22 /* SignIn_SignUpView */ = {
+			isa = PBXGroup;
+			children = (
+				919A8A061E9581F200E8EA22 /* GOSigninViewController.h */,
+				919A8A071E9581F200E8EA22 /* GOSigninViewController.m */,
+				919A8A091E95820300E8EA22 /* GOSignupViewController.h */,
+				919A8A0A1E95820300E8EA22 /* GOSignupViewController.m */,
+			);
+			name = SignIn_SignUpView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +376,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9178CAD71E9575540054B7FB /* SignIn_SignUp.storyboard in Resources */,
 				9132C17C1E92FAC1007C31EC /* logo.png in Resources */,
 				4153EE9F1E9239AC001EFF70 /* Category_Location_Storyboard.storyboard in Resources */,
 				418584631E91F1A30053EF40 /* profile.jpg in Resources */,
@@ -394,9 +416,11 @@
 				418584571E91F15E0053EF40 /* LoginViewController.m in Sources */,
 				418584321E91EE9E0053EF40 /* AMSlideMenuMainViewController.m in Sources */,
 				4153EE9B1E92399A001EFF70 /* GOMainTableViewCell.m in Sources */,
+				919A8A081E9581F200E8EA22 /* GOSigninViewController.m in Sources */,
 				4153EE9D1E92399A001EFF70 /* GOCollectionViewController.m in Sources */,
 				418584331E91EE9E0053EF40 /* AMSlideMenuRightMenuSegue.m in Sources */,
 				4153EE8F1E92393C001EFF70 /* GOCategoryViewController.m in Sources */,
+				919A8A0B1E95820300E8EA22 /* GOSignupViewController.m in Sources */,
 				4153EE841E9238FD001EFF70 /* GODataCenter.m in Sources */,
 				91641F231E92798600DC5B43 /* GOSchoolLocationTableViewCell.m in Sources */,
 				91641F201E92796400DC5B43 /* GOSchoolLocationViewController.m in Sources */,
