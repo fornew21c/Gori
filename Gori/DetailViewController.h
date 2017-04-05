@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface DetailViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIScrollView *imageScrollView;
+@property (weak, nonatomic) IBOutlet UIView *imageView;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
 @end

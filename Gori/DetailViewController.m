@@ -7,13 +7,11 @@
 //
 
 #import "DetailViewController.h"
+#import "FirstTableViewCell.h"
+#import "SecondTableViewCell.h"
 
 @interface DetailViewController ()
-<UITableViewDelegate,UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UILabel *joinCountLabel;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView2;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+<UIScrollViewDelegate>
 
 @end
 
@@ -22,9 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.joinCountLabel.layer.masksToBounds = YES;
-    self.joinCountLabel.layer.cornerRadius = 15;
-    self.scrollView2.contentSize = CGSizeMake(self.scrollView2.frame.size.width, self.scrollView2.frame.size.height*3);
+    self.imageScrollView.pagingEnabled = YES;
+    self.imageScrollView.delegate = self;
+
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,29 +31,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 75.0;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    
-    if(cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    NSLog(@"scrollView.contentOffset.x: %lf", scrollView.contentOffset.x);
+    if(scrollView.contentOffset.x == 0) {
+        self.pageControl.currentPage = 0;
     }
-    
-    cell.textLabel.text = [NSString stringWithFormat:@"%lu", indexPath.row];
-    return cell;
+    else if(scrollView.contentOffset.x == self.imageScrollView.frame.size.width) {
+        self.pageControl.currentPage = 1;
+    }
+    else if(scrollView.contentOffset.x == self.imageScrollView.frame.size.width*2) {
+        self.pageControl.currentPage = 2;
+    }
+      
 }
+
+
 /*
 #pragma mark - Navigation
 
