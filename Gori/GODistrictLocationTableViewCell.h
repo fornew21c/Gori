@@ -16,6 +16,8 @@
 
 @property (nonatomic, weak) UILabel *titleLabel;
 
+@property (nonatomic, weak) UILabel *titleDetailLabel;
+
 - (void)settingText;
 
 

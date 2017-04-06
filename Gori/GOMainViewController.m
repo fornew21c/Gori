@@ -74,6 +74,14 @@
     self.headerImageView = headerImageView;
     self.headerImageView.image = [UIImage imageNamed:@"headerImage.jpg"];
     [self.mainTableView.tableHeaderView addSubview:self.headerImageView];
+    UILabel *headerLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.headerImageView.frame.size.width * 3/4, self.headerImageView.frame.size.height * 3/4)];
+    headerLabel.center = CGPointMake(self.headerImageView.frame.size.width / 2, self.headerImageView.frame.size.height / 2);
+    headerLabel.numberOfLines = 0;
+    headerLabel.text = @"취미,\n같이할래?";
+    headerLabel.font = [UIFont boldSystemFontOfSize:50.0f];
+    headerLabel.textColor = [UIColor whiteColor];
+    [self.headerImageView addSubview:headerLabel];
+    
     UIView *searchControllerView = [[UIView alloc]initWithFrame:CGRectMake(0, 160, self.view.frame.size.width, 40)];
     [self.mainTableView.tableHeaderView addSubview:searchControllerView];
     [searchControllerView addSubview:self.searchController.searchBar];

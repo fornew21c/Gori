@@ -30,6 +30,12 @@
     self.titleLabel.font = [UIFont boldSystemFontOfSize:20.0f];
     [self.titleImageView addSubview:self.titleLabel];
     
+    UILabel *titleDetailLabel = [[UILabel alloc]init];
+    self.titleDetailLabel = titleDetailLabel;
+    self.titleDetailLabel.textColor = [UIColor whiteColor];
+    self.titleDetailLabel.font = [UIFont systemFontOfSize:17.0f];
+    [self.titleImageView addSubview:self.titleDetailLabel];
+    
 }
 
 - (void)settingCustomCellObject{

@@ -81,10 +81,10 @@
     CGFloat offsetX = 0.0f;
     CGFloat offsetY = 0.0f;
     
-    self.mainView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, MARGIN * 30);
-    self.titleImageView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, MARGIN * 30);
+    self.mainView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, MARGIN * 40);
+    self.titleImageView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, MARGIN * 40);
     
-    offsetY = (self.titleImageView.frame.size.height / 2) + (MARGIN *5);
+    offsetY = (self.titleImageView.frame.size.height / 2) + (MARGIN *10);
     
     self.titleFooterView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, MARGIN * 10);
     
