@@ -29,6 +29,10 @@
         case 1:
             identifier = @"secondSegue";
             break;
+        case 2:
+            NSLog(@"signupSegue");
+            identifier = @"signupSegue";
+            break;
     }
     
     NSLog(@"git Test2222");
