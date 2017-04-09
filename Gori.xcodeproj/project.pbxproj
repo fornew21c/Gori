@@ -48,6 +48,7 @@
 		418584671E91F1A30053EF40 /* footerImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 418584611E91F1A30053EF40 /* footerImage.jpg */; };
 		418584681E91F1A30053EF40 /* headerImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 418584621E91F1A30053EF40 /* headerImage.jpg */; };
 		9132C17C1E92FAC1007C31EC /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9132C17B1E92FAC1007C31EC /* logo.png */; };
+		9163ECFD1E9A451E00F23EDA /* NetworkModuleMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 9163ECFC1E9A451E00F23EDA /* NetworkModuleMain.m */; };
 		91641F201E92796400DC5B43 /* GOSchoolLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91641F1F1E92796400DC5B43 /* GOSchoolLocationViewController.m */; };
 		91641F231E92798600DC5B43 /* GOSchoolLocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91641F221E92798600DC5B43 /* GOSchoolLocationTableViewCell.m */; };
 		91641F261E927B8800DC5B43 /* GOLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91641F251E927B8800DC5B43 /* GOLocationViewController.m */; };
@@ -124,6 +125,8 @@
 		418584611E91F1A30053EF40 /* footerImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = footerImage.jpg; sourceTree = "<group>"; };
 		418584621E91F1A30053EF40 /* headerImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = headerImage.jpg; sourceTree = "<group>"; };
 		9132C17B1E92FAC1007C31EC /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		9163ECFB1E9A451E00F23EDA /* NetworkModuleMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkModuleMain.h; sourceTree = "<group>"; };
+		9163ECFC1E9A451E00F23EDA /* NetworkModuleMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkModuleMain.m; sourceTree = "<group>"; };
 		91641F1E1E92796400DC5B43 /* GOSchoolLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOSchoolLocationViewController.h; sourceTree = "<group>"; };
 		91641F1F1E92796400DC5B43 /* GOSchoolLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOSchoolLocationViewController.m; sourceTree = "<group>"; };
 		91641F211E92798600DC5B43 /* GOSchoolLocationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOSchoolLocationTableViewCell.h; sourceTree = "<group>"; };
@@ -159,6 +162,8 @@
 				4135A8A91E9740230043E0ED /* PostModel.m */,
 				4135A8A51E973F040043E0ED /* NetworkModule.h */,
 				4135A8A61E973F040043E0ED /* NetworkModule.m */,
+				9163ECFB1E9A451E00F23EDA /* NetworkModuleMain.h */,
+				9163ECFC1E9A451E00F23EDA /* NetworkModuleMain.m */,
 			);
 			name = NetworkModule;
 			sourceTree = "<group>";
@@ -436,6 +441,7 @@
 				4135A8AA1E9740230043E0ED /* PostModel.m in Sources */,
 				418584351E91EE9E0053EF40 /* UIViewController+AMSlideMenu.m in Sources */,
 				4153EE9A1E92399A001EFF70 /* GOMainViewController.m in Sources */,
+				9163ECFD1E9A451E00F23EDA /* NetworkModuleMain.m in Sources */,
 				414848071E935C8400612B3C /* DetailViewController.m in Sources */,
 				418584311E91EE9E0053EF40 /* AMSlideMenuLeftTableViewController.m in Sources */,
 				418584571E91F15E0053EF40 /* LoginViewController.m in Sources */,

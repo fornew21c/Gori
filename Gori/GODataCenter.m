@@ -7,6 +7,7 @@
 //
 
 #import "GODataCenter.h"
+#import "NetworkModuleMain.h"
 
 @implementation GODataCenter
 
@@ -18,6 +19,79 @@
     });
     return dataCenter;
 }
+
+- (instancetype)init{
+    self = [super init];
+        if (self) {
+            self.networkDataArray = [[NSArray alloc] init];
+        }
+        return self;
+    
+}
+
+/**************** setting for MainView with NetworkModule********************************/
+- (void)receiveServerDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock{
+    
+    [NetworkModuleMain getTalentListWithCompletionBlock:^(BOOL isSuccess, NSDictionary *result){
+        if (isSuccess) {
+            NSArray *networkDataArray = (NSArray *)result;
+            //        NSLog(@"데이터센터에서 네트워크데이터어레이로 데이터를 집어넣음 %@", networkDataArray);
+            self.networkDataArray = networkDataArray;
+            //           NSLog(@"네트워크데이터어레이의 0번 데이터 %@", [networkDataArray objectAtIndex:0]);
+            completionBlock(YES);
+        }else{
+            nil;
+            
+        }
+    }];
+    
+}
+//예외처리 위해 BOOL을 던져줄 수 있도록 코드를 재수정 한 버전...맞게 했는지는 모르겠음
+
+
+/**************** Deprecated setting for MainView with NetworkModule ***********************/
+//- (void)receivingServerDatawithCompletionBlock:(void (^)())completionBlock{
+//
+//   [NetworkModule getPostListWithCompletionBlock:^(BOOL isSuccess, NSDictionary *result){
+//       if (isSuccess) {
+//           NSArray *networkDataArray = (NSArray *)result;
+////        NSLog(@"데이터센터에서 네트워크데이터어레이로 데이터를 집어넣음 %@", networkDataArray);
+//           self.networkDataArray = networkDataArray;
+////           NSLog(@"네트워크데이터어레이의 0번 데이터 %@", [networkDataArray objectAtIndex:0]);
+//           completionBlock();
+//       }else{
+//           nil;
+//
+//       }
+//   }];
+//}
+////예외처리 위해 BOOL을 던져줄 수 있도록 코드 재수정 해야함
+
+
+//
+//- (void)beginTaskWithCallbackBlock:(void (^)(void))callbackBlock {
+//    ...
+//    callbackBlock();
+//}
+
+//
+//- (void)postListWithPage:(NSInteger)page completion:(CompletionBlock)completion
+//{
+//    [self.nManager postListRequestWithPage:@1 completion:^(BOOL isSuccess, id respons) {
+//        if (isSuccess) {
+//            NSArray *list = [(NSDictionary *)respons objectForKey:@"results"];
+//            [self postModelListWithData:list];
+//            //다음 페이지가 없으면 self.canNextPage = NO
+//
+//            completion(YES, self.postList);
+//        }else
+//        {
+//            completion(NO, nil);
+//        }
+//    }];
+//}
+
+
 
 /**************** setting for MainView ********************************/
 

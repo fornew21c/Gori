@@ -11,6 +11,7 @@
 #import "GODataCenter.h"
 #import "GOLocationViewController.h"
 #import "GOCategoryViewController.h"
+#import "NetworkModuleMain.h"
 
 
 @interface GOMainViewController ()
@@ -57,6 +58,29 @@
     self.mainTableView.delegate = self;
     self.mainTableView.dataSource = self;
 //    [self.view addSubview:self.mainTableView];
+    [[GODataCenter sharedInstance]receiveServerDataWithCompletionBlock:^(BOOL isSuccess) {
+        if (isSuccess) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.mainTableView reloadData];
+                NSLog(@"ReceivingServerData and ReloadingData is Completed");
+            });
+        }else{
+            NSLog(@"ReceivingServerData and ReloadingData is Failed");
+        }
+    }];
+    
+    /**************** Deprecated due to if/else issue ***********************/
+    //    [[DataCenter sharedInstance] receivingServerDatawithCompletionBlock:^{
+    //
+    //        dispatch_async(dispatch_get_main_queue(), ^{
+    //            [self.mainTableView reloadData];
+    //        });
+    //
+    //        NSLog(@"receivingServerDatawithCompletionBlock, reloadData");
+    //    }];
+
+
+    
     
     /**************** searchController Setting ********************************/
     self.searchDataSetTitle = [GODataCenter sharedInstance].titleArray;
@@ -183,7 +207,7 @@
         return self.searchDataResult.count;
     }
     
-   return ([GODataCenter sharedInstance].titleArray.count);
+   return ([GODataCenter sharedInstance].networkDataArray.count);
 }
 
 
@@ -199,24 +223,48 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    [GODataCenter sharedInstance].currentRow = indexPath.row;
+    /**************** Deprecated. currentRow is replaced by networkDataArray ***************/
+//    [GODataCenter sharedInstance].currentRow = indexPath.row;
     GOMainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
     if (cell == nil) {
         cell = [[GOMainTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
+    /**************** changing cell text with networkDataArray ********************************/
+    NSDictionary *temp = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:indexPath.row];
+    
+    //cell이 별도의 메소드를 사용해서 불러오는 것 보다는 하단의 방법으로 텍스트와 이미지를 바꾸는 것이 더 낫다고 함
+    //왜냐하면 tableview의 dataSource가 self(ViewController) 이므로
+    cell.tutorNameLabel.text = [[temp objectForKey:@"tutor"] objectForKey:@"name"];
+    cell.titleLabel.text = [temp objectForKey:@"title"];
+    cell.tuteeCountNumberLabel.text = [[NSString stringWithFormat:@"%@", [temp objectForKey:@"registration_count"]] stringByAppendingString:@"명 참여"];
+    
+    /**************** changing cell image with networkDataArray ********************************/
+    NSString *titleImageViewURL = [NSString stringWithFormat:@"%@", [temp objectForKey:@"cover_image"]];
+    NSURL *titleURL = [NSURL URLWithString:titleImageViewURL];
+    cell.titleImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:titleURL]];
+    
+    NSString *profileImageViewURL = [NSString stringWithFormat:@"%@", [[temp objectForKey:@"tutor"] objectForKey:@"profile_image"]];
+    NSURL *profileURL = [NSURL URLWithString:profileImageViewURL];
+    cell.profileImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]];
+    
+    //해당 코드는 메인스레드에서 돌아가는 코드임...따라서 이미지를 여러개 불러올 경우엔 이미지가 다 불러질 때까지 기다리게 됨...따라서 ui도 안먹히게 됨...즉 비동기 처리를 해줘야 함
+    
+    //    NSLog(@"%ld", [DataCenter sharedInstance].currentRow);
+    
+    
     if (self.searchController.isActive && (self.searchController.searchBar.text.length > 0)) {
         
         cell.titleLabel.text = self.searchDataResult[indexPath.row];
         
         //서치컨트롤러 시행 후, 제목 정확히 입력시 검색됨...튜터 이름, 수강생 명수도 같이 바뀌도록 여러 메소드를 구현해야 함
     }else{
-        
-        [cell settingText];
+        /******** must be Deprecated due to setting tableView Data issue *******************/
+//        [cell settingText:indexPath];
     }
     
-    
+    /**************** Deprecated due to setting tableView Data issue ***********************/
+    //    [cell settingText:indexPath];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
@@ -241,10 +289,12 @@
 //}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    CGFloat heightForRow;
-    GOMainTableViewCell *cell= [[GOMainTableViewCell alloc]init];
-    heightForRow = cell.mainView.frame.size.height;
-    return heightForRow;
+//    CGFloat heightForRow;
+//    GOMainTableViewCell *cell= [[GOMainTableViewCell alloc]init];
+//    heightForRow = cell.mainView.frame.size.height;
+//    return heightForRow;
+    
+    return 200;
 }
 
 /**************** searchController Protocol ********************************/

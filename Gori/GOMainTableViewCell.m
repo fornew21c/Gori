@@ -25,7 +25,7 @@
     
     UIImageView *titleImageView = [[UIImageView alloc]init];
     self.titleImageView = titleImageView;
-    self.titleImageView.image = [UIImage imageNamed:@"bodyImage1.jpg"];
+//    self.titleImageView.image = [UIImage imageNamed:@"bodyImage1.jpg"];
     [self.mainView addSubview:self.titleImageView];
     
     UIView *titleFooterView = [[UIView alloc]init];
@@ -35,7 +35,7 @@
     
     UIImageView *profileImageView = [[UIImageView alloc]init];
     self.profileImageView = profileImageView;
-    self.profileImageView.image = [UIImage imageNamed:@"profile.jpg"];
+//    self.profileImageView.image = [UIImage imageNamed:@"profile.jpg"];
     self.profileImageView.layer.cornerRadius = 25;
     self.profileImageView.layer.masksToBounds = YES;
     self.profileImageView.clipsToBounds = YES;
@@ -121,11 +121,18 @@
     self.tuteeCountView.backgroundColor= [UIColor whiteColor];
 }
 
+/**************** Deprecated due to setting tableView Data issue ***********************/
+- (void)settingText:(NSIndexPath *) indexPath{
 
-- (void)settingText{
-    self.tutorNameLabel.text = [[GODataCenter sharedInstance].tutorNameArray objectAtIndex:[GODataCenter sharedInstance].currentRow];
-    self.titleLabel.text = [[GODataCenter sharedInstance].titleArray objectAtIndex:[GODataCenter sharedInstance].currentRow];
-    self.tuteeCountNumberLabel.text = @"26명 참여";
+    NSDictionary *temp = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:indexPath.row];
+
+    self.tutorNameLabel.text = [[temp objectForKey:@"tutor"] objectForKey:@"name"];
+    self.titleLabel.text = [temp objectForKey:@"title"];
+    self.tuteeCountNumberLabel.text = [temp objectForKey:@"registration_count"];
+    NSLog(@"tutorNameLabel text : %@",self.tutorNameLabel.text);
+    NSLog(@"titleLabel text : %@",self.titleLabel.text);
+    NSLog(@"tuteeCountNumberLabel text : %@",self.tuteeCountNumberLabel.text);
+
 }
 
 

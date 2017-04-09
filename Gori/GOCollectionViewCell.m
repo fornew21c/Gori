@@ -51,8 +51,9 @@
     [self settingCellObject];
 }
 
-- (void)inputData{
-    self.titleLabel.text = [[GODataCenter sharedInstance].categoryArray objectAtIndex:[GODataCenter sharedInstance].currentRow];
-}
+/**************** Deprecated due to setting tableView Data issue ***********************/
+//- (void)inputData{
+//    self.titleLabel.text = [[GODataCenter sharedInstance].categoryArray objectAtIndex:[GODataCenter sharedInstance].currentRow];
+//}
 
 @end

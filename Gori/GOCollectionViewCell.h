@@ -13,8 +13,8 @@
 @property (nonatomic, weak) UIView *mainView;
 @property (nonatomic, weak) UILabel *titleLabel;
 
-
-- (void)inputData;
+/**************** Deprecated due to setting tableView Data issue ***********************/
+//- (void)inputData;
 - (void)makingCustomCellObject;
 - (void)settingCellObject;
 
