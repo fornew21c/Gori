@@ -22,8 +22,13 @@
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 @property (weak, nonatomic) UIImageView *headerImageView;
 @property (nonatomic, strong) UISearchController *searchController;
-@property (nonatomic, strong) NSArray *searchDataSetTitle;
-@property (nonatomic, strong) NSArray *searchDataResult;
+@property (nonatomic, strong) NSArray *searchDataSetTutorName;
+@property (nonatomic, strong) NSArray *searchDataTutorNameResult;
+@property (nonatomic, strong) NSMutableArray *tutorNameMutableArray;
+@property (nonatomic, strong) NSArray *searchDataSetTitleName;
+@property (nonatomic, strong) NSArray *searchDataTitleNameResult;
+@property (nonatomic, strong) NSMutableArray *titleNameMutableArray;
+
 
 
 @end
@@ -49,6 +54,19 @@
         if (isSuccess) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.mainTableView reloadData];
+                NSDictionary *temp = [[NSDictionary alloc]init];
+                NSMutableArray *tutorMutableArray = [[NSMutableArray alloc]init];
+                NSMutableArray *titleMutableArray = [[NSMutableArray alloc]init];
+                for (NSInteger i = 0; i < [GODataCenter sharedInstance].networkDataArray.count; i++) {
+                    temp = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:i];
+                    [tutorMutableArray addObject:[[temp objectForKey:@"tutor"] objectForKey:@"name"]];
+                    [titleMutableArray addObject:[temp objectForKey:@"title"]];
+                    NSLog(@"타이틀뮤터블어레이 데이터 : %@", titleMutableArray);
+                }
+                self.tutorNameMutableArray = tutorMutableArray;
+                self.titleNameMutableArray = titleMutableArray;
+                self.searchDataSetTutorName = [[NSArray alloc]initWithArray:self.tutorNameMutableArray];
+                self.searchDataSetTitleName = [[NSArray alloc]initWithArray:self.titleNameMutableArray];
                 NSLog(@"ReceivingServerData and ReloadingData is Completed");
             });
         }else{
@@ -57,7 +75,7 @@
     }];
     
     /**************** searchController Setting ********************************/
-    self.searchDataSetTitle = [GODataCenter sharedInstance].networkDataArray;
+    
     UISearchController *searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     self.searchController = searchController;
     self.searchController.searchResultsUpdater = self;
@@ -111,7 +129,8 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (self.searchController.isActive && (self.searchController.searchBar.text.length > 0)) {
-        return self.searchDataResult.count;
+        return self.searchDataTutorNameResult.count;
+//        return self.searchDataTitleNameResult.count;
     }
     
    return ([GODataCenter sharedInstance].networkDataArray.count);
@@ -141,7 +160,8 @@
     
     if (self.searchController.isActive && (self.searchController.searchBar.text.length > 0)) {
         
-        cell.titleLabel.text = self.searchDataResult[indexPath.row];
+        cell.tutorNameLabel.text = self.searchDataTutorNameResult[indexPath.row];
+//        cell.titleLabel.text = self.searchDataTitleNameResult[indexPath.row];
         
     }else{
 
@@ -163,7 +183,8 @@
 - (void)checkingText:(NSString *)string{
 //    self.searchDataResult = [self.searchDataSetTitle mutableCopy];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF == %@", string];
-    self.searchDataResult = [self.searchDataSetTitle filteredArrayUsingPredicate:predicate];
+    self.searchDataTutorNameResult = [self.searchDataSetTutorName filteredArrayUsingPredicate:predicate];
+    self.searchDataTitleNameResult = [self.searchDataSetTitleName filteredArrayUsingPredicate:predicate];
     [self.mainTableView reloadData];
 }
 
@@ -172,8 +193,6 @@
     [self checkingText:searchController.searchBar.text];
     
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
