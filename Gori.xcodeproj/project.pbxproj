@@ -52,6 +52,11 @@
 		91641F201E92796400DC5B43 /* GOSchoolLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91641F1F1E92796400DC5B43 /* GOSchoolLocationViewController.m */; };
 		91641F231E92798600DC5B43 /* GOSchoolLocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91641F221E92798600DC5B43 /* GOSchoolLocationTableViewCell.m */; };
 		91641F261E927B8800DC5B43 /* GOLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91641F251E927B8800DC5B43 /* GOLocationViewController.m */; };
+		91680C231E9CA70100A110BE /* Mypage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91680C221E9CA70100A110BE /* Mypage.storyboard */; };
+		91680C271E9CAC0800A110BE /* GOMypageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91680C261E9CAC0800A110BE /* GOMypageViewController.m */; };
+		91680C2B1E9CAE8400A110BE /* GORegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91680C2A1E9CAE8400A110BE /* GORegistrationViewController.m */; };
+		91680C2E1E9CAE9B00A110BE /* GOClassListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91680C2D1E9CAE9B00A110BE /* GOClassListViewController.m */; };
+		91680C311E9CAEAD00A110BE /* GOWishListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91680C301E9CAEAD00A110BE /* GOWishListViewController.m */; };
 		9178CAD71E9575540054B7FB /* SignIn_SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9178CAD61E9575540054B7FB /* SignIn_SignUp.storyboard */; };
 		919A8A081E9581F200E8EA22 /* GOSigninViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919A8A071E9581F200E8EA22 /* GOSigninViewController.m */; };
 		919A8A0B1E95820300E8EA22 /* GOSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919A8A0A1E95820300E8EA22 /* GOSignupViewController.m */; };
@@ -133,6 +138,15 @@
 		91641F221E92798600DC5B43 /* GOSchoolLocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOSchoolLocationTableViewCell.m; sourceTree = "<group>"; };
 		91641F241E927B8800DC5B43 /* GOLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOLocationViewController.h; sourceTree = "<group>"; };
 		91641F251E927B8800DC5B43 /* GOLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOLocationViewController.m; sourceTree = "<group>"; };
+		91680C221E9CA70100A110BE /* Mypage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mypage.storyboard; sourceTree = "<group>"; };
+		91680C251E9CAC0800A110BE /* GOMypageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOMypageViewController.h; sourceTree = "<group>"; };
+		91680C261E9CAC0800A110BE /* GOMypageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOMypageViewController.m; sourceTree = "<group>"; };
+		91680C291E9CAE8400A110BE /* GORegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GORegistrationViewController.h; sourceTree = "<group>"; };
+		91680C2A1E9CAE8400A110BE /* GORegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GORegistrationViewController.m; sourceTree = "<group>"; };
+		91680C2C1E9CAE9B00A110BE /* GOClassListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOClassListViewController.h; sourceTree = "<group>"; };
+		91680C2D1E9CAE9B00A110BE /* GOClassListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOClassListViewController.m; sourceTree = "<group>"; };
+		91680C2F1E9CAEAD00A110BE /* GOWishListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOWishListViewController.h; sourceTree = "<group>"; };
+		91680C301E9CAEAD00A110BE /* GOWishListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOWishListViewController.m; sourceTree = "<group>"; };
 		9178CAD61E9575540054B7FB /* SignIn_SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn_SignUp.storyboard; sourceTree = "<group>"; };
 		919A8A061E9581F200E8EA22 /* GOSigninViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOSigninViewController.h; sourceTree = "<group>"; };
 		919A8A071E9581F200E8EA22 /* GOSigninViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOSigninViewController.m; sourceTree = "<group>"; };
@@ -237,12 +251,14 @@
 				4185844B1E91F1220053EF40 /* model */,
 				4185843E1E91F0E00053EF40 /* MainView */,
 				418584361E91EEFD0053EF40 /* AppDelegate.h */,
+				91680C241E9CABD400A110BE /* MypageView */,
 				418584371E91EEFD0053EF40 /* AppDelegate.m */,
 				418584511E91F15E0053EF40 /* MainVC.h */,
 				418584521E91F15E0053EF40 /* MainVC.m */,
 				4153EEA01E923A49001EFF70 /* Main.storyboard */,
 				9178CAD61E9575540054B7FB /* SignIn_SignUp.storyboard */,
 				4153EE9E1E9239AC001EFF70 /* Category_Location_Storyboard.storyboard */,
+				91680C221E9CA70100A110BE /* Mypage.storyboard */,
 				4185840B1E91EDF70053EF40 /* Assets.xcassets */,
 				4185840D1E91EDF70053EF40 /* LaunchScreen.storyboard */,
 				418584101E91EDF70053EF40 /* Info.plist */,
@@ -334,6 +350,21 @@
 			name = MainViewImage;
 			sourceTree = "<group>";
 		};
+		91680C241E9CABD400A110BE /* MypageView */ = {
+			isa = PBXGroup;
+			children = (
+				91680C251E9CAC0800A110BE /* GOMypageViewController.h */,
+				91680C261E9CAC0800A110BE /* GOMypageViewController.m */,
+				91680C291E9CAE8400A110BE /* GORegistrationViewController.h */,
+				91680C2A1E9CAE8400A110BE /* GORegistrationViewController.m */,
+				91680C2C1E9CAE9B00A110BE /* GOClassListViewController.h */,
+				91680C2D1E9CAE9B00A110BE /* GOClassListViewController.m */,
+				91680C2F1E9CAEAD00A110BE /* GOWishListViewController.h */,
+				91680C301E9CAEAD00A110BE /* GOWishListViewController.m */,
+			);
+			name = MypageView;
+			sourceTree = "<group>";
+		};
 		919A89FF1E95819700E8EA22 /* SignIn_SignUpView */ = {
 			isa = PBXGroup;
 			children = (
@@ -411,6 +442,7 @@
 				4185840F1E91EDF70053EF40 /* LaunchScreen.storyboard in Resources */,
 				4153EEA11E923A49001EFF70 /* Main.storyboard in Resources */,
 				4185845B1E91F1770053EF40 /* icon-menu@2x.png in Resources */,
+				91680C231E9CA70100A110BE /* Mypage.storyboard in Resources */,
 				418584661E91F1A30053EF40 /* bodyImage2.jpg in Resources */,
 				4185840C1E91EDF70053EF40 /* Assets.xcassets in Resources */,
 				418584681E91F1A30053EF40 /* headerImage.jpg in Resources */,
@@ -439,15 +471,19 @@
 				91641F261E927B8800DC5B43 /* GOLocationViewController.m in Sources */,
 				4135A8A71E973F040043E0ED /* NetworkModule.m in Sources */,
 				4135A8AA1E9740230043E0ED /* PostModel.m in Sources */,
+				91680C2E1E9CAE9B00A110BE /* GOClassListViewController.m in Sources */,
 				418584351E91EE9E0053EF40 /* UIViewController+AMSlideMenu.m in Sources */,
 				4153EE9A1E92399A001EFF70 /* GOMainViewController.m in Sources */,
 				9163ECFD1E9A451E00F23EDA /* NetworkModuleMain.m in Sources */,
 				414848071E935C8400612B3C /* DetailViewController.m in Sources */,
 				418584311E91EE9E0053EF40 /* AMSlideMenuLeftTableViewController.m in Sources */,
+				91680C311E9CAEAD00A110BE /* GOWishListViewController.m in Sources */,
 				418584571E91F15E0053EF40 /* LoginViewController.m in Sources */,
+				91680C2B1E9CAE8400A110BE /* GORegistrationViewController.m in Sources */,
 				418584321E91EE9E0053EF40 /* AMSlideMenuMainViewController.m in Sources */,
 				4153EE9B1E92399A001EFF70 /* GOMainTableViewCell.m in Sources */,
 				919A8A081E9581F200E8EA22 /* GOSigninViewController.m in Sources */,
+				91680C271E9CAC0800A110BE /* GOMypageViewController.m in Sources */,
 				4153EE9D1E92399A001EFF70 /* GOCollectionViewController.m in Sources */,
 				418584331E91EE9E0053EF40 /* AMSlideMenuRightMenuSegue.m in Sources */,
 				4153EE8F1E92393C001EFF70 /* GOCategoryViewController.m in Sources */,

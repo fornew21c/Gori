@@ -129,8 +129,8 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (self.searchController.isActive && (self.searchController.searchBar.text.length > 0)) {
-        return self.searchDataTutorNameResult.count;
-//        return self.searchDataTitleNameResult.count;
+//        return self.searchDataTutorNameResult.count;
+        return self.searchDataTitleNameResult.count;
     }
     
    return ([GODataCenter sharedInstance].networkDataArray.count);
@@ -160,8 +160,10 @@
     
     if (self.searchController.isActive && (self.searchController.searchBar.text.length > 0)) {
         
-        cell.tutorNameLabel.text = self.searchDataTutorNameResult[indexPath.row];
-//        cell.titleLabel.text = self.searchDataTitleNameResult[indexPath.row];
+//        cell.tutorNameLabel.text = self.searchDataTutorNameResult[indexPath.row];
+//        NSLog(@"테이블뷰 상에서 튜터 어레이의 데이터 체크 : %@", self.searchDataTutorNameResult);
+        cell.titleLabel.text = self.searchDataTitleNameResult[indexPath.row];
+        NSLog(@"테이블뷰 상에서 타이틀 어레이의 데이터 체크 : %@", self.searchDataTitleNameResult);
         
     }else{
 
@@ -184,7 +186,11 @@
 //    self.searchDataResult = [self.searchDataSetTitle mutableCopy];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF == %@", string];
     self.searchDataTutorNameResult = [self.searchDataSetTutorName filteredArrayUsingPredicate:predicate];
+            NSLog(@"체크 텍스트 메소드 서치데이터 튜터 네임 : %@", self.searchDataSetTutorName);
     self.searchDataTitleNameResult = [self.searchDataSetTitleName filteredArrayUsingPredicate:predicate];
+
+    NSLog(@"체크 텍스트 메소드 서치데이터 타이틀 네임 : %@", self.searchDataSetTitleName);
+    
     [self.mainTableView reloadData];
 }
 
