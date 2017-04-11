@@ -29,6 +29,7 @@
 }
 - (IBAction)signupBtnTouched:(id)sender {
     [[GODataCenter2 sharedInstance] signupWithID:self.nameTF.text email:self.emailTF.text pw:self.pwTF.text repw:self.rePwTF.text completion:^(BOOL isSuccess, id respons) {
+        NSLog(@"isSuccess: %lu", isSuccess);
         if (isSuccess) {
            // [self.navigationController dismissViewControllerAnimated:YES completion:nil];
             
