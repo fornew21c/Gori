@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25A48385E4D3A342AFBED138 /* libPods-Gori.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1585AE216C18B713828536EC /* libPods-Gori.a */; };
 		4135A8A31E973EB70043E0ED /* GODataCenter2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4135A8A21E973EB70043E0ED /* GODataCenter2.m */; };
 		4135A8A71E973F040043E0ED /* NetworkModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4135A8A61E973F040043E0ED /* NetworkModule.m */; };
 		4135A8AA1E9740230043E0ED /* PostModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4135A8A91E9740230043E0ED /* PostModel.m */; };
@@ -47,17 +48,19 @@
 		418584661E91F1A30053EF40 /* bodyImage2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 418584601E91F1A30053EF40 /* bodyImage2.jpg */; };
 		418584671E91F1A30053EF40 /* footerImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 418584611E91F1A30053EF40 /* footerImage.jpg */; };
 		418584681E91F1A30053EF40 /* headerImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 418584621E91F1A30053EF40 /* headerImage.jpg */; };
+		41B26E261E9CA787001592CE /* Facebook-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B26E251E9CA787001592CE /* Facebook-icon.png */; };
 		9132C17C1E92FAC1007C31EC /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9132C17B1E92FAC1007C31EC /* logo.png */; };
 		9163ECFD1E9A451E00F23EDA /* NetworkModuleMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 9163ECFC1E9A451E00F23EDA /* NetworkModuleMain.m */; };
 		91641F201E92796400DC5B43 /* GOSchoolLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91641F1F1E92796400DC5B43 /* GOSchoolLocationViewController.m */; };
 		91641F231E92798600DC5B43 /* GOSchoolLocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91641F221E92798600DC5B43 /* GOSchoolLocationTableViewCell.m */; };
 		91641F261E927B8800DC5B43 /* GOLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91641F251E927B8800DC5B43 /* GOLocationViewController.m */; };
 		9178CAD71E9575540054B7FB /* SignIn_SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9178CAD61E9575540054B7FB /* SignIn_SignUp.storyboard */; };
-		919A8A081E9581F200E8EA22 /* GOSigninViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919A8A071E9581F200E8EA22 /* GOSigninViewController.m */; };
 		919A8A0B1E95820300E8EA22 /* GOSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919A8A0A1E95820300E8EA22 /* GOSignupViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1585AE216C18B713828536EC /* libPods-Gori.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Gori.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		411E653B51DD087BF5BC23C3 /* Pods-Gori.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gori.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gori/Pods-Gori.debug.xcconfig"; sourceTree = "<group>"; };
 		4135A8A11E973EB70043E0ED /* GODataCenter2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GODataCenter2.h; sourceTree = "<group>"; };
 		4135A8A21E973EB70043E0ED /* GODataCenter2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GODataCenter2.m; sourceTree = "<group>"; };
 		4135A8A51E973F040043E0ED /* NetworkModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkModule.h; sourceTree = "<group>"; };
@@ -124,6 +127,7 @@
 		418584601E91F1A30053EF40 /* bodyImage2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bodyImage2.jpg; sourceTree = "<group>"; };
 		418584611E91F1A30053EF40 /* footerImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = footerImage.jpg; sourceTree = "<group>"; };
 		418584621E91F1A30053EF40 /* headerImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = headerImage.jpg; sourceTree = "<group>"; };
+		41B26E251E9CA787001592CE /* Facebook-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Facebook-icon.png"; sourceTree = "<group>"; };
 		9132C17B1E92FAC1007C31EC /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		9163ECFB1E9A451E00F23EDA /* NetworkModuleMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkModuleMain.h; sourceTree = "<group>"; };
 		9163ECFC1E9A451E00F23EDA /* NetworkModuleMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkModuleMain.m; sourceTree = "<group>"; };
@@ -134,10 +138,9 @@
 		91641F241E927B8800DC5B43 /* GOLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOLocationViewController.h; sourceTree = "<group>"; };
 		91641F251E927B8800DC5B43 /* GOLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOLocationViewController.m; sourceTree = "<group>"; };
 		9178CAD61E9575540054B7FB /* SignIn_SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn_SignUp.storyboard; sourceTree = "<group>"; };
-		919A8A061E9581F200E8EA22 /* GOSigninViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOSigninViewController.h; sourceTree = "<group>"; };
-		919A8A071E9581F200E8EA22 /* GOSigninViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOSigninViewController.m; sourceTree = "<group>"; };
 		919A8A091E95820300E8EA22 /* GOSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOSignupViewController.h; sourceTree = "<group>"; };
 		919A8A0A1E95820300E8EA22 /* GOSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOSignupViewController.m; sourceTree = "<group>"; };
+		D73FD04D81D1C5D0908138EC /* Pods-Gori.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gori.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gori/Pods-Gori.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,12 +152,21 @@
 				418584181E91EE1E0053EF40 /* Bolts.framework in Frameworks */,
 				4185841A1E91EE2B0053EF40 /* FBSDKCoreKit.framework in Frameworks */,
 				4185841C1E91EE350053EF40 /* FBSDKLoginKit.framework in Frameworks */,
+				25A48385E4D3A342AFBED138 /* libPods-Gori.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		224826D5FAFABECE875F748F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1585AE216C18B713828536EC /* libPods-Gori.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4135A8A41E973EEB0043E0ED /* NetworkModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +226,8 @@
 				418584161E91EE0D0053EF40 /* Framework */,
 				418583FE1E91EDF70053EF40 /* Gori */,
 				418583FD1E91EDF70053EF40 /* Products */,
+				E076E54D510DEC8324008562 /* Pods */,
+				224826D5FAFABECE875F748F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -228,7 +242,7 @@
 		418583FE1E91EDF70053EF40 /* Gori */ = {
 			isa = PBXGroup;
 			children = (
-				919A89FF1E95819700E8EA22 /* SignIn_SignUpView */,
+				919A89FF1E95819700E8EA22 /* SignUpView */,
 				4135A8A41E973EEB0043E0ED /* NetworkModule */,
 				414848091E935C9F00612B3C /* DetailView */,
 				414848081E935C8E00612B3C /* LoginView */,
@@ -244,6 +258,7 @@
 				9178CAD61E9575540054B7FB /* SignIn_SignUp.storyboard */,
 				4153EE9E1E9239AC001EFF70 /* Category_Location_Storyboard.storyboard */,
 				4185840B1E91EDF70053EF40 /* Assets.xcassets */,
+				41B26E251E9CA787001592CE /* Facebook-icon.png */,
 				4185840D1E91EDF70053EF40 /* LaunchScreen.storyboard */,
 				418584101E91EDF70053EF40 /* Info.plist */,
 				418583FF1E91EDF70053EF40 /* Supporting Files */,
@@ -334,15 +349,22 @@
 			name = MainViewImage;
 			sourceTree = "<group>";
 		};
-		919A89FF1E95819700E8EA22 /* SignIn_SignUpView */ = {
+		919A89FF1E95819700E8EA22 /* SignUpView */ = {
 			isa = PBXGroup;
 			children = (
-				919A8A061E9581F200E8EA22 /* GOSigninViewController.h */,
-				919A8A071E9581F200E8EA22 /* GOSigninViewController.m */,
 				919A8A091E95820300E8EA22 /* GOSignupViewController.h */,
 				919A8A0A1E95820300E8EA22 /* GOSignupViewController.m */,
 			);
-			name = SignIn_SignUpView;
+			name = SignUpView;
+			sourceTree = "<group>";
+		};
+		E076E54D510DEC8324008562 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				411E653B51DD087BF5BC23C3 /* Pods-Gori.debug.xcconfig */,
+				D73FD04D81D1C5D0908138EC /* Pods-Gori.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,9 +374,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 418584131E91EDF70053EF40 /* Build configuration list for PBXNativeTarget "Gori" */;
 			buildPhases = (
+				8A4DC0EEAE6E36B8D4853A7A /* [CP] Check Pods Manifest.lock */,
 				418583F81E91EDF70053EF40 /* Sources */,
 				418583F91E91EDF70053EF40 /* Frameworks */,
 				418583FA1E91EDF70053EF40 /* Resources */,
+				F74E717D3FEDBB8E98BDC88C /* [CP] Embed Pods Frameworks */,
+				B8F0A9D8C9D3978EFA05232C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -407,6 +432,7 @@
 				9178CAD71E9575540054B7FB /* SignIn_SignUp.storyboard in Resources */,
 				9132C17C1E92FAC1007C31EC /* logo.png in Resources */,
 				4153EE9F1E9239AC001EFF70 /* Category_Location_Storyboard.storyboard in Resources */,
+				41B26E261E9CA787001592CE /* Facebook-icon.png in Resources */,
 				418584631E91F1A30053EF40 /* profile.jpg in Resources */,
 				4185840F1E91EDF70053EF40 /* LaunchScreen.storyboard in Resources */,
 				4153EEA11E923A49001EFF70 /* Main.storyboard in Resources */,
@@ -422,6 +448,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8A4DC0EEAE6E36B8D4853A7A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B8F0A9D8C9D3978EFA05232C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gori/Pods-Gori-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F74E717D3FEDBB8E98BDC88C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gori/Pods-Gori-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		418583F81E91EDF70053EF40 /* Sources */ = {
@@ -447,7 +521,6 @@
 				418584571E91F15E0053EF40 /* LoginViewController.m in Sources */,
 				418584321E91EE9E0053EF40 /* AMSlideMenuMainViewController.m in Sources */,
 				4153EE9B1E92399A001EFF70 /* GOMainTableViewCell.m in Sources */,
-				919A8A081E9581F200E8EA22 /* GOSigninViewController.m in Sources */,
 				4153EE9D1E92399A001EFF70 /* GOCollectionViewController.m in Sources */,
 				418584331E91EE9E0053EF40 /* AMSlideMenuRightMenuSegue.m in Sources */,
 				4153EE8F1E92393C001EFF70 /* GOCategoryViewController.m in Sources */,
@@ -567,6 +640,7 @@
 		};
 		418584141E91EDF70053EF40 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 411E653B51DD087BF5BC23C3 /* Pods-Gori.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 95Q6A6VBQ7;
@@ -583,6 +657,7 @@
 		};
 		418584151E91EDF70053EF40 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D73FD04D81D1C5D0908138EC /* Pods-Gori.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 95Q6A6VBQ7;

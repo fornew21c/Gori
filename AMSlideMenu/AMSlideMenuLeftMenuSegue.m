@@ -38,35 +38,36 @@
 
 - (void)perform
 {
+
     AMSlideMenuMainViewController* mainVC = self.sourceViewController;
-    AMSlideMenuLeftTableViewController* leftMenu = self.destinationViewController;
+    AMSlideMenuLeftTableViewController* leftMenu2 = self.destinationViewController;
     
-    mainVC.leftMenu = leftMenu;
-    leftMenu.mainVC = mainVC;
+    mainVC.leftMenu = leftMenu2;
+    leftMenu2.mainVC = mainVC;
     
-    [mainVC addChildViewController:leftMenu];
+    [mainVC addChildViewController:leftMenu2];
     
     double delayInSeconds = 0.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         CGRect bounds = mainVC.view.bounds;
-        leftMenu.view.frame = CGRectMake(0,0,bounds.size.width,bounds.size.height);
+        leftMenu2.view.frame = CGRectMake(0,0,bounds.size.width,bounds.size.height);
     });
 
-    [mainVC.view addSubview:leftMenu.view];
+    [mainVC.view addSubview:leftMenu2.view];
     
-    [leftMenu.navigationController setNavigationBarHidden:YES];
+    [leftMenu2.navigationController setNavigationBarHidden:YES];
     
     NSIndexPath *initialIndexPath = [mainVC initialIndexPathForLeftMenu];
     
 #ifndef AMSlideMenuWithoutStoryboards
     if ([mainVC respondsToSelector:@selector(navigationControllerForIndexPathInLeftMenu:)]) {
         UINavigationController *navController = [mainVC navigationControllerForIndexPathInLeftMenu:initialIndexPath];
-        AMSlideMenuContentSegue *segue = [[AMSlideMenuContentSegue alloc] initWithIdentifier:@"ContentSugue" source:leftMenu destination:navController];
+        AMSlideMenuContentSegue *segue = [[AMSlideMenuContentSegue alloc] initWithIdentifier:@"ContentSugue" source:leftMenu2 destination:navController];
         [segue perform];
     } else {
         NSString *segueIdentifier = [mainVC segueIdentifierForIndexPathInLeftMenu:initialIndexPath];
-        [leftMenu performSegueWithIdentifier:segueIdentifier sender:self];
+        [leftMenu2 performSegueWithIdentifier:segueIdentifier sender:self];
     }
 #else
     [leftMenu tableView:leftMenu.tableView didSelectRowAtIndexPath:initialIndexPath];

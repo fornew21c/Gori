@@ -14,7 +14,7 @@ static NSString *const TOKEN_KEY = @"Authorization";
 @implementation NetworkModule
 
 
-- (void)loginRequestWithUserID:(NSString *)userID pw:(NSString *)pw completion:(CompletionBlock)completion
+- (void)loginRequestWithEmail:(NSString *)email pw:(NSString *)pw completion:(CompletionBlock)completion
 {
     //session 생성
     NSURLSession *session = [NSURLSession sessionWithConfiguration:
@@ -24,7 +24,7 @@ static NSString *const TOKEN_KEY = @"Authorization";
     
     NSURL *url = [NSURL URLWithString:urlStr];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    NSString *requstData = [self loginBodyUserName:userID password:pw];
+    NSString *requstData = [self loginBodyUserName:email password:pw];
     
     //body data set
     request.HTTPMethod = @"POST";
@@ -35,9 +35,26 @@ static NSString *const TOKEN_KEY = @"Authorization";
                                                          fromData:nil
                                                 completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                                                     if (error == nil) {
-                                                        NSDictionary *responsData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-                                                        NSLog(@"%@",responsData);
-                                                        completion(YES,responsData);
+                                                        NSDictionary *responseData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+
+                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                        NSUInteger statusCode = (NSUInteger) [httpResponse statusCode];
+                                                        // 받은 header들을 dictionary형태로 받음
+                                                        //NSDictionary *responseHeaderFields = [(NSHTTPURLResponse *)response allHeaderFields];
+                                                        
+                                                        if(statusCode == 200) {
+                                                            NSLog(@"로그인 성공");
+                                                            NSLog(@"key: %@", [responseData objectForKey:@"key"]);;
+                                                            //[[GODataCenter2 sharedInstance] setMyLoginToken:[responseData objectForKey:@"key"]];
+                                                            completion(YES,responseData);
+
+                                                        }
+                                                        else if(statusCode == 400) {
+                                                            NSLog(@"non_field_errors: %@", [responseData objectForKey:@"non_field_errors"]);
+                                                            completion(NO,responseData);
+       
+                                                            
+                                                        }
                                                                                                                 
                                                     }else
                                                     {
@@ -81,10 +98,25 @@ static NSString *const TOKEN_KEY = @"Authorization";
                                                         completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                             
                                                             if (error == nil) {
-                                                                NSDictionary *responsData =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-                                                                NSLog(@"responsData: %@",responsData);
-                                                                
-                                                                completion(YES, responsData);
+                                                                NSDictionary *responseData =  [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+                                                                NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                                NSUInteger statusCode = (NSUInteger) [httpResponse statusCode];
+                                                                // 받은 header들을 dictionary형태로 받음
+                                                                //NSDictionary *responseHeaderFields = [(NSHTTPURLResponse *)response allHeaderFields];
+                                                                NSLog(@"status code: %lu", statusCode);
+                                                                if(statusCode == 201) {
+                                                                    NSLog(@"회원가입 성공");
+                                                                    NSLog(@"key: %@", [responseData objectForKey:@"key"]);;
+                                                                    //[[GODataCenter2 sharedInstance] setMyLoginToken:[responseData objectForKey:@"key"]];
+                                                                    completion(YES,responseData);
+                                                                    
+                                                                }
+                                                                else if(statusCode == 400) {
+                                                                    NSLog(@"non_field_errors: %@", [responseData objectForKey:@"non_field_errors"]);
+                                                                    completion(NO,responseData);
+                                                                    
+                                                                    
+                                                                }
                                                             }else
                                                             {
                                                                 NSDictionary *responsData =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
@@ -259,9 +291,9 @@ static NSString *const TOKEN_KEY = @"Authorization";
 }
 
 
-- (NSString *)loginBodyUserName:(NSString *)userName password:(NSString *)pw
+- (NSString *)loginBodyUserName:(NSString *)email password:(NSString *)pw
 {
-    return [NSString stringWithFormat:@"username=%@&password=%@", userName, pw];
+    return [NSString stringWithFormat:@"username=%@&password=%@", email, pw];
 }
 
 

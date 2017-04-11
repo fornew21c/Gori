@@ -76,9 +76,9 @@
 }
 
 #pragma mark - RequestMethod
-- (void)loginWithID:(NSString *)userID pw:(NSString *)pw completion:(CompletionBlock)completion
+- (void)loginWithEmail:(NSString *)email pw:(NSString *)pw completion:(CompletionBlock)completion
 {
-    [self.nManager loginRequestWithUserID:userID pw:pw completion:^(BOOL isSuccess, id respons) {
+    [self.nManager loginRequestWithEmail:email pw:pw completion:^(BOOL isSuccess, id respons) {
         if (isSuccess) {
             NSString *token = [(NSDictionary*)respons objectForKey:@"key"];
             [self saveToken:token];

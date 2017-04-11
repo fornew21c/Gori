@@ -28,8 +28,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)signupBtnTouched:(id)sender {
-    [[GODataCenter2 sharedInstance] signupWithID:self.nameTF.text email:self.emailTF.text pw:self.pwTF.text repw:self.rePwTF.text completion:^(BOOL isSuccess, id respons) {
-        NSLog(@"isSuccess: %lu", isSuccess);
+    [[GODataCenter2 sharedInstance] signupWithID:self.nameTF.text email:self.emailTF.text pw:self.pwTF.text repw:self.rePwTF.text completion:^(BOOL isSuccess, id response) {
         if (isSuccess) {
            // [self.navigationController dismissViewControllerAnimated:YES completion:nil];
             
@@ -42,9 +41,25 @@
 
             NSLog(@"signupBtnTouched success");
         }
-        NSLog(@"respons: %@",respons);
+        else {
+            NSLog(@"%@", [response objectForKey:@"username"]);
+            NSLog(@"%@", [response objectForKey:@"non_field_errors"]);
+            NSLog(@"%@", [response objectForKey:@"password2"]);
+            NSLog(@"%@", [response objectForKey:@"name"]);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"회원가입 실패" message:[response objectForKey:@"non_field_errors"] preferredStyle:UIAlertControllerStyleAlert];
+                
+                UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                
+                
+                [alertController addAction:okAction];
+                [self presentViewController:alertController animated:YES completion:nil];
+            });
+        }
+        
     }];
 }
+
 
 /*
 #pragma mark - Navigation

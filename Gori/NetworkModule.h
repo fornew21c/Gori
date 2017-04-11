@@ -41,7 +41,7 @@ static NSString * const POST_RETRIEVE_URL = @"/post/";           //GET /post/<po
                            repw:(NSString *)repw
                      completion:(CompletionBlock)completion;
 
-- (void)loginRequestWithUserID:(NSString *)userID pw:(NSString *)pw completion:(CompletionBlock)completion;
+- (void)loginRequestWithEmail:(NSString *)email pw:(NSString *)pw completion:(CompletionBlock)completion;
 
 - (void)logoutRequestCompletion:(CompletionBlock)completion;
 
