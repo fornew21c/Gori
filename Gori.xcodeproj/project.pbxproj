@@ -56,6 +56,11 @@
 		91641F261E927B8800DC5B43 /* GOLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91641F251E927B8800DC5B43 /* GOLocationViewController.m */; };
 		9178CAD71E9575540054B7FB /* SignIn_SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9178CAD61E9575540054B7FB /* SignIn_SignUp.storyboard */; };
 		919A8A0B1E95820300E8EA22 /* GOSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919A8A0A1E95820300E8EA22 /* GOSignupViewController.m */; };
+		919B6F261E9CE4C300AE8CA5 /* Mypage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 919B6F251E9CE4C300AE8CA5 /* Mypage.storyboard */; };
+		919B6F2F1E9CE56000AE8CA5 /* GOClassListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919B6F281E9CE56000AE8CA5 /* GOClassListViewController.m */; };
+		919B6F301E9CE56000AE8CA5 /* GOMypageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919B6F2A1E9CE56000AE8CA5 /* GOMypageViewController.m */; };
+		919B6F311E9CE56000AE8CA5 /* GORegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919B6F2C1E9CE56000AE8CA5 /* GORegistrationViewController.m */; };
+		919B6F321E9CE56000AE8CA5 /* GOWishListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919B6F2E1E9CE56000AE8CA5 /* GOWishListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -140,6 +145,15 @@
 		9178CAD61E9575540054B7FB /* SignIn_SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn_SignUp.storyboard; sourceTree = "<group>"; };
 		919A8A091E95820300E8EA22 /* GOSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOSignupViewController.h; sourceTree = "<group>"; };
 		919A8A0A1E95820300E8EA22 /* GOSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOSignupViewController.m; sourceTree = "<group>"; };
+		919B6F251E9CE4C300AE8CA5 /* Mypage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mypage.storyboard; sourceTree = "<group>"; };
+		919B6F271E9CE56000AE8CA5 /* GOClassListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOClassListViewController.h; sourceTree = "<group>"; };
+		919B6F281E9CE56000AE8CA5 /* GOClassListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOClassListViewController.m; sourceTree = "<group>"; };
+		919B6F291E9CE56000AE8CA5 /* GOMypageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOMypageViewController.h; sourceTree = "<group>"; };
+		919B6F2A1E9CE56000AE8CA5 /* GOMypageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOMypageViewController.m; sourceTree = "<group>"; };
+		919B6F2B1E9CE56000AE8CA5 /* GORegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GORegistrationViewController.h; sourceTree = "<group>"; };
+		919B6F2C1E9CE56000AE8CA5 /* GORegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GORegistrationViewController.m; sourceTree = "<group>"; };
+		919B6F2D1E9CE56000AE8CA5 /* GOWishListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOWishListViewController.h; sourceTree = "<group>"; };
+		919B6F2E1E9CE56000AE8CA5 /* GOWishListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOWishListViewController.m; sourceTree = "<group>"; };
 		D73FD04D81D1C5D0908138EC /* Pods-Gori.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gori.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gori/Pods-Gori.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -242,6 +256,7 @@
 		418583FE1E91EDF70053EF40 /* Gori */ = {
 			isa = PBXGroup;
 			children = (
+				917082EB1E9CE58B00A6B0A5 /* MyPageView */,
 				919A89FF1E95819700E8EA22 /* SignUpView */,
 				4135A8A41E973EEB0043E0ED /* NetworkModule */,
 				414848091E935C9F00612B3C /* DetailView */,
@@ -254,6 +269,7 @@
 				418584371E91EEFD0053EF40 /* AppDelegate.m */,
 				418584511E91F15E0053EF40 /* MainVC.h */,
 				418584521E91F15E0053EF40 /* MainVC.m */,
+				919B6F251E9CE4C300AE8CA5 /* Mypage.storyboard */,
 				4153EEA01E923A49001EFF70 /* Main.storyboard */,
 				9178CAD61E9575540054B7FB /* SignIn_SignUp.storyboard */,
 				4153EE9E1E9239AC001EFF70 /* Category_Location_Storyboard.storyboard */,
@@ -349,6 +365,21 @@
 			name = MainViewImage;
 			sourceTree = "<group>";
 		};
+		917082EB1E9CE58B00A6B0A5 /* MyPageView */ = {
+			isa = PBXGroup;
+			children = (
+				919B6F291E9CE56000AE8CA5 /* GOMypageViewController.h */,
+				919B6F2A1E9CE56000AE8CA5 /* GOMypageViewController.m */,
+				919B6F271E9CE56000AE8CA5 /* GOClassListViewController.h */,
+				919B6F281E9CE56000AE8CA5 /* GOClassListViewController.m */,
+				919B6F2B1E9CE56000AE8CA5 /* GORegistrationViewController.h */,
+				919B6F2C1E9CE56000AE8CA5 /* GORegistrationViewController.m */,
+				919B6F2D1E9CE56000AE8CA5 /* GOWishListViewController.h */,
+				919B6F2E1E9CE56000AE8CA5 /* GOWishListViewController.m */,
+			);
+			name = MyPageView;
+			sourceTree = "<group>";
+		};
 		919A89FF1E95819700E8EA22 /* SignUpView */ = {
 			isa = PBXGroup;
 			children = (
@@ -440,6 +471,7 @@
 				418584661E91F1A30053EF40 /* bodyImage2.jpg in Resources */,
 				4185840C1E91EDF70053EF40 /* Assets.xcassets in Resources */,
 				418584681E91F1A30053EF40 /* headerImage.jpg in Resources */,
+				919B6F261E9CE4C300AE8CA5 /* Mypage.storyboard in Resources */,
 				418584671E91F1A30053EF40 /* footerImage.jpg in Resources */,
 				4185845A1E91F1770053EF40 /* icon-menu.png in Resources */,
 				418584641E91F1A30053EF40 /* bodyImage.jpg in Resources */,
@@ -503,6 +535,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				418584301E91EE9E0053EF40 /* AMSlideMenuLeftMenuSegue.m in Sources */,
+				919B6F301E9CE56000AE8CA5 /* GOMypageViewController.m in Sources */,
 				418584341E91EE9E0053EF40 /* AMSlideMenuRightTableViewController.m in Sources */,
 				4153EE9C1E92399A001EFF70 /* GOCollectionViewCell.m in Sources */,
 				4185843A1E91EEFD0053EF40 /* AppDelegate.m in Sources */,
@@ -510,6 +543,8 @@
 				4185842F1E91EE9E0053EF40 /* AMSlideMenuContentSegue.m in Sources */,
 				4153EE911E92393C001EFF70 /* GOCategoryTableViewCell.m in Sources */,
 				4153EE901E92393C001EFF70 /* GODistrictLocationTableViewCell.m in Sources */,
+				919B6F311E9CE56000AE8CA5 /* GORegistrationViewController.m in Sources */,
+				919B6F321E9CE56000AE8CA5 /* GOWishListViewController.m in Sources */,
 				91641F261E927B8800DC5B43 /* GOLocationViewController.m in Sources */,
 				4135A8A71E973F040043E0ED /* NetworkModule.m in Sources */,
 				4135A8AA1E9740230043E0ED /* PostModel.m in Sources */,
@@ -529,6 +564,7 @@
 				4153EE841E9238FD001EFF70 /* GODataCenter.m in Sources */,
 				91641F231E92798600DC5B43 /* GOSchoolLocationTableViewCell.m in Sources */,
 				91641F201E92796400DC5B43 /* GOSchoolLocationViewController.m in Sources */,
+				919B6F2F1E9CE56000AE8CA5 /* GOClassListViewController.m in Sources */,
 				418584011E91EDF70053EF40 /* main.m in Sources */,
 				4153EE8E1E92393C001EFF70 /* GODistrictLocationViewController.m in Sources */,
 			);

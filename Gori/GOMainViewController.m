@@ -12,6 +12,7 @@
 #import "GOLocationViewController.h"
 #import "GOCategoryViewController.h"
 #import "NetworkModuleMain.h"
+#import "GOMypageViewController.h"
 
 
 @interface GOMainViewController ()
@@ -19,6 +20,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *locationButton;
 @property (weak, nonatomic) IBOutlet UIButton *categoryButton;
+@property (weak, nonatomic) IBOutlet UIButton *mypageButton;
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 @property (weak, nonatomic) UIImageView *headerImageView;
 @property (nonatomic, strong) UISearchController *searchController;
@@ -28,6 +30,8 @@
 @property (nonatomic, strong) NSArray *searchDataSetTitleName;
 @property (nonatomic, strong) NSArray *searchDataTitleNameResult;
 @property (nonatomic, strong) NSMutableArray *titleNameMutableArray;
+
+@property (nonatomic, strong) NSMutableArray *pkMutableArray;
 
 
 
@@ -47,7 +51,7 @@
     [logoView setContentMode:UIViewContentModeScaleAspectFit];
     self.navigationItem.titleView = logoView;
     
-    /**************** tableView Setting ********************************/
+    /**************** tableView and pk Setting ********************************/
     self.mainTableView.delegate = self;
     self.mainTableView.dataSource = self;
     [[GODataCenter sharedInstance]receiveServerDataWithCompletionBlock:^(BOOL isSuccess) {
@@ -57,14 +61,17 @@
                 NSDictionary *temp = [[NSDictionary alloc]init];
                 NSMutableArray *tutorMutableArray = [[NSMutableArray alloc]init];
                 NSMutableArray *titleMutableArray = [[NSMutableArray alloc]init];
+                NSMutableArray *pkMutableArray = [[NSMutableArray alloc]init];
                 for (NSInteger i = 0; i < [GODataCenter sharedInstance].networkDataArray.count; i++) {
                     temp = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:i];
                     [tutorMutableArray addObject:[[temp objectForKey:@"tutor"] objectForKey:@"name"]];
                     [titleMutableArray addObject:[temp objectForKey:@"title"]];
-                    NSLog(@"타이틀뮤터블어레이 데이터 : %@", titleMutableArray);
+                    [pkMutableArray addObject:[temp objectForKey:@"pk"]];
                 }
                 self.tutorNameMutableArray = tutorMutableArray;
                 self.titleNameMutableArray = titleMutableArray;
+                self.pkMutableArray = pkMutableArray;
+                NSLog(@" pk array data : %@", self.pkMutableArray);
                 self.searchDataSetTutorName = [[NSArray alloc]initWithArray:self.tutorNameMutableArray];
                 self.searchDataSetTitleName = [[NSArray alloc]initWithArray:self.titleNameMutableArray];
                 NSLog(@"ReceivingServerData and ReloadingData is Completed");
@@ -73,6 +80,7 @@
             NSLog(@"ReceivingServerData and ReloadingData is Failed");
         }
     }];
+    
     
     /**************** searchController Setting ********************************/
     
@@ -100,12 +108,21 @@
     [searchControllerView addSubview:self.searchController.searchBar];
 
     /**************** button Action Setting ********************************/
-    [self.locationButton addTarget:self action:@selector(showLocationDetailView:) forControlEvents:UIControlEventTouchUpInside];
-    [self.categoryButton addTarget:self action:@selector(showCategoryDetailView:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.locationButton addTarget:self action:@selector(showLocationDetailView:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.categoryButton addTarget:self action:@selector(showCategoryDetailView:) forControlEvents:UIControlEventTouchUpInside];
+////    [self.mypageButton addTarget:self action:@selector(showMypageView:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 
 /**************** button Action ********************************/
+- (IBAction)showMypageView:(id)sender {
+    NSLog(@"showMypageView button Action");
+    
+    UIStoryboard *Mypage_Storyboard = [UIStoryboard storyboardWithName:@"Mypage" bundle:nil];
+    GOMypageViewController *GOMypageViewController = [Mypage_Storyboard instantiateViewControllerWithIdentifier:@"GOMypageViewController"];
+    [self presentViewController:GOMypageViewController animated:YES completion:nil];
+    
+}
 
 - (IBAction)showLocationDetailView:(id)sender {
     UIStoryboard *GOCategory_Location_Storyboard = [UIStoryboard storyboardWithName:@"Category_Location_Storyboard" bundle:nil];
@@ -209,6 +226,13 @@
     NSLog(@"didSelectRowAtIndexPath: %lu", indexPath.row);
     [self performSegueWithIdentifier:@"detailSegue" sender:nil];
 }
+
+- (IBAction)unwindSegue:(UIStoryboardSegue *)sender{
+    /**************** myPage --> mainView unwindSegue ********************************/
+    //마이페이지에서 메인 화면으로 돌아오기 위한 unwindSegue 설정
+    
+}
+
 /*
 #pragma mark - Navigation
 

@@ -276,6 +276,14 @@
                                     <action selector="showCategoryDetailView:" destination="aDU-HZ-EyT" eventType="touchUpInside" id="VZ6-fE-3xX"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZl-Ap-K36">
+                                <rect key="frame" x="155" y="72" width="65" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="마이페이지"/>
+                                <connections>
+                                    <action selector="showMypageView:" destination="aDU-HZ-EyT" eventType="touchUpInside" id="MKX-5j-dYB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -284,6 +292,7 @@
                         <outlet property="categoryButton" destination="kJ5-y2-2dX" id="GMJ-8Q-SP3"/>
                         <outlet property="locationButton" destination="HUF-Ju-yuv" id="BD0-TB-fyM"/>
                         <outlet property="mainTableView" destination="Ort-Qo-vMU" id="6yD-qb-NqQ"/>
+                        <outlet property="mypageButton" destination="jZl-Ap-K36" id="DaI-sd-ejb"/>
                         <segue destination="jqr-xZ-wqy" kind="show" identifier="detailSegue" id="QxK-ib-7SM"/>
                     </connections>
                 </viewController>
