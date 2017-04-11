@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "GODataCenter2.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
@@ -20,21 +21,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
      //Do any additional setup after loading the view.
-       FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    // Optional: Place the button in the center of your view.
-        loginButton.center = self.view.center;
-        loginButton.delegate = self;
-        [self.view addSubview:loginButton];
-    
-        loginButton.readPermissions =
-        @[@"public_profile", @"email", @"user_friends"];
-    
-        NSLog(@"currentAccessToken: %@", [FBSDKAccessToken currentAccessToken]);
-        if ([FBSDKAccessToken currentAccessToken]) {
-            // User is logged in, do work such as go to next view controller.
-            NSLog(@"login success");
-            //loginButton.hidden = TRUE;
-        }
+//       FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+//    // Optional: Place the button in the center of your view.
+//        loginButton.center = self.view.center;
+//        loginButton.delegate = self;
+//        [self.view addSubview:loginButton];
+//    
+//        loginButton.readPermissions =
+//        @[@"public_profile", @"email", @"user_friends"];
+//    
+//        NSLog(@"currentAccessToken: %@", [FBSDKAccessToken currentAccessToken]);
+//        if ([FBSDKAccessToken currentAccessToken]) {
+//            // User is logged in, do work such as go to next view controller.
+//            NSLog(@"login success");
+//            //loginButton.hidden = TRUE;
+//        }
     [self.facebookLoginBtn addTarget:self action:@selector(loginButtonTouched) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -52,7 +53,9 @@
                 NSLog(@"Cancelled");
             } else {
                 NSLog(@"Logged in");
-                [self performSegueWithIdentifier:@"mainViewSegue" sender:nil];
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [self performSegueWithIdentifier:@"mainViewSegue" sender:nil];
+                });
                 
                 
             }
@@ -66,7 +69,7 @@
     if(!error) {
         NSLog(@"You've logged in");
         NSLog(@"result: %@", result);
-        [self performSegueWithIdentifier:@"mainViewSegue" sender:nil];
+        [self performSegueWithIdentifier:@"mainViewSegue2" sender:nil];
     }
 }
 
@@ -76,6 +79,33 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)emailLoginBtnTouched:(id)sender {
+    [[GODataCenter2 sharedInstance] loginWithEmail:self.emailTF.text pw:self.pwTF.text completion:^(BOOL isSuccess, id respons) {
+        
+        if(isSuccess)
+        {
+            NSLog(@"respons %@",respons);
+
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [self performSegueWithIdentifier:@"mainViewSegue" sender:nil];
+            });
+        }else
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"로그인 에러" message:@"로그인에 실패하였습니다." preferredStyle:UIAlertControllerStyleAlert];
+                
+                UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                
+                
+                [alertController addAction:okAction];
+                [self presentViewController:alertController animated:YES completion:nil];
+            });
+        }
+        
+       // NSLog(@"respons %@",respons);
+        
+    }];
 }
 
 /*

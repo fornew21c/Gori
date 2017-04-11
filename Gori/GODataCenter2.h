@@ -21,7 +21,7 @@
 - (BOOL)isAvaliblePageRequest;
 
 //Login
-- (void)loginWithID:(NSString *)userID pw:(NSString *)pw completion:(CompletionBlock)completion;
+- (void)loginWithEmail:(NSString *)userID pw:(NSString *)pw completion:(CompletionBlock)completion;
 - (void)signupWithID:(NSString *)userID email:(NSString *)email pw:(NSString *)pw repw:(NSString *)repw completion:(CompletionBlock)completion;
 - (void)logoutCompletion:(CompletionBlock)completion;
 //post

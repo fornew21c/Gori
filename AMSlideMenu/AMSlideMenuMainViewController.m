@@ -418,8 +418,7 @@ static NSMutableArray *allInstances;
         @try
         {
             [self performSegueWithIdentifier:@"leftMenu" sender:self];
-
-            @try {
+                        @try {
                 [self performSegueWithIdentifier:@"rightMenu" sender:self];
             }
             @catch (NSException *exception) {
@@ -463,6 +462,8 @@ static NSMutableArray *allInstances;
         if (self.leftMenu)
         {
             self.leftSegue = [[AMSlideMenuLeftMenuSegue alloc] initWithIdentifier:@"leftMenu" source:self destination:self.leftMenu];
+            NSLog(@"leftMenu segue");
+
             [self.leftSegue perform];
 
             // Fixing strange bug with iPad iOS6 when starting whit landscape orientation

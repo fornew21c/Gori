@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailTF;
 @property (weak, nonatomic) IBOutlet UITextField *pwTF;
 @property (weak, nonatomic) IBOutlet UITextField *rePwTF;
+@property (weak, nonatomic) IBOutlet UIButton *goLoginView;
 
 
 

@@ -24,14 +24,14 @@
     NSString *identifier;
     switch (indexPath.row) {
         case 0:
-            identifier = @"firstSegue";
+            identifier = @"mainSegue"; //메인페이지
             break;
         case 1:
-            identifier = @"secondSegue";
+            identifier = @"loginSegue"; //로그인 페이지
             break;
         case 2:
             NSLog(@"signupSegue");
-            identifier = @"signupSegue";
+            identifier = @"signupSegue"; //회원가입 페이지
             break;
     }
     
@@ -79,7 +79,7 @@
 
 - (CGFloat)leftMenuWidth
 {
-    return 180;
+    return 240;
 }
 
 - (AMPrimaryMenu)primaryMenu
