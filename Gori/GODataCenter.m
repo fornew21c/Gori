@@ -24,6 +24,9 @@
     self = [super init];
         if (self) {
             self.networkDataArray = [[NSArray alloc] init];
+            self.networkUserDetailDictionary = [[NSDictionary alloc]init];
+            //토큰값을 임의로 지정함, 로그인, 로그아웃, 회원가입 시 토큰을 DataCenter로 전달할 방법 찾아야 함
+            self.token = @"555156e03265e6f859e5966cf52a6da26725af18";
         }
         return self;
     
@@ -41,13 +44,37 @@
             completionBlock(YES);
         }else{
             nil;
-            
         }
     }];
-    
 }
 //예외처리 위해 BOOL을 던져줄 수 있도록 코드를 재수정 한 버전...맞게 했는지는 모르겠음
 
+/**************** setting for mypageView with NetworkModule********************************/
+- (void)receiveServerUserDetailDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock{
+    [NetworkModuleMain getUserDetailWithCompletionBlock:^(BOOL isSuccess, NSDictionary *result) {
+        if (isSuccess) {
+            NSDictionary *networkUserDetailDictionary = result;
+            self.networkUserDetailDictionary = networkUserDetailDictionary;
+            completionBlock(YES);
+        }else{
+            nil;
+        }
+    }];
+}
+
+/**************** setting for mypageView with NetworkModule********************************/
+
++ (void)setUserTokenWithString:(NSString *)tokenString{
+    [[NSUserDefaults standardUserDefaults] setObject:tokenString forKey:@"UserToken"];
+}
+
++ (NSString *)getUserToken{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"UserToken"];
+}
+
++ (void)removeUserToken{
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"UserToken"];
+}
 
 /**************** Deprecated setting for MainView with NetworkModule ***********************/
 //- (void)receivingServerDatawithCompletionBlock:(void (^)())completionBlock{

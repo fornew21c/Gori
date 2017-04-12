@@ -60,7 +60,7 @@
                                     <segue destination="Z8q-tz-ayV" kind="embed" id="Jms-hG-4uM"/>
                                 </connections>
                             </containerView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="76P-m9-rHU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="76P-m9-rHU">
                                 <rect key="frame" x="131" y="54" width="113" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -97,15 +97,23 @@
                                     <action selector="goClassListView:" destination="2DW-D0-AZx" eventType="touchUpInside" id="ao2-4y-eSe"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEH-0B-Me5">
+                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="back"/>
+                                <connections>
+                                    <segue destination="MaT-Zz-eOX" kind="unwind" unwindAction="unwindSegue:" id="hGc-GS-Nxz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="classListButton" destination="BFL-lO-Nz1" id="faB-kk-cFI"/>
                         <outlet property="classListView" destination="i3R-4O-Z94" id="h4r-bh-KZ7"/>
-                        <outlet property="goClassList" destination="BFL-lO-Nz1" id="PrE-OQ-QdL"/>
-                        <outlet property="goRegistrationView" destination="FI6-0w-7Sd" id="WzR-Gv-q9x"/>
-                        <outlet property="goWishList" destination="IWz-p9-7ST" id="AwE-Bs-74n"/>
+                        <outlet property="profileEmailLabel" destination="PBH-uD-rbR" id="ldt-hy-gyb"/>
+                        <outlet property="profileImageView" destination="76P-m9-rHU" id="zKy-Ga-j5w"/>
+                        <outlet property="profileNameLabel" destination="evv-u5-JAa" id="XgA-An-kPF"/>
                         <outlet property="registrationButton" destination="FI6-0w-7Sd" id="e8p-3G-X3R"/>
                         <outlet property="registrationView" destination="nHJ-vs-c5X" id="6Oy-Bt-Vzn"/>
                         <outlet property="wishListButton" destination="IWz-p9-7ST" id="Suf-hZ-jLS"/>
@@ -113,6 +121,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p6W-sE-T1E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="MaT-Zz-eOX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="84" y="77.811094452773617"/>
         </scene>
@@ -120,6 +129,10 @@
         <scene sceneID="7J1-qD-kEm">
             <objects>
                 <viewController storyboardIdentifier="GORegistrationViewController" id="pfB-ae-KmX" customClass="GORegistrationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="scL-Jb-c6T"/>
+                        <viewControllerLayoutGuide type="bottom" id="WoT-eU-l58"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh7-tK-Xst">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="388"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -143,6 +156,10 @@
         <scene sceneID="45o-ar-V0j">
             <objects>
                 <viewController storyboardIdentifier="ClassListViewController" id="tnH-gk-vgd" customClass="GOClassListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VKX-ha-YMJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="r7V-bP-NqX"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tSd-ia-sea">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="388"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -166,6 +183,10 @@
         <scene sceneID="LKl-ul-6KE">
             <objects>
                 <viewController storyboardIdentifier="WishListViewController" id="Z8q-tz-ayV" customClass="GOWishListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nX9-TM-h4v"/>
+                        <viewControllerLayoutGuide type="bottom" id="hzW-Fg-hWe"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="EkB-ax-99B">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="388"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -12,9 +12,9 @@
 
 @property (nonatomic) NSString *token;
 
-/**************** temporary Array for tableviewCell Setting with NetworkModule****************/
+/**************** temporary Array for Setting with NetworkModule****************/
 @property (nonatomic) NSArray *networkDataArray;
-
+@property (nonatomic) NSDictionary *networkUserDetailDictionary;
 
 /**************** temporary Array for tableviewCell Setting ********************************/
 @property (nonatomic) NSArray *titleArray;
@@ -36,5 +36,10 @@
 - (NSArray *)settingDistrictLocationArray;
 
 - (void)receiveServerDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock;
+- (void)receiveServerUserDetailDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock;
+
++ (void)setUserTokenWithString:(NSString *)tokenString;
++ (NSString *)getUserToken;
++ (void)removeUserToken;
 
 @end

@@ -12,4 +12,10 @@
 
 + (void)getTalentListWithCompletionBlock:(void (^)(BOOL isSuccess, NSDictionary *result))completionBlock;
 
++ (void)getUserDetailWithCompletionBlock:(void (^)(BOOL isSuccess, NSDictionary *result))completionBlock;
+
+
+
+
+
 @end
