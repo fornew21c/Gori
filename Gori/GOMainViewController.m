@@ -31,9 +31,8 @@
 @property (nonatomic, strong) NSArray *searchDataSetTitleName;
 @property (nonatomic, strong) NSArray *searchDataTitleNameResult;
 @property (nonatomic, strong) NSMutableArray *titleNameMutableArray;
+@property NSDictionary *selectedData;
 
-
-@property (nonatomic) PostModel *selectedData;
 @property (nonatomic, strong) NSMutableArray *pkMutableArray;
 
 
@@ -228,6 +227,7 @@
     NSLog(@"didSelectRowAtIndexPath: %lu", indexPath.row);
     //self.selectedData = [[GODataCenter2 sharedInstance].postList objectAtIndex:indexPath.row];
     //NSLog(@"%@", self.selectedData);
+    self.selectedData = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"detailSegue" sender:nil];
 
 }
@@ -247,7 +247,9 @@
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"detailSegue"]) {
         DetailViewController *nextVC = segue.destinationViewController;
-        [nextVC setDetailData:self.selectedData];
+        //nextVC.pk = [self.selectedData objectForKey:@"pk"];
+        [nextVC getSeletedPk:[self.selectedData objectForKey:@"pk"]];
+        NSLog(@"pk: %@", [self.selectedData objectForKey:@"pk"]);
     }
 }
 

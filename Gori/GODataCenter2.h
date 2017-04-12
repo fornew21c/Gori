@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "NetworkModule.h"
-#import "PostModel.h"
+#import "TalentDetailModel.h"
 
 @interface GODataCenter2 : NSObject
 
@@ -27,7 +27,7 @@
 //post
 - (void)creatPostWithTitle:(NSString *)title content:(NSString *)content image:(NSData *)imageData completion:(CompletionBlock)completion;
 - (void)postListWithPage:(NSInteger)page completion:(CompletionBlock)completion;
-- (void)requestPostRetrieveID:(NSNumber *)postID completion:(CompletionBlock)completion;
+- (void)requestPostRetrieveID:(NSNumber*)postID completion:(CompletionBlock)completion;
 
 - (void) setMyLoginToken:(NSString *)newToken;
 - (NSString*) getMyLoginToken;

@@ -10,7 +10,7 @@
 		25A48385E4D3A342AFBED138 /* libPods-Gori.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1585AE216C18B713828536EC /* libPods-Gori.a */; };
 		4135A8A31E973EB70043E0ED /* GODataCenter2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4135A8A21E973EB70043E0ED /* GODataCenter2.m */; };
 		4135A8A71E973F040043E0ED /* NetworkModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4135A8A61E973F040043E0ED /* NetworkModule.m */; };
-		4135A8AA1E9740230043E0ED /* PostModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4135A8A91E9740230043E0ED /* PostModel.m */; };
+		4135A8AA1E9740230043E0ED /* TalentDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4135A8A91E9740230043E0ED /* TalentDetailModel.m */; };
 		414848071E935C8400612B3C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 414848061E935C8400612B3C /* DetailViewController.m */; };
 		4153EE841E9238FD001EFF70 /* GODataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4153EE831E9238FD001EFF70 /* GODataCenter.m */; };
 		4153EE8E1E92393C001EFF70 /* GODistrictLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4153EE871E92393C001EFF70 /* GODistrictLocationViewController.m */; };
@@ -70,8 +70,8 @@
 		4135A8A21E973EB70043E0ED /* GODataCenter2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GODataCenter2.m; sourceTree = "<group>"; };
 		4135A8A51E973F040043E0ED /* NetworkModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkModule.h; sourceTree = "<group>"; };
 		4135A8A61E973F040043E0ED /* NetworkModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkModule.m; sourceTree = "<group>"; };
-		4135A8A81E9740230043E0ED /* PostModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostModel.h; sourceTree = "<group>"; };
-		4135A8A91E9740230043E0ED /* PostModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostModel.m; sourceTree = "<group>"; };
+		4135A8A81E9740230043E0ED /* TalentDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalentDetailModel.h; sourceTree = "<group>"; };
+		4135A8A91E9740230043E0ED /* TalentDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalentDetailModel.m; sourceTree = "<group>"; };
 		414848051E935C8400612B3C /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		414848061E935C8400612B3C /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		4153EE821E9238FD001EFF70 /* GODataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GODataCenter.h; sourceTree = "<group>"; };
@@ -184,8 +184,8 @@
 		4135A8A41E973EEB0043E0ED /* NetworkModule */ = {
 			isa = PBXGroup;
 			children = (
-				4135A8A81E9740230043E0ED /* PostModel.h */,
-				4135A8A91E9740230043E0ED /* PostModel.m */,
+				4135A8A81E9740230043E0ED /* TalentDetailModel.h */,
+				4135A8A91E9740230043E0ED /* TalentDetailModel.m */,
 				4135A8A51E973F040043E0ED /* NetworkModule.h */,
 				4135A8A61E973F040043E0ED /* NetworkModule.m */,
 				9163ECFB1E9A451E00F23EDA /* NetworkModuleMain.h */,
@@ -547,7 +547,7 @@
 				919B6F321E9CE56000AE8CA5 /* GOWishListViewController.m in Sources */,
 				91641F261E927B8800DC5B43 /* GOLocationViewController.m in Sources */,
 				4135A8A71E973F040043E0ED /* NetworkModule.m in Sources */,
-				4135A8AA1E9740230043E0ED /* PostModel.m in Sources */,
+				4135A8AA1E9740230043E0ED /* TalentDetailModel.m in Sources */,
 				418584351E91EE9E0053EF40 /* UIViewController+AMSlideMenu.m in Sources */,
 				4153EE9A1E92399A001EFF70 /* GOMainViewController.m in Sources */,
 				9163ECFD1E9A451E00F23EDA /* NetworkModuleMain.m in Sources */,

@@ -15,12 +15,16 @@
  "content": "Post Content"
  */
 
-@interface PostModel : NSObject
+@interface TalentDetailModel : NSObject
 
-@property (nonatomic) NSString *title;
-@property (nonatomic) NSString *classInfo;
-@property (nonatomic) NSString *img_cover_url;
 @property (nonatomic) NSInteger postID;
+@property (nonatomic) NSString *title;
+@property (nonatomic) NSMutableArray *locations;
+@property (nonatomic) NSString *region;
+@property (nonatomic) NSInteger *hoursPerClass;
+@property (nonatomic) NSString *classInfo;
+@property (nonatomic) NSURL *img_cover_url;
+
 
 + (instancetype)modelWithData:(NSDictionary *)data;
 

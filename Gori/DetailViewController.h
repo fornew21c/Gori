@@ -13,5 +13,9 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *imageScrollView;
 @property (weak, nonatomic) IBOutlet UIView *imageView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
-- (void)setDetailData:(PostModel *)data;
+@property (nonatomic) NSNumber* pk;
+
+@property TalentDetailModel *selectedModel;
+//- (void)setDetailData:(PostModel *)data;
+- (void)getSeletedPk:(NSNumber*)selectedPk;
 @end

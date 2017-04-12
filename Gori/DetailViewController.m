@@ -8,12 +8,18 @@
 
 #import "DetailViewController.h"
 #import <AFNetworking/AFNetworking.h>
-
+#import "GODataCenter2.h"
+#import "TalentDetailModel.h"
 
 @interface DetailViewController ()
 <UIScrollViewDelegate>
-@property (nonatomic, strong) PostModel *viewData;
+@property (nonatomic, strong) TalentDetailModel *viewData;
 
+@property (weak, nonatomic) IBOutlet UILabel *talentRegion;
+@property (weak, nonatomic) IBOutlet UIImageView *coverImage;
+@property (weak, nonatomic) IBOutlet UILabel *hoursPerClass;
+@property (weak, nonatomic) IBOutlet UILabel *joinCntLabel;
+@property (weak, nonatomic) IBOutlet UILabel *talentTitle;
 @end
 
 @implementation DetailViewController
@@ -23,24 +29,41 @@
     // Do any additional setup after loading the view.
     self.imageScrollView.pagingEnabled = YES;
     self.imageScrollView.delegate = self;
-    
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-    
-    NSURL *URL = [NSURL URLWithString:@"https://mozzi.co.kr/api/talent/detail-all/1"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    
-    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
-        if (error) {
-            NSLog(@"Error: %@", error);
-        } else {
-            NSLog(@"%@ %@", response, responseObject);
+   
+    self.joinCntLabel.layer.masksToBounds = YES;
+    self.joinCntLabel.layer.cornerRadius = 15;
+  
+    [[GODataCenter2 sharedInstance] requestPostRetrieveID:self.pk completion:^(BOOL isSuccess, id responseData) {
+        
+        if(isSuccess)
+        {
+           // NSLog(@"isSuccess: %lu", isSuccess);
+            //NSLog(@"title: %@", [responseData objectForKey:@"title"]);
+            
+            self.selectedModel = [TalentDetailModel modelWithData:responseData];
+            NSLog(@"title: %@", self.selectedModel.title);
+            NSLog(@"region: %@", self.selectedModel.region);
+            [self layoutDataInView];
+            
+        }else
+        {
+ 
         }
     }];
-    [dataTask resume];
-    //NSLog(@"%@", self.viewData.classInfo);
 }
 
+- (void)getSeletedPk:(NSNumber *)selectedPk {
+    self.pk = selectedPk;
+}
+
+- (void)layoutDataInView {
+    self.talentTitle.text = self.selectedModel.title;
+    self.talentRegion.text =  self.selectedModel.region;
+    self.coverImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.selectedModel.img_cover_url]];
+    self.hoursPerClass.text = [NSString stringWithFormat:@"%lu" ,self.selectedModel.hoursPerClass];
+
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -60,7 +83,7 @@
       
 }
 
-- (void)setDetailData:(PostModel *)data
+- (void)setDetailData:(TalentDetailModel *)data
 {
     //self.viewData = data;
 }

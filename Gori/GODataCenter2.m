@@ -137,22 +137,22 @@
     }];
 }
 //포스트 디테일 보기
-- (void)requestPostRetrieveID:(NSNumber *)postID completion:(CompletionBlock)completion
+- (void)requestPostRetrieveID:(NSNumber*)pk completion:(CompletionBlock)completion
 {
-    [self.nManager postRetrieveRequestWithPostID:@1 completion:completion];
+    [self.nManager postRetrieveRequestWithPostID:pk completion:completion];
 }
 
 - (void)postModelListWithData:(NSArray *)dataList
 {
     
-    if(self.postList == nil)
-    {
-        self.postList  = [[NSMutableArray alloc] init];
-    }
-    
-    for (NSDictionary *data in dataList) {
-        [self.postList addObject:[PostModel modelWithData:data]];
-    }
+//    if(self.postList == nil)
+//    {
+//        self.postList  = [[NSMutableArray alloc] init];
+//    }
+//    
+//    for (NSDictionary *data in dataList) {
+//        [self.postList addObject:[PostModel modelWithData:data]];
+//    }
 }
 
 #pragma mark - private Method

@@ -29,7 +29,7 @@ static NSString * const LOGOUT_URL = @"/member/logout/";    //POST
 static NSString * const USERDETAIL_URL = @"/member/profile/";//GET
 static NSString * const POST_URL = @"/post/";               //POST - MULTIPART
 static NSString * const POST_LIST_URL = @"/post/";           //GET
-static NSString * const POST_RETRIEVE_URL = @"/post/";           //GET /post/<post_pk>/
+static NSString * const GET_DETAIL_URL = @"/talent/detail-all/";           //GET 수업 상세보기
 
 
 @interface NetworkModule : NSObject
@@ -47,6 +47,6 @@ static NSString * const POST_RETRIEVE_URL = @"/post/";           //GET /post/<po
 
 - (void)postRequestWithTitle:(NSString *)title content:(NSString *)content image:(NSData *)imageData completion:(CompletionBlock)completion;
 - (void)postListRequestWithPage:(NSNumber *)page completion:(CompletionBlock)completion;
-- (void)postRetrieveRequestWithPostID:(NSNumber *)postID completion:(CompletionBlock)completion;
+- (void)postRetrieveRequestWithPostID:(NSNumber *)pk completion:(CompletionBlock)completion;
 
 @end

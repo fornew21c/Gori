@@ -8,7 +8,7 @@
 
 #import "NetworkModule.h"
 #import "GODataCenter2.h"
-
+#import <AFNetworking/AFNetworking.h>
 
 static NSString *const TOKEN_KEY = @"Authorization";
 @implementation NetworkModule
@@ -244,35 +244,27 @@ static NSString *const TOKEN_KEY = @"Authorization";
     [task resume];
 }
 
-- (void)postRetrieveRequestWithPostID:(NSNumber *)postID completion:(CompletionBlock)completion
+- (void)postRetrieveRequestWithPostID:(NSNumber *)pk completion:(CompletionBlock)completion
 {
-    //session 생성
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:
-                             [NSURLSessionConfiguration defaultSessionConfiguration]];
+
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
-    //Request 객체 생성
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@/",BASE_URL,POST_RETRIEVE_URL,postID]];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@/",BASE_URL,GET_DETAIL_URL,pk]];
+    NSLog(@"URL: %@", URL);
+    //NSURL *URL = [NSURL URLWithString:@"https://mozzi.co.kr/api/talent/detail-all/1"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     
-    request.HTTPMethod = @"POST";
-//    [request setValue:[[DataCenter sharedInstance] token] forHTTPHeaderField:TOKEN_KEY];
-    
-    NSURLSessionDataTask *task = [session dataTaskWithRequest:request
-                                            completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-                                               
-                                                if (error == nil) {
-                                                    NSDictionary *responsData =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-                                                    NSLog(@"%@",responsData);
-                                                    
-                                                    completion(YES,responsData);
-                                                }else
-                                                {
-                                                    completion(NO,error);
-                                                }
-                                                
-                                            }];
-    
-    [task resume];
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@", error);
+            completion(NO,error);
+        } else {
+           // NSLog(@"%@ %@", response, responseObject);
+            completion(YES,responseObject);
+        }
+    }];
+    [dataTask resume];
 }
 
 #pragma mark - PrivateMethod
