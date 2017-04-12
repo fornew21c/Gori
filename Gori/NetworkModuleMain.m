@@ -22,7 +22,6 @@ static NSString *const API_USER_DETAIL_URL = @"/member/profile/user/";
 
 @implementation NetworkModuleMain
 
-
 /**************** gettingMainTableViewData from BackEnd API ***********************/
 + (void)getTalentListWithCompletionBlock:(void (^)(BOOL isSuccess, NSDictionary *result))completionBlock{
     // Session
