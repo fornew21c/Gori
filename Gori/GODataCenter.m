@@ -26,7 +26,6 @@
             self.networkDataArray = [[NSArray alloc] init];
             self.networkUserDetailDictionary = [[NSDictionary alloc]init];
             //토큰값을 임의로 지정함, 로그인, 로그아웃, 회원가입 시 토큰을 DataCenter로 전달할 방법 찾아야 함
-            self.token = @"555156e03265e6f859e5966cf52a6da26725af18";
         }
         return self;
     
@@ -38,9 +37,7 @@
     [NetworkModuleMain getTalentListWithCompletionBlock:^(BOOL isSuccess, NSDictionary *result){
         if (isSuccess) {
             NSArray *networkDataArray = (NSArray *)result;
-            //        NSLog(@"데이터센터에서 네트워크데이터어레이로 데이터를 집어넣음 %@", networkDataArray);
             self.networkDataArray = networkDataArray;
-            //           NSLog(@"네트워크데이터어레이의 0번 데이터 %@", [networkDataArray objectAtIndex:0]);
             completionBlock(YES);
         }else{
             nil;
