@@ -7,13 +7,12 @@
 //
 
 #import "DetailViewController.h"
-//#import "FirstTableViewCell.h"
-//#import "SecondTableViewCell.h"
-//상단의 퍼스트, 세컨드 테이블뷰 셀은 파일을 찾을 수 없어 우선 주석 처리함
+#import <AFNetworking/AFNetworking.h>
 
 
 @interface DetailViewController ()
 <UIScrollViewDelegate>
+@property (nonatomic, strong) PostModel *viewData;
 
 @end
 
@@ -24,8 +23,22 @@
     // Do any additional setup after loading the view.
     self.imageScrollView.pagingEnabled = YES;
     self.imageScrollView.delegate = self;
-
-
+    
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    
+    NSURL *URL = [NSURL URLWithString:@"https://mozzi.co.kr/api/talent/detail-all/1"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@", error);
+        } else {
+            NSLog(@"%@ %@", response, responseObject);
+        }
+    }];
+    [dataTask resume];
+    //NSLog(@"%@", self.viewData.classInfo);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,6 +60,10 @@
       
 }
 
+- (void)setDetailData:(PostModel *)data
+{
+    //self.viewData = data;
+}
 
 /*
 #pragma mark - Navigation

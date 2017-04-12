@@ -108,14 +108,13 @@
                     </tableView>
                     <connections>
                         <segue destination="OMT-OH-D2j" kind="custom" identifier="mainSegue" customClass="AMSlideMenuContentSegue" id="NU7-KV-CAa"/>
-                        <segue destination="6Ks-Nx-myP" kind="custom" identifier="secondSegue" customClass="AMSlideMenuContentSegue" id="EkZ-2d-VoX"/>
                         <segue destination="1zK-GY-sDn" kind="custom" identifier="signupSegue" customClass="AMSlideMenuContentSegue" id="uOT-8H-BXo"/>
                         <segue destination="2tK-T7-gs6" kind="custom" identifier="loginSegue" customClass="AMSlideMenuContentSegue" id="K3l-6Z-y5S"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1A-la-ALX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2076" y="-486"/>
+            <point key="canvasLocation" x="1793" y="526"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tub-ka-H2M">
@@ -131,7 +130,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lh2-Hs-6Si" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2745" y="-565"/>
+            <point key="canvasLocation" x="2745" y="-334"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="WmB-Gf-Edf">
@@ -175,7 +174,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rhy-6n-rw5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2745" y="93"/>
+            <point key="canvasLocation" x="5418" y="958"/>
         </scene>
         <!--SignIn_SignUp-->
         <scene sceneID="vkh-ec-Gug">
@@ -218,12 +217,11 @@
                     <navigationItem key="navigationItem" id="vbX-no-rKz"/>
                     <connections>
                         <outlet property="facebookLoginBtn" destination="yfV-pl-uNd" id="YOg-S7-tOs"/>
-                        <segue destination="UZd-Ok-whz" kind="show" identifier="mainViewSegue" id="HQY-il-lZM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tXG-1H-ea3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3752.8000000000002" y="91.304347826086968"/>
+            <point key="canvasLocation" x="6204" y="958"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ahE-iN-e2P">
@@ -289,7 +287,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uqv-cU-fg4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3753" y="-601"/>
+            <point key="canvasLocation" x="3658" y="-334"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="ii3-d5-WrU">
@@ -933,7 +931,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NSb-6N-W6Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3753" y="851"/>
+            <point key="canvasLocation" x="3657" y="365"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="p0H-Z7-caw">
@@ -951,7 +949,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nug-w8-GhK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2745" y="851"/>
+            <point key="canvasLocation" x="2745" y="365"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="oK5-Db-lKk">
@@ -1046,7 +1044,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UJo-ko-jS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3412" y="1684"/>
+            <point key="canvasLocation" x="3657" y="1096"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="twG-lZ-hmG">
@@ -1064,7 +1062,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mu8-gF-aVO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2417" y="1684"/>
+            <point key="canvasLocation" x="2745" y="1097"/>
         </scene>
     </scenes>
     <resources>
@@ -1075,7 +1073,7 @@
         <image name="logo.png" width="985" height="555"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="br3-Nz-hQ0"/>
+        <segue reference="ZTz-Dv-kBt"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.90980392160000001" green="0.1764705882" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>

@@ -81,12 +81,12 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)emailLoginBtnTouched:(id)sender {
-    [[GODataCenter2 sharedInstance] loginWithEmail:self.emailTF.text pw:self.pwTF.text completion:^(BOOL isSuccess, id respons) {
+    [[GODataCenter2 sharedInstance] loginWithEmail:self.emailTF.text pw:self.pwTF.text completion:^(BOOL isSuccess, id responseData) {
         
         if(isSuccess)
         {
-            NSLog(@"respons %@",respons);
-
+            NSLog(@"responseData %@",responseData);
+            [[GODataCenter2 sharedInstance] setMyLoginToken:[responseData objectForKey:@"key"]];
             dispatch_sync(dispatch_get_main_queue(), ^{
                 [self performSegueWithIdentifier:@"mainViewSegue" sender:nil];
             });

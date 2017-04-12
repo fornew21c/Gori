@@ -9,9 +9,11 @@
 #import "GOMainViewController.h"
 #import "GOMainTableViewCell.h"
 #import "GODataCenter.h"
+#import "GODataCenter2.h"
 #import "GOLocationViewController.h"
 #import "GOCategoryViewController.h"
 #import "NetworkModuleMain.h"
+#import "DetailViewController.h"
 
 
 @interface GOMainViewController ()
@@ -29,7 +31,7 @@
 @property (nonatomic, strong) NSArray *searchDataTitleNameResult;
 @property (nonatomic, strong) NSMutableArray *titleNameMutableArray;
 
-
+@property (nonatomic) PostModel *selectedData;
 
 @end
 
@@ -171,7 +173,7 @@
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
+    //PostModel *postData = [[GODataCenter2 sharedInstance].postList objectAtIndex:indexPath.row];
     return cell;
 }
 
@@ -207,17 +209,37 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"didSelectRowAtIndexPath: %lu", indexPath.row);
+    //self.selectedData = [[GODataCenter2 sharedInstance].postList objectAtIndex:indexPath.row];
+    //NSLog(@"%@", self.selectedData);
     [self performSegueWithIdentifier:@"detailSegue" sender:nil];
+
 }
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"detailSegue"]) {
+        DetailViewController *nextVC = segue.destinationViewController;
+        [nextVC setDetailData:self.selectedData];
+    }
 }
-*/
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:false];
+    
+//    //선택된 Cell의 데이터
+//    self.selectedData = nil;
+//    
+//    //page upload
+//    if ([[GODataCenter2 sharedInstance] isAvaliblePageRequest]) {
+//        //[self loadPostList];
+//    }
+}
 
 
 @end

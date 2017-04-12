@@ -19,11 +19,11 @@
         model.title = [data objectForKey:@"title"];
         
         
-        if (![[data objectForKey:@"content"] isKindOfClass:[NSNull class]]) {
-            model.content = [data objectForKey:@"content"] ;
+        if (![[data objectForKey:@"class_info"] isKindOfClass:[NSNull class]]) {
+            model.classInfo = [data objectForKey:@"class_info"] ;
         }else
         {
-            model.content = @"";
+            model.classInfo = @"";
         }
         
         

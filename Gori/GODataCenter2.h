@@ -29,4 +29,6 @@
 - (void)postListWithPage:(NSInteger)page completion:(CompletionBlock)completion;
 - (void)requestPostRetrieveID:(NSNumber *)postID completion:(CompletionBlock)completion;
 
+- (void) setMyLoginToken:(NSString *)newToken;
+- (NSString*) getMyLoginToken;
 @end

@@ -18,7 +18,7 @@
 @interface PostModel : NSObject
 
 @property (nonatomic) NSString *title;
-@property (nonatomic) NSString *content;
+@property (nonatomic) NSString *classInfo;
 @property (nonatomic) NSString *img_cover_url;
 @property (nonatomic) NSInteger postID;
 

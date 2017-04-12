@@ -167,4 +167,13 @@
     self.token = nil;
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"token"];
 }
+
+- (void) setMyLoginToken:(NSString *)newToken {
+    [[NSUserDefaults standardUserDefaults] setObject:newToken forKey:@"token"];
+}
+
+- (NSString*) getMyLoginToken
+{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+}
 @end

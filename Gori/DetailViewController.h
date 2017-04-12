@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GODataCenter2.h"
 
 @interface DetailViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIScrollView *imageScrollView;
 @property (weak, nonatomic) IBOutlet UIView *imageView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
-
+- (void)setDetailData:(PostModel *)data;
 @end
