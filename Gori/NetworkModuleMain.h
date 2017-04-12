@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+typedef void(^CompletionBlock)(BOOL isSuccess, id respons);
 
 @interface NetworkModuleMain : NSObject
 
@@ -14,6 +15,6 @@
 
 + (void)getUserDetailWithCompletionBlock:(void (^)(BOOL isSuccess, NSDictionary *result))completionBlock;
 
-
++ (void)getFilteredLocationWithCompletionBlock:(NSString *)regionKey completion:(CompletionBlock)completion;
 
 @end

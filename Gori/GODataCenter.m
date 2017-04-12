@@ -25,7 +25,7 @@
         if (self) {
             self.networkDataArray = [[NSArray alloc] init];
             self.networkUserDetailDictionary = [[NSDictionary alloc]init];
-            //토큰값을 임의로 지정함, 로그인, 로그아웃, 회원가입 시 토큰을 DataCenter로 전달할 방법 찾아야 함
+
         }
         return self;
     
@@ -158,14 +158,14 @@
 
 - (NSArray *)settingSchoolLocationArray{
     /**************** temporary Array for collectionviewCell Setting ********************************/
-    NSArray *schoolLocationArray = @[@"전체", @"고려대", @"연세대", @"홍익대", @"서울대", @"이화여대", @"부산대", @"건국대", @"한양대", @"중앙대"];
+    NSArray *schoolLocationArray = @[@"전체", @"고려대", @"서울대", @"연세대", @"홍익대", @"이화여대", @"부산대", @"중앙대", @"건국대", @"한양대"];
     self.schoolLocationArray = schoolLocationArray;
     return self.schoolLocationArray;
 }
 
 - (NSArray *)settingDistrictLocationArray{
     /**************** temporary Array for collectionviewCell Setting ********************************/
-    NSArray *districtLocationArray = @[@"전체", @"강남", @"신촌", @"종로", @"사당", @"잠실", @"혜화", @"용산", @"합정", @"목동"];
+    NSArray *districtLocationArray = @[@"전체", @"강남", @"신촌", @"사당", @"잠실", @"종로", @"혜화", @"용산", @"합정", @"목동", @"기타"];
     self.districtLoactionArray = districtLocationArray;
     return self.districtLoactionArray;
 }

@@ -15,6 +15,7 @@
 #import "NetworkModuleMain.h"
 #import "DetailViewController.h"
 #import "GOMypageViewController.h"
+#import "GODistrictLocationViewController.h"
 
 @interface GOMainViewController ()
 <UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating>
@@ -146,6 +147,7 @@
 /**************** tableviewDelegate ********************************/
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
     return 1;
 }
 

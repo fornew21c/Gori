@@ -9,6 +9,7 @@
 #import "NetworkModuleMain.h"
 #import "GODataCenter.h"
 #import "GODataCenter2.h"
+#import <AFNetworking/AFNetworking.h>
 
 static NSString *const API_BASE_URL     = @"https://mozzi.co.kr/api";
 
@@ -16,11 +17,39 @@ static NSString *const API_TALENT_URL = @"/talent/list/";
 
 static NSString *const API_USER_DETAIL_URL = @"/member/profile/user/";
 
+static NSString *const API_LOCATION_FILTER_URL     = @"/talent/list/";
+
 @interface NetworkModuleMain ()
 
 @end
 
 @implementation NetworkModuleMain
+
+/**************** gettingFilteredLocationData from BackEnd API ***********************/
++ (void)getFilteredLocationWithCompletionBlock:(NSString*)regionKey completion:(CompletionBlock)completion
+{
+    
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@",API_BASE_URL,API_LOCATION_FILTER_URL,regionKey]];
+    NSLog(@"네트워크모듈메인의 URL : %@", URL);
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@", error);
+            completion(NO,error);
+        } else {
+            // NSLog(@"%@ %@", response, responseObject);
+            completion(YES,responseObject);
+            NSLog(@"네트워크모듈메인의 리스폰스와 리스폰스 오브젝트 : %@", responseObject);
+        }
+    }];
+    [dataTask resume];
+}
+
+
 
 /**************** gettingMainTableViewData from BackEnd API ***********************/
 + (void)getTalentListWithCompletionBlock:(void (^)(BOOL isSuccess, NSDictionary *result))completionBlock{
@@ -31,7 +60,6 @@ static NSString *const API_USER_DETAIL_URL = @"/member/profile/user/";
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", API_BASE_URL, API_TALENT_URL]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
-    request.HTTPBody = [[NSString stringWithFormat:@"limit=%d", 10] dataUsingEncoding:NSUTF8StringEncoding];
     request.HTTPMethod = @"GET";
     
     // Get Task 요청
