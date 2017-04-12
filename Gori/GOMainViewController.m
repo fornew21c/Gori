@@ -76,7 +76,11 @@
                 self.searchDataSetTutorName = [[NSArray alloc]initWithArray:self.tutorNameMutableArray];
                 self.searchDataSetTitleName = [[NSArray alloc]initWithArray:self.titleNameMutableArray];
                 NSLog(@"ReceivingServerData and ReloadingData is Completed");
+                
+                [[GODataCenter2 sharedInstance] getMyLoginToken];
+                NSLog(@"메인 뷰컨트롤러에서 토큰 여부 체크 : %@", [[GODataCenter2 sharedInstance] getMyLoginToken]);
             });
+
         }else{
             NSLog(@"ReceivingServerData and ReloadingData is Failed");
         }
@@ -225,6 +229,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"didSelectRowAtIndexPath: %lu", indexPath.row);
+    
     //self.selectedData = [[GODataCenter2 sharedInstance].postList objectAtIndex:indexPath.row];
     //NSLog(@"%@", self.selectedData);
     self.selectedData = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:indexPath.row];

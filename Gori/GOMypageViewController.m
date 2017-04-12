@@ -8,6 +8,7 @@
 
 #import "GOMypageViewController.h"
 #import "GODataCenter.h"
+#import "GODataCenter2.h"
 
 @interface GOMypageViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *registrationButton;
@@ -28,36 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    /**************** userProfile and pk Setting ********************************/
-//    
-//    [[GODataCenter sharedInstance]receiveServerDataWithCompletionBlock:^(BOOL isSuccess) {
-//        if (isSuccess) {
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                NSDictionary *temp = [[NSDictionary alloc]init];
-//                NSMutableArray *tutorMutableArray = [[NSMutableArray alloc]init];
-//                NSMutableArray *titleMutableArray = [[NSMutableArray alloc]init];
-//                NSMutableArray *pkMutableArray = [[NSMutableArray alloc]init];
-//                for (NSInteger i = 0; i < [GODataCenter sharedInstance].networkDataArray.count; i++) {
-//                    temp = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:i];
-//                    [tutorMutableArray addObject:[[temp objectForKey:@"tutor"] objectForKey:@"name"]];
-//                    [titleMutableArray addObject:[temp objectForKey:@"title"]];
-//                    [pkMutableArray addObject:[temp objectForKey:@"pk"]];
-//                }
-//                self.pkMutableArray = pkMutableArray;
-//                self.tutorNameMutableArray = tutorMutableArray;
-//                self.titleNameMutableArray = titleMutableArray;
-//                
-//                NSLog(@" pk array data : %@", self.pkMutableArray);
-//                self.searchDataSetTutorName = [[NSArray alloc]initWithArray:self.tutorNameMutableArray];
-//                self.searchDataSetTitleName = [[NSArray alloc]initWithArray:self.titleNameMutableArray];
-//                NSLog(@"ReceivingServerData and ReloadingData is Completed");
-//            });
-//        }else{
-//            NSLog(@"ReceivingServerData and ReloadingData is Failed");
-//        }
-//    }];
-//
+  
     [[GODataCenter sharedInstance]receiveServerUserDetailDataWithCompletionBlock:^(BOOL isSuccess) {
         if (isSuccess) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -65,22 +37,38 @@
                 NSLog(@"템프 딕셔너리의 데이터 : %@", temp);
                 self.profileNameLabel.text = [temp objectForKey:@"name"];
                 self.profileEmailLabel.text = [temp objectForKey:@"user_id"];
+                NSLog(@"프로파일네임레이블 텍스트 : %@", [temp objectForKey:@"name"]);
+                NSLog(@"프로파일이메일레이블 텍스트 : %@", [temp objectForKey:@"user_id"]);
                 
                 NSURL *profileURL = [NSURL URLWithString:[temp objectForKey:@"profile_image"]];
                 self.profileImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]];
                 NSLog(@"ReceivingServerData and ReloadingData is Completed");
+                
             });
         }else{
               NSLog(@"ReceivingServerData and ReloadingData is Failed");
         }
     }];
-    /**************** 토큰값을 임의로 지정한 결과 잘 됨...토큰을 어떻게 다른곳에 저장시키고 불러와야 할 지가 문제임**********/
+    
     
     
     self.registrationView.alpha = 1.0f;
     self.classListView.alpha = 0.0f;
     self.wishListView.alpha = 0.0f;
     
+}
+
+- (IBAction)signoutAction:(UIButton *)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+       [[GODataCenter2 sharedInstance] logoutCompletion:^(BOOL isSuccess, id respons) {
+           if (isSuccess) {
+               NSLog(@"로그아웃이 완료되었습니다");
+           }else{
+               NSLog(@"로그아웃이 실패했습니다");
+           }
+       }];
+    }];
 }
 - (IBAction)goRegistrationView:(UIButton *)sender {
     [UIView animateWithDuration:1.5 animations:^{
