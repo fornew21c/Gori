@@ -129,14 +129,17 @@
 //        return ([GODataCenter sharedInstance].networkDataArray.count);
 //    }
 //    
-    if ([GODataCenter sharedInstance].filterDistrictLocationYN == YES) {
-        return [GODataCenter sharedInstance].networkDataArray.count;
-    }else if ([GODataCenter sharedInstance].filterCategoryYN == YES){
-        return [GODataCenter sharedInstance].networkDataArray.count;
-    }
-    else{
-        return ([GODataCenter sharedInstance].networkDataArray.count);
-    }
+//    if ([GODataCenter sharedInstance].filterDistrictLocationYN == YES) {
+//        return [GODataCenter sharedInstance].networkDataArray.count;
+//    }else if ([GODataCenter sharedInstance].filterCategoryYN == YES){
+//        return [GODataCenter sharedInstance].networkDataArray.count;
+//    }
+//    else{
+//        return ([GODataCenter sharedInstance].networkDataArray.count);
+//    }
+    
+    
+    return ([GODataCenter sharedInstance].networkDataArray.count);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -147,50 +150,64 @@
         cell = [[GOMainTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     
-    if ([GODataCenter sharedInstance].filterDistrictLocationYN == YES) {
-        NSDictionary *temp = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:indexPath.row];
-        cell.tutorNameLabel.text = [[temp objectForKey:@"tutor"] objectForKey:@"name"];
-        cell.titleLabel.text = [temp objectForKey:@"title"];
-        cell.tuteeCountNumberLabel.text = [[NSString stringWithFormat:@"%@", [temp objectForKey:@"registration_count"]] stringByAppendingString:@"명 참여"];
-        
-        /**************** changing cell image with networkDataArray ********************************/
-        NSURL *titleURL = [NSURL URLWithString:[temp objectForKey:@"cover_image"]];
-        cell.titleImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:titleURL]];
-        NSURL *profileURL = [NSURL URLWithString:[[temp objectForKey:@"tutor"] objectForKey:@"profile_image"]];
-        cell.profileImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]];
-        cell.titleLabel.text = [temp objectForKey:@"title"];
+    
+    NSDictionary *temp = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:indexPath.row];
+    
+    cell.tutorNameLabel.text = [[temp objectForKey:@"tutor"] objectForKey:@"name"];
+    cell.titleLabel.text = [temp objectForKey:@"title"];
+    cell.tuteeCountNumberLabel.text = [[NSString stringWithFormat:@"%@", [temp objectForKey:@"registration_count"]] stringByAppendingString:@"명 참여"];
 
-    }else if ([GODataCenter sharedInstance].filterCategoryYN == YES){
-        NSDictionary *temp = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:indexPath.row];
-        cell.tutorNameLabel.text = [[temp objectForKey:@"tutor"] objectForKey:@"name"];
-        cell.titleLabel.text = [temp objectForKey:@"title"];
-        cell.tuteeCountNumberLabel.text = [[NSString stringWithFormat:@"%@", [temp objectForKey:@"registration_count"]] stringByAppendingString:@"명 참여"];
-        
-        /**************** changing cell image with networkDataArray ********************************/
-        NSURL *titleURL = [NSURL URLWithString:[temp objectForKey:@"cover_image"]];
-        cell.titleImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:titleURL]];
-        NSURL *profileURL = [NSURL URLWithString:[[temp objectForKey:@"tutor"] objectForKey:@"profile_image"]];
-        cell.profileImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]];
-        cell.titleLabel.text = [temp objectForKey:@"title"];
-        
-    }else{
-        /**************** changing cell text with networkDataArray ********************************/
-        NSDictionary *temp = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:indexPath.row];
-        
-        //cell이 별도의 메소드를 사용해서 불러오는 것 보다는 하단의 방법으로 텍스트와 이미지를 바꾸는 것이 더 낫다고 함
-        //왜냐하면 tableview의 dataSource가 self(ViewController) 이므로
-        cell.tutorNameLabel.text = [[temp objectForKey:@"tutor"] objectForKey:@"name"];
-        cell.titleLabel.text = [temp objectForKey:@"title"];
-        cell.tuteeCountNumberLabel.text = [[NSString stringWithFormat:@"%@", [temp objectForKey:@"registration_count"]] stringByAppendingString:@"명 참여"];
-        
-        /**************** changing cell image with networkDataArray ********************************/
-        NSURL *titleURL = [NSURL URLWithString:[temp objectForKey:@"cover_image"]];
-        cell.titleImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:titleURL]];
-        NSURL *profileURL = [NSURL URLWithString:[[temp objectForKey:@"tutor"] objectForKey:@"profile_image"]];
-        cell.profileImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]];
-        
-        cell.titleLabel.text = [temp objectForKey:@"title"];
-    }
+    /**************** changing cell image with networkDataArray ********************************/
+    NSURL *titleURL = [NSURL URLWithString:[temp objectForKey:@"cover_image"]];
+    cell.titleImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:titleURL]];
+    NSURL *profileURL = [NSURL URLWithString:[[temp objectForKey:@"tutor"] objectForKey:@"profile_image"]];
+    cell.profileImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]];
+    cell.titleLabel.text = [temp objectForKey:@"title"];
+    
+//    if ([GODataCenter sharedInstance].filterDistrictLocationYN == YES) {
+//        NSDictionary *temp = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:indexPath.row];
+//        cell.tutorNameLabel.text = [[temp objectForKey:@"tutor"] objectForKey:@"name"];
+//        cell.titleLabel.text = [temp objectForKey:@"title"];
+//        cell.tuteeCountNumberLabel.text = [[NSString stringWithFormat:@"%@", [temp objectForKey:@"registration_count"]] stringByAppendingString:@"명 참여"];
+//        
+//        /**************** changing cell image with networkDataArray ********************************/
+//        NSURL *titleURL = [NSURL URLWithString:[temp objectForKey:@"cover_image"]];
+//        cell.titleImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:titleURL]];
+//        NSURL *profileURL = [NSURL URLWithString:[[temp objectForKey:@"tutor"] objectForKey:@"profile_image"]];
+//        cell.profileImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]];
+//        cell.titleLabel.text = [temp objectForKey:@"title"];
+//
+//    }else if ([GODataCenter sharedInstance].filterCategoryYN == YES){
+//        NSDictionary *temp = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:indexPath.row];
+//        cell.tutorNameLabel.text = [[temp objectForKey:@"tutor"] objectForKey:@"name"];
+//        cell.titleLabel.text = [temp objectForKey:@"title"];
+//        cell.tuteeCountNumberLabel.text = [[NSString stringWithFormat:@"%@", [temp objectForKey:@"registration_count"]] stringByAppendingString:@"명 참여"];
+//        
+//        /**************** changing cell image with networkDataArray ********************************/
+//        NSURL *titleURL = [NSURL URLWithString:[temp objectForKey:@"cover_image"]];
+//        cell.titleImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:titleURL]];
+//        NSURL *profileURL = [NSURL URLWithString:[[temp objectForKey:@"tutor"] objectForKey:@"profile_image"]];
+//        cell.profileImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]];
+//        cell.titleLabel.text = [temp objectForKey:@"title"];
+//        
+//    }else{
+//        /**************** changing cell text with networkDataArray ********************************/
+//        NSDictionary *temp = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:indexPath.row];
+//        
+//        //cell이 별도의 메소드를 사용해서 불러오는 것 보다는 하단의 방법으로 텍스트와 이미지를 바꾸는 것이 더 낫다고 함
+//        //왜냐하면 tableview의 dataSource가 self(ViewController) 이므로
+//        cell.tutorNameLabel.text = [[temp objectForKey:@"tutor"] objectForKey:@"name"];
+//        cell.titleLabel.text = [temp objectForKey:@"title"];
+//        cell.tuteeCountNumberLabel.text = [[NSString stringWithFormat:@"%@", [temp objectForKey:@"registration_count"]] stringByAppendingString:@"명 참여"];
+//        
+//        /**************** changing cell image with networkDataArray ********************************/
+//        NSURL *titleURL = [NSURL URLWithString:[temp objectForKey:@"cover_image"]];
+//        cell.titleImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:titleURL]];
+//        NSURL *profileURL = [NSURL URLWithString:[[temp objectForKey:@"tutor"] objectForKey:@"profile_image"]];
+//        cell.profileImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]];
+//        
+//        cell.titleLabel.text = [temp objectForKey:@"title"];
+//    }
     
 //    /**************** changing cell text related searchcontroller ********************************/
 //    if (self.searchController.isActive && (self.searchController.searchBar.text.length > 0)) {
@@ -275,6 +292,8 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    NSLog(@"viewDidAppear");
+    
     [super viewDidAppear:false];
     
     if ([GODataCenter sharedInstance].filterDistrictLocationYN == YES) {
