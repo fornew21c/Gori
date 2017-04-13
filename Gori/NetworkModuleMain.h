@@ -17,4 +17,6 @@ typedef void(^CompletionBlock)(BOOL isSuccess, id respons);
 
 + (void)getFilteredLocationWithCompletionBlock:(NSString *)regionKey completion:(CompletionBlock)completion;
 
++ (void)getFilteredCategoryWithCompletionBlock:(NSString *)categoryKey completion:(CompletionBlock)completion;
+
 @end

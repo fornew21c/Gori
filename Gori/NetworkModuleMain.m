@@ -19,14 +19,36 @@ static NSString *const API_USER_DETAIL_URL = @"/member/profile/user/";
 
 static NSString *const API_LOCATION_FILTER_URL     = @"/talent/list/";
 
+static NSString *const API_CATEGORY_FILTER_URL     = @"/talent/list/";
+//?category=
+
 @interface NetworkModuleMain ()
 
 @end
 
 @implementation NetworkModuleMain
 
+/**************** gettingFilteredCategoryData from BackEnd API ***********************/
++ (void)getFilteredCategoryWithCompletionBlock:(NSString *)categoryKey completion:(CompletionBlock)completion{
+    
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc]initWithSessionConfiguration:configuration];
+    
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@", API_BASE_URL, API_CATEGORY_FILTER_URL, categoryKey]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Error : %@", error);
+            completion(NO, nil);
+        }else{
+            completion(YES, responseObject);
+        }
+    }];
+    [dataTask resume];
+}
+
 /**************** gettingFilteredLocationData from BackEnd API ***********************/
-+ (void)getFilteredLocationWithCompletionBlock:(NSString*)regionKey completion:(CompletionBlock)completion
++ (void)getFilteredLocationWithCompletionBlock:(NSString *)regionKey completion:(CompletionBlock)completion
 {
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -39,7 +61,7 @@ static NSString *const API_LOCATION_FILTER_URL     = @"/talent/list/";
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         if (error) {
             NSLog(@"Error: %@", error);
-            completion(NO,error);
+            completion(NO,nil);
         } else {
             // NSLog(@"%@ %@", response, responseObject);
             completion(YES,responseObject);
@@ -48,7 +70,6 @@ static NSString *const API_LOCATION_FILTER_URL     = @"/talent/list/";
     }];
     [dataTask resume];
 }
-
 
 
 /**************** gettingMainTableViewData from BackEnd API ***********************/

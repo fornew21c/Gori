@@ -52,10 +52,46 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    CGFloat heightForRow;
-    GOCategoryTableViewCell *cell= [[GOCategoryTableViewCell alloc]init];
-    heightForRow = cell.mainView.frame.size.height;
-    return heightForRow;
+    
+    return 150;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [GODataCenter sharedInstance].filterCategoryYN = YES;
+    
+    switch (indexPath.row) {
+        case 0:
+            [GODataCenter sharedInstance].categoryKey = @"";
+            break;
+        case 1:
+            [GODataCenter sharedInstance].categoryKey = @"?category=hnb";
+            break;
+        case 2:
+            [GODataCenter sharedInstance].categoryKey = @"?category=lan";
+            break;
+        case 3:
+            [GODataCenter sharedInstance].categoryKey = @"?category=com";
+            break;
+        case 4:
+            [GODataCenter sharedInstance].categoryKey = @"?category=art";
+            break;
+        case 5:
+            [GODataCenter sharedInstance].categoryKey = @"?category=spo";
+            break;
+        case 6:
+            [GODataCenter sharedInstance].categoryKey = @"?category=job";
+            break;
+        case 7:
+            [GODataCenter sharedInstance].categoryKey = @"?category=hob";
+            break;
+        case 8:
+            [GODataCenter sharedInstance].categoryKey = @"?category=etc";
+            break;
+        default:
+            break;
+    }
+    [GODataCenter sharedInstance].filterDistrictLocationYN = NO;
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /**************** button Action ********************************/

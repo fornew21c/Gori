@@ -23,8 +23,11 @@
 - (instancetype)init{
     self = [super init];
         if (self) {
+            self.regionKey = @"";
+            self.categoryKey = @"";
             self.networkDataArray = [[NSArray alloc] init];
             self.networkUserDetailDictionary = [[NSDictionary alloc]init];
+            self.districtLocationFilteredArray = [[NSArray alloc]init];
 
         }
         return self;
@@ -36,7 +39,8 @@
     
     [NetworkModuleMain getTalentListWithCompletionBlock:^(BOOL isSuccess, NSDictionary *result){
         if (isSuccess) {
-            NSArray *networkDataArray = (NSArray *)result;
+            NSArray *networkDataArray = [result objectForKey:@"results"];
+            NSLog(@"데이터센터에서 네트워크데이터어레이의 내용 : %@", networkDataArray);
             self.networkDataArray = networkDataArray;
             completionBlock(YES);
         }else{
@@ -45,6 +49,38 @@
     }];
 }
 //예외처리 위해 BOOL을 던져줄 수 있도록 코드를 재수정 한 버전...맞게 했는지는 모르겠음
+
+- (void)receiveCategoryFilteredDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock{
+    [NetworkModuleMain getFilteredCategoryWithCompletionBlock:self.categoryKey completion:^(BOOL isSuccess, id respons) {
+        if (isSuccess) {
+            NSArray *networkDataArray = [respons objectForKey:@"results"];
+            self.networkDataArray = networkDataArray;
+            completionBlock(YES);
+            NSLog(@"-----------------------------------------------------------------------------");
+            NSLog(@"self.districtLocationFilteredArray: %@", self.districtLocationFilteredArray);
+            NSLog(@"-----------------------------------------------------------------------------");
+            nil;
+        }
+    }];
+    
+}
+
+- (void)receiveDistrictLocationFilteredDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock{
+    
+    [NetworkModuleMain getFilteredLocationWithCompletionBlock:self.regionKey completion:^(BOOL isSuccess, id respons) {
+        if (isSuccess) {
+            NSArray *networkDataArray = [respons objectForKey:@"results"];
+            self.networkDataArray = networkDataArray;
+            completionBlock(YES);
+            NSLog(@"-----------------------------------------------------------------------------");
+            NSLog(@"self.districtLocationFilteredArray: %@", self.districtLocationFilteredArray);
+            NSLog(@"-----------------------------------------------------------------------------");
+            nil;
+        }else{
+            nil;
+        }
+    }];
+}
 
 /**************** setting for mypageView with NetworkModule********************************/
 - (void)receiveServerUserDetailDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock{
@@ -143,7 +179,7 @@
 
 - (NSArray *)settingCategoryArray{
     /**************** temporary Array for collectionviewCell Setting ********************************/
-    NSArray *categoryArray = @[@"전체", @"헬스&뷰티", @"외국어", @"컴퓨터", @"음악&미술", @"스포츠", @"전공&취업", @"이색취미"];
+    NSArray *categoryArray = @[@"전체", @"헬스&뷰티", @"외국어", @"컴퓨터", @"미술&음악", @"스포츠", @"전공&취업", @"이색취미", @"기타"];
     self.categoryArray = categoryArray;
     return  self.categoryArray;
 }
