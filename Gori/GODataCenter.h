@@ -29,7 +29,7 @@
 @property (nonatomic) NSArray *districtLoactionArray;
 
 /**************** Deprecated. currentRow is replaced by networkDataArray ***********************/
-@property (nonatomic) NSInteger currentRow;
+//@property (nonatomic) NSInteger currentRow;
 
 + (instancetype)sharedInstance;
 - (NSArray *)settingTitleArray;

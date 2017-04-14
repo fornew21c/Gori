@@ -41,13 +41,11 @@ typedef void(^CompletionBlock)(BOOL isSuccess, id respons);
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    [GODataCenter sharedInstance].currentRow = indexPath.row;
     GODistrictLocationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil) {
         cell = [[GODistrictLocationTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    [cell settingText];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.titleLabel.text = [[GODataCenter sharedInstance].districtLoactionArray objectAtIndex:indexPath.row];
     
     return cell;
 }

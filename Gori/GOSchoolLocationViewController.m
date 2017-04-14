@@ -41,13 +41,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    [GODataCenter sharedInstance].currentRow = indexPath.row;
     GOSchoolLocationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil) {
         cell = [[GOSchoolLocationTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    [cell settingText];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.titleLabel.text = [[GODataCenter sharedInstance].schoolLocationArray objectAtIndex:indexPath.row];
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }

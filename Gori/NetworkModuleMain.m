@@ -37,11 +37,11 @@ static NSString *const API_CATEGORY_FILTER_URL     = @"/talent/list/";
     NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@", API_BASE_URL, API_CATEGORY_FILTER_URL, categoryKey]];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-        if (error) {
+        if (error == nil) {
+            completion(YES, responseObject);
+        }else{
             NSLog(@"Error : %@", error);
             completion(NO, nil);
-        }else{
-            completion(YES, responseObject);
         }
     }];
     [dataTask resume];
