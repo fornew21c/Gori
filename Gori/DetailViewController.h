@@ -15,7 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (nonatomic) NSNumber* pk;
 
-@property TalentDetailModel *selectedModel;
+@property GOTalentDetailModel *selectedModel;
 //- (void)setDetailData:(PostModel *)data;
-- (void)getSeletedPk:(NSNumber*)selectedPk;
+- (void)setSeletedPk:(NSNumber*)selectedPk;
 @end

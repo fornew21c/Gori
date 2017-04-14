@@ -15,15 +15,27 @@
  "content": "Post Content"
  */
 
-@interface TalentDetailModel : NSObject
+@interface GOTalentDetailModel : NSObject
 
 @property (nonatomic) NSInteger postID;
 @property (nonatomic) NSString *title;
+@property (nonatomic) NSURL *img_cover_url;
 @property (nonatomic) NSMutableArray *locations;
 @property (nonatomic) NSString *region;
-@property (nonatomic) NSInteger *hoursPerClass;
+@property (nonatomic) NSNumber *hoursPerClass;
+@property (nonatomic) NSNumber *pricePerHour;
+@property (nonatomic) NSNumber *registrationCount;
+@property (nonatomic) NSNumber *minNumberStudent;
+@property (nonatomic) NSNumber *maxNumberStudent;
+@property (nonatomic) NSNumber *numberOfClass;
+@property (nonatomic) NSURL *tutorImgURL;
+@property (nonatomic) NSString *tutorName;
+@property (nonatomic) NSString *tutorMessage;
+@property (nonatomic) NSString *tutorInfo;
+
+
 @property (nonatomic) NSString *classInfo;
-@property (nonatomic) NSURL *img_cover_url;
+
 
 
 + (instancetype)modelWithData:(NSDictionary *)data;

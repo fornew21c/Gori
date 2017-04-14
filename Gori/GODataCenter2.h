@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "NetworkModule.h"
-#import "TalentDetailModel.h"
+#import "GOTalentDetailModel.h"
 
 @interface GODataCenter2 : NSObject
 
@@ -31,4 +31,7 @@
 
 - (void) setMyLoginToken:(NSString *)newToken;
 - (NSString*) getMyLoginToken;
+
+//수업신청
+- (void)registerCreate:(CompletionBlock)completion;
 @end

@@ -255,7 +255,7 @@
     if ([segue.identifier isEqualToString:@"detailSegue"]) {
         DetailViewController *nextVC = segue.destinationViewController;
         //nextVC.pk = [self.selectedData objectForKey:@"pk"];
-        [nextVC getSeletedPk:[self.selectedData objectForKey:@"pk"]];
+        [nextVC setSeletedPk:[self.selectedData objectForKey:@"pk"]];
         NSLog(@"pk: %@", [self.selectedData objectForKey:@"pk"]);
     }
 }

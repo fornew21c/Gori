@@ -252,7 +252,6 @@ static NSString *const TOKEN_KEY = @"Authorization";
     
     NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@/",BASE_URL,GET_DETAIL_URL,pk]];
     NSLog(@"URL: %@", URL);
-    //NSURL *URL = [NSURL URLWithString:@"https://mozzi.co.kr/api/talent/detail-all/1"];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
@@ -289,5 +288,55 @@ static NSString *const TOKEN_KEY = @"Authorization";
 }
 
 
+- (void)postRegisterCreate:(CompletionBlock)completion
+{
+    
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@/",BASE_URL,POST_REGISTER_CREATE]];
+    NSLog(@"URL: %@", URL);
+    //NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
+    
+    //Data 생성
+    //NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+    
+    NSUInteger locationPk = 5;
+    NSUInteger studentLevel = 1;
+    NSString *messageToTutor = @"반갑습니다.";
+    
+    NSString *body = [NSString stringWithFormat:@"location_pk=%lu&studuent_level=%lu&message_to_tutor=%@", locationPk, studentLevel, messageToTutor];
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *loginToken = [[GODataCenter2 sharedInstance] getMyLoginToken];
+    
+    // 헤더 세팅
+    [request setValue:[NSString stringWithFormat:@"token %@", loginToken] forHTTPHeaderField:@"Authorization"];
+    [request setHTTPBody: [body dataUsingEncoding:NSUTF8StringEncoding]];
 
+    
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+        if (error) {
+            completion(NO,responseObject);
+            NSLog(@"에러에러에러에러");
+            NSLog(@"-----------------------response : %@", response);
+            NSLog(@"%@ %@", response, responseObject);
+
+        } else {
+            // NSLog(@"%@ %@", response, responseObject);
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+            NSUInteger statusCode = (NSUInteger) [httpResponse statusCode];
+            NSLog(@"statusCode: %lu", statusCode);
+            if(statusCode == 201) {
+                completion(YES,responseObject);
+            }
+            else if(statusCode == 400) {
+                completion(NO,responseObject);
+                NSLog(@"-----------------------response : %@", response);
+            }
+        }
+    }];
+    [dataTask resume];
+}
 @end

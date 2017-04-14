@@ -42,6 +42,7 @@
 - (void)loginButtonTouched {
     if([FBSDKAccessToken currentAccessToken]) {
         NSLog(@"이미 로그인중");
+        NSLog(@"facebook access token: %@",[FBSDKAccessToken currentAccessToken]);
         [self performSegueWithIdentifier:@"mainViewSegue" sender:nil];
     }
     else {
@@ -53,6 +54,7 @@
                 NSLog(@"Cancelled");
             } else {
                 NSLog(@"Logged in");
+                NSLog(@"facebook access token: %@",[FBSDKAccessToken currentAccessToken]);
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     [self performSegueWithIdentifier:@"mainViewSegue" sender:nil];
                 });

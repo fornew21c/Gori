@@ -30,6 +30,8 @@ static NSString * const USERDETAIL_URL = @"/member/profile/";//GET
 static NSString * const POST_URL = @"/post/";               //POST - MULTIPART
 static NSString * const POST_LIST_URL = @"/post/";           //GET
 static NSString * const GET_DETAIL_URL = @"/talent/detail-all/";           //GET 수업 상세보기
+static NSString * const POST_REGISTER_CREATE = @"/talent/add/registration/";     //수업신청하기
+
 
 
 @interface NetworkModule : NSObject
@@ -48,5 +50,5 @@ static NSString * const GET_DETAIL_URL = @"/talent/detail-all/";           //GET
 - (void)postRequestWithTitle:(NSString *)title content:(NSString *)content image:(NSData *)imageData completion:(CompletionBlock)completion;
 - (void)postListRequestWithPage:(NSNumber *)page completion:(CompletionBlock)completion;
 - (void)postRetrieveRequestWithPostID:(NSNumber *)pk completion:(CompletionBlock)completion;
-
+- (void)postRegisterCreate:(CompletionBlock)completion;
 @end

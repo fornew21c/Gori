@@ -176,4 +176,12 @@
 {
     return [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
 }
+
+//포스트 디테일 보기
+- (void)registerCreate:(CompletionBlock)completion
+{
+    [self.nManager postRegisterCreate:completion];
+}
+
+
 @end

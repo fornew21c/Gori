@@ -36,7 +36,7 @@
     
     [NetworkModuleMain getTalentListWithCompletionBlock:^(BOOL isSuccess, NSDictionary *result){
         if (isSuccess) {
-            NSArray *networkDataArray = (NSArray *)result;
+            NSArray *networkDataArray = [result objectForKey:@"results"];
             self.networkDataArray = networkDataArray;
             completionBlock(YES);
         }else{
