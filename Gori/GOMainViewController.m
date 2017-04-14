@@ -48,7 +48,6 @@
     self.mainTableView.delegate = self;
     self.mainTableView.dataSource = self;
     
-    
     /**************** tableViewHeader Footer Setting ********************************/
     UIView *tableViewHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
     self.mainTableView.tableHeaderView = tableViewHeaderView;
@@ -294,7 +293,7 @@
 {
     NSLog(@"viewDidAppear");
     
-    [super viewDidAppear:false];
+    [super viewDidAppear:animated];
     
     if ([GODataCenter sharedInstance].filterDistrictLocationYN == YES) {
         

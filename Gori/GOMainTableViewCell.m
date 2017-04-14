@@ -69,7 +69,7 @@
     
     UIImageView *tuteeCountIconImageView = [[UIImageView alloc]init];
     self.tuteeCountIconImageView = tuteeCountIconImageView;
-    self.tuteeCountIconImageView.image = [UIImage imageNamed:@"tuteeCount.png"];
+    self.tuteeCountIconImageView.image = [UIImage imageNamed:@"tuteeCountIcon.png"];
     [self.tuteeCountView addSubview:self.tuteeCountIconImageView];
     
 
