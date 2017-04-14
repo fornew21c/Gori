@@ -25,40 +25,35 @@
     
     UIImageView *titleImageView = [[UIImageView alloc]init];
     self.titleImageView = titleImageView;
-//    self.titleImageView.image = [UIImage imageNamed:@"bodyImage1.jpg"];
     [self.mainView addSubview:self.titleImageView];
     
     UIView *titleFooterView = [[UIView alloc]init];
     self.titleFooterView = titleFooterView;
+    self.titleFooterView.backgroundColor = [UIColor whiteColor];
     [self.titleFooterView setAlpha:0.7f];
     [self.titleImageView addSubview:self.titleFooterView];
     
     UIImageView *profileImageView = [[UIImageView alloc]init];
     self.profileImageView = profileImageView;
-//    self.profileImageView.image = [UIImage imageNamed:@"profile.jpg"];
     self.profileImageView.layer.cornerRadius = 25;
     self.profileImageView.layer.masksToBounds = YES;
     self.profileImageView.clipsToBounds = YES;
     [self.titleImageView addSubview:self.profileImageView];
-//    
-//    [self.profileImage.layer setCornerRadius:(self.imageViewForAuthor.frame.size.height-(MARGIN * 5)) / 2];
-//    [self.profileImage setClipsToBounds:YES];
-    
+
     UILabel *titleLabel = [[UILabel alloc]init];
     self.titleLabel = titleLabel;
     self.textLabel.textColor = [UIColor blackColor];
-//    self.titleLabel.text = [[DataCenter sharedInstance].titleArray objectAtIndex:[DataCenter sharedInstance].currentRow];
     self.titleLabel.font = [UIFont boldSystemFontOfSize:16.0f];
     [self.titleImageView addSubview:self.titleLabel];
     
     UILabel *tutorNameLabel = [[UILabel alloc]init];
     self.tutorNameLabel = tutorNameLabel;
-//    self.tutorNameLabel.text = [[DataCenter sharedInstance].tutorNameArray objectAtIndex:[DataCenter sharedInstance].currentRow];
     self.tutorNameLabel.font = [UIFont systemFontOfSize:14.0f];
     [self.titleImageView addSubview:self.tutorNameLabel];
  
     UIView *tuteeCountView = [[UIView alloc]init];
     self.tuteeCountView = tuteeCountView;
+    self.tuteeCountView.backgroundColor= [UIColor whiteColor];
     self.tuteeCountView.alpha = 0.4;
     [self.titleImageView addSubview:self.tuteeCountView];
     
@@ -81,58 +76,58 @@
     CGFloat offsetX = 0.0f;
     CGFloat offsetY = 0.0f;
     
-    self.mainView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, MARGIN * 40);
-    self.titleImageView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, MARGIN * 40);
+    self.mainView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 200);
+    self.titleImageView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 200);
     
     offsetY = (self.titleImageView.frame.size.height / 2) + (MARGIN *10);
     
-    self.titleFooterView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, MARGIN * 10);
+    self.titleFooterView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 50);
     
     offsetX += MARGIN * 2;
     offsetY -= MARGIN * 5;
     
-    self.profileImageView.frame = CGRectMake(offsetX, offsetY, MARGIN * 10, MARGIN * 10);
+    self.profileImageView.frame = CGRectMake(offsetX, offsetY, 50, 50);
     
     offsetX += (self.profileImageView.frame.size.width + MARGIN * 2);
     offsetY += (self.profileImageView.frame.size.height) / 2 + MARGIN;
     
-    self.titleLabel.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, MARGIN * 2);
+    self.titleLabel.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 10);
     
     offsetY += MARGIN * 6;
     
-    self.tutorNameLabel.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, MARGIN * 2);
+    self.tutorNameLabel.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 10);
     
     offsetX = 0;
     offsetY = 0;
     offsetX += MARGIN;
     offsetY += MARGIN;
     
-    self.tuteeCountView.frame = CGRectMake(offsetX, offsetY, MARGIN * 25, MARGIN * 8);
-    self.tuteeCountIconImageView.frame = CGRectMake(offsetX, offsetY, MARGIN * 6, MARGIN * 6);
+    self.tuteeCountView.frame = CGRectMake(offsetX, offsetY, 125, 40);
+    self.tuteeCountIconImageView.frame = CGRectMake(offsetX, offsetY, 30, 30);
     
     offsetX += MARGIN * 10;
     
-    self.tuteeCountNumberLabel.frame = CGRectMake(offsetX, offsetY, MARGIN * 20, MARGIN * 6);
+    self.tuteeCountNumberLabel.frame = CGRectMake(offsetX, offsetY, 100, 30);
     
 }
 
-- (void)settingCustomCellObjectColor{
-    self.titleFooterView.backgroundColor = [UIColor whiteColor];
-    self.tuteeCountView.backgroundColor= [UIColor whiteColor];
-}
+//- (void)settingCustomCellObjectColor{
+//    self.titleFooterView.backgroundColor = [UIColor whiteColor];
+//    self.tuteeCountView.backgroundColor= [UIColor whiteColor];
+//}
 
 /**************** Deprecated due to setting tableView Data issue ***********************/
-- (void)settingText:(NSIndexPath *) indexPath{
-
-    NSDictionary *temp = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:indexPath.row];
-    self.tutorNameLabel.text = [[temp objectForKey:@"tutor"] objectForKey:@"name"];
-    self.titleLabel.text = [temp objectForKey:@"title"];
-    self.tuteeCountNumberLabel.text = [temp objectForKey:@"registration_count"];
-    NSLog(@"tutorNameLabel text : %@",self.tutorNameLabel.text);
-    NSLog(@"titleLabel text : %@",self.titleLabel.text);
-    NSLog(@"tuteeCountNumberLabel text : %@",self.tuteeCountNumberLabel.text);
-
-}
+//- (void)settingText:(NSIndexPath *) indexPath{
+//
+//    NSDictionary *temp = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:indexPath.row];
+//    self.tutorNameLabel.text = [[temp objectForKey:@"tutor"] objectForKey:@"name"];
+//    self.titleLabel.text = [temp objectForKey:@"title"];
+//    self.tuteeCountNumberLabel.text = [temp objectForKey:@"registration_count"];
+//    NSLog(@"tutorNameLabel text : %@",self.tutorNameLabel.text);
+//    NSLog(@"titleLabel text : %@",self.titleLabel.text);
+//    NSLog(@"tuteeCountNumberLabel text : %@",self.tuteeCountNumberLabel.text);
+//
+//}
 
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -141,7 +136,7 @@
     if (self) {
         [self makingCustomCellObject];
         [self settingCustomCellObject];
-        [self settingCustomCellObjectColor];
+//        [self settingCustomCellObjectColor];
     }
     return self;
 }

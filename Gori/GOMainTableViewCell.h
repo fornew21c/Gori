@@ -29,7 +29,7 @@
 @property (nonatomic, weak) UIImageView *tuteeCountIconImageView;
 
 /**************** Deprecated due to setting tableView Data issue ***********************/
-- (void)settingText:(NSIndexPath *) indexPath;
+//- (void)settingText:(NSIndexPath *) indexPath;
 
 
 @end

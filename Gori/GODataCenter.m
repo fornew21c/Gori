@@ -182,26 +182,32 @@
     return  self.categoryArray;
 }
 
-- (NSArray *)settingCategoryDetailArray{
-    /**************** temporary Array for collectionviewCell Setting ********************************/
-    NSArray *categoryDetailArray = @[@"", @"헬스PT, 필라테스, 요가, 메이크업", @"외국어시험, 영어회화, 중국어", @"프로그래밍, 엑셀, 피피티", @"기타, 피아노, 미술", @"방송댄스, 구기운동, 스케이트보드", @"주식투자, 자기소개서, 학과전공", @"사진, 캘리그래피, 바둑"];
-    self.categoryDetailArray = categoryDetailArray;
-    return  self.categoryDetailArray;
-}
+//- (NSArray *)settingCategoryDetailArray{
+//    /**************** temporary Array for collectionviewCell Setting ********************************/
+//    NSArray *categoryDetailArray = @[@"", @"헬스PT, 필라테스, 요가, 메이크업", @"외국어시험, 영어회화, 중국어", @"프로그래밍, 엑셀, 피피티", @"기타, 피아노, 미술", @"방송댄스, 구기운동, 스케이트보드", @"주식투자, 자기소개서, 학과전공", @"사진, 캘리그래피, 바둑"];
+//    self.categoryDetailArray = categoryDetailArray;
+//    return  self.categoryDetailArray;
+//}
 
 
 - (NSArray *)settingSchoolLocationArray{
-    /**************** temporary Array for collectionviewCell Setting ********************************/
+    /**************** temporary Array Setting ********************************/
     NSArray *schoolLocationArray = @[@"전체", @"고려대", @"서울대", @"연세대", @"홍익대", @"이화여대", @"부산대", @"중앙대", @"건국대", @"한양대"];
     self.schoolLocationArray = schoolLocationArray;
     return self.schoolLocationArray;
 }
 
 - (NSArray *)settingDistrictLocationArray{
-    /**************** temporary Array for collectionviewCell Setting ********************************/
+    /**************** temporary Array Setting ********************************/
     NSArray *districtLocationArray = @[@"전체", @"강남", @"신촌", @"사당", @"잠실", @"종로", @"혜화", @"용산", @"합정", @"목동", @"기타"];
     self.districtLoactionArray = districtLocationArray;
     return self.districtLoactionArray;
+}
+
+- (NSArray *)settingDistrictLocationImageArray{
+    NSArray *districtLocationImageArray = @[@"District_All.jpg", @"District_Kangnam.jpg", @"District_Sinchon.jpg", @"District_Sadang.jpg", @"District_Jamsil.jpg", @"District_Jongro.png", @"District_Hyehwa.png", @"District_Yongsan.jpeg", @"District_Hapjung.png", @"District_Mokdong.jpg", @"District_Etc.jpg"];
+    self.districtLocationImageArray = districtLocationImageArray;
+    return self.districtLocationImageArray;
 }
 
 

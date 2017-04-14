@@ -63,7 +63,11 @@
     headerLabel.textColor = [UIColor whiteColor];
     [self.headerImageView addSubview:headerLabel];
     
+    /**************** searchController Setting ********************************/
     UIView *searchControllerView = [[UIView alloc]initWithFrame:CGRectMake(0, 160, self.view.frame.size.width, 40)];
+    UISearchController *searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    self.searchController = searchController;
+    //    self.searchController.searchResultsUpdater = self;
     [self.mainTableView.tableHeaderView addSubview:searchControllerView];
     [searchControllerView addSubview:self.searchController.searchBar];
     
@@ -76,32 +80,6 @@
     [logoImageView2 setContentMode:UIViewContentModeScaleAspectFit];
     
     [logoView addSubview:logoImageView2];
-    
-    
-    
-//
-//    
-//    self.navigationItem.titleView = logoView;
-    
-    
-    
-    
-//    [button addTarget:self action:@selector(BackBtnClicked) forControlEvents:UIControlEventTouchUpInside];
-//    UIView *backButtonView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 32)];
-//    backButtonView.bounds = CGRectOffset(backButtonView.bounds, -1, -4);
-//    [backButtonView addSubview:button];
-//    
-//    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButtonView];
-//    //barButtonItem.imageInsets = UIEdgeInsetsMake(-6, 20, 30, 0);
-//    
-//    [self.navigationItem setLeftBarButtonItem:barButtonItem];
-    
-    
-    /**************** searchController Setting ********************************/
-    
-//    UISearchController *searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
-//    self.searchController = searchController;
-//    self.searchController.searchResultsUpdater = self;
 
     /**************** button Action Setting ********************************/
 //    [self.locationButton addTarget:self action:@selector(showLocationDetailView:) forControlEvents:UIControlEventTouchUpInside];
@@ -168,6 +146,7 @@
     
     if (cell == nil) {
         cell = [[GOMainTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
     
@@ -243,7 +222,6 @@
 //    }
 //    
     
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     //PostModel *postData = [[GODataCenter2 sharedInstance].postList objectAtIndex:indexPath.row];
     return cell;
 }
@@ -280,7 +258,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"didSelectRowAtIndexPath: %lu", indexPath.row);
-    
     //self.selectedData = [[GODataCenter2 sharedInstance].postList objectAtIndex:indexPath.row];
     //NSLog(@"%@", self.selectedData);
     self.selectedData = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:indexPath.row];

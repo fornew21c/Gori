@@ -46,7 +46,7 @@ typedef void(^CompletionBlock)(BOOL isSuccess, id respons);
         cell = [[GODistrictLocationTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     cell.titleLabel.text = [[GODataCenter sharedInstance].districtLoactionArray objectAtIndex:indexPath.row];
-    
+    cell.titleImageView.image = [UIImage imageNamed:[[GODataCenter sharedInstance].districtLocationImageArray objectAtIndex:indexPath.row]];
     return cell;
 }
 

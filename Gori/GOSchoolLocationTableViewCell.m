@@ -20,37 +20,34 @@
     
     UIImageView *titleImageView = [[UIImageView alloc]init];
     self.titleImageView = titleImageView;
-    self.titleImageView.image = [UIImage imageNamed:@"bodyImage.jpg"];
     [self.mainView addSubview:self.titleImageView];
     
     
     UILabel *titleLabel = [[UILabel alloc]init];
     self.titleLabel = titleLabel;
     self.titleLabel.textColor = [UIColor whiteColor];
-    //    self.titleLabel.text = [[DataCenter sharedInstance].titleArray objectAtIndex:[DataCenter sharedInstance].currentRow];
-    self.titleLabel.font = [UIFont boldSystemFontOfSize:20.0f];
+    self.titleLabel.font = [UIFont boldSystemFontOfSize:25.0f];
     [self.titleImageView addSubview:self.titleLabel];
     
 }
 
 - (void)settingCustomCellObject{
-    const CGFloat MARGIN = 5.0f;
     
     CGFloat offsetX = 0.0f;
     CGFloat offsetY = 0.0f;
     
-    self.mainView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, MARGIN * 30);
-    self.titleImageView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, MARGIN * 30);
+    self.mainView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 150);
+    self.titleImageView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 150);
     
-    self.titleLabel.frame = CGRectMake(0, 0, MARGIN * 20, MARGIN * 2);
+    self.titleLabel.frame = CGRectMake(0, 0, 100, 10);
     self.titleLabel.center = CGPointMake(self.titleImageView.frame.size.width / 2, self.titleImageView.frame.size.height / 2);
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     
 }
 
-- (void)settingCustomCellObjectColor{
-    self.mainView.backgroundColor = [UIColor blackColor];
-}
+//- (void)settingCustomCellObjectColor{
+//    self.mainView.backgroundColor = [UIColor blackColor];
+//}
 
 
 //- (void)settingText{
@@ -64,7 +61,7 @@
     if (self) {
         [self makingCustomCellObject];
         [self settingCustomCellObject];
-        [self settingCustomCellObjectColor];
+//        [self settingCustomCellObjectColor];
     }
     return self;
 }

@@ -46,8 +46,7 @@
         cell = [[GOSchoolLocationTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     cell.titleLabel.text = [[GODataCenter sharedInstance].schoolLocationArray objectAtIndex:indexPath.row];
-//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
+    cell.titleImageView.image = [UIImage imageNamed:@"bodyImage.jpg"];
     return cell;
 }
 

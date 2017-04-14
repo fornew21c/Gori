@@ -15,7 +15,7 @@
 @property (nonatomic) BOOL filterCategoryYN;
 @property (nonatomic) NSString *regionKey;
 @property (nonatomic) NSString *categoryKey;
-/**************** temporary Array for Setting with NetworkModule****************/
+/**************** Array for Setting with NetworkModule****************/
 @property (nonatomic) NSArray *networkDataArray;
 @property (nonatomic) NSDictionary *networkUserDetailDictionary;
 @property (nonatomic) NSArray *districtLocationFilteredArray;
@@ -28,6 +28,9 @@
 @property (nonatomic) NSArray *schoolLocationArray;
 @property (nonatomic) NSArray *districtLoactionArray;
 
+/**************** temporary Array for LocationViewController Setting ***********************/
+@property (nonatomic) NSArray *districtLocationImageArray;
+
 /**************** Deprecated. currentRow is replaced by networkDataArray ***********************/
 //@property (nonatomic) NSInteger currentRow;
 
@@ -35,9 +38,10 @@
 - (NSArray *)settingTitleArray;
 - (NSArray *)settingTutorNameArray;
 - (NSArray *)settingCategoryArray;
-- (NSArray *)settingCategoryDetailArray;
+//- (NSArray *)settingCategoryDetailArray;
 - (NSArray *)settingSchoolLocationArray;
 - (NSArray *)settingDistrictLocationArray;
+- (NSArray *)settingDistrictLocationImageArray;
 
 - (void)receiveServerDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock;
 - (void)receiveServerUserDetailDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock;
