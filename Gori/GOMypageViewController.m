@@ -71,7 +71,7 @@
     }];
 }
 - (IBAction)goRegistrationView:(UIButton *)sender {
-    [UIView animateWithDuration:1.5 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         self.registrationView.alpha = 1.0f;
         self.classListView.alpha = 0.0f;
         self.wishListView.alpha = 0.0f;
@@ -79,14 +79,14 @@
     
 }
 - (IBAction)goClassListView:(UIButton *)sender {
-    [UIView animateWithDuration:1.5 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         self.registrationView.alpha = 0.0f;
         self.classListView.alpha = 1.0f;
         self.wishListView.alpha = 0.0f;
     }];
 }
 - (IBAction)goWishListView:(UIButton *)sender {
-    [UIView animateWithDuration:1.5 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         self.registrationView.alpha = 0.0f;
         self.classListView.alpha = 0.0f;
         self.wishListView.alpha = 1.0f;
