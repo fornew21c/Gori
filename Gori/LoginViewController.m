@@ -21,21 +21,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
      //Do any additional setup after loading the view.
-//       FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-//    // Optional: Place the button in the center of your view.
-//        loginButton.center = self.view.center;
-//        loginButton.delegate = self;
-//        [self.view addSubview:loginButton];
-//    
-//        loginButton.readPermissions =
-//        @[@"public_profile", @"email", @"user_friends"];
-//    
-//        NSLog(@"currentAccessToken: %@", [FBSDKAccessToken currentAccessToken]);
-//        if ([FBSDKAccessToken currentAccessToken]) {
-//            // User is logged in, do work such as go to next view controller.
-//            NSLog(@"login success");
-//            //loginButton.hidden = TRUE;
-//        }
+       FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+    // Optional: Place the button in the center of your view.
+        loginButton.center = self.view.center;
+        loginButton.delegate = self;
+        [self.view addSubview:loginButton];
+    
+        loginButton.readPermissions =
+        @[@"public_profile", @"email", @"user_friends"];
+    
+        NSLog(@"currentAccessToken: %@", [FBSDKAccessToken currentAccessToken]);
+        if ([FBSDKAccessToken currentAccessToken]) {
+            // User is logged in, do work such as go to next view controller.
+            NSLog(@"login success");
+            //loginButton.hidden = TRUE;
+        }
     [self.facebookLoginBtn addTarget:self action:@selector(loginButtonTouched) forControlEvents:UIControlEventTouchUpInside];
     self.pwTF.secureTextEntry = YES;
 }
@@ -72,7 +72,7 @@
     if(!error) {
         NSLog(@"You've logged in");
         NSLog(@"result: %@", result);
-        [self performSegueWithIdentifier:@"mainViewSegue2" sender:nil];
+        [self performSegueWithIdentifier:@"mainViewSegue" sender:nil];
     }
 }
 

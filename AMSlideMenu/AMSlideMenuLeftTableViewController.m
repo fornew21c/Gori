@@ -25,7 +25,8 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE
 
 #import "AMSlideMenuLeftTableViewController.h"
-
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "AMSlideMenuMainViewController.h"
 
 #import "AMSlideMenuContentSegue.h"
@@ -51,28 +52,30 @@
     [super viewDidLoad];
     
     self.mainVC.slideMenuDelegate = self;
+    self.leftTableMenu.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+   
 }
 
 - (void)leftMenuWillOpen {
     NSLog(@"leftMenuWillOpen");
-    if( [[GODataCenter2 sharedInstance] getMyLoginToken] == NULL) {
-        self.loginLabel.hidden = NO;
-        self.signUpLabel.hidden = NO;
-        self.myPageLabel.hidden = YES;
-        self.logoutLabel.hidden = YES;
-        
-    }
-    else {
+    //|| [FBSDKAccessToken currentAccessToken]
+    if( [[GODataCenter2 sharedInstance] getMyLoginToken] ) {
         self.loginLabel.hidden = YES;
         self.signUpLabel.hidden = YES;
         self.myPageLabel.hidden = NO;
         self.logoutLabel.hidden = NO;
     }
+    else {
+        self.loginLabel.hidden = NO;
+        self.signUpLabel.hidden = NO;
+        self.myPageLabel.hidden = YES;
+        self.logoutLabel.hidden = YES;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-  \
+  
     [super viewWillAppear:NO];
 
 }

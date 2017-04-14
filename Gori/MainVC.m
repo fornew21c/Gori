@@ -8,6 +8,9 @@
 
 #import "MainVC.h"
 #import "GODataCenter2.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+
 @interface MainVC ()
 <AMSlideMenuDelegate>
 @end
@@ -24,29 +27,51 @@
     NSString *identifier;
 
     switch (indexPath.row) {
-        case 0:
+//        case 0:
+//            identifier = @"mainSegue"; //메인페이지
+//            break;
+//        case 1:
+//            //identifier = @"loginSegue"; //로그인 페이지
+//            //|| [FBSDKAccessToken currentAccessToken]
+//            if( [[GODataCenter2 sharedInstance] getMyLoginToken] ) {
+//                identifier = @"mypageSegue"; //마이 페이지
+//            }
+//            else {
+//                identifier = @"loginSegue"; //로그인 페이지
+//            }
+//            break;
+//        case 2:
+//            NSLog(@"signupSegue");
+//            if( [[GODataCenter2 sharedInstance] getMyLoginToken] ) {
+//                NSLog(@"로그아웃");
+//            }
+//            else {
+//                
+//                identifier = @"signupSegue"; //회원가입 페이지
+//            }
+//            break;
+        case 3:
             identifier = @"mainSegue"; //메인페이지
             break;
-        case 1:
+        case 4:
             //identifier = @"loginSegue"; //로그인 페이지
-            NSLog(@"%@", [[GODataCenter2 sharedInstance] getMyLoginToken]);
-
-            if( [[GODataCenter2 sharedInstance] getMyLoginToken] == NULL) {
-                identifier = @"loginSegue"; //로그인 페이지
-            }
-            else {
+            //|| [FBSDKAccessToken currentAccessToken]
+            if( [[GODataCenter2 sharedInstance] getMyLoginToken] ) {
                 identifier = @"mypageSegue"; //마이 페이지
             }
-            break;
-        case 2:
-            NSLog(@"signupSegue");
-            if( [[GODataCenter2 sharedInstance] getMyLoginToken] == NULL) {
-                identifier = @"signupSegue"; //회원가입 페이지
-            }
             else {
+                identifier = @"loginSegue"; //로그인 페이지
+            }
+            break;
+        case 5:
+            NSLog(@"signupSegue");
+            if( [[GODataCenter2 sharedInstance] getMyLoginToken] ) {
                 NSLog(@"로그아웃");
             }
-            
+            else {
+                
+                identifier = @"signupSegue"; //회원가입 페이지
+            }
             break;
     }
     

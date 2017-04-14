@@ -224,7 +224,7 @@ static NSMutableArray *allInstances;
 
 - (NSIndexPath *)initialIndexPathForLeftMenu
 {
-    return [NSIndexPath indexPathForRow:0 inSection:0];
+    return [NSIndexPath indexPathForRow:3 inSection:0];
 }
 
 - (NSIndexPath *)initialIndexPathForRightMenu
