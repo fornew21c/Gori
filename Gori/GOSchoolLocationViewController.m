@@ -12,7 +12,6 @@
 #import "GOMainViewController.h"
 
 @interface GOSchoolLocationViewController ()
-<UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *locationTableView;
 
@@ -54,10 +53,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    CGFloat heightForRow;
-    GOSchoolLocationTableViewCell *cell= [[GOSchoolLocationTableViewCell alloc]init];
-    heightForRow = cell.mainView.frame.size.height;
-    return heightForRow;
+    return 150;
 }
 
 - (void)didReceiveMemoryWarning {

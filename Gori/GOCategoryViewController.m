@@ -52,10 +52,54 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    CGFloat heightForRow;
-    GOCategoryTableViewCell *cell= [[GOCategoryTableViewCell alloc]init];
-    heightForRow = cell.mainView.frame.size.height;
-    return heightForRow;
+    
+    return 150;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [GODataCenter sharedInstance].filterCategoryYN = YES;
+
+    switch (indexPath.row) {
+        case 0:
+            [GODataCenter sharedInstance].categoryKey = @"";
+            break;
+        case 1:
+            [GODataCenter sharedInstance].categoryKey = @"?category=hnb";
+            break;
+        case 2:
+            [GODataCenter sharedInstance].categoryKey = @"?category=lan";
+            break;
+        case 3:
+            [GODataCenter sharedInstance].categoryKey = @"?category=com";
+            break;
+        case 4:
+            [GODataCenter sharedInstance].categoryKey = @"?category=art";
+            break;
+        case 5:
+            [GODataCenter sharedInstance].categoryKey = @"?category=spo";
+            break;
+        case 6:
+            [GODataCenter sharedInstance].categoryKey = @"?category=job";
+            break;
+        case 7:
+            [GODataCenter sharedInstance].categoryKey = @"?category=hob";
+            break;
+        case 8:
+            [GODataCenter sharedInstance].categoryKey = @"?category=etc";
+            break;
+        default:
+            break;
+    }
+    
+    [GODataCenter sharedInstance].filterDistrictLocationYN = NO;
+    
+    NSLog(@"didSelectRowAtIndexPath");
+    //디스미스가 느려지는 이유를 찾지 못함...메인큐로 넣으면 빨라지는 것으로 보아, 모르는 곳에서 스레드가 돌 고 있으나 찾기가 어려움...
+    //리팩토링을 해야 한다고 함
+    //또한 메인 뷰컨트롤러의 테이블뷰 델리게이트에서 if,else를 쓰는 것은 의미가 없음...
+    dispatch_async(dispatch_get_main_queue(), ^{
+       [self dismissViewControllerAnimated:YES completion:nil];
+    });
 }
 
 /**************** button Action ********************************/

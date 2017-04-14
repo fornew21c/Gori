@@ -29,13 +29,13 @@
 
 - (IBAction)districtSchoolSelection:(UISegmentedControl *)sender {
     if (sender.selectedSegmentIndex == 0) {
-        [UIView animateWithDuration:1.5 animations:^{
+        [UIView animateWithDuration:0.3 animations:^{
             self.schoolLocationView.alpha = 1.0f;
             self.districtLocationView.alpha = 0.0f;
         }];
     }
     else{
-        [UIView animateWithDuration:1.5 animations:^{
+        [UIView animateWithDuration:0.3 animations:^{
             self.schoolLocationView.alpha = 0.0f;
             self.districtLocationView.alpha = 1.0f;
         }];

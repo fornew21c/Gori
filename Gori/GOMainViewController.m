@@ -18,7 +18,7 @@
 #import "GODistrictLocationViewController.h"
 
 @interface GOMainViewController ()
-<UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating>
+<UITableViewDelegate, UITableViewDataSource/* UISearchResultsUpdating*/>
 
 @property (weak, nonatomic) IBOutlet UIButton *locationButton;
 @property (weak, nonatomic) IBOutlet UIButton *categoryButton;
@@ -45,56 +45,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    /**************** navigationBar Logo Setting ********************************/
-    
-    UIImage *logo = [UIImage imageNamed:@"logo.png"];
-    UIImageView *logoView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
-    [logoView setImage:logo];
-    [logoView setContentMode:UIViewContentModeScaleAspectFit];
-    self.navigationItem.titleView = logoView;
-    
-    /**************** tableView and pk Setting ********************************/
     self.mainTableView.delegate = self;
     self.mainTableView.dataSource = self;
-    [[GODataCenter sharedInstance]receiveServerDataWithCompletionBlock:^(BOOL isSuccess) {
-        if (isSuccess) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.mainTableView reloadData];
-                NSDictionary *temp = [[NSDictionary alloc]init];
-                NSMutableArray *tutorMutableArray = [[NSMutableArray alloc]init];
-                NSMutableArray *titleMutableArray = [[NSMutableArray alloc]init];
-                NSMutableArray *pkMutableArray = [[NSMutableArray alloc]init];
-                for (NSInteger i = 0; i < [GODataCenter sharedInstance].networkDataArray.count; i++) {
-                    temp = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:i];
-                    [tutorMutableArray addObject:[[temp objectForKey:@"tutor"] objectForKey:@"name"]];
-                    [titleMutableArray addObject:[temp objectForKey:@"title"]];
-                    [pkMutableArray addObject:[temp objectForKey:@"pk"]];
-                }
-                self.tutorNameMutableArray = tutorMutableArray;
-                self.titleNameMutableArray = titleMutableArray;
-                self.pkMutableArray = pkMutableArray;
-                NSLog(@" pk array data : %@", self.pkMutableArray);
-                self.searchDataSetTutorName = [[NSArray alloc]initWithArray:self.tutorNameMutableArray];
-                self.searchDataSetTitleName = [[NSArray alloc]initWithArray:self.titleNameMutableArray];
-                NSLog(@"ReceivingServerData and ReloadingData is Completed");
-                
-                [[GODataCenter2 sharedInstance] getMyLoginToken];
-                NSLog(@"메인 뷰컨트롤러에서 토큰 여부 체크 : %@", [[GODataCenter2 sharedInstance] getMyLoginToken]);
-            });
-
-        }else{
-            NSLog(@"ReceivingServerData and ReloadingData is Failed");
-        }
-    }];
     
     
-    /**************** searchController Setting ********************************/
-    
-    UISearchController *searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
-    self.searchController = searchController;
-    self.searchController.searchResultsUpdater = self;
-
-    /**************** tableViewHeader Setting ********************************/
+    /**************** tableViewHeader Footer Setting ********************************/
     UIView *tableViewHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
     self.mainTableView.tableHeaderView = tableViewHeaderView;
     UIImageView *headerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 160)];
@@ -112,6 +67,21 @@
     UIView *searchControllerView = [[UIView alloc]initWithFrame:CGRectMake(0, 160, self.view.frame.size.width, 40)];
     [self.mainTableView.tableHeaderView addSubview:searchControllerView];
     [searchControllerView addSubview:self.searchController.searchBar];
+    
+    
+    /**************** navigationBar Logo Setting ********************************/
+    
+    UIImage *logo = [UIImage imageNamed:@"logo.png"];
+    UIImageView *logoView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [logoView setImage:logo];
+    [logoView setContentMode:UIViewContentModeScaleAspectFit];
+    self.navigationItem.titleView = logoView;
+    
+    /**************** searchController Setting ********************************/
+    
+//    UISearchController *searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+//    self.searchController = searchController;
+//    self.searchController.searchResultsUpdater = self;
 
     /**************** button Action Setting ********************************/
 //    [self.locationButton addTarget:self action:@selector(showLocationDetailView:) forControlEvents:UIControlEventTouchUpInside];
@@ -152,12 +122,24 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (self.searchController.isActive && (self.searchController.searchBar.text.length > 0)) {
-//        return self.searchDataTutorNameResult.count;
-        return self.searchDataTitleNameResult.count;
-    }
+//    if (self.searchController.isActive && (self.searchController.searchBar.text.length > 0)) {
+////        return self.searchDataTutorNameResult.count;
+//        return self.searchDataTitleNameResult.count;
+//    }else{
+//        return ([GODataCenter sharedInstance].networkDataArray.count);
+//    }
+//    
+//    if ([GODataCenter sharedInstance].filterDistrictLocationYN == YES) {
+//        return [GODataCenter sharedInstance].networkDataArray.count;
+//    }else if ([GODataCenter sharedInstance].filterCategoryYN == YES){
+//        return [GODataCenter sharedInstance].networkDataArray.count;
+//    }
+//    else{
+//        return ([GODataCenter sharedInstance].networkDataArray.count);
+//    }
     
-   return ([GODataCenter sharedInstance].networkDataArray.count);
+    
+    return ([GODataCenter sharedInstance].networkDataArray.count);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -167,32 +149,79 @@
     if (cell == nil) {
         cell = [[GOMainTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    /**************** changing cell text with networkDataArray ********************************/
+    
+    
     NSDictionary *temp = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:indexPath.row];
     
-    //cell이 별도의 메소드를 사용해서 불러오는 것 보다는 하단의 방법으로 텍스트와 이미지를 바꾸는 것이 더 낫다고 함
-    //왜냐하면 tableview의 dataSource가 self(ViewController) 이므로
     cell.tutorNameLabel.text = [[temp objectForKey:@"tutor"] objectForKey:@"name"];
     cell.titleLabel.text = [temp objectForKey:@"title"];
     cell.tuteeCountNumberLabel.text = [[NSString stringWithFormat:@"%@", [temp objectForKey:@"registration_count"]] stringByAppendingString:@"명 참여"];
-    
+
     /**************** changing cell image with networkDataArray ********************************/
     NSURL *titleURL = [NSURL URLWithString:[temp objectForKey:@"cover_image"]];
-        cell.titleImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:titleURL]];
+    cell.titleImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:titleURL]];
     NSURL *profileURL = [NSURL URLWithString:[[temp objectForKey:@"tutor"] objectForKey:@"profile_image"]];
-        cell.profileImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]];
+    cell.profileImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]];
+    cell.titleLabel.text = [temp objectForKey:@"title"];
     
-    if (self.searchController.isActive && (self.searchController.searchBar.text.length > 0)) {
-        
-//        cell.tutorNameLabel.text = self.searchDataTutorNameResult[indexPath.row];
-//        NSLog(@"테이블뷰 상에서 튜터 어레이의 데이터 체크 : %@", self.searchDataTutorNameResult);
-        cell.titleLabel.text = self.searchDataTitleNameResult[indexPath.row];
-        NSLog(@"테이블뷰 상에서 타이틀 어레이의 데이터 체크 : %@", self.searchDataTitleNameResult);
-        
-    }else{
-
-        cell.titleLabel.text = [temp objectForKey:@"title"];
-    }
+//    if ([GODataCenter sharedInstance].filterDistrictLocationYN == YES) {
+//        NSDictionary *temp = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:indexPath.row];
+//        cell.tutorNameLabel.text = [[temp objectForKey:@"tutor"] objectForKey:@"name"];
+//        cell.titleLabel.text = [temp objectForKey:@"title"];
+//        cell.tuteeCountNumberLabel.text = [[NSString stringWithFormat:@"%@", [temp objectForKey:@"registration_count"]] stringByAppendingString:@"명 참여"];
+//        
+//        /**************** changing cell image with networkDataArray ********************************/
+//        NSURL *titleURL = [NSURL URLWithString:[temp objectForKey:@"cover_image"]];
+//        cell.titleImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:titleURL]];
+//        NSURL *profileURL = [NSURL URLWithString:[[temp objectForKey:@"tutor"] objectForKey:@"profile_image"]];
+//        cell.profileImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]];
+//        cell.titleLabel.text = [temp objectForKey:@"title"];
+//
+//    }else if ([GODataCenter sharedInstance].filterCategoryYN == YES){
+//        NSDictionary *temp = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:indexPath.row];
+//        cell.tutorNameLabel.text = [[temp objectForKey:@"tutor"] objectForKey:@"name"];
+//        cell.titleLabel.text = [temp objectForKey:@"title"];
+//        cell.tuteeCountNumberLabel.text = [[NSString stringWithFormat:@"%@", [temp objectForKey:@"registration_count"]] stringByAppendingString:@"명 참여"];
+//        
+//        /**************** changing cell image with networkDataArray ********************************/
+//        NSURL *titleURL = [NSURL URLWithString:[temp objectForKey:@"cover_image"]];
+//        cell.titleImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:titleURL]];
+//        NSURL *profileURL = [NSURL URLWithString:[[temp objectForKey:@"tutor"] objectForKey:@"profile_image"]];
+//        cell.profileImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]];
+//        cell.titleLabel.text = [temp objectForKey:@"title"];
+//        
+//    }else{
+//        /**************** changing cell text with networkDataArray ********************************/
+//        NSDictionary *temp = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:indexPath.row];
+//        
+//        //cell이 별도의 메소드를 사용해서 불러오는 것 보다는 하단의 방법으로 텍스트와 이미지를 바꾸는 것이 더 낫다고 함
+//        //왜냐하면 tableview의 dataSource가 self(ViewController) 이므로
+//        cell.tutorNameLabel.text = [[temp objectForKey:@"tutor"] objectForKey:@"name"];
+//        cell.titleLabel.text = [temp objectForKey:@"title"];
+//        cell.tuteeCountNumberLabel.text = [[NSString stringWithFormat:@"%@", [temp objectForKey:@"registration_count"]] stringByAppendingString:@"명 참여"];
+//        
+//        /**************** changing cell image with networkDataArray ********************************/
+//        NSURL *titleURL = [NSURL URLWithString:[temp objectForKey:@"cover_image"]];
+//        cell.titleImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:titleURL]];
+//        NSURL *profileURL = [NSURL URLWithString:[[temp objectForKey:@"tutor"] objectForKey:@"profile_image"]];
+//        cell.profileImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]];
+//        
+//        cell.titleLabel.text = [temp objectForKey:@"title"];
+//    }
+    
+//    /**************** changing cell text related searchcontroller ********************************/
+//    if (self.searchController.isActive && (self.searchController.searchBar.text.length > 0)) {
+//        
+//        //        cell.tutorNameLabel.text = self.searchDataTutorNameResult[indexPath.row];
+//        //        NSLog(@"테이블뷰 상에서 튜터 어레이의 데이터 체크 : %@", self.searchDataTutorNameResult);
+//        cell.titleLabel.text = self.searchDataTitleNameResult[indexPath.row];
+//        NSLog(@"테이블뷰 상에서 타이틀 어레이의 데이터 체크 : %@", self.searchDataTitleNameResult);
+//        
+//    }else{
+//        NSDictionary *temp = [[GODataCenter sharedInstance].districtLocationFilteredArray objectAtIndex:indexPath.row];
+//        cell.titleLabel.text = [temp objectForKey:@"title"];
+//    }
+//    
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     //PostModel *postData = [[GODataCenter2 sharedInstance].postList objectAtIndex:indexPath.row];
@@ -206,23 +235,23 @@
 
 /**************** searchController Protocol ********************************/
 
-- (void)checkingText:(NSString *)string{
-//    self.searchDataResult = [self.searchDataSetTitle mutableCopy];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF == %@", string];
-    self.searchDataTutorNameResult = [self.searchDataSetTutorName filteredArrayUsingPredicate:predicate];
-            NSLog(@"체크 텍스트 메소드 서치데이터 튜터 네임 : %@", self.searchDataSetTutorName);
-    self.searchDataTitleNameResult = [self.searchDataSetTitleName filteredArrayUsingPredicate:predicate];
-
-    NSLog(@"체크 텍스트 메소드 서치데이터 타이틀 네임 : %@", self.searchDataSetTitleName);
-    
-    [self.mainTableView reloadData];
-}
-
-- (void)updateSearchResultsForSearchController:(UISearchController *)searchController{
-    
-    [self checkingText:searchController.searchBar.text];
-    
-}
+//- (void)checkingText:(NSString *)string{
+////    self.searchDataResult = [self.searchDataSetTitle mutableCopy];
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF == %@", string];
+//    self.searchDataTutorNameResult = [self.searchDataSetTutorName filteredArrayUsingPredicate:predicate];
+//            NSLog(@"체크 텍스트 메소드 서치데이터 튜터 네임 : %@", self.searchDataSetTutorName);
+//    self.searchDataTitleNameResult = [self.searchDataSetTitleName filteredArrayUsingPredicate:predicate];
+//
+//    NSLog(@"체크 텍스트 메소드 서치데이터 타이틀 네임 : %@", self.searchDataSetTitleName);
+//    
+//    [self.mainTableView reloadData];
+//}
+//
+//- (void)updateSearchResultsForSearchController:(UISearchController *)searchController{
+//    
+//    [self checkingText:searchController.searchBar.text];
+//    
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -263,15 +292,52 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    NSLog(@"viewDidAppear");
+    
     [super viewDidAppear:false];
     
-//    //선택된 Cell의 데이터
-//    self.selectedData = nil;
-//    
-//    //page upload
-//    if ([[GODataCenter2 sharedInstance] isAvaliblePageRequest]) {
-//        //[self loadPostList];
-//    }
+    if ([GODataCenter sharedInstance].filterDistrictLocationYN == YES) {
+        
+        [[GODataCenter sharedInstance] receiveDistrictLocationFilteredDataWithCompletionBlock:^(BOOL isSuccess) {
+            if (isSuccess) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.mainTableView reloadData];
+                    [[GODataCenter2 sharedInstance] getMyLoginToken];
+                    NSLog(@"ReceivingServerData and ReloadingData is Completed");
+                    });
+            }else{
+                NSLog(@"ReceivingServerData and ReloadingData is Failed");
+            }
+        }];
+    }else if ([GODataCenter sharedInstance].filterCategoryYN == YES){
+        [[GODataCenter sharedInstance] receiveCategoryFilteredDataWithCompletionBlock:^(BOOL isSuccess) {
+            if (isSuccess) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.mainTableView reloadData];
+                    [[GODataCenter2 sharedInstance] getMyLoginToken];
+                    NSLog(@"ReceivingServerData and ReloadingData is Completed");
+                });
+            }else{
+                NSLog(@"ReceivingServerData and ReloadingData is Failed");
+            }
+        }];
+    }
+    else{
+        [[GODataCenter sharedInstance]receiveServerDataWithCompletionBlock:^(BOOL isSuccess) {
+            if (isSuccess) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.mainTableView reloadData];
+                    [[GODataCenter2 sharedInstance] getMyLoginToken];
+                    NSLog(@"메인 뷰컨트롤러에서 토큰 여부 체크 : %@", [[GODataCenter2 sharedInstance] getMyLoginToken]);
+                    NSLog(@"ReceivingServerData and ReloadingData is Completed");
+                });
+            }else{
+                NSLog(@"ReceivingServerData and ReloadingData is Failed");
+            }
+        }];
+    }
+    
+    
 }
 
 

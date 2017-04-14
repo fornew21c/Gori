@@ -125,7 +125,6 @@
 - (void)settingText:(NSIndexPath *) indexPath{
 
     NSDictionary *temp = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:indexPath.row];
-
     self.tutorNameLabel.text = [[temp objectForKey:@"tutor"] objectForKey:@"name"];
     self.titleLabel.text = [temp objectForKey:@"title"];
     self.tuteeCountNumberLabel.text = [temp objectForKey:@"registration_count"];

@@ -11,10 +11,14 @@
 @interface GODataCenter : NSObject
 
 @property (nonatomic) NSString *token;
-
+@property (nonatomic) BOOL filterDistrictLocationYN;
+@property (nonatomic) BOOL filterCategoryYN;
+@property (nonatomic) NSString *regionKey;
+@property (nonatomic) NSString *categoryKey;
 /**************** temporary Array for Setting with NetworkModule****************/
 @property (nonatomic) NSArray *networkDataArray;
 @property (nonatomic) NSDictionary *networkUserDetailDictionary;
+@property (nonatomic) NSArray *districtLocationFilteredArray;
 
 /**************** temporary Array for tableviewCell Setting ********************************/
 @property (nonatomic) NSArray *titleArray;
@@ -37,6 +41,8 @@
 
 - (void)receiveServerDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock;
 - (void)receiveServerUserDetailDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock;
+- (void)receiveDistrictLocationFilteredDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock;
+- (void)receiveCategoryFilteredDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock;
 
 + (void)setUserTokenWithString:(NSString *)tokenString;
 + (NSString *)getUserToken;
