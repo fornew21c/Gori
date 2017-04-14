@@ -45,6 +45,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
+    /***************** Setting DataCenter *****************/
+    //    [[GODataCenter sharedInstance] settingTitleArray];
+    //    [[GODataCenter sharedInstance] settingTutorNameArray];
+    //    [[GODataCenter sharedInstance] settingCategoryDetailArray];
+    [[GODataCenter sharedInstance] settingCategoryArray];
+    [[GODataCenter sharedInstance] settingSchoolLocationArray];
+    [[GODataCenter sharedInstance] settingDistrictLocationArray];
+    [[GODataCenter sharedInstance] settingDistrictLocationImageArray];
+
+    
     self.mainTableView.delegate = self;
     self.mainTableView.dataSource = self;
     

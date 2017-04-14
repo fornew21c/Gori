@@ -21,14 +21,6 @@
     // Override point for customization after application launch.
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
-    /**************** Deprecated. title,tutorname is replaced by networkDataArray *************/
-//    [[GODataCenter sharedInstance] settingTitleArray];
-//    [[GODataCenter sharedInstance] settingTutorNameArray];
-//    [[GODataCenter sharedInstance] settingCategoryDetailArray];
-    [[GODataCenter sharedInstance] settingCategoryArray];
-    [[GODataCenter sharedInstance] settingSchoolLocationArray];
-    [[GODataCenter sharedInstance] settingDistrictLocationArray];
-    [[GODataCenter sharedInstance] settingDistrictLocationImageArray];
     return YES;
 }
 
