@@ -83,7 +83,7 @@
     NSString *numberStr = [NSNumberFormatter localizedStringFromNumber:num1 numberStyle:NSNumberFormatterDecimalStyle];
     NSString *won = @"￦ ";
     self.pricePerHour.text = [won stringByAppendingString:numberStr];
-     
+    
     self.maxNumber.text = [[[self.selectedModel.minNumberStudent stringValue] stringByAppendingString:@"~"] stringByAppendingString:[self.selectedModel.maxNumberStudent stringValue]];
     
     // 총횟수/시간

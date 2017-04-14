@@ -40,8 +40,8 @@
                 NSLog(@"프로파일네임레이블 텍스트 : %@", [temp objectForKey:@"name"]);
                 NSLog(@"프로파일이메일레이블 텍스트 : %@", [temp objectForKey:@"user_id"]);
                 
-                NSURL *profileURL = [NSURL URLWithString:[temp objectForKey:@"profile_image"]];
-                self.profileImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]];
+//                NSURL *profileURL = [NSURL URLWithString:[temp objectForKey:@"profile_image"]];
+//                self.profileImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]];
                 NSLog(@"ReceivingServerData and ReloadingData is Completed");
                 
             });
@@ -59,16 +59,17 @@
 }
 
 - (IBAction)signoutAction:(UIButton *)sender {
-    
-    [self dismissViewControllerAnimated:YES completion:^{
-       [[GODataCenter2 sharedInstance] logoutCompletion:^(BOOL isSuccess, id respons) {
-           if (isSuccess) {
-               NSLog(@"로그아웃이 완료되었습니다");
-           }else{
-               NSLog(@"로그아웃이 실패했습니다");
-           }
-       }];
+    [[GODataCenter2 sharedInstance] logoutCompletion:^(BOOL isSuccess, id respons) {
+        if(isSuccess) {
+            NSLog(@"로그아웃에 성공했습니다.");
+        }
+        else {
+            NSLog(@"로그아웃에 실패했습니다.");
+
+        }
     }];
+    [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 - (IBAction)goRegistrationView:(UIButton *)sender {
     [UIView animateWithDuration:1.5 animations:^{

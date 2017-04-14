@@ -140,20 +140,36 @@ static NSString *const TOKEN_KEY = @"Authorization";
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
     request.HTTPMethod = @"POST";
-    [request setValue:[self tokenValue] forHTTPHeaderField:TOKEN_KEY];
-    
+    NSString *loginToken = [[GODataCenter2 sharedInstance] getMyLoginToken];
+        // 헤더 세팅
+    [request setValue:[NSString stringWithFormat:@"token %@", loginToken] forHTTPHeaderField:@"Authorization"];
+    request.HTTPBody = [@"" dataUsingEncoding:NSUTF8StringEncoding];
+
+    NSLog(@"logout url: %@", url);
     NSURLSessionUploadTask *task = [session uploadTaskWithRequest:request
                                                          fromData:nil
                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
 
                                                     if (error != nil) {
                                                         completion(NO, nil);
+                                                        NSLog(@"===========================");
                                                     }else
                                                     {
-                                                        NSDictionary *responsData =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-                                                        NSLog(@"%@",responsData);
+                                                        NSDictionary *responseData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+                                                        NSLog(@"responseData: %@", responseData);
                                                         
-                                                        completion(YES,responsData);
+                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                        NSUInteger statusCode = (NSUInteger) [httpResponse statusCode];
+                                                        //NSDictionary *responseHeaderFields = [(NSHTTPURLResponse *)response allHeaderFields];
+                                                        
+                                                        NSLog(@"statusCode: %lu", statusCode);
+                                                        NSLog(@"responseHeaderFields: %@", response);
+                                                        if(statusCode == 200) {
+                                                            completion(YES,responseData);
+                                                        }
+                                                        
+                                                       
+
                                                     }
                                                 }];
     

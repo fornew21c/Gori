@@ -7,9 +7,9 @@
 //
 
 #import "MainVC.h"
-
+#import "GODataCenter2.h"
 @interface MainVC ()
-
+<AMSlideMenuDelegate>
 @end
 
 @implementation MainVC
@@ -22,16 +22,31 @@
 - (NSString *)segueIdentifierForIndexPathInLeftMenu:(NSIndexPath *)indexPath
 {
     NSString *identifier;
+
     switch (indexPath.row) {
         case 0:
             identifier = @"mainSegue"; //메인페이지
             break;
         case 1:
-            identifier = @"loginSegue"; //로그인 페이지
+            //identifier = @"loginSegue"; //로그인 페이지
+            NSLog(@"%@", [[GODataCenter2 sharedInstance] getMyLoginToken]);
+
+            if( [[GODataCenter2 sharedInstance] getMyLoginToken] == NULL) {
+                identifier = @"loginSegue"; //로그인 페이지
+            }
+            else {
+                identifier = @"mypageSegue"; //마이 페이지
+            }
             break;
         case 2:
             NSLog(@"signupSegue");
-            identifier = @"signupSegue"; //회원가입 페이지
+            if( [[GODataCenter2 sharedInstance] getMyLoginToken] == NULL) {
+                identifier = @"signupSegue"; //회원가입 페이지
+            }
+            else {
+                NSLog(@"로그아웃");
+            }
+            
             break;
     }
     
@@ -96,4 +111,5 @@
 {
     return YES;
 }
+
 @end

@@ -43,7 +43,7 @@ typedef enum {
   AMSlidePanningStateRight
 } AMSlidePanningState;
 
-@interface AMSlideMenuMainViewController ()<UIGestureRecognizerDelegate>
+@interface AMSlideMenuMainViewController ()<UIGestureRecognizerDelegate,AMSlideMenuDelegate>
 {
     AMSlidePanningState panningState;
     CGFloat panningPreviousPosition;
@@ -557,6 +557,7 @@ static NSMutableArray *allInstances;
 
 - (void)openLeftMenu
 {
+    NSLog(@"left hamburger");
     [self openLeftMenuAnimated:YES];
 }
 
@@ -1240,4 +1241,9 @@ static NSMutableArray *allInstances;
     }
     /********************************************* DARKNESS EFFECT *******************************************************/
 }
+
+- (void)leftMenuWillOpen {
+    NSLog(@"leftMenuWillOpen");
+}
+
 @end

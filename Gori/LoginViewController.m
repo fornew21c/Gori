@@ -37,6 +37,7 @@
 //            //loginButton.hidden = TRUE;
 //        }
     [self.facebookLoginBtn addTarget:self action:@selector(loginButtonTouched) forControlEvents:UIControlEventTouchUpInside];
+    self.pwTF.secureTextEntry = YES;
 }
 
 - (void)loginButtonTouched {

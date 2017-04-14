@@ -38,7 +38,7 @@
     [NetworkModuleMain getTalentListWithCompletionBlock:^(BOOL isSuccess, NSDictionary *result){
         if (isSuccess) {
             NSArray *networkDataArray = [result objectForKey:@"results"];
-            NSLog(@"데이터센터에서 네트워크데이터어레이의 내용 : %@", networkDataArray);
+            //NSLog(@"데이터센터에서 네트워크데이터어레이의 내용 : %@", networkDataArray);
             self.networkDataArray = networkDataArray;
             completionBlock(YES);
         }else{

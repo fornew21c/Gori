@@ -30,7 +30,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xkE-bi-RC7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="724" y="526"/>
+            <point key="canvasLocation" x="281" y="526"/>
         </scene>
         <!--Slide Menu Left Table View Controller-->
         <scene sceneID="CbN-Mi-XA9">
@@ -76,6 +76,13 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="마이페이지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9K5-cR-Rjt">
+                                                    <rect key="frame" x="8" y="14" width="127" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.97720271780000001" green="0.98014714400000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.90980392160000001" green="0.1764705882" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -94,6 +101,13 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="로그아웃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPi-zX-7q4">
+                                                    <rect key="frame" x="8" y="11" width="69" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.97720271780000001" green="0.98014714400000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.90980392160000001" green="0.1764705882" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -107,14 +121,20 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="leftTableMenu" destination="WwR-ul-zjY" id="4o9-CL-d8d"/>
+                        <outlet property="loginLabel" destination="OD1-N9-xmS" id="iNR-4G-9l6"/>
+                        <outlet property="logoutLabel" destination="oPi-zX-7q4" id="1U5-Nv-hUy"/>
+                        <outlet property="myPageLabel" destination="9K5-cR-Rjt" id="T3Q-6t-a8M"/>
+                        <outlet property="signUpLabel" destination="eRe-Hn-xMZ" id="iAU-QE-Nnr"/>
                         <segue destination="OMT-OH-D2j" kind="custom" identifier="mainSegue" customClass="AMSlideMenuContentSegue" id="NU7-KV-CAa"/>
                         <segue destination="1zK-GY-sDn" kind="custom" identifier="signupSegue" customClass="AMSlideMenuContentSegue" id="uOT-8H-BXo"/>
                         <segue destination="2tK-T7-gs6" kind="custom" identifier="loginSegue" customClass="AMSlideMenuContentSegue" id="K3l-6Z-y5S"/>
+                        <segue destination="tiW-un-Zew" kind="custom" identifier="mypageSegue" customClass="AMSlideMenuContentSegue" id="gkV-OM-HkQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1A-la-ALX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1793" y="526"/>
+            <point key="canvasLocation" x="1109.5999999999999" y="486.20689655172418"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tub-ka-H2M">
@@ -154,7 +174,15 @@
                 <viewControllerPlaceholder storyboardName="SignIn_SignUp" id="mJx-Op-QVG" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LKk-Ju-v9i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1298" y="959"/>
+            <point key="canvasLocation" x="1720" y="1288"/>
+        </scene>
+        <!--Mypage-->
+        <scene sceneID="qdS-YN-Y3a">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Mypage" id="tiW-un-Zew" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eBz-AA-nC6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1846" y="1095"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="JTa-29-7qO">
@@ -211,7 +239,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VvN-8O-U1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-236" y="526"/>
+            <point key="canvasLocation" x="-593" y="526"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="IJL-2E-7Yg">
@@ -670,7 +698,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nkc-b9-1bg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4255" y="-890"/>
+            <point key="canvasLocation" x="4612" y="-908"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="WfT-j4-A3i">
@@ -1068,7 +1096,7 @@
         <image name="malpoongsuncopy.png" width="1816" height="752"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZTz-Dv-kBt"/>
+        <segue reference="br3-Nz-hQ0"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.90980392160000001" green="0.1764705882" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>

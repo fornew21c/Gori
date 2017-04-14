@@ -29,8 +29,14 @@
 #import "AMSlideMenuMainViewController.h"
 
 #import "AMSlideMenuContentSegue.h"
-
+#import "GODataCenter2.h"
 @interface AMSlideMenuLeftTableViewController ()
+<AMSlideMenuDelegate>
+@property (strong, nonatomic) IBOutlet UITableView *leftTableMenu;
+@property (weak, nonatomic) IBOutlet UILabel *loginLabel;
+@property (weak, nonatomic) IBOutlet UILabel *myPageLabel;
+@property (weak, nonatomic) IBOutlet UILabel *signUpLabel;
+@property (weak, nonatomic) IBOutlet UILabel *logoutLabel;
 
 @end
 
@@ -43,6 +49,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.mainVC.slideMenuDelegate = self;
+    
+}
+
+- (void)leftMenuWillOpen {
+    NSLog(@"leftMenuWillOpen");
+    if( [[GODataCenter2 sharedInstance] getMyLoginToken] == NULL) {
+        self.loginLabel.hidden = NO;
+        self.signUpLabel.hidden = NO;
+        self.myPageLabel.hidden = YES;
+        self.logoutLabel.hidden = YES;
+        
+    }
+    else {
+        self.loginLabel.hidden = YES;
+        self.signUpLabel.hidden = YES;
+        self.myPageLabel.hidden = NO;
+        self.logoutLabel.hidden = NO;
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  \
+    [super viewWillAppear:NO];
+
 }
 
 - (void)openContentNavigationController:(UINavigationController *)nvc
@@ -83,6 +115,7 @@
 {
     return 50.0;
 }
+
 
 
 @end
