@@ -69,12 +69,33 @@
     
     
     /**************** navigationBar Logo Setting ********************************/
-    
-    UIImage *logo = [UIImage imageNamed:@"logo.png"];
-    UIImageView *logoView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
-    [logoView setImage:logo];
-    [logoView setContentMode:UIViewContentModeScaleAspectFit];
+    UIView *logoView = [[UIView alloc] initWithFrame:CGRectMake(0,0,70,70)];
     self.navigationItem.titleView = logoView;
+    UIImageView *logoImageView2 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 70, 70)];
+    logoImageView2.image = [UIImage imageNamed:@"logo.png"];
+    [logoImageView2 setContentMode:UIViewContentModeScaleAspectFit];
+    
+    [logoView addSubview:logoImageView2];
+    
+    
+    
+//
+//    
+//    self.navigationItem.titleView = logoView;
+    
+    
+    
+    
+//    [button addTarget:self action:@selector(BackBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+//    UIView *backButtonView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 32)];
+//    backButtonView.bounds = CGRectOffset(backButtonView.bounds, -1, -4);
+//    [backButtonView addSubview:button];
+//    
+//    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButtonView];
+//    //barButtonItem.imageInsets = UIEdgeInsetsMake(-6, 20, 30, 0);
+//    
+//    [self.navigationItem setLeftBarButtonItem:barButtonItem];
+    
     
     /**************** searchController Setting ********************************/
     

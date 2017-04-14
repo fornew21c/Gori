@@ -53,9 +53,9 @@
 }
 
 
-- (void)settingText{
-    self.titleLabel.text = [[GODataCenter sharedInstance].schoolLocationArray objectAtIndex:[GODataCenter sharedInstance].currentRow];
-}
+//- (void)settingText{
+//    self.titleLabel.text = [[GODataCenter sharedInstance].schoolLocationArray objectAtIndex:[GODataCenter sharedInstance].currentRow];
+//}
 
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier

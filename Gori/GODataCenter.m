@@ -23,8 +23,6 @@
 - (instancetype)init{
     self = [super init];
         if (self) {
-            self.regionKey = @"";
-            self.categoryKey = @"";
             self.networkDataArray = [[NSArray alloc] init];
             self.networkUserDetailDictionary = [[NSDictionary alloc]init];
             self.districtLocationFilteredArray = [[NSArray alloc]init];

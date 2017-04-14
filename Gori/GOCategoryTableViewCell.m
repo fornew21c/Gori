@@ -63,10 +63,10 @@
 }
 
 
-- (void)settingText{
-    self.titleLabel.text = [[GODataCenter sharedInstance].categoryArray objectAtIndex:[GODataCenter sharedInstance].currentRow];
-//    self.titleDetailLabel.text = [[GODataCenter sharedInstance].categoryDetailArray objectAtIndex:[GODataCenter sharedInstance].currentRow];
-}
+//- (void)settingText{
+//    self.titleLabel.text = [[GODataCenter sharedInstance].categoryArray objectAtIndex:[GODataCenter sharedInstance].currentRow];
+////    self.titleDetailLabel.text = [[GODataCenter sharedInstance].categoryDetailArray objectAtIndex:[GODataCenter sharedInstance].currentRow];
+//}
 
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier

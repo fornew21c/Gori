@@ -49,6 +49,9 @@
 		418584671E91F1A30053EF40 /* footerImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 418584611E91F1A30053EF40 /* footerImage.jpg */; };
 		418584681E91F1A30053EF40 /* headerImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 418584621E91F1A30053EF40 /* headerImage.jpg */; };
 		41B26E261E9CA787001592CE /* Facebook-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B26E251E9CA787001592CE /* Facebook-icon.png */; };
+		912696971EA0A0F30067C331 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 912696941EA0A0F30067C331 /* menu.png */; };
+		912696981EA0A0F30067C331 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 912696951EA0A0F30067C331 /* menu@2x.png */; };
+		912696991EA0A0F30067C331 /* menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 912696961EA0A0F30067C331 /* menu@3x.png */; };
 		9132C17C1E92FAC1007C31EC /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9132C17B1E92FAC1007C31EC /* logo.png */; };
 		9163ECFD1E9A451E00F23EDA /* NetworkModuleMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 9163ECFC1E9A451E00F23EDA /* NetworkModuleMain.m */; };
 		91641F201E92796400DC5B43 /* GOSchoolLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91641F1F1E92796400DC5B43 /* GOSchoolLocationViewController.m */; };
@@ -134,6 +137,9 @@
 		418584611E91F1A30053EF40 /* footerImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = footerImage.jpg; sourceTree = "<group>"; };
 		418584621E91F1A30053EF40 /* headerImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = headerImage.jpg; sourceTree = "<group>"; };
 		41B26E251E9CA787001592CE /* Facebook-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Facebook-icon.png"; sourceTree = "<group>"; };
+		912696941EA0A0F30067C331 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		912696951EA0A0F30067C331 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
+		912696961EA0A0F30067C331 /* menu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@3x.png"; sourceTree = "<group>"; };
 		9132C17B1E92FAC1007C31EC /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		9163ECFB1E9A451E00F23EDA /* NetworkModuleMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkModuleMain.h; sourceTree = "<group>"; };
 		9163ECFC1E9A451E00F23EDA /* NetworkModuleMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkModuleMain.m; sourceTree = "<group>"; };
@@ -356,6 +362,9 @@
 		4185845C1E91F1850053EF40 /* MainViewImage */ = {
 			isa = PBXGroup;
 			children = (
+				912696941EA0A0F30067C331 /* menu.png */,
+				912696951EA0A0F30067C331 /* menu@2x.png */,
+				912696961EA0A0F30067C331 /* menu@3x.png */,
 				4185845D1E91F1A30053EF40 /* profile.jpg */,
 				4185845E1E91F1A30053EF40 /* bodyImage.jpg */,
 				4185845F1E91F1A30053EF40 /* bodyImage1.jpg */,
@@ -465,12 +474,15 @@
 			files = (
 				9178CAD71E9575540054B7FB /* SignIn_SignUp.storyboard in Resources */,
 				9132C17C1E92FAC1007C31EC /* logo.png in Resources */,
+				912696971EA0A0F30067C331 /* menu.png in Resources */,
 				4153EE9F1E9239AC001EFF70 /* Category_Location_Storyboard.storyboard in Resources */,
+				912696981EA0A0F30067C331 /* menu@2x.png in Resources */,
 				41B26E261E9CA787001592CE /* Facebook-icon.png in Resources */,
 				418584631E91F1A30053EF40 /* profile.jpg in Resources */,
 				4185840F1E91EDF70053EF40 /* LaunchScreen.storyboard in Resources */,
 				4153EEA11E923A49001EFF70 /* Main.storyboard in Resources */,
 				4185845B1E91F1770053EF40 /* icon-menu@2x.png in Resources */,
+				912696991EA0A0F30067C331 /* menu@3x.png in Resources */,
 				418584661E91F1A30053EF40 /* bodyImage2.jpg in Resources */,
 				4185840C1E91EDF70053EF40 /* Assets.xcassets in Resources */,
 				418584681E91F1A30053EF40 /* headerImage.jpg in Resources */,
