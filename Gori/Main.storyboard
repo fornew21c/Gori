@@ -126,7 +126,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="로그아웃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjZ-VD-TTI">
-                                                    <rect key="frame" x="8" y="14" width="42" height="21"/>
+                                                    <rect key="frame" x="8" y="14" width="76" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.97720271780000001" green="0.98014714400000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -167,7 +167,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1A-la-ALX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1111" y="487"/>
+            <point key="canvasLocation" x="1109.5999999999999" y="486.20689655172418"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tub-ka-H2M">
