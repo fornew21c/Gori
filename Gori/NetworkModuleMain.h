@@ -19,4 +19,6 @@ typedef void(^CompletionBlock)(BOOL isSuccess, id respons);
 
 + (void)getFilteredCategoryWithCompletionBlock:(NSString *)categoryKey completion:(CompletionBlock)completion;
 
+- (void)updatingUserDetailTextDataWithCompletionBlock:(NSString *)name nickName:(NSString *)nickName cellPhone:(NSString *)cellPhone completion:(CompletionBlock)completion;
+
 @end

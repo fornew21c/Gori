@@ -39,22 +39,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nHJ-vs-c5X" userLabel="RegistrationView">
-                                <rect key="frame" x="0.0" y="279" width="375" height="388"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <connections>
-                                    <segue destination="pfB-ae-KmX" kind="embed" id="gBx-mv-zPC"/>
-                                </connections>
-                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i3R-4O-Z94" userLabel="ClassListView">
-                                <rect key="frame" x="0.0" y="279" width="375" height="388"/>
+                                <rect key="frame" x="0.0" y="322" width="375" height="345"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="tnH-gk-vgd" kind="embed" id="ZKf-Z8-5zB"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3nS-gd-vGB" userLabel="WishListView">
-                                <rect key="frame" x="0.0" y="279" width="375" height="388"/>
+                                <rect key="frame" x="0.0" y="322" width="375" height="345"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="Z8q-tz-ayV" kind="embed" id="Jms-hG-4uM"/>
@@ -64,30 +57,18 @@
                                 <rect key="frame" x="131" y="72" width="113" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FI6-0w-7Sd">
-                                <rect key="frame" x="0.0" y="224" width="145" height="61"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ax-b0-eb7">
+                                <rect key="frame" x="301" y="72" width="58" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.90980392156862744" green="0.1764705882352941" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="수업신청서">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="로그아웃">
+                                    <color key="titleColor" red="0.90980392160000001" green="0.1764705882" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="goRegistrationView:" destination="2DW-D0-AZx" eventType="touchUpInside" id="5GI-jK-zQZ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWz-p9-7ST">
-                                <rect key="frame" x="264" y="224" width="111" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.90980392156862744" green="0.1764705882352941" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="위시리스트">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="goWishListView:" destination="2DW-D0-AZx" eventType="touchUpInside" id="0LG-7D-TVV"/>
+                                    <action selector="signoutAction:" destination="2DW-D0-AZx" eventType="touchUpInside" id="ajY-0b-UMq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFL-lO-Nz1">
-                                <rect key="frame" x="142" y="224" width="130" height="61"/>
+                                <rect key="frame" x="0.0" y="267" width="181" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90980392156862744" green="0.1764705882352941" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="신청한수업">
@@ -97,14 +78,15 @@
                                     <action selector="goClassListView:" destination="2DW-D0-AZx" eventType="touchUpInside" id="ao2-4y-eSe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ax-b0-eb7">
-                                <rect key="frame" x="301" y="72" width="58" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWz-p9-7ST">
+                                <rect key="frame" x="176" y="267" width="199" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="로그아웃">
-                                    <color key="titleColor" red="0.90980392160000001" green="0.1764705882" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.90980392156862744" green="0.1764705882352941" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="위시리스트">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="signoutAction:" destination="2DW-D0-AZx" eventType="touchUpInside" id="ajY-0b-UMq"/>
+                                    <action selector="goWishListView:" destination="2DW-D0-AZx" eventType="touchUpInside" id="0LG-7D-TVV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -117,8 +99,6 @@
                         <outlet property="profileEmailLabel" destination="PBH-uD-rbR" id="ldt-hy-gyb"/>
                         <outlet property="profileImageView" destination="76P-m9-rHU" id="zKy-Ga-j5w"/>
                         <outlet property="profileNameLabel" destination="evv-u5-JAa" id="XgA-An-kPF"/>
-                        <outlet property="registrationButton" destination="FI6-0w-7Sd" id="e8p-3G-X3R"/>
-                        <outlet property="registrationView" destination="nHJ-vs-c5X" id="6Oy-Bt-Vzn"/>
                         <outlet property="wishListButton" destination="IWz-p9-7ST" id="Suf-hZ-jLS"/>
                         <outlet property="wishListView" destination="3nS-gd-vGB" id="laL-9n-mcU"/>
                     </connections>
@@ -126,33 +106,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p6W-sE-T1E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2100" y="29.23538230884558"/>
-        </scene>
-        <!--Registration View Controller-->
-        <scene sceneID="7J1-qD-kEm">
-            <objects>
-                <viewController storyboardIdentifier="GORegistrationViewController" id="pfB-ae-KmX" customClass="GORegistrationViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="scL-Jb-c6T"/>
-                        <viewControllerLayoutGuide type="bottom" id="WoT-eU-l58"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh7-tK-Xst">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="388"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="수업신청서" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AIJ-n9-CgO">
-                                <rect key="frame" x="99" y="54" width="80" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TkT-nz-CGZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2780" y="-458.77061469265368"/>
         </scene>
         <!--Class List View Controller-->
         <scene sceneID="45o-ar-V0j">
@@ -163,7 +116,7 @@
                         <viewControllerLayoutGuide type="bottom" id="r7V-bP-NqX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tSd-ia-sea">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="388"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="345"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="수강목록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJh-7O-nUX">
@@ -179,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="02X-O3-bvD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2800.8000000000002" y="62.968515742128943"/>
+            <point key="canvasLocation" x="3039" y="13"/>
         </scene>
         <!--Wish List View Controller-->
         <scene sceneID="LKl-ul-6KE">
@@ -190,7 +143,7 @@
                         <viewControllerLayoutGuide type="bottom" id="hzW-Fg-hWe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="EkB-ax-99B">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="388"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="345"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="위시리스트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aik-d6-GM7">
@@ -206,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yl6-vE-aer" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1559" y="663"/>
+            <point key="canvasLocation" x="2994" y="438"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nmz-rt-ZiD">

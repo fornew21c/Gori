@@ -19,13 +19,10 @@
 
 - (void)makingCustomCellObject{
     
-    UIView *mainView = [[UIView alloc]init];
-    self.mainView = mainView;
-    [self.contentView addSubview:self.mainView];
-    
     UIImageView *titleImageView = [[UIImageView alloc]init];
     self.titleImageView = titleImageView;
-    [self.mainView addSubview:self.titleImageView];
+//    [self.titleImageView setContentMode:UIViewContentModeScaleToFill];
+    [self.contentView addSubview:self.titleImageView];
     
     UIView *titleFooterView = [[UIView alloc]init];
     self.titleFooterView = titleFooterView;
@@ -75,11 +72,11 @@
     
     CGFloat offsetX = 0.0f;
     CGFloat offsetY = 0.0f;
+//    [self.contentView setBackgroundColor:[UIColor colorWithRed:0.204 green:0.204 blue:0.204 alpha:1]];
+//    [self.contentView setBackgroundColor:[UIColor grayColor]];
+    self.titleImageView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 300);
     
-    self.mainView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 200);
-    self.titleImageView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 200);
-    
-    offsetY = (self.titleImageView.frame.size.height / 2) + (MARGIN *10);
+    offsetY = (self.titleImageView.frame.size.height / 2) + (MARGIN *20);
     
     self.titleFooterView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 50);
     

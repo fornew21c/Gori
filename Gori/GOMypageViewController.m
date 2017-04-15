@@ -11,10 +11,8 @@
 #import "GODataCenter2.h"
 
 @interface GOMypageViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *registrationButton;
 @property (weak, nonatomic) IBOutlet UIButton *classListButton;
 @property (weak, nonatomic) IBOutlet UIButton *wishListButton;
-@property (weak, nonatomic) IBOutlet UIView *registrationView;
 @property (weak, nonatomic) IBOutlet UIView *classListView;
 @property (weak, nonatomic) IBOutlet UIView *wishListView;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
@@ -40,8 +38,8 @@
                 NSLog(@"프로파일네임레이블 텍스트 : %@", [temp objectForKey:@"name"]);
                 NSLog(@"프로파일이메일레이블 텍스트 : %@", [temp objectForKey:@"user_id"]);
                 
-//                NSURL *profileURL = [NSURL URLWithString:[temp objectForKey:@"profile_image"]];
-//                self.profileImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]];
+                NSURL *profileURL = [NSURL URLWithString:[temp objectForKey:@"profile_image"]];
+                self.profileImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]];
                 NSLog(@"ReceivingServerData and ReloadingData is Completed");
                 
             });
@@ -52,8 +50,7 @@
     
     
     
-    self.registrationView.alpha = 1.0f;
-    self.classListView.alpha = 0.0f;
+    self.classListView.alpha = 1.0f;
     self.wishListView.alpha = 0.0f;
     
 }
@@ -71,24 +68,15 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 
 }
-- (IBAction)goRegistrationView:(UIButton *)sender {
-    [UIView animateWithDuration:1.5 animations:^{
-        self.registrationView.alpha = 1.0f;
-        self.classListView.alpha = 0.0f;
-        self.wishListView.alpha = 0.0f;
-    }];
-    
-}
+
 - (IBAction)goClassListView:(UIButton *)sender {
-    [UIView animateWithDuration:1.5 animations:^{
-        self.registrationView.alpha = 0.0f;
+    [UIView animateWithDuration:0.3 animations:^{
         self.classListView.alpha = 1.0f;
         self.wishListView.alpha = 0.0f;
     }];
 }
 - (IBAction)goWishListView:(UIButton *)sender {
-    [UIView animateWithDuration:1.5 animations:^{
-        self.registrationView.alpha = 0.0f;
+    [UIView animateWithDuration:0.3 animations:^{
         self.classListView.alpha = 0.0f;
         self.wishListView.alpha = 1.0f;
     }];
