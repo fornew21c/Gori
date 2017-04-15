@@ -292,7 +292,6 @@
 				418584371E91EEFD0053EF40 /* AppDelegate.m */,
 				418584511E91F15E0053EF40 /* MainVC.h */,
 				418584521E91F15E0053EF40 /* MainVC.m */,
-				919B6F291E9CE56000AE8CA5 /* GOMypageViewController.h */,
 				919B6F251E9CE4C300AE8CA5 /* Mypage.storyboard */,
 				4153EEA01E923A49001EFF70 /* Main.storyboard */,
 				9178CAD61E9575540054B7FB /* SignIn_SignUp.storyboard */,
@@ -415,6 +414,7 @@
 		917082EB1E9CE58B00A6B0A5 /* MyPageView */ = {
 			isa = PBXGroup;
 			children = (
+				919B6F291E9CE56000AE8CA5 /* GOMypageViewController.h */,
 				919B6F2A1E9CE56000AE8CA5 /* GOMypageViewController.m */,
 				919B6F271E9CE56000AE8CA5 /* GOClassListViewController.h */,
 				919B6F281E9CE56000AE8CA5 /* GOClassListViewController.m */,

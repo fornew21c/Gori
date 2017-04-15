@@ -64,17 +64,6 @@
                                 <rect key="frame" x="131" y="72" width="113" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FI6-0w-7Sd">
-                                <rect key="frame" x="0.0" y="224" width="145" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.90980392156862744" green="0.1764705882352941" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="수업신청서">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="goRegistrationView:" destination="2DW-D0-AZx" eventType="touchUpInside" id="5GI-jK-zQZ"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWz-p9-7ST">
                                 <rect key="frame" x="264" y="224" width="111" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -84,17 +73,6 @@
                                 </state>
                                 <connections>
                                     <action selector="goWishListView:" destination="2DW-D0-AZx" eventType="touchUpInside" id="0LG-7D-TVV"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFL-lO-Nz1">
-                                <rect key="frame" x="142" y="224" width="130" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.90980392156862744" green="0.1764705882352941" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="신청한수업">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="goClassListView:" destination="2DW-D0-AZx" eventType="touchUpInside" id="ao2-4y-eSe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ax-b0-eb7">
@@ -107,6 +85,17 @@
                                     <action selector="signoutAction:" destination="2DW-D0-AZx" eventType="touchUpInside" id="ajY-0b-UMq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFL-lO-Nz1">
+                                <rect key="frame" x="0.0" y="224" width="130" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90980392156862744" green="0.1764705882352941" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="신청한수업">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goClassListView:" destination="2DW-D0-AZx" eventType="touchUpInside" id="ao2-4y-eSe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -117,7 +106,6 @@
                         <outlet property="profileEmailLabel" destination="PBH-uD-rbR" id="ldt-hy-gyb"/>
                         <outlet property="profileImageView" destination="76P-m9-rHU" id="zKy-Ga-j5w"/>
                         <outlet property="profileNameLabel" destination="evv-u5-JAa" id="XgA-An-kPF"/>
-                        <outlet property="registrationButton" destination="FI6-0w-7Sd" id="e8p-3G-X3R"/>
                         <outlet property="registrationView" destination="nHJ-vs-c5X" id="6Oy-Bt-Vzn"/>
                         <outlet property="wishListButton" destination="IWz-p9-7ST" id="Suf-hZ-jLS"/>
                         <outlet property="wishListView" destination="3nS-gd-vGB" id="laL-9n-mcU"/>

@@ -22,7 +22,6 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *locationButton;
 @property (weak, nonatomic) IBOutlet UIButton *categoryButton;
-@property (weak, nonatomic) IBOutlet UIButton *mypageButton;
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 @property (weak, nonatomic) UIImageView *headerImageView;
 @property (nonatomic, strong) UISearchController *searchController;
@@ -91,23 +90,12 @@
     [logoImageView2 setContentMode:UIViewContentModeScaleAspectFit];
     
     [logoView addSubview:logoImageView2];
-
-    /**************** button Action Setting ********************************/
-//    [self.locationButton addTarget:self action:@selector(showLocationDetailView:) forControlEvents:UIControlEventTouchUpInside];
-//    [self.categoryButton addTarget:self action:@selector(showCategoryDetailView:) forControlEvents:UIControlEventTouchUpInside];
-////    [self.mypageButton addTarget:self action:@selector(showMypageView:) forControlEvents:UIControlEventTouchUpInside];
+    [[GODataCenter2 sharedInstance]getMyLoginToken];
+    NSLog(@"뷰디드로드 겟마이토큰 : %@", [[GODataCenter2 sharedInstance]getMyLoginToken]);
 }
 
 
 /**************** button Action ********************************/
-- (IBAction)showMypageView:(id)sender {
-    NSLog(@"showMypageView button Action");
-    
-    UIStoryboard *Mypage_Storyboard = [UIStoryboard storyboardWithName:@"Mypage" bundle:nil];
-    GOMypageViewController *GOMypageViewController = [Mypage_Storyboard instantiateViewControllerWithIdentifier:@"GOMypageViewController"];
-    [self presentViewController:GOMypageViewController animated:YES completion:nil];
-    
-}
 
 - (IBAction)showLocationDetailView:(id)sender {
     UIStoryboard *GOCategory_Location_Storyboard = [UIStoryboard storyboardWithName:@"Category_Location_Storyboard" bundle:nil];
@@ -274,12 +262,6 @@
     self.selectedData = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"detailSegue" sender:nil];
 
-}
-
-- (IBAction)unwindSegue:(UIStoryboardSegue *)sender{
-    /**************** myPage --> mainView unwindSegue ********************************/
-    //마이페이지에서 메인 화면으로 돌아오기 위한 unwindSegue 설정
-    
 }
 
 

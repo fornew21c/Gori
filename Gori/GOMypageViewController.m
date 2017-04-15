@@ -11,10 +11,8 @@
 #import "GODataCenter2.h"
 
 @interface GOMypageViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *registrationButton;
 @property (weak, nonatomic) IBOutlet UIButton *classListButton;
 @property (weak, nonatomic) IBOutlet UIButton *wishListButton;
-@property (weak, nonatomic) IBOutlet UIView *registrationView;
 @property (weak, nonatomic) IBOutlet UIView *classListView;
 @property (weak, nonatomic) IBOutlet UIView *wishListView;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
@@ -52,8 +50,7 @@
     
     
     
-    self.registrationView.alpha = 1.0f;
-    self.classListView.alpha = 0.0f;
+    self.classListView.alpha = 1.0f;
     self.wishListView.alpha = 0.0f;
     
 }
@@ -71,24 +68,15 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 
 }
-- (IBAction)goRegistrationView:(UIButton *)sender {
-    [UIView animateWithDuration:1.5 animations:^{
-        self.registrationView.alpha = 1.0f;
-        self.classListView.alpha = 0.0f;
-        self.wishListView.alpha = 0.0f;
-    }];
-    
-}
+
 - (IBAction)goClassListView:(UIButton *)sender {
     [UIView animateWithDuration:1.5 animations:^{
-        self.registrationView.alpha = 0.0f;
         self.classListView.alpha = 1.0f;
         self.wishListView.alpha = 0.0f;
     }];
 }
 - (IBAction)goWishListView:(UIButton *)sender {
     [UIView animateWithDuration:1.5 animations:^{
-        self.registrationView.alpha = 0.0f;
         self.classListView.alpha = 0.0f;
         self.wishListView.alpha = 1.0f;
     }];
