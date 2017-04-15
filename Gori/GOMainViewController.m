@@ -22,6 +22,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *locationButton;
 @property (weak, nonatomic) IBOutlet UIButton *categoryButton;
+@property (weak, nonatomic) IBOutlet UIButton *mypageButton;
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 @property (weak, nonatomic) UIImageView *headerImageView;
 @property (nonatomic, strong) UISearchController *searchController;
@@ -90,13 +91,24 @@
     [logoImageView2 setContentMode:UIViewContentModeScaleAspectFit];
     
     [logoView addSubview:logoImageView2];
-    [[GODataCenter2 sharedInstance]getMyLoginToken];
-    NSLog(@"뷰디드로드 겟마이토큰 : %@", [[GODataCenter2 sharedInstance]getMyLoginToken]);
-    
+
+    /**************** button Action Setting ********************************/
+//    [self.locationButton addTarget:self action:@selector(showLocationDetailView:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.categoryButton addTarget:self action:@selector(showCategoryDetailView:) forControlEvents:UIControlEventTouchUpInside];
+////    [self.mypageButton addTarget:self action:@selector(showMypageView:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 
 /**************** button Action ********************************/
+- (IBAction)showMypageView:(id)sender {
+    NSLog(@"showMypageView button Action");
+    
+    UIStoryboard *Mypage_Storyboard = [UIStoryboard storyboardWithName:@"Mypage" bundle:nil];
+    GOMypageViewController *GOMypageViewController = [Mypage_Storyboard instantiateViewControllerWithIdentifier:@"GOMypageViewController"];
+    [self presentViewController:GOMypageViewController animated:YES completion:nil];
+    
+}
+
 - (IBAction)showLocationDetailView:(id)sender {
     UIStoryboard *GOCategory_Location_Storyboard = [UIStoryboard storyboardWithName:@"Category_Location_Storyboard" bundle:nil];
     GOLocationViewController *GOlocationViewController = [GOCategory_Location_Storyboard instantiateViewControllerWithIdentifier:@"GOLocationViewController"];
@@ -227,7 +239,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    return 300;
+    return 200;
 }
 
 /**************** searchController Protocol ********************************/
@@ -263,6 +275,13 @@
     [self performSegueWithIdentifier:@"detailSegue" sender:nil];
 
 }
+
+- (IBAction)unwindSegue:(UIStoryboardSegue *)sender{
+    /**************** myPage --> mainView unwindSegue ********************************/
+    //마이페이지에서 메인 화면으로 돌아오기 위한 unwindSegue 설정
+    
+}
+
 
 #pragma mark - Navigation
 
@@ -317,7 +336,7 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.mainTableView reloadData];
                     [[GODataCenter2 sharedInstance] getMyLoginToken];
-//                    NSLog(@"메인 뷰컨트롤러에서 토큰 여부 체크 : %@", [[GODataCenter2 sharedInstance] getMyLoginToken]);
+                    NSLog(@"메인 뷰컨트롤러에서 토큰 여부 체크 : %@", [[GODataCenter2 sharedInstance] getMyLoginToken]);
                     NSLog(@"ReceivingServerData and ReloadingData is Completed");
                 });
             }else{

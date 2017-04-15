@@ -20,41 +20,13 @@ static NSString *const API_USER_DETAIL_URL = @"/member/profile/user/";
 static NSString *const API_LOCATION_FILTER_URL     = @"/talent/list/";
 
 static NSString *const API_CATEGORY_FILTER_URL     = @"/talent/list/";
-
-static NSString *const API_USER_DETAIL_UPDATE_URL = @"member/update/user/";
-
+//?category=
 
 @interface NetworkModuleMain ()
 
 @end
 
 @implementation NetworkModuleMain
-/**************** updating UserDetailData to BackEnd API ***********************/
-- (void)updatingUserDetailTextDataWithCompletionBlock:(NSString *)name nickName:(NSString *)nickName cellPhone:(NSString *)cellPhone completion:(CompletionBlock)completion{
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-    
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", API_BASE_URL, API_USER_DETAIL_URL]];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
-    NSString *requestData = [self updatingUserInputText:name nickName:nickName cellPhone:cellPhone];
-    
-    NSURLSessionUploadTask *uploadTask = [manager uploadTaskWithRequest:request fromData:(NSData*)requestData progress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-        if (error == nil) {
-            NSLog(@"Success: %@ %@", response, responseObject);
-            completion(YES, responseObject);
-        } else {
-            NSLog(@"Error: %@", error);
-            completion(NO, responseObject);
-        }
-        
-    }];
-    [uploadTask resume];
-    
-}
-
-- (NSString*)updatingUserInputText:(NSString *)name nickName:(NSString *)nickName cellPhone:(NSString *)cellPhone{
-    return [NSString stringWithFormat:@"name=%@&nickname=%@&cellphone=%@",name, nickName, cellPhone];
-}
 
 /**************** gettingFilteredCategoryData from BackEnd API ***********************/
 + (void)getFilteredCategoryWithCompletionBlock:(NSString *)categoryKey completion:(CompletionBlock)completion{
@@ -93,7 +65,7 @@ static NSString *const API_USER_DETAIL_UPDATE_URL = @"member/update/user/";
         } else {
             // NSLog(@"%@ %@", response, responseObject);
             completion(YES,responseObject);
-//            NSLog(@"네트워크모듈메인의 리스폰스와 리스폰스 오브젝트 : %@", responseObject);
+            NSLog(@"네트워크모듈메인의 리스폰스와 리스폰스 오브젝트 : %@", responseObject);
         }
     }];
     [dataTask resume];
@@ -144,7 +116,7 @@ static NSString *const API_USER_DETAIL_UPDATE_URL = @"member/update/user/";
         if (error == nil) {
             NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
             completionBlock(YES, responseDic);
-//            NSLog(@"네트워크모듈 메인의 딕셔너리 데이터 : %@", [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+            NSLog(@"네트워크모듈 메인의 딕셔너리 데이터 : %@", [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
             
         } else {
             NSLog(@"network error code %ld", error.code);

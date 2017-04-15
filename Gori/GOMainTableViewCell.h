@@ -16,8 +16,6 @@
 
 @property (nonatomic, weak) UIView *titleFooterView;
 
-@property (nonatomic, weak) UIView *titleFooterLineView;
-
 @property (nonatomic, weak) UIImageView *profileImageView;
 
 @property (nonatomic, weak) UILabel *titleLabel;
