@@ -12,23 +12,6 @@
 		4135A8A71E973F040043E0ED /* NetworkModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4135A8A61E973F040043E0ED /* NetworkModule.m */; };
 		4135A8AA1E9740230043E0ED /* GOTalentDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4135A8A91E9740230043E0ED /* GOTalentDetailModel.m */; };
 		4145D0DA1E9F611B00C7141A /* malpoongsuncopy.png in Resources */ = {isa = PBXBuildFile; fileRef = 4145D0D91E9F611B00C7141A /* malpoongsuncopy.png */; };
-		4145D0E01EA2701800C7141A /* register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4145D0DF1EA2701800C7141A /* register.storyboard */; };
-		4145D0E21EA2745200C7141A /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 4145D0E11EA2745200C7141A /* close.png */; };
-		4145D0E61EA2755200C7141A /* registerGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4145D0E51EA2755200C7141A /* registerGuideViewController.m */; };
-		4145D0E91EA27A6600C7141A /* registerTalentFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4145D0E81EA27A6600C7141A /* registerTalentFirstViewController.m */; };
-		4145D0EC1EA289C600C7141A /* testViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4145D0EB1EA289C600C7141A /* testViewController.m */; };
-		4145D0F01EA2904A00C7141A /* registerGuide.png in Resources */ = {isa = PBXBuildFile; fileRef = 4145D0EF1EA2904A00C7141A /* registerGuide.png */; };
-		4145D0F21EA292D000C7141A /* locationConfirm.png in Resources */ = {isa = PBXBuildFile; fileRef = 4145D0F11EA292D000C7141A /* locationConfirm.png */; };
-		4145D0F41EA2ADFA00C7141A /* confirmation1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4145D0F31EA2ADFA00C7141A /* confirmation1.png */; };
-		4145D0F61EA37A6F00C7141A /* beginnerBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 4145D0F51EA37A6F00C7141A /* beginnerBtn.png */; };
-		4145D0FA1EA37A7A00C7141A /* advanceBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 4145D0F91EA37A7A00C7141A /* advanceBtn.png */; };
-		4145D0FC1EA37ACA00C7141A /* intermediateBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 4145D0FB1EA37ACA00C7141A /* intermediateBtn.png */; };
-		4145D1001EA37AD300C7141A /* intermediateTouchedBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 4145D0FD1EA37AD300C7141A /* intermediateTouchedBtn.png */; };
-		4145D1011EA37AD300C7141A /* beginnerTouchedBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 4145D0FE1EA37AD300C7141A /* beginnerTouchedBtn.png */; };
-		4145D1021EA37AD300C7141A /* advancedTouchedBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 4145D0FF1EA37AD300C7141A /* advancedTouchedBtn.png */; };
-		4145D1051EA3908300C7141A /* registerTalentSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4145D1041EA3908300C7141A /* registerTalentSecondViewController.m */; };
-		4145D1071EA3A2C600C7141A /* confirmation2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4145D1061EA3A2C600C7141A /* confirmation2.png */; };
-		4145D1091EA46AFC00C7141A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4145D1081EA46AFC00C7141A /* Default-568h@2x.png */; };
 		414848071E935C8400612B3C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 414848061E935C8400612B3C /* DetailViewController.m */; };
 		4153EE841E9238FD001EFF70 /* GODataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4153EE831E9238FD001EFF70 /* GODataCenter.m */; };
 		4153EE8E1E92393C001EFF70 /* GODistrictLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4153EE871E92393C001EFF70 /* GODistrictLocationViewController.m */; };
@@ -65,6 +48,14 @@
 		418584671E91F1A30053EF40 /* footerImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 418584611E91F1A30053EF40 /* footerImage.jpg */; };
 		418584681E91F1A30053EF40 /* headerImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 418584621E91F1A30053EF40 /* headerImage.jpg */; };
 		41B26E261E9CA787001592CE /* Facebook-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B26E251E9CA787001592CE /* Facebook-icon.png */; };
+		41C299AC1EA48B19004D130F /* register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41C299AB1EA48B19004D130F /* register.storyboard */; };
+		41C299B41EA48B35004D130F /* registerGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C299AF1EA48B35004D130F /* registerGuideViewController.m */; };
+		41C299B51EA48B35004D130F /* registerTalentFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C299B11EA48B35004D130F /* registerTalentFirstViewController.m */; };
+		41C299B61EA48B35004D130F /* registerTalentSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C299B31EA48B35004D130F /* registerTalentSecondViewController.m */; };
+		41C299B91EA48B6B004D130F /* confirmation1.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C299B71EA48B6B004D130F /* confirmation1.png */; };
+		41C299BA1EA48B6B004D130F /* confirmation2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C299B81EA48B6B004D130F /* confirmation2.png */; };
+		41C299BC1EA48B7D004D130F /* locationConfirm.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C299BB1EA48B7D004D130F /* locationConfirm.png */; };
+		910E64311EA3619500B90B7E /* GOUserInfoUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910E64301EA3619500B90B7E /* GOUserInfoUpdateViewController.m */; };
 		911555021EA0C2A300CAFF7D /* District_Hyehwa.png in Resources */ = {isa = PBXBuildFile; fileRef = 911554F41EA0C2A300CAFF7D /* District_Hyehwa.png */; };
 		911555031EA0C2A300CAFF7D /* District_Yongsan.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 911554F51EA0C2A300CAFF7D /* District_Yongsan.jpeg */; };
 		911555041EA0C2A300CAFF7D /* District_Mokdong.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 911554F61EA0C2A300CAFF7D /* District_Mokdong.jpg */; };
@@ -89,7 +80,6 @@
 		919B6F261E9CE4C300AE8CA5 /* Mypage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 919B6F251E9CE4C300AE8CA5 /* Mypage.storyboard */; };
 		919B6F2F1E9CE56000AE8CA5 /* GOClassListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919B6F281E9CE56000AE8CA5 /* GOClassListViewController.m */; };
 		919B6F301E9CE56000AE8CA5 /* GOMypageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919B6F2A1E9CE56000AE8CA5 /* GOMypageViewController.m */; };
-		919B6F311E9CE56000AE8CA5 /* GORegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919B6F2C1E9CE56000AE8CA5 /* GORegistrationViewController.m */; };
 		919B6F321E9CE56000AE8CA5 /* GOWishListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919B6F2E1E9CE56000AE8CA5 /* GOWishListViewController.m */; };
 		91A309021EA08DE1000D3E32 /* tuteeCountIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91A309011EA08DE1000D3E32 /* tuteeCountIcon.png */; };
 /* End PBXBuildFile section */
@@ -104,27 +94,6 @@
 		4135A8A81E9740230043E0ED /* GOTalentDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOTalentDetailModel.h; sourceTree = "<group>"; };
 		4135A8A91E9740230043E0ED /* GOTalentDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOTalentDetailModel.m; sourceTree = "<group>"; };
 		4145D0D91E9F611B00C7141A /* malpoongsuncopy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = malpoongsuncopy.png; sourceTree = "<group>"; };
-		4145D0DF1EA2701800C7141A /* register.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = register.storyboard; sourceTree = "<group>"; };
-		4145D0E11EA2745200C7141A /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
-		4145D0E41EA2755200C7141A /* registerGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = registerGuideViewController.h; sourceTree = "<group>"; };
-		4145D0E51EA2755200C7141A /* registerGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = registerGuideViewController.m; sourceTree = "<group>"; };
-		4145D0E71EA27A6600C7141A /* registerTalentFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = registerTalentFirstViewController.h; sourceTree = "<group>"; };
-		4145D0E81EA27A6600C7141A /* registerTalentFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = registerTalentFirstViewController.m; sourceTree = "<group>"; };
-		4145D0EA1EA289C600C7141A /* testViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testViewController.h; sourceTree = "<group>"; };
-		4145D0EB1EA289C600C7141A /* testViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testViewController.m; sourceTree = "<group>"; };
-		4145D0EF1EA2904A00C7141A /* registerGuide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = registerGuide.png; sourceTree = "<group>"; };
-		4145D0F11EA292D000C7141A /* locationConfirm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locationConfirm.png; sourceTree = "<group>"; };
-		4145D0F31EA2ADFA00C7141A /* confirmation1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confirmation1.png; sourceTree = "<group>"; };
-		4145D0F51EA37A6F00C7141A /* beginnerBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginnerBtn.png; sourceTree = "<group>"; };
-		4145D0F91EA37A7A00C7141A /* advanceBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = advanceBtn.png; sourceTree = "<group>"; };
-		4145D0FB1EA37ACA00C7141A /* intermediateBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intermediateBtn.png; sourceTree = "<group>"; };
-		4145D0FD1EA37AD300C7141A /* intermediateTouchedBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intermediateTouchedBtn.png; sourceTree = "<group>"; };
-		4145D0FE1EA37AD300C7141A /* beginnerTouchedBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beginnerTouchedBtn.png; sourceTree = "<group>"; };
-		4145D0FF1EA37AD300C7141A /* advancedTouchedBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = advancedTouchedBtn.png; sourceTree = "<group>"; };
-		4145D1031EA3908300C7141A /* registerTalentSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = registerTalentSecondViewController.h; sourceTree = "<group>"; };
-		4145D1041EA3908300C7141A /* registerTalentSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = registerTalentSecondViewController.m; sourceTree = "<group>"; };
-		4145D1061EA3A2C600C7141A /* confirmation2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confirmation2.png; sourceTree = "<group>"; };
-		4145D1081EA46AFC00C7141A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		414848051E935C8400612B3C /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		414848061E935C8400612B3C /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		4153EE821E9238FD001EFF70 /* GODataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GODataCenter.h; sourceTree = "<group>"; };
@@ -182,6 +151,18 @@
 		418584611E91F1A30053EF40 /* footerImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = footerImage.jpg; sourceTree = "<group>"; };
 		418584621E91F1A30053EF40 /* headerImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = headerImage.jpg; sourceTree = "<group>"; };
 		41B26E251E9CA787001592CE /* Facebook-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Facebook-icon.png"; sourceTree = "<group>"; };
+		41C299AB1EA48B19004D130F /* register.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = register.storyboard; sourceTree = "<group>"; };
+		41C299AE1EA48B35004D130F /* registerGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = registerGuideViewController.h; sourceTree = "<group>"; };
+		41C299AF1EA48B35004D130F /* registerGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = registerGuideViewController.m; sourceTree = "<group>"; };
+		41C299B01EA48B35004D130F /* registerTalentFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = registerTalentFirstViewController.h; sourceTree = "<group>"; };
+		41C299B11EA48B35004D130F /* registerTalentFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = registerTalentFirstViewController.m; sourceTree = "<group>"; };
+		41C299B21EA48B35004D130F /* registerTalentSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = registerTalentSecondViewController.h; sourceTree = "<group>"; };
+		41C299B31EA48B35004D130F /* registerTalentSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = registerTalentSecondViewController.m; sourceTree = "<group>"; };
+		41C299B71EA48B6B004D130F /* confirmation1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confirmation1.png; sourceTree = "<group>"; };
+		41C299B81EA48B6B004D130F /* confirmation2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confirmation2.png; sourceTree = "<group>"; };
+		41C299BB1EA48B7D004D130F /* locationConfirm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locationConfirm.png; sourceTree = "<group>"; };
+		910E642F1EA3619500B90B7E /* GOUserInfoUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOUserInfoUpdateViewController.h; sourceTree = "<group>"; };
+		910E64301EA3619500B90B7E /* GOUserInfoUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOUserInfoUpdateViewController.m; sourceTree = "<group>"; };
 		911554F41EA0C2A300CAFF7D /* District_Hyehwa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = District_Hyehwa.png; sourceTree = "<group>"; };
 		911554F51EA0C2A300CAFF7D /* District_Yongsan.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = District_Yongsan.jpeg; sourceTree = "<group>"; };
 		911554F61EA0C2A300CAFF7D /* District_Mokdong.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = District_Mokdong.jpg; sourceTree = "<group>"; };
@@ -213,8 +194,6 @@
 		919B6F281E9CE56000AE8CA5 /* GOClassListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOClassListViewController.m; sourceTree = "<group>"; };
 		919B6F291E9CE56000AE8CA5 /* GOMypageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOMypageViewController.h; sourceTree = "<group>"; };
 		919B6F2A1E9CE56000AE8CA5 /* GOMypageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOMypageViewController.m; sourceTree = "<group>"; };
-		919B6F2B1E9CE56000AE8CA5 /* GORegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GORegistrationViewController.h; sourceTree = "<group>"; };
-		919B6F2C1E9CE56000AE8CA5 /* GORegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GORegistrationViewController.m; sourceTree = "<group>"; };
 		919B6F2D1E9CE56000AE8CA5 /* GOWishListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOWishListViewController.h; sourceTree = "<group>"; };
 		919B6F2E1E9CE56000AE8CA5 /* GOWishListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOWishListViewController.m; sourceTree = "<group>"; };
 		91A309011EA08DE1000D3E32 /* tuteeCountIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tuteeCountIcon.png; sourceTree = "<group>"; };
@@ -254,19 +233,6 @@
 				9163ECFC1E9A451E00F23EDA /* NetworkModuleMain.m */,
 			);
 			name = NetworkModule;
-			sourceTree = "<group>";
-		};
-		4145D0E31EA2751A00C7141A /* registerProcessView */ = {
-			isa = PBXGroup;
-			children = (
-				4145D0E41EA2755200C7141A /* registerGuideViewController.h */,
-				4145D0E51EA2755200C7141A /* registerGuideViewController.m */,
-				4145D0E71EA27A6600C7141A /* registerTalentFirstViewController.h */,
-				4145D0E81EA27A6600C7141A /* registerTalentFirstViewController.m */,
-				4145D1031EA3908300C7141A /* registerTalentSecondViewController.h */,
-				4145D1041EA3908300C7141A /* registerTalentSecondViewController.m */,
-			);
-			name = registerProcessView;
 			sourceTree = "<group>";
 		};
 		414848081E935C8E00612B3C /* LoginView */ = {
@@ -312,7 +278,6 @@
 		418583F31E91EDF70053EF40 = {
 			isa = PBXGroup;
 			children = (
-				4145D1081EA46AFC00C7141A /* Default-568h@2x.png */,
 				4185841F1E91EE9E0053EF40 /* AMSlideMenu */,
 				418584161E91EE0D0053EF40 /* Framework */,
 				418583FE1E91EDF70053EF40 /* Gori */,
@@ -333,7 +298,7 @@
 		418583FE1E91EDF70053EF40 /* Gori */ = {
 			isa = PBXGroup;
 			children = (
-				4145D0E31EA2751A00C7141A /* registerProcessView */,
+				41C299AD1EA48B20004D130F /* registerView */,
 				4185844B1E91F1220053EF40 /* model */,
 				917082EB1E9CE58B00A6B0A5 /* MyPageView */,
 				919A89FF1E95819700E8EA22 /* SignUpView */,
@@ -341,35 +306,25 @@
 				414848091E935C9F00612B3C /* DetailView */,
 				414848081E935C8E00612B3C /* LoginView */,
 				4153EE851E923904001EFF70 /* Category_LocationView */,
-				418584361E91EEFD0053EF40 /* AppDelegate.h */,
-				418584371E91EEFD0053EF40 /* AppDelegate.m */,
+				4185843E1E91F0E00053EF40 /* MainView */,
 				418584511E91F15E0053EF40 /* MainVC.h */,
 				418584521E91F15E0053EF40 /* MainVC.m */,
+				418584361E91EEFD0053EF40 /* AppDelegate.h */,
+				418584371E91EEFD0053EF40 /* AppDelegate.m */,
 				919B6F251E9CE4C300AE8CA5 /* Mypage.storyboard */,
 				4153EEA01E923A49001EFF70 /* Main.storyboard */,
 				9178CAD61E9575540054B7FB /* SignIn_SignUp.storyboard */,
 				4153EE9E1E9239AC001EFF70 /* Category_Location_Storyboard.storyboard */,
-				4145D0DF1EA2701800C7141A /* register.storyboard */,
-				4185843E1E91F0E00053EF40 /* MainView */,
+				41C299AB1EA48B19004D130F /* register.storyboard */,
 				4185840B1E91EDF70053EF40 /* Assets.xcassets */,
-				4145D0FD1EA37AD300C7141A /* intermediateTouchedBtn.png */,
-				4145D0FE1EA37AD300C7141A /* beginnerTouchedBtn.png */,
-				4145D0FF1EA37AD300C7141A /* advancedTouchedBtn.png */,
-				4145D0FB1EA37ACA00C7141A /* intermediateBtn.png */,
-				4145D0F91EA37A7A00C7141A /* advanceBtn.png */,
-				4145D0F51EA37A6F00C7141A /* beginnerBtn.png */,
-				4145D0F31EA2ADFA00C7141A /* confirmation1.png */,
-				4145D1061EA3A2C600C7141A /* confirmation2.png */,
-				4145D0F11EA292D000C7141A /* locationConfirm.png */,
-				4145D0EF1EA2904A00C7141A /* registerGuide.png */,
-				4145D0E11EA2745200C7141A /* close.png */,
+				41C299BB1EA48B7D004D130F /* locationConfirm.png */,
+				41C299B71EA48B6B004D130F /* confirmation1.png */,
+				41C299B81EA48B6B004D130F /* confirmation2.png */,
 				4145D0D91E9F611B00C7141A /* malpoongsuncopy.png */,
 				41B26E251E9CA787001592CE /* Facebook-icon.png */,
 				4185840D1E91EDF70053EF40 /* LaunchScreen.storyboard */,
 				418584101E91EDF70053EF40 /* Info.plist */,
 				418583FF1E91EDF70053EF40 /* Supporting Files */,
-				4145D0EA1EA289C600C7141A /* testViewController.h */,
-				4145D0EB1EA289C600C7141A /* testViewController.m */,
 			);
 			path = Gori;
 			sourceTree = "<group>";
@@ -460,6 +415,19 @@
 			name = MainViewImage;
 			sourceTree = "<group>";
 		};
+		41C299AD1EA48B20004D130F /* registerView */ = {
+			isa = PBXGroup;
+			children = (
+				41C299AE1EA48B35004D130F /* registerGuideViewController.h */,
+				41C299AF1EA48B35004D130F /* registerGuideViewController.m */,
+				41C299B01EA48B35004D130F /* registerTalentFirstViewController.h */,
+				41C299B11EA48B35004D130F /* registerTalentFirstViewController.m */,
+				41C299B21EA48B35004D130F /* registerTalentSecondViewController.h */,
+				41C299B31EA48B35004D130F /* registerTalentSecondViewController.m */,
+			);
+			name = registerView;
+			sourceTree = "<group>";
+		};
 		9115550E1EA0C2B000CAFF7D /* DistrictLocationImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -485,10 +453,10 @@
 				919B6F2A1E9CE56000AE8CA5 /* GOMypageViewController.m */,
 				919B6F271E9CE56000AE8CA5 /* GOClassListViewController.h */,
 				919B6F281E9CE56000AE8CA5 /* GOClassListViewController.m */,
-				919B6F2B1E9CE56000AE8CA5 /* GORegistrationViewController.h */,
-				919B6F2C1E9CE56000AE8CA5 /* GORegistrationViewController.m */,
 				919B6F2D1E9CE56000AE8CA5 /* GOWishListViewController.h */,
 				919B6F2E1E9CE56000AE8CA5 /* GOWishListViewController.m */,
+				910E642F1EA3619500B90B7E /* GOUserInfoUpdateViewController.h */,
+				910E64301EA3619500B90B7E /* GOUserInfoUpdateViewController.m */,
 			);
 			name = MyPageView;
 			sourceTree = "<group>";
@@ -573,50 +541,41 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4145D1001EA37AD300C7141A /* intermediateTouchedBtn.png in Resources */,
-				4145D0F41EA2ADFA00C7141A /* confirmation1.png in Resources */,
-				4145D0F01EA2904A00C7141A /* registerGuide.png in Resources */,
-				4145D0F21EA292D000C7141A /* locationConfirm.png in Resources */,
 				9178CAD71E9575540054B7FB /* SignIn_SignUp.storyboard in Resources */,
+				41C299BC1EA48B7D004D130F /* locationConfirm.png in Resources */,
 				9132C17C1E92FAC1007C31EC /* logo.png in Resources */,
 				912696971EA0A0F30067C331 /* menu.png in Resources */,
-				4145D1071EA3A2C600C7141A /* confirmation2.png in Resources */,
 				911555031EA0C2A300CAFF7D /* District_Yongsan.jpeg in Resources */,
 				4153EE9F1E9239AC001EFF70 /* Category_Location_Storyboard.storyboard in Resources */,
 				911555071EA0C2A300CAFF7D /* District_Sadang.jpg in Resources */,
 				911555061EA0C2A300CAFF7D /* District_Hapjung.png in Resources */,
 				912696981EA0A0F30067C331 /* menu@2x.png in Resources */,
 				41B26E261E9CA787001592CE /* Facebook-icon.png in Resources */,
-				4145D1011EA37AD300C7141A /* beginnerTouchedBtn.png in Resources */,
 				418584631E91F1A30053EF40 /* profile.jpg in Resources */,
-				4145D0FC1EA37ACA00C7141A /* intermediateBtn.png in Resources */,
+				41C299BA1EA48B6B004D130F /* confirmation2.png in Resources */,
 				911555081EA0C2A300CAFF7D /* District_Sinchon.jpg in Resources */,
 				4185840F1E91EDF70053EF40 /* LaunchScreen.storyboard in Resources */,
+				41C299B91EA48B6B004D130F /* confirmation1.png in Resources */,
 				4153EEA11E923A49001EFF70 /* Main.storyboard in Resources */,
 				4185845B1E91F1770053EF40 /* icon-menu@2x.png in Resources */,
 				912696991EA0A0F30067C331 /* menu@3x.png in Resources */,
-				4145D0F61EA37A6F00C7141A /* beginnerBtn.png in Resources */,
 				418584661E91F1A30053EF40 /* bodyImage2.jpg in Resources */,
 				911555041EA0C2A300CAFF7D /* District_Mokdong.jpg in Resources */,
 				4185840C1E91EDF70053EF40 /* Assets.xcassets in Resources */,
-				4145D0FA1EA37A7A00C7141A /* advanceBtn.png in Resources */,
-				4145D0E01EA2701800C7141A /* register.storyboard in Resources */,
+				41C299AC1EA48B19004D130F /* register.storyboard in Resources */,
 				418584681E91F1A30053EF40 /* headerImage.jpg in Resources */,
 				919B6F261E9CE4C300AE8CA5 /* Mypage.storyboard in Resources */,
 				9115550D1EA0C2A300CAFF7D /* District_Kangnam.jpg in Resources */,
 				9115550C1EA0C2A300CAFF7D /* District_All.jpg in Resources */,
 				911555021EA0C2A300CAFF7D /* District_Hyehwa.png in Resources */,
 				91A309021EA08DE1000D3E32 /* tuteeCountIcon.png in Resources */,
-				4145D1021EA37AD300C7141A /* advancedTouchedBtn.png in Resources */,
 				418584671E91F1A30053EF40 /* footerImage.jpg in Resources */,
 				911555091EA0C2A300CAFF7D /* District_Jamsil.jpg in Resources */,
 				4145D0DA1E9F611B00C7141A /* malpoongsuncopy.png in Resources */,
-				4145D1091EA46AFC00C7141A /* Default-568h@2x.png in Resources */,
 				4185845A1E91F1770053EF40 /* icon-menu.png in Resources */,
 				418584641E91F1A30053EF40 /* bodyImage.jpg in Resources */,
 				911555051EA0C2A300CAFF7D /* District_Etc.jpg in Resources */,
 				418584651E91F1A30053EF40 /* bodyImage1.jpg in Resources */,
-				4145D0E21EA2745200C7141A /* close.png in Resources */,
 				9115550B1EA0C2A300CAFF7D /* District_Jongro.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -676,19 +635,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				910E64311EA3619500B90B7E /* GOUserInfoUpdateViewController.m in Sources */,
 				418584301E91EE9E0053EF40 /* AMSlideMenuLeftMenuSegue.m in Sources */,
 				919B6F301E9CE56000AE8CA5 /* GOMypageViewController.m in Sources */,
 				418584341E91EE9E0053EF40 /* AMSlideMenuRightTableViewController.m in Sources */,
 				4185843A1E91EEFD0053EF40 /* AppDelegate.m in Sources */,
+				41C299B61EA48B35004D130F /* registerTalentSecondViewController.m in Sources */,
 				418584561E91F15E0053EF40 /* MainVC.m in Sources */,
 				4185842F1E91EE9E0053EF40 /* AMSlideMenuContentSegue.m in Sources */,
 				4153EE911E92393C001EFF70 /* GOCategoryTableViewCell.m in Sources */,
 				4153EE901E92393C001EFF70 /* GODistrictLocationTableViewCell.m in Sources */,
-				919B6F311E9CE56000AE8CA5 /* GORegistrationViewController.m in Sources */,
 				919B6F321E9CE56000AE8CA5 /* GOWishListViewController.m in Sources */,
-				4145D0E61EA2755200C7141A /* registerGuideViewController.m in Sources */,
+				41C299B41EA48B35004D130F /* registerGuideViewController.m in Sources */,
 				91641F261E927B8800DC5B43 /* GOLocationViewController.m in Sources */,
-				4145D1051EA3908300C7141A /* registerTalentSecondViewController.m in Sources */,
 				4135A8A71E973F040043E0ED /* NetworkModule.m in Sources */,
 				4135A8AA1E9740230043E0ED /* GOTalentDetailModel.m in Sources */,
 				418584351E91EE9E0053EF40 /* UIViewController+AMSlideMenu.m in Sources */,
@@ -702,10 +661,9 @@
 				418584331E91EE9E0053EF40 /* AMSlideMenuRightMenuSegue.m in Sources */,
 				4153EE8F1E92393C001EFF70 /* GOCategoryViewController.m in Sources */,
 				4135A8A31E973EB70043E0ED /* GODataCenter2.m in Sources */,
-				4145D0E91EA27A6600C7141A /* registerTalentFirstViewController.m in Sources */,
+				41C299B51EA48B35004D130F /* registerTalentFirstViewController.m in Sources */,
 				919A8A0B1E95820300E8EA22 /* GOSignupViewController.m in Sources */,
 				4153EE841E9238FD001EFF70 /* GODataCenter.m in Sources */,
-				4145D0EC1EA289C600C7141A /* testViewController.m in Sources */,
 				91641F231E92798600DC5B43 /* GOSchoolLocationTableViewCell.m in Sources */,
 				91641F201E92796400DC5B43 /* GOSchoolLocationViewController.m in Sources */,
 				919B6F2F1E9CE56000AE8CA5 /* GOClassListViewController.m in Sources */,

@@ -20,13 +20,83 @@ static NSString *const API_USER_DETAIL_URL = @"/member/profile/user/";
 static NSString *const API_LOCATION_FILTER_URL     = @"/talent/list/";
 
 static NSString *const API_CATEGORY_FILTER_URL     = @"/talent/list/";
-//?category=
+
+static NSString *const API_USER_DETAIL_UPDATE_URL = @"/member/update/user/";
+
+static NSString *const TOKEN_KEY = @"Authorization";
 
 @interface NetworkModuleMain ()
 
 @end
 
 @implementation NetworkModuleMain
+/**************** updating UserDetailTextData to BackEnd API ***********************/
+- (void)updatingUserDetailTextDataWithCompletionBlock:(NSString *)name nickName:(NSString *)nickName cellPhone:(NSString *)cellPhone completion:(CompletionBlock)completion{
+    //session 생성
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:
+                             [NSURLSessionConfiguration defaultSessionConfiguration]];
+    //Request 객체 생성
+    NSString *urlStr = [NSString stringWithFormat:@"%@%@",BASE_URL,API_USER_DETAIL_UPDATE_URL] ;
+    
+    NSURL *url = [NSURL URLWithString:urlStr];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    NSString *requestData = [self updatingUserInputText:name nickName:nickName cellPhone:cellPhone];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+//    [request setValue:@"application/json" forHTTPHeaderField:TOKEN_KEY];
+    NSLog(@"네트워크모듈의 리퀘스트 데이터 : %@", requestData);
+    //body data set
+    request.HTTPMethod = @"PATCH";
+    NSString *loginToken = [[GODataCenter2 sharedInstance] getMyLoginToken];
+    NSLog(@"네트워크모듈 메인의 토큰 : %@",loginToken);
+    // 헤더 세팅
+    [request setValue:[NSString stringWithFormat:@"Token %@", loginToken] forHTTPHeaderField:TOKEN_KEY];
+    NSData *data = [requestData dataUsingEncoding:NSUTF8StringEncoding];
+    request.HTTPBody = data;
+//    NSLog(@"에이치티티피 데이타 : %@", [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+    
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            if (error == nil) {
+                NSDictionary *responseData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+                NSLog(@"네트워크모듈메인의 데이터 : %@", [[NSString alloc] initWithData: data encoding:NSUTF8StringEncoding]);
+                NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                NSUInteger statusCode = (NSUInteger) [httpResponse statusCode];
+                // 받은 header들을 dictionary형태로 받음
+                NSDictionary *responseHeaderFields = [(NSHTTPURLResponse *)response allHeaderFields];
+                NSLog(@"스테이터스 코드 체크 : %lu", statusCode);
+                NSLog(@"네트워크모듈 메인의 리스폰스 헤더 필드 네임 데이터:%@",[responseHeaderFields objectForKey:@"name"]);
+
+                if(statusCode == 200) {
+                    NSLog(@"마이페이지 텍스트 업데이트 성공");
+//                    NSLog(@"key: %@", [responseData objectForKey:@"key"]);;
+//                    [[GODataCenter2 sharedInstance] setMyLoginToken:[responseData objectForKey:@"key"]];
+                    completion(YES,responseData);
+
+                }
+                else if(statusCode == 400) {
+                    NSLog(@"non_field_errors: %@", [responseData objectForKey:@"non_field_errors"]);
+                    completion(NO,responseData);
+
+
+                }
+
+            }else
+            {
+                NSDictionary *responsData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+                NSLog(@"%@",responsData);
+                completion(NO,responsData);
+            }
+                                                        }];
+    [task resume];
+    
+}
+
+
+- (NSString*)updatingUserInputText:(NSString *)name nickName:(NSString *)nickName cellPhone:(NSString *)cellPhone{
+    return [NSString stringWithFormat:@"{\"name\":\"%@\",\"nickname\":\"%@\",\"cellphone\":\"%@\"}",name,nickName,cellPhone];
+    
+//    return [NSString stringWithFormat:@"name=%@&nickname=%@&cellphone=%@",name,nickName, cellPhone];
+}
+
 
 /**************** gettingFilteredCategoryData from BackEnd API ***********************/
 + (void)getFilteredCategoryWithCompletionBlock:(NSString *)categoryKey completion:(CompletionBlock)completion{
@@ -35,6 +105,7 @@ static NSString *const API_CATEGORY_FILTER_URL     = @"/talent/list/";
     AFURLSessionManager *manager = [[AFURLSessionManager alloc]initWithSessionConfiguration:configuration];
     
     NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@", API_BASE_URL, API_CATEGORY_FILTER_URL, categoryKey]];
+    NSLog(@"네트워크모듈 메인의 지역 필터링 데이터 : %@", [NSString stringWithFormat:@"%@%@%@", API_BASE_URL, API_CATEGORY_FILTER_URL, categoryKey]);
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         if (error == nil) {
@@ -55,17 +126,17 @@ static NSString *const API_CATEGORY_FILTER_URL     = @"/talent/list/";
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
     NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@",API_BASE_URL,API_LOCATION_FILTER_URL,regionKey]];
-    NSLog(@"네트워크모듈메인의 URL : %@", URL);
+//    NSLog(@"네트워크모듈메인의 URL : %@", URL);
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         if (error) {
-            NSLog(@"Error: %@", error);
+//            NSLog(@"Error: %@", error);
             completion(NO,nil);
         } else {
             // NSLog(@"%@ %@", response, responseObject);
             completion(YES,responseObject);
-            NSLog(@"네트워크모듈메인의 리스폰스와 리스폰스 오브젝트 : %@", responseObject);
+//            NSLog(@"네트워크모듈메인의 리스폰스와 리스폰스 오브젝트 : %@", responseObject);
         }
     }];
     [dataTask resume];
@@ -108,7 +179,7 @@ static NSString *const API_CATEGORY_FILTER_URL     = @"/talent/list/";
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     request.HTTPMethod = @"GET";
     
-    [request addValue:[NSString stringWithFormat:@"token %@", [[GODataCenter2 sharedInstance] getMyLoginToken]] forHTTPHeaderField:@"Authorization"];
+    [request addValue:[NSString stringWithFormat:@"token %@", [[GODataCenter2 sharedInstance] getMyLoginToken]] forHTTPHeaderField:TOKEN_KEY];
     
     // Get Task 요청
     NSURLSessionDataTask *getDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
@@ -116,7 +187,7 @@ static NSString *const API_CATEGORY_FILTER_URL     = @"/talent/list/";
         if (error == nil) {
             NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
             completionBlock(YES, responseDic);
-            NSLog(@"네트워크모듈 메인의 딕셔너리 데이터 : %@", [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+//            NSLog(@"네트워크모듈 메인의 딕셔너리 데이터 : %@", [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
             
         } else {
             NSLog(@"network error code %ld", error.code);

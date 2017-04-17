@@ -13,14 +13,13 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface GOMypageViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *registrationButton;
 @property (weak, nonatomic) IBOutlet UIButton *classListButton;
 @property (weak, nonatomic) IBOutlet UIButton *wishListButton;
-@property (weak, nonatomic) IBOutlet UIView *registrationView;
+@property (weak, nonatomic) IBOutlet UIButton *userInfoSettingButton;
 @property (weak, nonatomic) IBOutlet UIView *classListView;
 @property (weak, nonatomic) IBOutlet UIView *wishListView;
-@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *profileNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *profileNickNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *profileEmailLabel;
 @property (nonatomic, strong) NSMutableArray *pkMutableArray;
 
@@ -31,31 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-  
-    [[GODataCenter sharedInstance]receiveServerUserDetailDataWithCompletionBlock:^(BOOL isSuccess) {
-        if (isSuccess) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                NSDictionary *temp = [GODataCenter sharedInstance].networkUserDetailDictionary;
-                NSLog(@"템프 딕셔너리의 데이터 : %@", temp);
-                self.profileNameLabel.text = [temp objectForKey:@"name"];
-                self.profileEmailLabel.text = [temp objectForKey:@"user_id"];
-                NSLog(@"프로파일네임레이블 텍스트 : %@", [temp objectForKey:@"name"]);
-                NSLog(@"프로파일이메일레이블 텍스트 : %@", [temp objectForKey:@"user_id"]);
-                
-//                NSURL *profileURL = [NSURL URLWithString:[temp objectForKey:@"profile_image"]];
-//                self.profileImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]];
-                NSLog(@"ReceivingServerData and ReloadingData is Completed");
-                
-            });
-        }else{
-              NSLog(@"ReceivingServerData and ReloadingData is Failed");
-        }
-    }];
-    
-    
-    
-    self.registrationView.alpha = 1.0f;
-    self.classListView.alpha = 0.0f;
+    self.classListView.alpha = 1.0f;
     self.wishListView.alpha = 0.0f;
     
 }
@@ -76,30 +51,50 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 
 }
-- (IBAction)goRegistrationView:(UIButton *)sender {
-    [UIView animateWithDuration:1.5 animations:^{
-        self.registrationView.alpha = 1.0f;
-        self.classListView.alpha = 0.0f;
-        self.wishListView.alpha = 0.0f;
-    }];
-    
-}
+
 - (IBAction)goClassListView:(UIButton *)sender {
     [UIView animateWithDuration:1.5 animations:^{
-        self.registrationView.alpha = 0.0f;
         self.classListView.alpha = 1.0f;
         self.wishListView.alpha = 0.0f;
     }];
 }
 - (IBAction)goWishListView:(UIButton *)sender {
     [UIView animateWithDuration:1.5 animations:^{
-        self.registrationView.alpha = 0.0f;
         self.classListView.alpha = 0.0f;
         self.wishListView.alpha = 1.0f;
     }];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    
+    [[GODataCenter sharedInstance]receiveServerUserDetailDataWithCompletionBlock:^(BOOL isSuccess) {
+        if (isSuccess) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSDictionary *temp = [GODataCenter sharedInstance].networkUserDetailDictionary;
+                //                NSLog(@"템프 딕셔너리의 데이터 : %@", temp);
+                self.profileNameLabel.text = [temp objectForKey:@"name"];
+                self.profileEmailLabel.text = [temp objectForKey:@"user_id"];
+                self.profileNickNameLabel.text = [temp objectForKey:@"nickname"];
+                //                NSLog(@"프로파일네임레이블 텍스트 : %@", [temp objectForKey:@"name"]);
+                //                NSLog(@"프로파일이메일레이블 텍스트 : %@", [temp objectForKey:@"user_id"]);
+                
+                NSURL *profileURL = [NSURL URLWithString:[temp objectForKey:@"profile_image"]];
+                [self.userInfoSettingButton setBackgroundImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]] forState:UIControlStateNormal];
+                NSLog(@"ReceivingServerData and ReloadingData is Completed");
+                
+            });
+        }else{
+            NSLog(@"ReceivingServerData and ReloadingData is Failed");
+        }
+    }];
+    
+}
 
+-(IBAction)unwindSegue:(UIStoryboardSegue*)sender{
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
