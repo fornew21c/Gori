@@ -183,5 +183,9 @@
     [self.nManager postRegisterCreate:completion];
 }
 
+- (void)loginWithFacebookid:(NSString*)facebookToken completion:(CompletionBlock)completion
+{
+    [self.nManager loginRequestWithFacebookid:facebookToken completion:completion];
+}
 
 @end

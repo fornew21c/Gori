@@ -39,14 +39,18 @@
         <dict>
             <key>CFBundleURLSchemes</key>
             <array>
-                <string>fb670055479855717</string>
+<!--                <string>fb670055479855717</string>-->
+                <string>fb800848553396368</string>
             </array>
         </dict>
     </array>
     <key>FacebookAppID</key>
-    <string>670055479855717</string>
+<!--    <string>670055479855717</string>-->
+    <string>800848553396368</string>
     <key>FacebookDisplayName</key>
-    <string>com.fornew21c.Gori</string>
+<!--    <string>com.fornew21c.Gori</string>-->
+    <string>fc-OAuth-login</string>
+
     <key>LSApplicationQueriesSchemes</key>
     <array>
         <string>fbapi</string>

@@ -25,6 +25,7 @@ static NSString * const BASE_URL = @"https://mozzi.co.kr/api";
  */
 static NSString * const SIGNUP_URL = @"/member/signup/";    //POST
 static NSString * const LOGIN_URL = @"/member/login/";      //GET
+static NSString * const FACEBOOK_LOGIN_URL = @"/member/fb_login/"; //POST
 static NSString * const LOGOUT_URL = @"/member/logout/";    //POST
 static NSString * const USERDETAIL_URL = @"/member/profile/";//GET
 static NSString * const POST_URL = @"/post/";               //POST - MULTIPART
@@ -51,4 +52,5 @@ static NSString * const POST_REGISTER_CREATE = @"/talent/add/registration/";    
 - (void)postListRequestWithPage:(NSNumber *)page completion:(CompletionBlock)completion;
 - (void)postRetrieveRequestWithPostID:(NSNumber *)pk completion:(CompletionBlock)completion;
 - (void)postRegisterCreate:(CompletionBlock)completion;
+- (void)loginRequestWithFacebookid:(NSString *)fbAccessToken completion:(CompletionBlock)completion;
 @end

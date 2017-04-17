@@ -21,21 +21,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
      //Do any additional setup after loading the view.
-       FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    // Optional: Place the button in the center of your view.
-        loginButton.center = self.view.center;
-        loginButton.delegate = self;
-        [self.view addSubview:loginButton];
-    
-        loginButton.readPermissions =
-        @[@"public_profile", @"email", @"user_friends"];
-    
-        NSLog(@"currentAccessToken: %@", [FBSDKAccessToken currentAccessToken]);
-        if ([FBSDKAccessToken currentAccessToken]) {
-            // User is logged in, do work such as go to next view controller.
-            NSLog(@"login success");
-            //loginButton.hidden = TRUE;
-        }
+//       FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+//    // Optional: Place the button in the center of your view.
+//        loginButton.center = self.view.center;
+//        loginButton.delegate = self;
+//        [self.view addSubview:loginButton];
+//    
+//        loginButton.readPermissions =
+//        @[@"public_profile", @"email", @"user_friends"];
+//    
+//    //FBSDKAccessToken *fbsaccesstoken = [FBSDKAccessToken alloc] ;
+//    //[FBSDKAccessToken alloc] tokenString
+//    
+////    NSString(@"facebook token string: %@", [FBSDKAccessToken alloc].tokenString);
+//       NSLog(@"currentAccessToken: %@", [FBSDKAccessToken currentAccessToken]);
+//        if ([FBSDKAccessToken currentAccessToken]) {
+//            // User is logged in, do work such as go to next view controller.
+//            NSLog(@"login success");
+//            //loginButton.hidden = TRUE;
+//        }
     [self.facebookLoginBtn addTarget:self action:@selector(loginButtonTouched) forControlEvents:UIControlEventTouchUpInside];
     self.pwTF.secureTextEntry = YES;
 }
@@ -43,8 +47,35 @@
 - (void)loginButtonTouched {
     if([FBSDKAccessToken currentAccessToken]) {
         NSLog(@"이미 로그인중");
+        NSString *fbAccessToken = [FBSDKAccessToken currentAccessToken].tokenString;
+        NSLog(@"fbAccessToken: %@", fbAccessToken);
         NSLog(@"facebook access token: %@",[FBSDKAccessToken currentAccessToken]);
-        [self performSegueWithIdentifier:@"mainViewSegue" sender:nil];
+       // [self performSegueWithIdentifier:@"mainViewSegue" sender:nil];
+        [[GODataCenter2 sharedInstance] loginWithFacebookid:fbAccessToken completion:^(BOOL isSuccess, id responseData) {
+            
+            if(isSuccess)
+            {
+                NSLog(@"responseData objectForKey: %@",[responseData objectForKey:@"key"]);
+                [[GODataCenter2 sharedInstance] setMyLoginToken:[responseData objectForKey:@"key"]];
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [self performSegueWithIdentifier:@"mainViewSegue" sender:nil];
+                });
+            }else
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"로그인 에러" message:@"로그인에 실패하였습니다." preferredStyle:UIAlertControllerStyleAlert];
+                    
+                    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                    
+                    
+                    [alertController addAction:okAction];
+                    [self presentViewController:alertController animated:YES completion:nil];
+                });
+            }
+            
+            // NSLog(@"respons %@",respons);
+            
+        }];
     }
     else {
         FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
@@ -56,9 +87,32 @@
             } else {
                 NSLog(@"Logged in");
                 NSLog(@"facebook access token: %@",[FBSDKAccessToken currentAccessToken]);
-                dispatch_sync(dispatch_get_main_queue(), ^{
-                    [self performSegueWithIdentifier:@"mainViewSegue" sender:nil];
-                });
+                NSString *fbAccessToken = [FBSDKAccessToken currentAccessToken].tokenString;
+                [[GODataCenter2 sharedInstance] loginWithFacebookid:fbAccessToken completion:^(BOOL isSuccess, id responseData) {
+                    
+                    if(isSuccess)
+                    {
+                        NSLog(@"responseData objectForKey: %@",[responseData objectForKey:@"key"]);
+                        [[GODataCenter2 sharedInstance] setMyLoginToken:[responseData objectForKey:@"key"]];
+                        dispatch_sync(dispatch_get_main_queue(), ^{
+                            [self performSegueWithIdentifier:@"mainViewSegue" sender:nil];
+                        });
+                    }else
+                    {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"로그인 에러" message:@"로그인에 실패하였습니다." preferredStyle:UIAlertControllerStyleAlert];
+                            
+                            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                            
+                            
+                            [alertController addAction:okAction];
+                            [self presentViewController:alertController animated:YES completion:nil];
+                        });
+                    }
+                    
+                    // NSLog(@"respons %@",respons);
+                    
+                }];
                 
                 
             }
@@ -70,9 +124,35 @@
 - (void)loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error
 {
     if(!error) {
+        NSString *fbAccessToken = [FBSDKAccessToken currentAccessToken].tokenString;
         NSLog(@"You've logged in");
-        NSLog(@"result: %@", result);
-        [self performSegueWithIdentifier:@"mainViewSegue" sender:nil];
+        NSLog(@"fbAccessToken: %@", fbAccessToken);
+        [[GODataCenter2 sharedInstance] loginWithFacebookid:fbAccessToken completion:^(BOOL isSuccess, id responseData) {
+            
+            if(isSuccess)
+            {
+                NSLog(@"responseData objectForKey: %@",[responseData objectForKey:@"key"]);
+                [[GODataCenter2 sharedInstance] setMyLoginToken:[responseData objectForKey:@"key"]];
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [self performSegueWithIdentifier:@"mainViewSegue" sender:nil];
+                });
+            }else
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"로그인 에러" message:@"로그인에 실패하였습니다." preferredStyle:UIAlertControllerStyleAlert];
+                    
+                    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                    
+                    
+                    [alertController addAction:okAction];
+                    [self presentViewController:alertController animated:YES completion:nil];
+                });
+            }
+            
+            // NSLog(@"respons %@",respons);
+            
+        }];
+       
     }
 }
 

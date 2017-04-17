@@ -34,4 +34,7 @@
 
 //수업신청
 - (void)registerCreate:(CompletionBlock)completion;
+
+//facebook login
+- (void)loginWithFacebookid:(NSString*)facebookToken completion:(CompletionBlock)completion;
 @end

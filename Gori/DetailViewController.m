@@ -10,6 +10,8 @@
 #import <AFNetworking/AFNetworking.h>
 #import "GODataCenter2.h"
 #import "GOTalentDetailModel.h"
+#import "registerGuideViewController.h"
+#import "testViewController.h"
 
 @interface DetailViewController ()
 <UIScrollViewDelegate>
@@ -136,37 +138,51 @@
     //self.viewData = data;
 }
 - (IBAction)talentRegisterBtnTouched:(id)sender {
-    [[GODataCenter2 sharedInstance] registerCreate:^(BOOL isSuccess, id responseData) {
-        if(isSuccess)
-        {
-            NSLog(@"talentRegisterBtnTouched isSuccess: %lu", isSuccess);
-            NSLog(@"talentRegisterBtnTouched responseData: %@", [responseData objectForKey:@"detail"]);
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"수업등록 성공" message:[responseData objectForKey:@"detail"] preferredStyle:UIAlertControllerStyleAlert];
-                
-                UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
-                
-                
-                [alertController addAction:okAction];
-                [self presentViewController:alertController animated:YES completion:nil];
-            });
-            
-        }else
-        {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"수업등록 실패" message:[responseData objectForKey:@"detail"] preferredStyle:UIAlertControllerStyleAlert];
-                
-                UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
-                
-                
-                [alertController addAction:okAction];
-                [self presentViewController:alertController animated:YES completion:nil];
-            });
-            NSLog(@"error talentRegisterBtnTouched responseData: %@", responseData);
+   // [self performSegueWithIdentifier:@"testSegue" sender:sender];
+    [self performSegueWithIdentifier:@"registerSegue" sender:sender];
+//    [[GODataCenter2 sharedInstance] registerCreate:^(BOOL isSuccess, id responseData) {
+//        if(isSuccess)
+//        {
+//            //NSLog(@"talentRegisterBtnTouched isSuccess: %lu", isSuccess);
+//            NSLog(@"talentRegisterBtnTouched responseData: %@", [responseData objectForKey:@"detail"]);
+//            
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"수업등록 성공" message:[responseData objectForKey:@"detail"] preferredStyle:UIAlertControllerStyleAlert];
+//                
+//                UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+//                
+//                
+//                [alertController addAction:okAction];
+//                [self presentViewController:alertController animated:YES completion:nil];
+//            });
+//            
+//        }else
+//        {
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"수업등록 실패" message:[responseData objectForKey:@"detail"] preferredStyle:UIAlertControllerStyleAlert];
+//                
+//                UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+//                
+//                
+//                [alertController addAction:okAction];
+//                [self presentViewController:alertController animated:YES completion:nil];
+//            });
+//            NSLog(@"error talentRegisterBtnTouched responseData: %@", responseData);
+//
+//        }
+//    }];
+}
 
-        }
-    }];
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"registerSegue"]) {
+        registerGuideViewController *rgView = [segue destinationViewController];
+        rgView.selectedModel = self.selectedModel;
+    }
+    else if([[segue identifier] isEqualToString:@"testSegue"]) {
+        testViewController *testView = [segue destinationViewController];
+        testView.recivedData = self.selectedModel.title;
+        
+    }
 }
 
 /*

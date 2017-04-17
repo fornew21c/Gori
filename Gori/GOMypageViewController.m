@@ -9,6 +9,8 @@
 #import "GOMypageViewController.h"
 #import "GODataCenter.h"
 #import "GODataCenter2.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface GOMypageViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *registrationButton;
@@ -62,6 +64,9 @@
     [[GODataCenter2 sharedInstance] logoutCompletion:^(BOOL isSuccess, id respons) {
         if(isSuccess) {
             NSLog(@"로그아웃에 성공했습니다.");
+            FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
+            [loginManager logOut];
+            [FBSDKAccessToken setCurrentAccessToken:nil];
         }
         else {
             NSLog(@"로그아웃에 실패했습니다.");

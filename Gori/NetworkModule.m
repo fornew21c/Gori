@@ -355,4 +355,56 @@ static NSString *const TOKEN_KEY = @"Authorization";
     }];
     [dataTask resume];
 }
+
+- (void)loginRequestWithFacebookid:(NSString *)fbAccessToken completion:(CompletionBlock)completion
+{
+    //session 생성
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:
+                             [NSURLSessionConfiguration defaultSessionConfiguration]];
+    //Request 객체 생성
+    NSString *urlStr = [NSString stringWithFormat:@"%@%@",BASE_URL,FACEBOOK_LOGIN_URL] ;
+    
+    NSURL *url = [NSURL URLWithString:urlStr];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    NSString *requstData = [NSString stringWithFormat:@"access_token=%@", fbAccessToken];
+    
+    //body data set
+    request.HTTPMethod = @"POST";
+    request.HTTPBody = [requstData dataUsingEncoding:NSUTF8StringEncoding];
+    //post Tast 요청
+    
+    NSURLSessionUploadTask *task = [session uploadTaskWithRequest:request
+                                                         fromData:nil
+                                                completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                                                    if (error == nil) {
+                                                        NSDictionary *responseData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+                                                        
+                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                        NSUInteger statusCode = (NSUInteger) [httpResponse statusCode];
+                                                        // 받은 header들을 dictionary형태로 받음
+                                                        //NSDictionary *responseHeaderFields = [(NSHTTPURLResponse *)response allHeaderFields];
+                                                        
+                                                        if(statusCode == 200) {
+                                                            NSLog(@"로그인 성공");
+                                                            NSLog(@"key: %@", [responseData objectForKey:@"key"]);;
+                                                            //[[GODataCenter2 sharedInstance] setMyLoginToken:[responseData objectForKey:@"key"]];
+                                                            completion(YES,responseData);
+                                                            
+                                                        }
+                                                        else if(statusCode == 400) {
+                                                            NSLog(@"non_field_errors: %@", [responseData objectForKey:@"non_field_errors"]);
+                                                            completion(NO,responseData);
+                                                            
+                                                            
+                                                        }
+                                                        
+                                                    }else
+                                                    {
+                                                        NSDictionary *responsData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+                                                        NSLog(@"%@",responsData);
+                                                        completion(NO,responsData);
+                                                    }
+                                                }];
+    [task resume];    
+}
 @end
