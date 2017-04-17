@@ -62,6 +62,7 @@
             self.networkDataArray = networkDataArray;
             completionBlock(YES);
         }else{
+            NSLog(@"깃 커밋 0417");
             nil;
         }
     }];
