@@ -30,6 +30,7 @@
 - (instancetype)init{
     self = [super init];
         if (self) {
+            self.networkManager = [[NetworkModuleMain alloc]init];
             self.networkDataArray = [[NSArray alloc] init];
             self.networkUserDetailDictionary = [[NSDictionary alloc]init];
             self.districtLocationFilteredArray = [[NSArray alloc]init];
@@ -43,7 +44,7 @@
 - (void)updatingUserDetailText:(NSString *)name nickName:(NSString *)nickName cellPhone:(NSString *)cellPhone completion:(CompletionBlock)completion{
     [self.networkManager updatingUserDetailTextDataWithCompletionBlock:name nickName:nickName cellPhone:cellPhone completion:^(BOOL isSuccess, id respons) {
         if (isSuccess) {
-            nil;
+            completion(YES, respons);
         }else{
             nil;
         }
@@ -73,9 +74,9 @@
             NSArray *networkDataArray = [respons objectForKey:@"results"];
             self.networkDataArray = networkDataArray;
             completionBlock(YES);
-            NSLog(@"-----------------------------------------------------------------------------");
-            NSLog(@"self.districtLocationFilteredArray: %@", self.districtLocationFilteredArray);
-            NSLog(@"-----------------------------------------------------------------------------");
+//            NSLog(@"-----------------------------------------------------------------------------");
+//            NSLog(@"self.districtLocationFilteredArray: %@", self.districtLocationFilteredArray);
+//            NSLog(@"-----------------------------------------------------------------------------");
             nil;
         }
     }];
@@ -89,9 +90,9 @@
             NSArray *networkDataArray = [respons objectForKey:@"results"];
             self.networkDataArray = networkDataArray;
             completionBlock(YES);
-            NSLog(@"-----------------------------------------------------------------------------");
-            NSLog(@"self.districtLocationFilteredArray: %@", self.districtLocationFilteredArray);
-            NSLog(@"-----------------------------------------------------------------------------");
+//            NSLog(@"-----------------------------------------------------------------------------");
+//            NSLog(@"self.districtLocationFilteredArray: %@", self.districtLocationFilteredArray);
+//            NSLog(@"-----------------------------------------------------------------------------");
             nil;
         }else{
             nil;

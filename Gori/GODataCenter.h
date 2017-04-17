@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void(^CompletionBlock)(BOOL isSuccess, id respons);
+
 @interface GODataCenter : NSObject
 
 @property (nonatomic) NSString *token;
@@ -47,6 +49,7 @@
 - (void)receiveServerUserDetailDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock;
 - (void)receiveDistrictLocationFilteredDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock;
 - (void)receiveCategoryFilteredDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock;
+- (void)updatingUserDetailText:(NSString *)name nickName:(NSString *)nickName cellPhone:(NSString *)cellPhone completion:(CompletionBlock)completion;
 
 + (void)setUserTokenWithString:(NSString *)tokenString;
 + (NSString *)getUserToken;

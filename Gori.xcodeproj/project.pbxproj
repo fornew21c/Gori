@@ -48,6 +48,7 @@
 		418584671E91F1A30053EF40 /* footerImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 418584611E91F1A30053EF40 /* footerImage.jpg */; };
 		418584681E91F1A30053EF40 /* headerImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 418584621E91F1A30053EF40 /* headerImage.jpg */; };
 		41B26E261E9CA787001592CE /* Facebook-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 41B26E251E9CA787001592CE /* Facebook-icon.png */; };
+		910E64311EA3619500B90B7E /* GOUserInfoUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910E64301EA3619500B90B7E /* GOUserInfoUpdateViewController.m */; };
 		911555021EA0C2A300CAFF7D /* District_Hyehwa.png in Resources */ = {isa = PBXBuildFile; fileRef = 911554F41EA0C2A300CAFF7D /* District_Hyehwa.png */; };
 		911555031EA0C2A300CAFF7D /* District_Yongsan.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 911554F51EA0C2A300CAFF7D /* District_Yongsan.jpeg */; };
 		911555041EA0C2A300CAFF7D /* District_Mokdong.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 911554F61EA0C2A300CAFF7D /* District_Mokdong.jpg */; };
@@ -72,7 +73,6 @@
 		919B6F261E9CE4C300AE8CA5 /* Mypage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 919B6F251E9CE4C300AE8CA5 /* Mypage.storyboard */; };
 		919B6F2F1E9CE56000AE8CA5 /* GOClassListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919B6F281E9CE56000AE8CA5 /* GOClassListViewController.m */; };
 		919B6F301E9CE56000AE8CA5 /* GOMypageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919B6F2A1E9CE56000AE8CA5 /* GOMypageViewController.m */; };
-		919B6F311E9CE56000AE8CA5 /* GORegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919B6F2C1E9CE56000AE8CA5 /* GORegistrationViewController.m */; };
 		919B6F321E9CE56000AE8CA5 /* GOWishListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919B6F2E1E9CE56000AE8CA5 /* GOWishListViewController.m */; };
 		91A309021EA08DE1000D3E32 /* tuteeCountIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91A309011EA08DE1000D3E32 /* tuteeCountIcon.png */; };
 /* End PBXBuildFile section */
@@ -144,6 +144,8 @@
 		418584611E91F1A30053EF40 /* footerImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = footerImage.jpg; sourceTree = "<group>"; };
 		418584621E91F1A30053EF40 /* headerImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = headerImage.jpg; sourceTree = "<group>"; };
 		41B26E251E9CA787001592CE /* Facebook-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Facebook-icon.png"; sourceTree = "<group>"; };
+		910E642F1EA3619500B90B7E /* GOUserInfoUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOUserInfoUpdateViewController.h; sourceTree = "<group>"; };
+		910E64301EA3619500B90B7E /* GOUserInfoUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOUserInfoUpdateViewController.m; sourceTree = "<group>"; };
 		911554F41EA0C2A300CAFF7D /* District_Hyehwa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = District_Hyehwa.png; sourceTree = "<group>"; };
 		911554F51EA0C2A300CAFF7D /* District_Yongsan.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = District_Yongsan.jpeg; sourceTree = "<group>"; };
 		911554F61EA0C2A300CAFF7D /* District_Mokdong.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = District_Mokdong.jpg; sourceTree = "<group>"; };
@@ -175,8 +177,6 @@
 		919B6F281E9CE56000AE8CA5 /* GOClassListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOClassListViewController.m; sourceTree = "<group>"; };
 		919B6F291E9CE56000AE8CA5 /* GOMypageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOMypageViewController.h; sourceTree = "<group>"; };
 		919B6F2A1E9CE56000AE8CA5 /* GOMypageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOMypageViewController.m; sourceTree = "<group>"; };
-		919B6F2B1E9CE56000AE8CA5 /* GORegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GORegistrationViewController.h; sourceTree = "<group>"; };
-		919B6F2C1E9CE56000AE8CA5 /* GORegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GORegistrationViewController.m; sourceTree = "<group>"; };
 		919B6F2D1E9CE56000AE8CA5 /* GOWishListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOWishListViewController.h; sourceTree = "<group>"; };
 		919B6F2E1E9CE56000AE8CA5 /* GOWishListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOWishListViewController.m; sourceTree = "<group>"; };
 		91A309011EA08DE1000D3E32 /* tuteeCountIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tuteeCountIcon.png; sourceTree = "<group>"; };
@@ -288,15 +288,15 @@
 				414848091E935C9F00612B3C /* DetailView */,
 				414848081E935C8E00612B3C /* LoginView */,
 				4153EE851E923904001EFF70 /* Category_LocationView */,
-				418584361E91EEFD0053EF40 /* AppDelegate.h */,
-				418584371E91EEFD0053EF40 /* AppDelegate.m */,
+				4185843E1E91F0E00053EF40 /* MainView */,
 				418584511E91F15E0053EF40 /* MainVC.h */,
 				418584521E91F15E0053EF40 /* MainVC.m */,
+				418584361E91EEFD0053EF40 /* AppDelegate.h */,
+				418584371E91EEFD0053EF40 /* AppDelegate.m */,
 				919B6F251E9CE4C300AE8CA5 /* Mypage.storyboard */,
 				4153EEA01E923A49001EFF70 /* Main.storyboard */,
 				9178CAD61E9575540054B7FB /* SignIn_SignUp.storyboard */,
 				4153EE9E1E9239AC001EFF70 /* Category_Location_Storyboard.storyboard */,
-				4185843E1E91F0E00053EF40 /* MainView */,
 				4185840B1E91EDF70053EF40 /* Assets.xcassets */,
 				4145D0D91E9F611B00C7141A /* malpoongsuncopy.png */,
 				41B26E251E9CA787001592CE /* Facebook-icon.png */,
@@ -418,10 +418,10 @@
 				919B6F2A1E9CE56000AE8CA5 /* GOMypageViewController.m */,
 				919B6F271E9CE56000AE8CA5 /* GOClassListViewController.h */,
 				919B6F281E9CE56000AE8CA5 /* GOClassListViewController.m */,
-				919B6F2B1E9CE56000AE8CA5 /* GORegistrationViewController.h */,
-				919B6F2C1E9CE56000AE8CA5 /* GORegistrationViewController.m */,
 				919B6F2D1E9CE56000AE8CA5 /* GOWishListViewController.h */,
 				919B6F2E1E9CE56000AE8CA5 /* GOWishListViewController.m */,
+				910E642F1EA3619500B90B7E /* GOUserInfoUpdateViewController.h */,
+				910E64301EA3619500B90B7E /* GOUserInfoUpdateViewController.m */,
 			);
 			name = MyPageView;
 			sourceTree = "<group>";
@@ -596,6 +596,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				910E64311EA3619500B90B7E /* GOUserInfoUpdateViewController.m in Sources */,
 				418584301E91EE9E0053EF40 /* AMSlideMenuLeftMenuSegue.m in Sources */,
 				919B6F301E9CE56000AE8CA5 /* GOMypageViewController.m in Sources */,
 				418584341E91EE9E0053EF40 /* AMSlideMenuRightTableViewController.m in Sources */,
@@ -604,7 +605,6 @@
 				4185842F1E91EE9E0053EF40 /* AMSlideMenuContentSegue.m in Sources */,
 				4153EE911E92393C001EFF70 /* GOCategoryTableViewCell.m in Sources */,
 				4153EE901E92393C001EFF70 /* GODistrictLocationTableViewCell.m in Sources */,
-				919B6F311E9CE56000AE8CA5 /* GORegistrationViewController.m in Sources */,
 				919B6F321E9CE56000AE8CA5 /* GOWishListViewController.m in Sources */,
 				91641F261E927B8800DC5B43 /* GOLocationViewController.m in Sources */,
 				4135A8A71E973F040043E0ED /* NetworkModule.m in Sources */,
