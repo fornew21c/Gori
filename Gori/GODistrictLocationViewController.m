@@ -96,6 +96,7 @@ typedef void(^CompletionBlock)(BOOL isSuccess, id respons);
         default:
             break;
     }
+    [GODataCenter sharedInstance].filterSchoolLocationYN = NO;
     [GODataCenter sharedInstance].filterCategoryYN = NO;
     [self dismissViewControllerAnimated:YES completion:nil];
 }

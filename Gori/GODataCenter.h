@@ -14,9 +14,11 @@ typedef void(^CompletionBlock)(BOOL isSuccess, id respons);
 
 @property (nonatomic) NSString *token;
 @property (nonatomic) BOOL filterDistrictLocationYN;
+@property (nonatomic) BOOL filterSchoolLocationYN;
 @property (nonatomic) BOOL filterCategoryYN;
 @property (nonatomic) NSString *regionKey;
 @property (nonatomic) NSString *categoryKey;
+@property (nonatomic) NSData *userPicture;
 /**************** Array for Setting with NetworkModule****************/
 @property (nonatomic) NSArray *networkDataArray;
 @property (nonatomic) NSDictionary *networkUserDetailDictionary;
@@ -32,6 +34,7 @@ typedef void(^CompletionBlock)(BOOL isSuccess, id respons);
 
 /**************** temporary Array for LocationViewController Setting ***********************/
 @property (nonatomic) NSArray *districtLocationImageArray;
+@property (nonatomic) NSArray *schoolLocationImageArray;
 
 /**************** Deprecated. currentRow is replaced by networkDataArray ***********************/
 //@property (nonatomic) NSInteger currentRow;
@@ -44,12 +47,14 @@ typedef void(^CompletionBlock)(BOOL isSuccess, id respons);
 - (NSArray *)settingSchoolLocationArray;
 - (NSArray *)settingDistrictLocationArray;
 - (NSArray *)settingDistrictLocationImageArray;
+- (NSArray *)settingSchoolLocationImageArray;
 
 - (void)receiveServerDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock;
 - (void)receiveServerUserDetailDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock;
 - (void)receiveDistrictLocationFilteredDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock;
 - (void)receiveCategoryFilteredDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock;
 - (void)updatingUserDetailText:(NSString *)name nickName:(NSString *)nickName cellPhone:(NSString *)cellPhone completion:(CompletionBlock)completion;
+- (void)updatingUserDetailImage:(NSData *)data completion:(CompletionBlock)completion;
 
 + (void)setUserTokenWithString:(NSString *)tokenString;
 + (NSString *)getUserToken;

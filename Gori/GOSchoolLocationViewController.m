@@ -46,13 +46,58 @@
         cell = [[GOSchoolLocationTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     cell.titleLabel.text = [[GODataCenter sharedInstance].schoolLocationArray objectAtIndex:indexPath.row];
-    cell.titleImageView.image = [UIImage imageNamed:@"bodyImage.jpg"];
+    cell.titleImageView.image = [UIImage imageNamed:[[GODataCenter sharedInstance].schoolLocationImageArray objectAtIndex:indexPath.row]];
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 150;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [GODataCenter sharedInstance].filterSchoolLocationYN = YES;
+    
+    switch (indexPath.row) {
+        case 0:
+            [GODataCenter sharedInstance].regionKey = @"";
+            break;
+        case 1:
+            [GODataCenter sharedInstance].regionKey = @"?region=kou";
+            break;
+        case 2:
+            [GODataCenter sharedInstance].regionKey = @"?region=snu";
+            break;
+        case 3:
+            [GODataCenter sharedInstance].regionKey = @"?region=you";
+            break;
+        case 4:
+            [GODataCenter sharedInstance].regionKey = @"?region=hou";
+            break;
+        case 5:
+            [GODataCenter sharedInstance].regionKey = @"?region=ewwu";
+            break;
+        case 6:
+            [GODataCenter sharedInstance].regionKey = @"?region=bsu";
+            break;
+        case 7:
+            [GODataCenter sharedInstance].regionKey = @"?region=jau";
+            break;
+        case 8:
+            [GODataCenter sharedInstance].regionKey = @"?region=ggu";
+            break;
+        case 9:
+            [GODataCenter sharedInstance].regionKey = @"?region=hyu";
+            break;
+       
+        default:
+            break;
+    }
+    [GODataCenter sharedInstance].filterDistrictLocationYN = NO;
+    [GODataCenter sharedInstance].filterCategoryYN = NO;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
