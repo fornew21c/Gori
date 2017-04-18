@@ -21,7 +21,8 @@
 @property (nonatomic) NSString *title;
 @property (nonatomic) NSURL *img_cover_url;
 @property (nonatomic) NSMutableArray *locations;
-@property (nonatomic) NSString *region;
+@property (nonatomic) NSMutableArray *regionsResult;
+@property (nonatomic) NSMutableArray *region;
 @property (nonatomic) NSNumber *hoursPerClass;
 @property (nonatomic) NSNumber *pricePerHour;
 @property (nonatomic) NSNumber *registrationCount;
@@ -32,10 +33,13 @@
 @property (nonatomic) NSString *tutorName;
 @property (nonatomic) NSString *tutorMessage;
 @property (nonatomic) NSString *tutorInfo;
-
-
+@property (nonatomic) NSMutableDictionary *regions;
 @property (nonatomic) NSString *classInfo;
 
+
+@property (nonatomic) NSMutableArray *curriculums;
+
+@property (nonatomic) NSString *test;
 
 
 + (instancetype)modelWithData:(NSDictionary *)data;

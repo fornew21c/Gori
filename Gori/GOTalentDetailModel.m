@@ -18,18 +18,17 @@
         model.postID = [[data objectForKey:@"pk"] integerValue];
         model.title = [data objectForKey:@"title"];
         model.locations = [data objectForKey:@"locations"];
-        //model.region = [[[data objectForKey:@"locations"] objectAtIndex:0]  objectForKey:@"region"];
-        model.region = @"";
-        
+        model.curriculums = [data objectForKey:@"curriculums"];
+        model.region = [[NSMutableArray alloc] init];
+        model.regionsResult = [[NSMutableArray alloc] init];
         if (model.locations.count != 0) {
-            for(NSUInteger i = 0; i < model.locations.count; i++)
-            model.region = [model.region stringByAppendingString:[NSString stringWithFormat:@"%@ ", [[[data objectForKey:@"locations"] objectAtIndex:i]  objectForKey:@"region"]] ];
-
-            
-        }else
-        {
-            model.region = @"";
+            for(NSUInteger i = 0; i < model.locations.count; i++) {
+                [model.region addObject:[[[data objectForKey:@"locations"] objectAtIndex:i] objectForKey:@"region"]];
+                [model.regionsResult addObject:[[[data objectForKey:@"locations"] objectAtIndex:i] objectForKey:@"results"]];
+            }
         }
+        //[[[model.regionsResult objectAtIndex:0] objectAtIndex:0] objectForKey:@"day"]
+        // NSLog(@"[model.regionsResult objectAtIndex:0] day: %@",  [[[model.regionsResult objectAtIndex:0] objectAtIndex:0] objectForKey:@"day"]);
         
         if (![[data objectForKey:@"class_info"] isKindOfClass:[NSNull class]]) {
             model.classInfo = [data objectForKey:@"class_info"] ;
@@ -132,6 +131,15 @@
         {
             model.classInfo = @"";
         }
+        
+        if (![[data objectForKey:@"curriculums"] isKindOfClass:[NSNull class]]) {
+            model.curriculums = [data objectForKey:@"curriculums"] ;
+        }else
+        {
+            model.curriculums = nil;
+        }
+        
+        NSLog(@"curriculums: %@", [model.curriculums objectAtIndex:0]);
     }
     
     return model;

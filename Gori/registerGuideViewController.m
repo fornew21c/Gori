@@ -8,6 +8,7 @@
 
 #import "registerGuideViewController.h"
 #import "registerTalentFirstViewController.h"
+#import "GODataCenter2.h"
 
 @interface registerGuideViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *tutorImage;
@@ -21,7 +22,8 @@
     // Do any additional setup after loading the view.
     self.tutorImage.layer.masksToBounds = YES;
     self.tutorImage.layer.cornerRadius =  roundf(self.tutorImage.frame.size.width/2.0);;
-    self.tutorImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.selectedModel.tutorImgURL]];
+    NSLog(@"tutorImgURL: %@", [GODataCenter2 sharedInstance].selectedModel.tutorImgURL);
+    self.tutorImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[GODataCenter2 sharedInstance].selectedModel.tutorImgURL]];
 //    UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(leftBtnTouched:)];
 //    self.navigationItem.leftBarButtonItem = leftButtonItem;
     

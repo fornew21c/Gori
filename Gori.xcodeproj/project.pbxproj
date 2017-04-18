@@ -55,6 +55,10 @@
 		41C299B91EA48B6B004D130F /* confirmation1.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C299B71EA48B6B004D130F /* confirmation1.png */; };
 		41C299BA1EA48B6B004D130F /* confirmation2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C299B81EA48B6B004D130F /* confirmation2.png */; };
 		41C299BC1EA48B7D004D130F /* locationConfirm.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C299BB1EA48B7D004D130F /* locationConfirm.png */; };
+		41C299C01EA49722004D130F /* registerGuide.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C299BF1EA49722004D130F /* registerGuide.png */; };
+		41C299C31EA4BEB3004D130F /* pay1.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C299C11EA4BEB3004D130F /* pay1.png */; };
+		41C299C41EA4BEB3004D130F /* pay2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C299C21EA4BEB3004D130F /* pay2.png */; };
+		41C299C71EA4F0DC004D130F /* curriculumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C299C61EA4F0DC004D130F /* curriculumViewController.m */; };
 		910E64311EA3619500B90B7E /* GOUserInfoUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910E64301EA3619500B90B7E /* GOUserInfoUpdateViewController.m */; };
 		911555021EA0C2A300CAFF7D /* District_Hyehwa.png in Resources */ = {isa = PBXBuildFile; fileRef = 911554F41EA0C2A300CAFF7D /* District_Hyehwa.png */; };
 		911555031EA0C2A300CAFF7D /* District_Yongsan.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 911554F51EA0C2A300CAFF7D /* District_Yongsan.jpeg */; };
@@ -161,6 +165,11 @@
 		41C299B71EA48B6B004D130F /* confirmation1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confirmation1.png; sourceTree = "<group>"; };
 		41C299B81EA48B6B004D130F /* confirmation2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confirmation2.png; sourceTree = "<group>"; };
 		41C299BB1EA48B7D004D130F /* locationConfirm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locationConfirm.png; sourceTree = "<group>"; };
+		41C299BF1EA49722004D130F /* registerGuide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = registerGuide.png; path = ../../Gori_backup/Gori/registerGuide.png; sourceTree = "<group>"; };
+		41C299C11EA4BEB3004D130F /* pay1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pay1.png; path = ../../../Downloads/pay1.png; sourceTree = "<group>"; };
+		41C299C21EA4BEB3004D130F /* pay2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pay2.png; path = ../../../Downloads/pay2.png; sourceTree = "<group>"; };
+		41C299C51EA4F0DC004D130F /* curriculumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = curriculumViewController.h; sourceTree = "<group>"; };
+		41C299C61EA4F0DC004D130F /* curriculumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = curriculumViewController.m; sourceTree = "<group>"; };
 		910E642F1EA3619500B90B7E /* GOUserInfoUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOUserInfoUpdateViewController.h; sourceTree = "<group>"; };
 		910E64301EA3619500B90B7E /* GOUserInfoUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOUserInfoUpdateViewController.m; sourceTree = "<group>"; };
 		911554F41EA0C2A300CAFF7D /* District_Hyehwa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = District_Hyehwa.png; sourceTree = "<group>"; };
@@ -249,6 +258,8 @@
 			children = (
 				414848051E935C8400612B3C /* DetailViewController.h */,
 				414848061E935C8400612B3C /* DetailViewController.m */,
+				41C299C51EA4F0DC004D130F /* curriculumViewController.h */,
+				41C299C61EA4F0DC004D130F /* curriculumViewController.m */,
 			);
 			name = DetailView;
 			sourceTree = "<group>";
@@ -317,6 +328,9 @@
 				4153EE9E1E9239AC001EFF70 /* Category_Location_Storyboard.storyboard */,
 				41C299AB1EA48B19004D130F /* register.storyboard */,
 				4185840B1E91EDF70053EF40 /* Assets.xcassets */,
+				41C299C11EA4BEB3004D130F /* pay1.png */,
+				41C299C21EA4BEB3004D130F /* pay2.png */,
+				41C299BF1EA49722004D130F /* registerGuide.png */,
 				41C299BB1EA48B7D004D130F /* locationConfirm.png */,
 				41C299B71EA48B6B004D130F /* confirmation1.png */,
 				41C299B81EA48B6B004D130F /* confirmation2.png */,
@@ -553,6 +567,7 @@
 				41B26E261E9CA787001592CE /* Facebook-icon.png in Resources */,
 				418584631E91F1A30053EF40 /* profile.jpg in Resources */,
 				41C299BA1EA48B6B004D130F /* confirmation2.png in Resources */,
+				41C299C31EA4BEB3004D130F /* pay1.png in Resources */,
 				911555081EA0C2A300CAFF7D /* District_Sinchon.jpg in Resources */,
 				4185840F1E91EDF70053EF40 /* LaunchScreen.storyboard in Resources */,
 				41C299B91EA48B6B004D130F /* confirmation1.png in Resources */,
@@ -563,12 +578,14 @@
 				911555041EA0C2A300CAFF7D /* District_Mokdong.jpg in Resources */,
 				4185840C1E91EDF70053EF40 /* Assets.xcassets in Resources */,
 				41C299AC1EA48B19004D130F /* register.storyboard in Resources */,
+				41C299C41EA4BEB3004D130F /* pay2.png in Resources */,
 				418584681E91F1A30053EF40 /* headerImage.jpg in Resources */,
 				919B6F261E9CE4C300AE8CA5 /* Mypage.storyboard in Resources */,
 				9115550D1EA0C2A300CAFF7D /* District_Kangnam.jpg in Resources */,
 				9115550C1EA0C2A300CAFF7D /* District_All.jpg in Resources */,
 				911555021EA0C2A300CAFF7D /* District_Hyehwa.png in Resources */,
 				91A309021EA08DE1000D3E32 /* tuteeCountIcon.png in Resources */,
+				41C299C01EA49722004D130F /* registerGuide.png in Resources */,
 				418584671E91F1A30053EF40 /* footerImage.jpg in Resources */,
 				911555091EA0C2A300CAFF7D /* District_Jamsil.jpg in Resources */,
 				4145D0DA1E9F611B00C7141A /* malpoongsuncopy.png in Resources */,
@@ -643,6 +660,7 @@
 				41C299B61EA48B35004D130F /* registerTalentSecondViewController.m in Sources */,
 				418584561E91F15E0053EF40 /* MainVC.m in Sources */,
 				4185842F1E91EE9E0053EF40 /* AMSlideMenuContentSegue.m in Sources */,
+				41C299C71EA4F0DC004D130F /* curriculumViewController.m in Sources */,
 				4153EE911E92393C001EFF70 /* GOCategoryTableViewCell.m in Sources */,
 				4153EE901E92393C001EFF70 /* GODistrictLocationTableViewCell.m in Sources */,
 				919B6F321E9CE56000AE8CA5 /* GOWishListViewController.m in Sources */,
