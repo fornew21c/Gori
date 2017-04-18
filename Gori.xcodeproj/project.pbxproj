@@ -88,6 +88,7 @@
 		91641F201E92796400DC5B43 /* GOSchoolLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91641F1F1E92796400DC5B43 /* GOSchoolLocationViewController.m */; };
 		91641F231E92798600DC5B43 /* GOSchoolLocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91641F221E92798600DC5B43 /* GOSchoolLocationTableViewCell.m */; };
 		91641F261E927B8800DC5B43 /* GOLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91641F251E927B8800DC5B43 /* GOLocationViewController.m */; };
+		916CDFEE1EA5D05800165EC4 /* GOUserInfoDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 916CDFED1EA5D05800165EC4 /* GOUserInfoDataModel.m */; };
 		9178CAD71E9575540054B7FB /* SignIn_SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9178CAD61E9575540054B7FB /* SignIn_SignUp.storyboard */; };
 		919A8A0B1E95820300E8EA22 /* GOSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919A8A0A1E95820300E8EA22 /* GOSignupViewController.m */; };
 		919B6F261E9CE4C300AE8CA5 /* Mypage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 919B6F251E9CE4C300AE8CA5 /* Mypage.storyboard */; };
@@ -214,6 +215,8 @@
 		91641F221E92798600DC5B43 /* GOSchoolLocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOSchoolLocationTableViewCell.m; sourceTree = "<group>"; };
 		91641F241E927B8800DC5B43 /* GOLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOLocationViewController.h; sourceTree = "<group>"; };
 		91641F251E927B8800DC5B43 /* GOLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOLocationViewController.m; sourceTree = "<group>"; };
+		916CDFEC1EA5D05800165EC4 /* GOUserInfoDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOUserInfoDataModel.h; sourceTree = "<group>"; };
+		916CDFED1EA5D05800165EC4 /* GOUserInfoDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOUserInfoDataModel.m; sourceTree = "<group>"; };
 		9178CAD61E9575540054B7FB /* SignIn_SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn_SignUp.storyboard; sourceTree = "<group>"; };
 		919A8A091E95820300E8EA22 /* GOSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOSignupViewController.h; sourceTree = "<group>"; };
 		919A8A0A1E95820300E8EA22 /* GOSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOSignupViewController.m; sourceTree = "<group>"; };
@@ -422,6 +425,8 @@
 			children = (
 				4135A8A81E9740230043E0ED /* GOTalentDetailModel.h */,
 				4135A8A91E9740230043E0ED /* GOTalentDetailModel.m */,
+				916CDFEC1EA5D05800165EC4 /* GOUserInfoDataModel.h */,
+				916CDFED1EA5D05800165EC4 /* GOUserInfoDataModel.m */,
 				4153EE821E9238FD001EFF70 /* GODataCenter.h */,
 				4153EE831E9238FD001EFF70 /* GODataCenter.m */,
 				4135A8A11E973EB70043E0ED /* GODataCenter2.h */,
@@ -696,6 +701,7 @@
 				418584341E91EE9E0053EF40 /* AMSlideMenuRightTableViewController.m in Sources */,
 				4185843A1E91EEFD0053EF40 /* AppDelegate.m in Sources */,
 				41C299B61EA48B35004D130F /* registerTalentSecondViewController.m in Sources */,
+				916CDFEE1EA5D05800165EC4 /* GOUserInfoDataModel.m in Sources */,
 				418584561E91F15E0053EF40 /* MainVC.m in Sources */,
 				4185842F1E91EE9E0053EF40 /* AMSlideMenuContentSegue.m in Sources */,
 				41C299C71EA4F0DC004D130F /* curriculumViewController.m in Sources */,
