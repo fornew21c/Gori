@@ -12,8 +12,9 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface LoginViewController ()
-<FBSDKGraphRequestConnectionDelegate, FBSDKLoginButtonDelegate>
+<FBSDKGraphRequestConnectionDelegate, FBSDKLoginButtonDelegate, UITextFieldDelegate>
 
+@property (strong, nonatomic) IBOutlet UIView *contentsView;
 @end
 
 @implementation LoginViewController
@@ -40,6 +41,11 @@
 //            NSLog(@"login success");
 //            //loginButton.hidden = TRUE;
 //        }
+    self.emailTF.delegate = self;
+    self.emailTF.tag = 1;
+    
+    self.pwTF.delegate = self;
+    self.pwTF.tag = 2;
     [self.facebookLoginBtn addTarget:self action:@selector(loginButtonTouched) forControlEvents:UIControlEventTouchUpInside];
     self.pwTF.secureTextEntry = YES;
 }
@@ -201,4 +207,20 @@
 }
 */
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self.contentsView setFrame:CGRectMake(0, -50, self.contentsView.frame.size.width, self.contentsView.frame.size.height)];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if(textField.tag == 1) {
+        [self.emailTF resignFirstResponder];
+        [self.pwTF becomeFirstResponder];
+    }
+    else if(textField.tag == 2) {
+        [self.pwTF resignFirstResponder];
+            [self.contentsView setFrame:CGRectMake(0, 0, self.contentsView.frame.size.width, self.contentsView.frame.size.height)];
+    }
+    return YES;
+}
 @end

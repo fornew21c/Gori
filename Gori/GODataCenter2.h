@@ -13,6 +13,14 @@
 @interface GODataCenter2 : NSObject
 
 @property (nonatomic, readonly) NSMutableArray *postList;
+@property  GOTalentDetailModel *selectedModel;
+
+//수업등록시 사용할 데이터
+@property NSUInteger locationPK;
+@property NSUInteger studentLevel;
+@property NSString *messageToTutor;
+@property NSUInteger experienceMonth;
+
 
 + (instancetype)sharedInstance;
 

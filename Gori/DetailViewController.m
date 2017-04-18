@@ -31,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *tutorMessage;
 @property (weak, nonatomic) IBOutlet UILabel *tutorInfo;
 @property (weak, nonatomic) IBOutlet UILabel *classInfo;
+@property (weak, nonatomic) IBOutlet UILabel *curriculumLabel;
 
 @end
 
@@ -57,8 +58,9 @@
             //NSLog(@"title: %@", [responseData objectForKey:@"title"]);
             
             self.selectedModel = [GOTalentDetailModel modelWithData:responseData];
-            NSLog(@"title: %@", self.selectedModel.title);
-            NSLog(@"region: %@", self.selectedModel.region);
+            [GODataCenter2 sharedInstance].selectedModel = self.selectedModel;
+            NSLog(@"title: %@", [GODataCenter2 sharedInstance].selectedModel.title);
+            NSLog(@"region: %@", [GODataCenter2 sharedInstance].selectedModel.region);
             [self layoutDataInView];
             
         }else
@@ -74,7 +76,13 @@
 
 - (void)layoutDataInView {
     self.talentTitle.text = self.selectedModel.title;
-    self.talentRegion.text =  self.selectedModel.region;
+    NSString *tmpRegion = @"";
+
+    for(NSUInteger i = 0; i < self.selectedModel.locations.count; i++) {
+        
+        tmpRegion = [[tmpRegion stringByAppendingString:[self.selectedModel.region objectAtIndex:i]] stringByAppendingString:@" "];
+    }
+    self.talentRegion.text =  tmpRegion;
     self.coverImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.selectedModel.img_cover_url]];
     self.hoursPerClass.text = [self.selectedModel.hoursPerClass stringValue];
     
@@ -110,6 +118,9 @@
     
     //수업정보
     self.classInfo.text = self.selectedModel.classInfo;
+    
+    //커리큘럼
+    self.curriculumLabel.text = [[self.selectedModel.curriculums objectAtIndex:0] objectForKey:@"information"];
 }
 
 
