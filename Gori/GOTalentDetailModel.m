@@ -15,12 +15,13 @@
     GOTalentDetailModel *model = [[GOTalentDetailModel alloc] init];
     
     if (data != nil) {
-        model.postID = [[data objectForKey:@"pk"] integerValue];
-        model.title = [data objectForKey:@"title"];
-        model.locations = [data objectForKey:@"locations"];
-        model.curriculums = [data objectForKey:@"curriculums"];
-        model.region = [[NSMutableArray alloc] init];
-        model.regionsResult = [[NSMutableArray alloc] init];
+       model.postID = [[data objectForKey:@"pk"] integerValue];
+       model.title = [data objectForKey:@"title"];
+       model.locations = [data objectForKey:@"locations"];
+       //model.curriculums = [data objectForKey:@"curriculums"];
+     
+       model.region = [[NSMutableArray alloc] init];
+       model.regionsResult = [[NSMutableArray alloc] init];
         if (model.locations.count != 0) {
             for(NSUInteger i = 0; i < model.locations.count; i++) {
                 [model.region addObject:[[[data objectForKey:@"locations"] objectAtIndex:i] objectForKey:@"region"]];
@@ -132,14 +133,18 @@
             model.classInfo = @"";
         }
         
+//        NSLog(@"[data objectForKey:@curriculums] : %@", [data objectForKey:@"curriculums"]);
+//        NSLog(@"model.curriculums : %@", model.curriculums);
+
         if (![[data objectForKey:@"curriculums"] isKindOfClass:[NSNull class]]) {
             model.curriculums = [data objectForKey:@"curriculums"] ;
+           // NSLog(@"curriculums: %@", [[model.curriculums objectAtIndex:0] objectForKey:@"information"]);
         }else
         {
             model.curriculums = nil;
         }
         
-        NSLog(@"curriculums: %@", [model.curriculums objectAtIndex:0]);
+       
     }
     
     return model;
