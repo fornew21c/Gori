@@ -40,8 +40,8 @@ typedef void(^CompletionBlock)(BOOL isSuccess, id respons);
 //@property (nonatomic) NSInteger currentRow;
 
 + (instancetype)sharedInstance;
-- (NSArray *)settingTitleArray;
-- (NSArray *)settingTutorNameArray;
+//- (NSArray *)settingTitleArray;
+//- (NSArray *)settingTutorNameArray;
 - (NSArray *)settingCategoryArray;
 //- (NSArray *)settingCategoryDetailArray;
 - (NSArray *)settingSchoolLocationArray;

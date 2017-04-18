@@ -204,6 +204,7 @@ static NSString *const TOKEN_KEY = @"Authorization";
     [getDataTask resume];
 }
 
+/**************** gettingUserDetailData from BackEnd API ***********************/
 + (void)getUserDetailWithCompletionBlock:(void (^)(BOOL isSuccess, NSDictionary *result))completionBlock{
     // session
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
