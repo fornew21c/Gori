@@ -10,6 +10,7 @@
 #import "GODataCenter.h"
 #import "GODataCenter2.h"
 #import "NetworkModuleMain.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface GOUserInfoUpdateViewController ()
 <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
@@ -125,8 +126,12 @@
                 //                NSLog(@"프로파일이메일레이블 텍스트 : %@", [temp objectForKey:@"user_id"]);
                 
                 NSURL *profileURL = [NSURL URLWithString:[temp objectForKey:@"profile_image"]];
+                
+                
                 [self.updateUserPictureDataButton setBackgroundImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]] forState:UIControlStateNormal];
                 NSLog(@"ReceivingServerData and ReloadingData is Completed");
+                
+//                [self.updateUserPictureDataButton.imageView sd_setImageWithURL:profileURL];
                 
             });
         }else{

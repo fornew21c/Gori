@@ -11,6 +11,7 @@
 #import "GODataCenter2.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface GOMypageViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *classListButton;
@@ -86,6 +87,12 @@
                 
                 NSURL *profileURL = [NSURL URLWithString:[temp objectForKey:@"profile_image"]];
                 [self.userInfoSettingButton setBackgroundImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]] forState:UIControlStateNormal];
+                [self.userInfoSettingButton.imageView sd_setImageWithURL:profileURL];
+                
+//                [cell.titleImageView sd_setImageWithURL:titleURL];
+//                [cell.profileImageView sd_setImageWithURL:profileURL];
+
+                
                 NSLog(@"ReceivingServerData and ReloadingData is Completed");
                 
             });

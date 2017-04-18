@@ -16,7 +16,8 @@
 @end
 
 
-@implementation GODataCenter
+@implementation
+GODataCenter
 
 +(instancetype)sharedInstance{
     static GODataCenter *dataCenter = nil;
@@ -80,6 +81,20 @@
     }];
 }
 //예외처리 위해 BOOL을 던져줄 수 있도록 코드를 재수정 한 버전...맞게 했는지는 모르겠음
+//
+- (void)receiveTitleFilteredDataWithCompletionBlock:(NSString *)titleKey completion:(CompletionBlock)completion{
+    [self.networkManager getFilteredTitleWithCompletionBlock:titleKey completion:^(BOOL isSuccess, id respons) {
+        if (isSuccess) {
+            NSArray *networkDataArray = [respons objectForKey:@"results"];
+            self.networkDataArray = networkDataArray;
+            completion(YES, respons);
+        }else{
+            nil;
+        }
+        
+    }];
+    
+}
 
 - (void)receiveCategoryFilteredDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock{
     [NetworkModuleMain getFilteredCategoryWithCompletionBlock:self.categoryKey completion:^(BOOL isSuccess, id respons) {
@@ -185,26 +200,26 @@
 
 
 /**************** setting for MainView ********************************/
-
--(NSArray *)settingTutorNameArray{
-    /**************** temporary Array for tableviewCell Setting ********************************/
-//    NSArray *tutorNameArray = @[@"1지준영", @"2허원철", @"3박재한", @"4박종찬", @"5최제헌", @"6정한선", @"7홍정기"];
+/**************** Deprecated setting for MainView with NetworkModule ***********************/
+//-(NSArray *)settingTutorNameArray{
+//    /**************** temporary Array for tableviewCell Setting ********************************/
+////    NSArray *tutorNameArray = @[@"1지준영", @"2허원철", @"3박재한", @"4박종찬", @"5최제헌", @"6정한선", @"7홍정기"];
+////    self.tutorNameArray = tutorNameArray;
+////    return self.tutorNameArray;
+//    NSArray *tutorNameArray = [[NSArray alloc]initWithObjects:@"1지준영", @"2허원철", @"3박재한", @"4박종찬", @"5최제헌", @"6정한선", @"7홍정기", @"8조봉기", nil];
 //    self.tutorNameArray = tutorNameArray;
 //    return self.tutorNameArray;
-    NSArray *tutorNameArray = [[NSArray alloc]initWithObjects:@"1지준영", @"2허원철", @"3박재한", @"4박종찬", @"5최제헌", @"6정한선", @"7홍정기", @"8조봉기", nil];
-    self.tutorNameArray = tutorNameArray;
-    return self.tutorNameArray;
-}
-
--(NSArray *)settingTitleArray{
-    /**************** temporary Array for tableviewCell Setting ********************************/
-//    NSArray *titleArray = @[@"1당신도 오브젝티브씨 고수가 될 수 있엉", @"2두달에 안드로이드 정복하기", @"3인테리어 디자이너와 함께 하는 프론트엔드 개론", @"4UX디자이너와 함께 하는 UI디자인 4주과정", @"5사년만 공부하면 너도 TED 연사급 iOS개발자", @"6반년안에 끝내는 언리얼엔진 게임개발", @"7유니티로 하는 4주안에 RPG게임 만들기"];
-//    self.titleArray = titleArray;
-//    return self.titleArray;
-    NSArray *titleArray = [[NSArray alloc]initWithObjects:@"1당신도 오브젝티브씨 고수가 될 수 있엉", @"2두달에 안드로이드 정복하기", @"3디자이너와 함께 하는 프론트엔드 개론", @"4UX디자이너와 함께 하는 UI디자인 4주과정", @"5사년만 공부하면 너도 TED 연사급 iOS개발자", @"6반년안에 끝내는 언리얼엔진 게임개발",@"77주만 노력하면 너도 풀스텍", @"8너도나도 할 수 있는 풀스텍 도전기", nil];
-        self.titleArray = titleArray;
-        return self.titleArray;
-}
+//}
+//
+//-(NSArray *)settingTitleArray{
+//    /**************** temporary Array for tableviewCell Setting ********************************/
+////    NSArray *titleArray = @[@"1당신도 오브젝티브씨 고수가 될 수 있엉", @"2두달에 안드로이드 정복하기", @"3인테리어 디자이너와 함께 하는 프론트엔드 개론", @"4UX디자이너와 함께 하는 UI디자인 4주과정", @"5사년만 공부하면 너도 TED 연사급 iOS개발자", @"6반년안에 끝내는 언리얼엔진 게임개발", @"7유니티로 하는 4주안에 RPG게임 만들기"];
+////    self.titleArray = titleArray;
+////    return self.titleArray;
+//    NSArray *titleArray = [[NSArray alloc]initWithObjects:@"1당신도 오브젝티브씨 고수가 될 수 있엉", @"2두달에 안드로이드 정복하기", @"3디자이너와 함께 하는 프론트엔드 개론", @"4UX디자이너와 함께 하는 UI디자인 4주과정", @"5사년만 공부하면 너도 TED 연사급 iOS개발자", @"6반년안에 끝내는 언리얼엔진 게임개발",@"77주만 노력하면 너도 풀스텍", @"8너도나도 할 수 있는 풀스텍 도전기", nil];
+//        self.titleArray = titleArray;
+//        return self.titleArray;
+//}
 
 /**************** setting for Location and Class Category ********************************/
 
@@ -248,8 +263,6 @@
     self.schoolLocationImageArray = schoolLocationImageArray;
     return self.schoolLocationImageArray;
 }
-
-
 
 
 

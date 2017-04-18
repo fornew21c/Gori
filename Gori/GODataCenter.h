@@ -16,6 +16,8 @@ typedef void(^CompletionBlock)(BOOL isSuccess, id respons);
 @property (nonatomic) BOOL filterDistrictLocationYN;
 @property (nonatomic) BOOL filterSchoolLocationYN;
 @property (nonatomic) BOOL filterCategoryYN;
+@property (nonatomic) BOOL filterTitleYN;
+@property (nonatomic) NSString *titleKey;
 @property (nonatomic) NSString *regionKey;
 @property (nonatomic) NSString *categoryKey;
 @property (nonatomic) NSData *userPicture;
@@ -40,8 +42,8 @@ typedef void(^CompletionBlock)(BOOL isSuccess, id respons);
 //@property (nonatomic) NSInteger currentRow;
 
 + (instancetype)sharedInstance;
-- (NSArray *)settingTitleArray;
-- (NSArray *)settingTutorNameArray;
+//- (NSArray *)settingTitleArray;
+//- (NSArray *)settingTutorNameArray;
 - (NSArray *)settingCategoryArray;
 //- (NSArray *)settingCategoryDetailArray;
 - (NSArray *)settingSchoolLocationArray;
@@ -53,6 +55,7 @@ typedef void(^CompletionBlock)(BOOL isSuccess, id respons);
 - (void)receiveServerUserDetailDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock;
 - (void)receiveDistrictLocationFilteredDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock;
 - (void)receiveCategoryFilteredDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock;
+- (void)receiveTitleFilteredDataWithCompletionBlock:(NSString *)titleKey completion:(CompletionBlock)completion;
 - (void)updatingUserDetailText:(NSString *)name nickName:(NSString *)nickName cellPhone:(NSString *)cellPhone completion:(CompletionBlock)completion;
 - (void)updatingUserDetailImage:(NSData *)data completion:(CompletionBlock)completion;
 
