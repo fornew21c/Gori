@@ -23,6 +23,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *locationButton;
 @property (weak, nonatomic) IBOutlet UIButton *categoryButton;
+@property (weak, nonatomic) IBOutlet UIButton *titleButton;
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 @property (weak, nonatomic) UIImageView *headerImageView;
 @property (nonatomic, strong) UISearchController *searchController;
@@ -41,6 +42,8 @@
 @property (nonatomic, strong) NSMutableArray *tableViewTutorImgURLArray;
 @property (nonatomic, strong) NSMutableArray *tableViewTitleImgArray;
 @property (nonatomic, strong) NSMutableArray *tableViewTutorImgArray;
+
+@property (nonatomic) UITextField *searchTextField;
 
 @end
 
@@ -79,13 +82,26 @@
     headerLabel.textColor = [UIColor whiteColor];
     [self.headerImageView addSubview:headerLabel];
     
-    /**************** searchController Setting ********************************/
-    UIView *searchControllerView = [[UIView alloc]initWithFrame:CGRectMake(0, 160, self.view.frame.size.width, 40)];
-    UISearchController *searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
-    self.searchController = searchController;
-    //    self.searchController.searchResultsUpdater = self;
-    [self.mainTableView.tableHeaderView addSubview:searchControllerView];
-    [searchControllerView addSubview:self.searchController.searchBar];
+    /*************** searchTextField Setting *******************************/
+    self.searchTextField = [[UITextField alloc]initWithFrame:CGRectMake(5, 160, self.view.frame.size.width - 50, 40)];
+//    searchTextField.backgroundColor = [UIColor redColor];
+    self.searchTextField.placeholder = @"강의명을 검색해보세요";
+    self.searchTextField.borderStyle = UITextBorderStyleNone;
+//    UISearchController *searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+//    self.searchController = searchController;
+//        self.searchController.searchResultsUpdater = self;
+    [self.mainTableView.tableHeaderView addSubview:self.searchTextField];
+    
+    UIButton *searchTitleButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    searchTitleButton.frame = CGRectMake(self.view.frame.size.width - 40, 165, 35, 35);
+//    [searchTitleButton setBackgroundColor:[UIColor greenColor]];
+//    [searchTitleButton.imageView setBackgroundColor:[UIColor purpleColor]];
+    
+    [searchTitleButton setBackgroundImage:[UIImage imageNamed:@"search"] forState:UIControlStateNormal];
+//    [searchTitleButton.imageView setContentMode:UIViewContentModeScaleAspectFill];
+    [searchTitleButton addTarget:self action:@selector(showTitleDetailResult:) forControlEvents:UIControlEventTouchUpInside];
+    [self.mainTableView.tableHeaderView addSubview:searchTitleButton];
+//    [searchControllerView addSubview:self.searchController.searchBar];
     
     
     /**************** navigationBar Logo Setting ********************************/
@@ -116,6 +132,28 @@
     GOCategoryViewController *GOCategoryViewController = [Category_Location_Storyboard instantiateViewControllerWithIdentifier:@"GOCategoryViewController"];
     [self presentViewController:GOCategoryViewController animated:YES completion:nil];
 }
+
+- (void)showTitleDetailResult:(UIButton*)sender{
+    NSString *titleKey = [NSString stringWithFormat:@"?title=%@", self.searchTextField.text];
+    [GODataCenter sharedInstance].filterTitleYN = YES;
+    [GODataCenter sharedInstance].filterSchoolLocationYN = NO;
+    [GODataCenter sharedInstance].filterCategoryYN = NO;
+    [GODataCenter sharedInstance].filterDistrictLocationYN = NO;
+    [[GODataCenter sharedInstance] receiveTitleFilteredDataWithCompletionBlock:titleKey completion:^(BOOL isSuccess, id respons) {
+        if (isSuccess) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSLog(@"receiveTitleFilteredDataWithCompletionBlock sucess");
+                [self.mainTableView reloadData];
+                [[GODataCenter2 sharedInstance] getMyLoginToken];
+                NSLog(@"메인 뷰컨트롤러에서 토큰 여부 체크 : %@", [[GODataCenter2 sharedInstance] getMyLoginToken]);
+                NSLog(@"ReceivingServerData and ReloadingData is Completed");
+            });
+        }else{
+            NSLog(@"ReceivingServerData and ReloadingData is Failed");
+        }
+    }];
+}
+
 
 /**************** tableviewDelegate ********************************/
 
@@ -221,7 +259,9 @@
         
         [[GODataCenter sharedInstance] receiveDistrictLocationFilteredDataWithCompletionBlock:^(BOOL isSuccess) {
             if (isSuccess) {
+                 NSLog(@"receiveDistrictLocationFilteredDataWithCompletionBlock sucess");
                 dispatch_async(dispatch_get_main_queue(), ^{
+                   
                     [self.mainTableView reloadData];
                     [[GODataCenter2 sharedInstance] getMyLoginToken];
                     NSLog(@"ReceivingServerData and ReloadingData is Completed");

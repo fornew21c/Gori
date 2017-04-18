@@ -21,6 +21,8 @@ static NSString *const API_LOCATION_FILTER_URL     = @"/talent/list/";
 
 static NSString *const API_CATEGORY_FILTER_URL     = @"/talent/list/";
 
+static NSString *const API_TITLE_FILTER_URL     = @"/talent/list/";
+
 static NSString *const API_USER_DETAIL_UPDATE_URL = @"/member/update/user/";
 
 static NSString *const TOKEN_KEY = @"Authorization";
@@ -124,12 +126,49 @@ static NSString *const TOKEN_KEY = @"Authorization";
     
 }
 
+/**************** gettingFilteredTitleData from BackEnd API ***********************/
+
+- (void)getFilteredTitleWithCompletionBlock:(NSString *)titleKey completion:(CompletionBlock)completion{
+    //session 생성
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc]initWithSessionConfiguration:configuration];
+    
+//    
+//    NSString *encodedStr = [self.urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+//    
+//    NSURL *url = [NSURL URLWithString:encodedStr];
+//    [webView loadRequest:[NSURLRequest requestWithURL:url]];
+    
+    NSString *stringForURL = [NSString stringWithFormat:@"%@%@%@", API_BASE_URL, API_TITLE_FILTER_URL, titleKey];
+    
+    NSString *encodedString = [stringForURL stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    
+    NSURL *URL = [NSURL URLWithString:encodedString];
+    NSLog(@"네트워크모듈 메인의 이름 필터링 데이터 : %@", [NSString stringWithFormat:@"%@",URL]);
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        if (error == nil) {
+            completion(YES, responseObject);
+            NSLog(@"네트워크모듈 리스폰스 데이터 : %@", responseObject);
+        }else{
+            NSLog(@"Error : %@", error);
+            completion(NO, nil);
+        }
+    }];
+    [dataTask resume];
+    
+}
+
+
 
 - (NSString*)updatingUserInputText:(NSString *)name nickName:(NSString *)nickName cellPhone:(NSString *)cellPhone{
     return [NSString stringWithFormat:@"{\"name\":\"%@\",\"nickname\":\"%@\",\"cellphone\":\"%@\"}",name,nickName,cellPhone];
     
 //    return [NSString stringWithFormat:@"name=%@&nickname=%@&cellphone=%@",name,nickName, cellPhone];
 }
+
+
+
 
 
 /**************** gettingFilteredCategoryData from BackEnd API ***********************/

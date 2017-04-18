@@ -90,6 +90,9 @@
 		91641F261E927B8800DC5B43 /* GOLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91641F251E927B8800DC5B43 /* GOLocationViewController.m */; };
 		916CDFEE1EA5D05800165EC4 /* GOUserInfoDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 916CDFED1EA5D05800165EC4 /* GOUserInfoDataModel.m */; };
 		9178CAD71E9575540054B7FB /* SignIn_SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9178CAD61E9575540054B7FB /* SignIn_SignUp.storyboard */; };
+		919864421EA60D0E00DDAB35 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 9198643F1EA60D0E00DDAB35 /* search.png */; };
+		919864431EA60D0E00DDAB35 /* search@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 919864401EA60D0E00DDAB35 /* search@3x.png */; };
+		919864441EA60D0E00DDAB35 /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 919864411EA60D0E00DDAB35 /* search@2x.png */; };
 		919A8A0B1E95820300E8EA22 /* GOSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919A8A0A1E95820300E8EA22 /* GOSignupViewController.m */; };
 		919B6F261E9CE4C300AE8CA5 /* Mypage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 919B6F251E9CE4C300AE8CA5 /* Mypage.storyboard */; };
 		919B6F2F1E9CE56000AE8CA5 /* GOClassListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919B6F281E9CE56000AE8CA5 /* GOClassListViewController.m */; };
@@ -218,6 +221,9 @@
 		916CDFEC1EA5D05800165EC4 /* GOUserInfoDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOUserInfoDataModel.h; sourceTree = "<group>"; };
 		916CDFED1EA5D05800165EC4 /* GOUserInfoDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOUserInfoDataModel.m; sourceTree = "<group>"; };
 		9178CAD61E9575540054B7FB /* SignIn_SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn_SignUp.storyboard; sourceTree = "<group>"; };
+		9198643F1EA60D0E00DDAB35 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		919864401EA60D0E00DDAB35 /* search@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@3x.png"; sourceTree = "<group>"; };
+		919864411EA60D0E00DDAB35 /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
 		919A8A091E95820300E8EA22 /* GOSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOSignupViewController.h; sourceTree = "<group>"; };
 		919A8A0A1E95820300E8EA22 /* GOSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOSignupViewController.m; sourceTree = "<group>"; };
 		919B6F251E9CE4C300AE8CA5 /* Mypage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mypage.storyboard; sourceTree = "<group>"; };
@@ -441,6 +447,9 @@
 				912696941EA0A0F30067C331 /* menu.png */,
 				912696951EA0A0F30067C331 /* menu@2x.png */,
 				912696961EA0A0F30067C331 /* menu@3x.png */,
+				9198643F1EA60D0E00DDAB35 /* search.png */,
+				919864401EA60D0E00DDAB35 /* search@3x.png */,
+				919864411EA60D0E00DDAB35 /* search@2x.png */,
 				4185845D1E91F1A30053EF40 /* profile.jpg */,
 				4185845E1E91F1A30053EF40 /* bodyImage.jpg */,
 				4185845F1E91F1A30053EF40 /* bodyImage1.jpg */,
@@ -592,6 +601,7 @@
 				9178CAD71E9575540054B7FB /* SignIn_SignUp.storyboard in Resources */,
 				41C299BC1EA48B7D004D130F /* locationConfirm.png in Resources */,
 				9132C17C1E92FAC1007C31EC /* logo.png in Resources */,
+				919864431EA60D0E00DDAB35 /* search@3x.png in Resources */,
 				912696971EA0A0F30067C331 /* menu.png in Resources */,
 				916254231EA4FC9F0014BE21 /* School_Jau.png in Resources */,
 				911555031EA0C2A300CAFF7D /* District_Yongsan.jpeg in Resources */,
@@ -609,6 +619,7 @@
 				41C299B91EA48B6B004D130F /* confirmation1.png in Resources */,
 				4153EEA11E923A49001EFF70 /* Main.storyboard in Resources */,
 				4185845B1E91F1770053EF40 /* icon-menu@2x.png in Resources */,
+				919864441EA60D0E00DDAB35 /* search@2x.png in Resources */,
 				912696991EA0A0F30067C331 /* menu@3x.png in Resources */,
 				418584661E91F1A30053EF40 /* bodyImage2.jpg in Resources */,
 				916254251EA4FC9F0014BE21 /* School_You.png in Resources */,
@@ -634,6 +645,7 @@
 				418584641E91F1A30053EF40 /* bodyImage.jpg in Resources */,
 				916254241EA4FC9F0014BE21 /* School_Kou.png in Resources */,
 				911555051EA0C2A300CAFF7D /* District_Etc.jpg in Resources */,
+				919864421EA60D0E00DDAB35 /* search.png in Resources */,
 				418584651E91F1A30053EF40 /* bodyImage1.jpg in Resources */,
 				9162541F1EA4FC9F0014BE21 /* School_Hou.png in Resources */,
 				9115550B1EA0C2A300CAFF7D /* District_Jongro.png in Resources */,

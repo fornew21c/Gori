@@ -16,7 +16,8 @@
 @end
 
 
-@implementation GODataCenter
+@implementation
+GODataCenter
 
 +(instancetype)sharedInstance{
     static GODataCenter *dataCenter = nil;
@@ -80,6 +81,20 @@
     }];
 }
 //예외처리 위해 BOOL을 던져줄 수 있도록 코드를 재수정 한 버전...맞게 했는지는 모르겠음
+//
+- (void)receiveTitleFilteredDataWithCompletionBlock:(NSString *)titleKey completion:(CompletionBlock)completion{
+    [self.networkManager getFilteredTitleWithCompletionBlock:titleKey completion:^(BOOL isSuccess, id respons) {
+        if (isSuccess) {
+            NSArray *networkDataArray = [respons objectForKey:@"results"];
+            self.networkDataArray = networkDataArray;
+            completion(YES, respons);
+        }else{
+            nil;
+        }
+        
+    }];
+    
+}
 
 - (void)receiveCategoryFilteredDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock{
     [NetworkModuleMain getFilteredCategoryWithCompletionBlock:self.categoryKey completion:^(BOOL isSuccess, id respons) {
