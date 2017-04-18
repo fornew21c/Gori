@@ -53,6 +53,7 @@
     [[GODataCenter sharedInstance] settingSchoolLocationArray];
     [[GODataCenter sharedInstance] settingDistrictLocationArray];
     [[GODataCenter sharedInstance] settingDistrictLocationImageArray];
+    [[GODataCenter sharedInstance] settingSchoolLocationImageArray];
 
     
     self.mainTableView.delegate = self;
@@ -311,8 +312,19 @@
                 NSLog(@"ReceivingServerData and ReloadingData is Failed");
             }
         }];
-    }
-    else{
+    }else if ([GODataCenter sharedInstance].filterSchoolLocationYN == YES){
+        [[GODataCenter sharedInstance] receiveDistrictLocationFilteredDataWithCompletionBlock:^(BOOL isSuccess) {
+            if (isSuccess) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.mainTableView reloadData];
+                    [[GODataCenter2 sharedInstance] getMyLoginToken];
+                    NSLog(@"ReceivingServerData and ReloadingData is Completed");
+                });
+            }else{
+                NSLog(@"ReceivingServerData and ReloadingData is Failed");
+            }
+        }];
+    }else{
         [[GODataCenter sharedInstance]receiveServerDataWithCompletionBlock:^(BOOL isSuccess) {
             if (isSuccess) {
                 dispatch_async(dispatch_get_main_queue(), ^{

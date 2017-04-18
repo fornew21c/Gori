@@ -34,12 +34,23 @@
             self.networkDataArray = [[NSArray alloc] init];
             self.networkUserDetailDictionary = [[NSDictionary alloc]init];
             self.districtLocationFilteredArray = [[NSArray alloc]init];
-
+            
         }
         return self;
     
 }
 /**************** updating myPageUserTextData with NetworkModule********************************/
+
+- (void)updatingUserDetailImage:(NSData *)data completion:(CompletionBlock)completion{
+    [self.networkManager updatingUserPictureWithCompletionBlock:data completion:^(BOOL isSuccess, id respons) {
+        if (isSuccess) {
+            completion(YES, respons);
+        }else{
+            nil;
+        }
+    }];
+    
+}
 
 - (void)updatingUserDetailText:(NSString *)name nickName:(NSString *)nickName cellPhone:(NSString *)cellPhone completion:(CompletionBlock)completion{
     [self.networkManager updatingUserDetailTextDataWithCompletionBlock:name nickName:nickName cellPhone:cellPhone completion:^(BOOL isSuccess, id respons) {
@@ -230,6 +241,12 @@
     NSArray *districtLocationImageArray = @[@"District_All.jpg", @"District_Kangnam.jpg", @"District_Sinchon.jpg", @"District_Sadang.jpg", @"District_Jamsil.jpg", @"District_Jongro.png", @"District_Hyehwa.png", @"District_Yongsan.jpeg", @"District_Hapjung.png", @"District_Mokdong.jpg", @"District_Etc.jpg"];
     self.districtLocationImageArray = districtLocationImageArray;
     return self.districtLocationImageArray;
+}
+
+- (NSArray *)settingSchoolLocationImageArray{
+    NSArray *schoolLocationImageArray = @[@"School_All.jpeg", @"School_Kou.png", @"School_Snu.png", @"School_You.png", @"School_Hou.png", @"School_Ewwu.png", @"School_Bsu.png", @"School_Jau.png", @"School_Ggu.png", @"School_Hyu.png"];
+    self.schoolLocationImageArray = schoolLocationImageArray;
+    return self.schoolLocationImageArray;
 }
 
 

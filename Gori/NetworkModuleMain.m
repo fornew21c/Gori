@@ -30,6 +30,41 @@ static NSString *const TOKEN_KEY = @"Authorization";
 @end
 
 @implementation NetworkModuleMain
+
+/**************** updating UserDetailTextData to BackEnd API ***********************/
+
+- (void)updatingUserPictureWithCompletionBlock:(NSData*)data completion:(CompletionBlock)completion{
+    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"PATCH" URLString:[NSString stringWithFormat:@"%@%@", API_BASE_URL, API_USER_DETAIL_UPDATE_URL] parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        [formData appendPartWithFileData:data name:@"profile_image" fileName:@"profile_image.jpeg" mimeType:@"image/jpeg"];
+    } error:nil];
+    
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    NSURLSessionUploadTask *uploadTask;
+    
+    NSString *loginToken = [[GODataCenter2 sharedInstance] getMyLoginToken];
+    NSLog(@"네트워크모듈 메인의 토큰 : %@",loginToken);
+    [request setValue:[NSString stringWithFormat:@"Token %@", loginToken] forHTTPHeaderField:TOKEN_KEY];
+    uploadTask = [manager
+                  uploadTaskWithStreamedRequest:request
+                  progress:^(NSProgress * _Nonnull uploadProgress) {
+                      // This is not called back on the main queue.
+                      // You are responsible for dispatching to the main queue for UI updates
+                      dispatch_async(dispatch_get_main_queue(), ^{
+                          //Update the progress view
+//                          [progressView setProgress:uploadProgress.fractionCompleted];
+                      });
+                  }
+                  completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+                      if (error == nil) {
+                          NSLog(@"%@ %@", response, responseObject);
+                      } else {
+                          NSLog(@"Error: %@", error);
+                      }
+                  }];
+    
+    [uploadTask resume];
+}
+
 /**************** updating UserDetailTextData to BackEnd API ***********************/
 - (void)updatingUserDetailTextDataWithCompletionBlock:(NSString *)name nickName:(NSString *)nickName cellPhone:(NSString *)cellPhone completion:(CompletionBlock)completion{
     //session 생성
@@ -42,7 +77,6 @@ static NSString *const TOKEN_KEY = @"Authorization";
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     NSString *requestData = [self updatingUserInputText:name nickName:nickName cellPhone:cellPhone];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-//    [request setValue:@"application/json" forHTTPHeaderField:TOKEN_KEY];
     NSLog(@"네트워크모듈의 리퀘스트 데이터 : %@", requestData);
     //body data set
     request.HTTPMethod = @"PATCH";
@@ -126,7 +160,7 @@ static NSString *const TOKEN_KEY = @"Authorization";
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
     NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@",API_BASE_URL,API_LOCATION_FILTER_URL,regionKey]];
-//    NSLog(@"네트워크모듈메인의 URL : %@", URL);
+    NSLog(@"네트워크모듈메인의 URL : %@", URL);
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {

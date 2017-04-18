@@ -75,6 +75,16 @@
 		912696981EA0A0F30067C331 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 912696951EA0A0F30067C331 /* menu@2x.png */; };
 		912696991EA0A0F30067C331 /* menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 912696961EA0A0F30067C331 /* menu@3x.png */; };
 		9132C17C1E92FAC1007C31EC /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9132C17B1E92FAC1007C31EC /* logo.png */; };
+		9162541E1EA4FC9F0014BE21 /* School_Ewwu.png in Resources */ = {isa = PBXBuildFile; fileRef = 916254151EA4FC9F0014BE21 /* School_Ewwu.png */; };
+		9162541F1EA4FC9F0014BE21 /* School_Hou.png in Resources */ = {isa = PBXBuildFile; fileRef = 916254161EA4FC9F0014BE21 /* School_Hou.png */; };
+		916254201EA4FC9F0014BE21 /* School_Snu.png in Resources */ = {isa = PBXBuildFile; fileRef = 916254171EA4FC9F0014BE21 /* School_Snu.png */; };
+		916254211EA4FC9F0014BE21 /* School_Hyu.png in Resources */ = {isa = PBXBuildFile; fileRef = 916254181EA4FC9F0014BE21 /* School_Hyu.png */; };
+		916254221EA4FC9F0014BE21 /* School_Ggu.png in Resources */ = {isa = PBXBuildFile; fileRef = 916254191EA4FC9F0014BE21 /* School_Ggu.png */; };
+		916254231EA4FC9F0014BE21 /* School_Jau.png in Resources */ = {isa = PBXBuildFile; fileRef = 9162541A1EA4FC9F0014BE21 /* School_Jau.png */; };
+		916254241EA4FC9F0014BE21 /* School_Kou.png in Resources */ = {isa = PBXBuildFile; fileRef = 9162541B1EA4FC9F0014BE21 /* School_Kou.png */; };
+		916254251EA4FC9F0014BE21 /* School_You.png in Resources */ = {isa = PBXBuildFile; fileRef = 9162541C1EA4FC9F0014BE21 /* School_You.png */; };
+		916254261EA4FC9F0014BE21 /* School_Bsu.png in Resources */ = {isa = PBXBuildFile; fileRef = 9162541D1EA4FC9F0014BE21 /* School_Bsu.png */; };
+		916254281EA4FD1F0014BE21 /* School_All.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 916254271EA4FD1F0014BE21 /* School_All.jpeg */; };
 		9163ECFD1E9A451E00F23EDA /* NetworkModuleMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 9163ECFC1E9A451E00F23EDA /* NetworkModuleMain.m */; };
 		91641F201E92796400DC5B43 /* GOSchoolLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91641F1F1E92796400DC5B43 /* GOSchoolLocationViewController.m */; };
 		91641F231E92798600DC5B43 /* GOSchoolLocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91641F221E92798600DC5B43 /* GOSchoolLocationTableViewCell.m */; };
@@ -187,6 +197,16 @@
 		912696951EA0A0F30067C331 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
 		912696961EA0A0F30067C331 /* menu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@3x.png"; sourceTree = "<group>"; };
 		9132C17B1E92FAC1007C31EC /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		916254151EA4FC9F0014BE21 /* School_Ewwu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = School_Ewwu.png; sourceTree = "<group>"; };
+		916254161EA4FC9F0014BE21 /* School_Hou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = School_Hou.png; sourceTree = "<group>"; };
+		916254171EA4FC9F0014BE21 /* School_Snu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = School_Snu.png; sourceTree = "<group>"; };
+		916254181EA4FC9F0014BE21 /* School_Hyu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = School_Hyu.png; sourceTree = "<group>"; };
+		916254191EA4FC9F0014BE21 /* School_Ggu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = School_Ggu.png; sourceTree = "<group>"; };
+		9162541A1EA4FC9F0014BE21 /* School_Jau.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = School_Jau.png; sourceTree = "<group>"; };
+		9162541B1EA4FC9F0014BE21 /* School_Kou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = School_Kou.png; sourceTree = "<group>"; };
+		9162541C1EA4FC9F0014BE21 /* School_You.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = School_You.png; sourceTree = "<group>"; };
+		9162541D1EA4FC9F0014BE21 /* School_Bsu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = School_Bsu.png; sourceTree = "<group>"; };
+		916254271EA4FD1F0014BE21 /* School_All.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = School_All.jpeg; sourceTree = "<group>"; };
 		9163ECFB1E9A451E00F23EDA /* NetworkModuleMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkModuleMain.h; sourceTree = "<group>"; };
 		9163ECFC1E9A451E00F23EDA /* NetworkModuleMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkModuleMain.m; sourceTree = "<group>"; };
 		91641F1E1E92796400DC5B43 /* GOSchoolLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOSchoolLocationViewController.h; sourceTree = "<group>"; };
@@ -445,6 +465,16 @@
 		9115550E1EA0C2B000CAFF7D /* DistrictLocationImage */ = {
 			isa = PBXGroup;
 			children = (
+				916254271EA4FD1F0014BE21 /* School_All.jpeg */,
+				916254151EA4FC9F0014BE21 /* School_Ewwu.png */,
+				916254161EA4FC9F0014BE21 /* School_Hou.png */,
+				916254171EA4FC9F0014BE21 /* School_Snu.png */,
+				916254181EA4FC9F0014BE21 /* School_Hyu.png */,
+				916254191EA4FC9F0014BE21 /* School_Ggu.png */,
+				9162541A1EA4FC9F0014BE21 /* School_Jau.png */,
+				9162541B1EA4FC9F0014BE21 /* School_Kou.png */,
+				9162541C1EA4FC9F0014BE21 /* School_You.png */,
+				9162541D1EA4FC9F0014BE21 /* School_Bsu.png */,
 				911554F41EA0C2A300CAFF7D /* District_Hyehwa.png */,
 				911554F51EA0C2A300CAFF7D /* District_Yongsan.jpeg */,
 				911554F61EA0C2A300CAFF7D /* District_Mokdong.jpg */,
@@ -559,10 +589,13 @@
 				41C299BC1EA48B7D004D130F /* locationConfirm.png in Resources */,
 				9132C17C1E92FAC1007C31EC /* logo.png in Resources */,
 				912696971EA0A0F30067C331 /* menu.png in Resources */,
+				916254231EA4FC9F0014BE21 /* School_Jau.png in Resources */,
 				911555031EA0C2A300CAFF7D /* District_Yongsan.jpeg in Resources */,
+				916254201EA4FC9F0014BE21 /* School_Snu.png in Resources */,
 				4153EE9F1E9239AC001EFF70 /* Category_Location_Storyboard.storyboard in Resources */,
 				911555071EA0C2A300CAFF7D /* District_Sadang.jpg in Resources */,
 				911555061EA0C2A300CAFF7D /* District_Hapjung.png in Resources */,
+				916254261EA4FC9F0014BE21 /* School_Bsu.png in Resources */,
 				912696981EA0A0F30067C331 /* menu@2x.png in Resources */,
 				41B26E261E9CA787001592CE /* Facebook-icon.png in Resources */,
 				418584631E91F1A30053EF40 /* profile.jpg in Resources */,
@@ -575,11 +608,15 @@
 				4185845B1E91F1770053EF40 /* icon-menu@2x.png in Resources */,
 				912696991EA0A0F30067C331 /* menu@3x.png in Resources */,
 				418584661E91F1A30053EF40 /* bodyImage2.jpg in Resources */,
+				916254251EA4FC9F0014BE21 /* School_You.png in Resources */,
+				916254281EA4FD1F0014BE21 /* School_All.jpeg in Resources */,
 				911555041EA0C2A300CAFF7D /* District_Mokdong.jpg in Resources */,
 				4185840C1E91EDF70053EF40 /* Assets.xcassets in Resources */,
+				9162541E1EA4FC9F0014BE21 /* School_Ewwu.png in Resources */,
 				41C299AC1EA48B19004D130F /* register.storyboard in Resources */,
 				41C299C41EA4BEB3004D130F /* pay2.png in Resources */,
 				418584681E91F1A30053EF40 /* headerImage.jpg in Resources */,
+				916254221EA4FC9F0014BE21 /* School_Ggu.png in Resources */,
 				919B6F261E9CE4C300AE8CA5 /* Mypage.storyboard in Resources */,
 				9115550D1EA0C2A300CAFF7D /* District_Kangnam.jpg in Resources */,
 				9115550C1EA0C2A300CAFF7D /* District_All.jpg in Resources */,
@@ -591,8 +628,10 @@
 				4145D0DA1E9F611B00C7141A /* malpoongsuncopy.png in Resources */,
 				4185845A1E91F1770053EF40 /* icon-menu.png in Resources */,
 				418584641E91F1A30053EF40 /* bodyImage.jpg in Resources */,
+				916254241EA4FC9F0014BE21 /* School_Kou.png in Resources */,
 				911555051EA0C2A300CAFF7D /* District_Etc.jpg in Resources */,
 				418584651E91F1A30053EF40 /* bodyImage1.jpg in Resources */,
+				9162541F1EA4FC9F0014BE21 /* School_Hou.png in Resources */,
 				9115550B1EA0C2A300CAFF7D /* District_Jongro.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

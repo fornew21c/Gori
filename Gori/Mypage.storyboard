@@ -197,6 +197,13 @@
                                     <segue destination="a7d-IC-XI0" kind="unwind" unwindAction="unwindSegue:" id="ATe-uL-Dcp"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yj0-TQ-s9u">
+                                <rect key="frame" x="150" y="80" width="74" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="uploadingUserImageAction:" destination="Klx-9U-Ih7" eventType="touchUpInside" id="n0f-NU-eE0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -204,13 +211,14 @@
                         <outlet property="cellPhoneTextField" destination="Lab-2n-K6B" id="eZL-J1-YzN"/>
                         <outlet property="nameTextField" destination="eGH-HD-FGd" id="IUR-Oh-qse"/>
                         <outlet property="nickNameTextField" destination="dG9-lM-vVO" id="dyS-La-pGj"/>
+                        <outlet property="updateUserPictureDataButton" destination="yj0-TQ-s9u" id="Wsc-aC-w0j"/>
                         <outlet property="updateUserTextDataButton" destination="osj-fM-WfC" id="6MQ-hU-jNZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N4G-UL-GZ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="a7d-IC-XI0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2100" y="785"/>
+            <point key="canvasLocation" x="2100" y="784.85757121439292"/>
         </scene>
         <!--Wish List View Controller-->
         <scene sceneID="LKl-ul-6KE">
