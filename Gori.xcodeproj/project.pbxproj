@@ -12,7 +12,6 @@
 		4135A8A71E973F040043E0ED /* NetworkModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4135A8A61E973F040043E0ED /* NetworkModule.m */; };
 		4135A8AA1E9740230043E0ED /* GOTalentDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4135A8A91E9740230043E0ED /* GOTalentDetailModel.m */; };
 		4145D0DA1E9F611B00C7141A /* malpoongsuncopy.png in Resources */ = {isa = PBXBuildFile; fileRef = 4145D0D91E9F611B00C7141A /* malpoongsuncopy.png */; };
-		414848071E935C8400612B3C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 414848061E935C8400612B3C /* DetailViewController.m */; };
 		4153EE841E9238FD001EFF70 /* GODataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4153EE831E9238FD001EFF70 /* GODataCenter.m */; };
 		4153EE8E1E92393C001EFF70 /* GODistrictLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4153EE871E92393C001EFF70 /* GODistrictLocationViewController.m */; };
 		4153EE8F1E92393C001EFF70 /* GOCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4153EE891E92393C001EFF70 /* GOCategoryViewController.m */; };
@@ -113,7 +112,6 @@
 		4135A8A91E9740230043E0ED /* GOTalentDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOTalentDetailModel.m; sourceTree = "<group>"; };
 		4145D0D91E9F611B00C7141A /* malpoongsuncopy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = malpoongsuncopy.png; sourceTree = "<group>"; };
 		414848051E935C8400612B3C /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		414848061E935C8400612B3C /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		4153EE821E9238FD001EFF70 /* GODataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GODataCenter.h; sourceTree = "<group>"; };
 		4153EE831E9238FD001EFF70 /* GODataCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GODataCenter.m; sourceTree = "<group>"; };
 		4153EE861E92393C001EFF70 /* GODistrictLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GODistrictLocationViewController.h; sourceTree = "<group>"; };
@@ -287,7 +285,6 @@
 			isa = PBXGroup;
 			children = (
 				414848051E935C8400612B3C /* DetailViewController.h */,
-				414848061E935C8400612B3C /* DetailViewController.m */,
 				41C299C51EA4F0DC004D130F /* curriculumViewController.h */,
 				41C299C61EA4F0DC004D130F /* curriculumViewController.m */,
 			);
@@ -731,7 +728,6 @@
 				418584351E91EE9E0053EF40 /* UIViewController+AMSlideMenu.m in Sources */,
 				4153EE9A1E92399A001EFF70 /* GOMainViewController.m in Sources */,
 				9163ECFD1E9A451E00F23EDA /* NetworkModuleMain.m in Sources */,
-				414848071E935C8400612B3C /* DetailViewController.m in Sources */,
 				418584311E91EE9E0053EF40 /* AMSlideMenuLeftTableViewController.m in Sources */,
 				418584571E91F15E0053EF40 /* LoginViewController.m in Sources */,
 				418584321E91EE9E0053EF40 /* AMSlideMenuMainViewController.m in Sources */,

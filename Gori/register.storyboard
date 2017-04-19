@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Rd1-qw-AJ2">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Rd1-qw-AJ2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -50,7 +50,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QiG-UZ-a9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1377" y="-36"/>
+            <point key="canvasLocation" x="-1532" y="-341"/>
         </scene>
         <!--Register Talent First View Controller-->
         <scene sceneID="IOx-Pi-WPs">
@@ -193,6 +193,13 @@
                                 <rect key="frame" x="15" y="303" width="344" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sc-hN-0ys">
+                                <rect key="frame" x="131" y="549" width="197" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -200,6 +207,7 @@
                         <outlet property="extraFee" destination="b3O-Nd-O8x" id="HiC-9Q-bmn"/>
                         <outlet property="friBtn" destination="sgS-2B-vey" id="q2r-vo-z5A"/>
                         <outlet property="locationButtonStackView" destination="BqB-5i-bev" id="t2x-tj-nNI"/>
+                        <outlet property="locationMessage" destination="8sc-hN-0ys" id="kfH-Ih-Swm"/>
                         <outlet property="monBtn" destination="AG5-di-Myq" id="PzG-vv-tbn"/>
                         <outlet property="satBtn" destination="HgA-sa-WIa" id="ECA-1k-bkK"/>
                         <outlet property="sunBtn" destination="L3i-ts-kTU" id="WWh-Sj-6fa"/>
@@ -212,7 +220,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBy-nl-cLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2104.8000000000002" y="-36.431784107946029"/>
+            <point key="canvasLocation" x="-695.20000000000005" y="-341.37931034482762"/>
         </scene>
         <!--Register Talent Second View Controller-->
         <scene sceneID="spz-oq-XeJ">
@@ -232,23 +240,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xhO-3z-du0" userLabel="Contents View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3IF-Fa-pvk">
-                                                <rect key="frame" x="135" y="252" width="100" height="100"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button" image="intermediateBtn.png"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qZ-Y8-3bv">
-                                                <rect key="frame" x="21" y="252" width="100" height="100"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button" image="beginnerBtn.png"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4x-Mq-EqQ">
-                                                <rect key="frame" x="249" y="252" width="100" height="100"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button" image="advanceBtn.png"/>
-                                            </button>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sud-sW-Mna">
-                                                <rect key="frame" x="12" y="375" width="337" height="29"/>
+                                                <rect key="frame" x="17" y="331" width="337" height="29"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <segments>
                                                     <segment title="입문자"/>
@@ -260,7 +253,7 @@
                                                 </connections>
                                             </segmentedControl>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w1s-eB-P0I">
-                                                <rect key="frame" x="21" y="429" width="328" height="35"/>
+                                                <rect key="frame" x="21" y="384" width="328" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="경력" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnX-DG-Sa6">
@@ -282,27 +275,20 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="튜터에게 전하는 말(요청사항)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWj-KF-Met">
-                                                <rect key="frame" x="21" y="484" width="218" height="21"/>
+                                                <rect key="frame" x="17" y="442" width="218" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="v7r-yv-hNv">
-                                                <rect key="frame" x="12" y="513" width="351" height="115"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" 자신의 레벨을 알려주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXR-Mn-Fal">
-                                                <rect key="frame" x="12" y="202" width="359" height="42"/>
+                                                <rect key="frame" x="12" y="281" width="359" height="42"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -312,6 +298,13 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="145"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="v7r-yv-hNv">
+                                                <rect key="frame" x="12" y="485" width="351" height="115"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -357,12 +350,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b0Y-eS-AAC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2804" y="-36"/>
+            <point key="canvasLocation" x="124" y="-349"/>
         </scene>
-        <!--View Controller-->
+        <!--Register Talent Third View Controller-->
         <scene sceneID="Z8q-XX-Q62">
             <objects>
-                <viewController id="2cc-Mm-Qf8" sceneMemberID="viewController">
+                <viewController id="2cc-Mm-Qf8" customClass="registerTalentThirdViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KK3-0T-sKh"/>
                         <viewControllerLayoutGuide type="bottom" id="llY-VB-op5"/>
@@ -400,12 +393,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lpf-81-D4V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3448.8000000000002" y="-36.431784107946029"/>
+            <point key="canvasLocation" x="834" y="-349"/>
         </scene>
-        <!--View Controller-->
+        <!--Register Talent Fourth View Controller-->
         <scene sceneID="IeE-RG-bmi">
             <objects>
-                <viewController id="iZN-9T-zfq" sceneMemberID="viewController">
+                <viewController id="iZN-9T-zfq" customClass="registerTalentFourthViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Pb-rq-Ltw"/>
                         <viewControllerLayoutGuide type="bottom" id="irv-vl-yyc"/>
@@ -422,6 +415,9 @@
                                 <state key="normal" title=" 결제하기">
                                     <color key="titleColor" red="0.97720271780000001" green="0.98014714400000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="finishButtonTouched:" destination="iZN-9T-zfq" eventType="touchUpInside" id="Woz-Sf-aP1"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pay1.png" translatesAutoresizingMaskIntoConstraints="NO" id="bGS-Fd-OeF">
                                 <rect key="frame" x="0.0" y="44" width="375" height="145"/>
@@ -447,12 +443,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81p-AS-rJr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4152.8000000000002" y="-36.431784107946029"/>
+            <point key="canvasLocation" x="1548" y="-341"/>
         </scene>
-        <!--View Controller-->
+        <!--Register Talent Fifth View Controller-->
         <scene sceneID="s4g-Be-vLE">
             <objects>
-                <viewController id="hVt-8M-5uK" sceneMemberID="viewController">
+                <viewController id="hVt-8M-5uK" customClass="registerTalentFifthViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="phg-5d-w3J"/>
                         <viewControllerLayoutGuide type="bottom" id="1Hi-n5-H1q"/>
@@ -480,15 +476,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibc-qQ-U3K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4852" y="-36"/>
+            <point key="canvasLocation" x="2239" y="-349"/>
         </scene>
     </scenes>
     <resources>
-        <image name="advanceBtn.png" width="234" height="232"/>
-        <image name="beginnerBtn.png" width="232" height="230"/>
         <image name="confirmation1.png" width="1536" height="483"/>
         <image name="confirmation2.png" width="1536" height="505"/>
-        <image name="intermediateBtn.png" width="222" height="232"/>
         <image name="locationConfirm.png" width="1536" height="506"/>
         <image name="malpoongsun2.png" width="412" height="186"/>
         <image name="pay1.png" width="1536" height="505"/>

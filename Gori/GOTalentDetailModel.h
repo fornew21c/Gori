@@ -35,6 +35,7 @@
 @property (nonatomic) NSString *tutorInfo;
 @property (nonatomic) NSMutableDictionary *regions;
 @property (nonatomic) NSString *classInfo;
+@property (nonatomic) NSString *locationMessage;
 
 
 @property (nonatomic) NSMutableArray *curriculums;

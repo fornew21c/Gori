@@ -29,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *time;
 @property (weak, nonatomic) IBOutlet UILabel *extraFee;
 @property (weak, nonatomic) IBOutlet UIImageView *tutorImage3;
+@property (weak, nonatomic) IBOutlet UILabel *locationMessage;
 
 
 @end
@@ -40,8 +41,8 @@
     // Do any additional setup after loading the view.
     self.tutorImage3.layer.masksToBounds = YES;
     self.tutorImage3.layer.cornerRadius =  roundf(self.tutorImage3.frame.size.width/2.0);;
-   
     self.tutorImage3.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.selectedModel.tutorImgURL]];
+    self.locationMessage.text = [GODataCenter2 sharedInstance].selectedModel.locationMessage;
     NSLog(@"self.selectedModel.locations.count: %lu", self.selectedModel.locations.count);
     NSUInteger buttonWidth = self.locationButtonStackView.frame.size.width / self.selectedModel.locations.count;
     NSUInteger buttonHeight = self.locationButtonStackView.frame.size.height;
@@ -291,6 +292,11 @@
 
 - (IBAction)leftBtnTouched:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"selected location pk: %lu", [GODataCenter2 sharedInstance].locationPK);
 }
 /*
 #pragma mark - Navigation

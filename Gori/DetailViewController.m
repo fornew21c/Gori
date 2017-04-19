@@ -42,6 +42,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *time;
 @property (weak, nonatomic) IBOutlet UILabel *extraFee;
 @property (weak, nonatomic) IBOutlet UIImageView *tutorImage2;
+@property (weak, nonatomic) IBOutlet UILabel *locationMessage;
 
 @property (weak, nonatomic) IBOutlet UIStackView *locationButtonStackView;
 @property NSMutableArray<UIButton *> *locationButtons;
@@ -54,6 +55,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *sunBtn;
 @property (nonatomic) NSMutableArray<UIButton*> *canSelectButtons;
 @property (nonatomic) NSMutableArray *selectedRegionResult;
+
 @end
 
 @implementation DetailViewController
@@ -178,6 +180,7 @@
     [self buttonInit];
     [self setDefaultDayButton];
     self.tutorImage2.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.selectedModel.tutorImgURL]];
+    self.locationMessage.text = self.selectedModel.locationMessage;
 }
 
 
@@ -428,37 +431,7 @@
     NSLog(@"region pk: %lu", [GODataCenter2 sharedInstance].locationPK );
 
     [self performSegueWithIdentifier:@"registerSegue" sender:sender];
-    //    [[GODataCenter2 sharedInstance] registerCreate:^(BOOL isSuccess, id responseData) {
-    //        if(isSuccess)
-    //        {
-    //            //NSLog(@"talentRegisterBtnTouched isSuccess: %lu", isSuccess);
-    //            NSLog(@"talentRegisterBtnTouched responseData: %@", [responseData objectForKey:@"detail"]);
-    //
-    //            dispatch_async(dispatch_get_main_queue(), ^{
-    //                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"수업등록 성공" message:[responseData objectForKey:@"detail"] preferredStyle:UIAlertControllerStyleAlert];
-    //
-    //                UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
-    //
-    //
-    //                [alertController addAction:okAction];
-    //                [self presentViewController:alertController animated:YES completion:nil];
-    //            });
-    //
-    //        }else
-    //        {
-    //            dispatch_async(dispatch_get_main_queue(), ^{
-    //                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"수업등록 실패" message:[responseData objectForKey:@"detail"] preferredStyle:UIAlertControllerStyleAlert];
-    //
-    //                UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
-    //
-    //
-    //                [alertController addAction:okAction];
-    //                [self presentViewController:alertController animated:YES completion:nil];
-    //            });
-    //            NSLog(@"error talentRegisterBtnTouched responseData: %@", responseData);
-    //
-    //        }
-    //    }];
+ 
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

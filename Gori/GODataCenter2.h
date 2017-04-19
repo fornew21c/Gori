@@ -44,7 +44,11 @@
 - (NSString*) getMyLoginToken;
 
 //수업신청
-- (void)registerCreate:(CompletionBlock)completion;
+- (void)registerCreateWithLocationPK:(NSUInteger)locationPK
+                        studentLevel:(NSUInteger)studentLevel
+               studentExperienceMonth:(NSUInteger)studentExperienceMonth
+                       messageToTutor:(NSString*)messageToTutor
+                           completion:(CompletionBlock)completion;
 
 //facebook login
 - (void)loginWithFacebookid:(NSString*)facebookToken completion:(CompletionBlock)completion;
