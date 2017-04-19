@@ -99,6 +99,7 @@
 		919B6F301E9CE56000AE8CA5 /* GOMypageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919B6F2A1E9CE56000AE8CA5 /* GOMypageViewController.m */; };
 		919B6F321E9CE56000AE8CA5 /* GOWishListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919B6F2E1E9CE56000AE8CA5 /* GOWishListViewController.m */; };
 		91A309021EA08DE1000D3E32 /* tuteeCountIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91A309011EA08DE1000D3E32 /* tuteeCountIcon.png */; };
+		91C95B211EA7C89100AA78CC /* myPageHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C95B201EA7C89100AA78CC /* myPageHeader.png */; };
 		91F83E731EA77512009EFD22 /* dismissViewX.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F83E721EA77512009EFD22 /* dismissViewX.png */; };
 		91F83E751EA77DF6009EFD22 /* School_hyu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91F83E741EA77DF6009EFD22 /* School_hyu.jpg */; };
 		91F83E791EA78B57009EFD22 /* bodyImage2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91F83E761EA78B57009EFD22 /* bodyImage2.jpg */; };
@@ -250,6 +251,7 @@
 		919B6F2D1E9CE56000AE8CA5 /* GOWishListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOWishListViewController.h; sourceTree = "<group>"; };
 		919B6F2E1E9CE56000AE8CA5 /* GOWishListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOWishListViewController.m; sourceTree = "<group>"; };
 		91A309011EA08DE1000D3E32 /* tuteeCountIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tuteeCountIcon.png; sourceTree = "<group>"; };
+		91C95B201EA7C89100AA78CC /* myPageHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myPageHeader.png; sourceTree = "<group>"; };
 		91F83E721EA77512009EFD22 /* dismissViewX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dismissViewX.png; sourceTree = "<group>"; };
 		91F83E741EA77DF6009EFD22 /* School_hyu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = School_hyu.jpg; sourceTree = "<group>"; };
 		91F83E761EA78B57009EFD22 /* bodyImage2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bodyImage2.jpg; sourceTree = "<group>"; };
@@ -544,6 +546,7 @@
 		917082EB1E9CE58B00A6B0A5 /* MyPageView */ = {
 			isa = PBXGroup;
 			children = (
+				91C95B1F1EA7C86500AA78CC /* MyPageImage */,
 				919B6F291E9CE56000AE8CA5 /* GOMypageViewController.h */,
 				919B6F2A1E9CE56000AE8CA5 /* GOMypageViewController.m */,
 				919B6F271E9CE56000AE8CA5 /* GOClassListViewController.h */,
@@ -563,6 +566,14 @@
 				919A8A0A1E95820300E8EA22 /* GOSignupViewController.m */,
 			);
 			name = SignUpView;
+			sourceTree = "<group>";
+		};
+		91C95B1F1EA7C86500AA78CC /* MyPageImage */ = {
+			isa = PBXGroup;
+			children = (
+				91C95B201EA7C89100AA78CC /* myPageHeader.png */,
+			);
+			name = MyPageImage;
 			sourceTree = "<group>";
 		};
 		91F83E7C1EA78B6A009EFD22 /* CategoryImage */ = {
@@ -665,6 +676,7 @@
 				91F83E8C1EA79118009EFD22 /* Category_UniqueHobby.png in Resources */,
 				916254201EA4FC9F0014BE21 /* School_Snu.png in Resources */,
 				4153EE9F1E9239AC001EFF70 /* Category_Location_Storyboard.storyboard in Resources */,
+				91C95B211EA7C89100AA78CC /* myPageHeader.png in Resources */,
 				91F83E791EA78B57009EFD22 /* bodyImage2.jpg in Resources */,
 				91F83E8D1EA79118009EFD22 /* Category_Language.png in Resources */,
 				911555071EA0C2A300CAFF7D /* District_Sadang.jpg in Resources */,
