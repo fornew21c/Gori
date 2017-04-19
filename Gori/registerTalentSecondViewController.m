@@ -110,6 +110,10 @@
     }
 }
 
+//- (void)performSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+//    
+//}
+
 /*
 #pragma mark - Navigation
 
@@ -137,6 +141,7 @@
     NSLog(@"textViewDidBeginEditing");
     [self.scrollView setContentOffset:CGPointMake(0, 300) animated:YES];
 }
+
 
 
 @end

@@ -133,15 +133,20 @@
             model.classInfo = @"";
         }
         
-//        NSLog(@"[data objectForKey:@curriculums] : %@", [data objectForKey:@"curriculums"]);
-//        NSLog(@"model.curriculums : %@", model.curriculums);
-
         if (![[data objectForKey:@"curriculums"] isKindOfClass:[NSNull class]]) {
             model.curriculums = [data objectForKey:@"curriculums"] ;
            // NSLog(@"curriculums: %@", [[model.curriculums objectAtIndex:0] objectForKey:@"information"]);
         }else
         {
             model.curriculums = nil;
+        }
+        
+        if (![[data objectForKey:@"location_message"] isKindOfClass:[NSNull class]]) {
+            model.locationMessage = [data objectForKey:@"location_message"] ;
+            
+        }else
+        {
+            model.locationMessage = @"";
         }
         
        

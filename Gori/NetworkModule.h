@@ -3,7 +3,7 @@
 //  NetworkProject
 //
 //  Created by youngmin joo on 2017. 3. 14..
-//  Copyright © 2017년 WingsCompany. All rights reserved.
+//  Copyright © 2017년 fornew21c. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,18 +11,6 @@
 typedef void(^CompletionBlock)(BOOL isSuccess, id respons);
 
 static NSString * const BASE_URL = @"https://mozzi.co.kr/api";
-/*
- HTTP METHOD : POST
- username	회원가입하는 사용자명	String
- password1	패스워드	String
- password2	패스워드 확인	String
- email	이메일	String
- 
- Success Response:
-   Code: 201
-   Token key value
-   "key": "4709a4a4174835ac846294f06f6486be9c02b20b"
- */
 static NSString * const SIGNUP_URL = @"/member/signup/";    //POST
 static NSString * const LOGIN_URL = @"/member/login/";      //GET
 static NSString * const FACEBOOK_LOGIN_URL = @"/member/fb_login/"; //POST
@@ -47,10 +35,13 @@ static NSString * const POST_REGISTER_CREATE = @"/talent/add/registration/";    
 - (void)loginRequestWithEmail:(NSString *)email pw:(NSString *)pw completion:(CompletionBlock)completion;
 
 - (void)logoutRequestCompletion:(CompletionBlock)completion;
-
-- (void)postRequestWithTitle:(NSString *)title content:(NSString *)content image:(NSData *)imageData completion:(CompletionBlock)completion;
 - (void)postListRequestWithPage:(NSNumber *)page completion:(CompletionBlock)completion;
 - (void)postRetrieveRequestWithPostID:(NSNumber *)pk completion:(CompletionBlock)completion;
-- (void)postRegisterCreate:(CompletionBlock)completion;
 - (void)loginRequestWithFacebookid:(NSString *)fbAccessToken completion:(CompletionBlock)completion;
+- (void)postRegisterCreateWithLocationPK:(NSUInteger)locationPK
+                        studentLevel:(NSUInteger)studentLevel
+              studentExperienceMonth:(NSUInteger)studentExperienceMonth
+                      messageToTutor:(NSString*)messageToTutor
+                          completion:(CompletionBlock)completion;
+
 @end

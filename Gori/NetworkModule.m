@@ -3,7 +3,7 @@
 //  NetworkProject
 //
 //  Created by youngmin joo on 2017. 3. 14..
-//  Copyright © 2017년 WingsCompany. All rights reserved.
+//  Copyright © 2017년 fornew21c. All rights reserved.
 //
 
 #import "NetworkModule.h"
@@ -176,63 +176,6 @@ static NSString *const TOKEN_KEY = @"Authorization";
     [task resume];
 }
 
-
-- (void)postRequestWithTitle:(NSString *)title content:(NSString *)content image:(NSData *)imageData completion:(CompletionBlock)completion
-{
-    
-    //session 생성
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:
-                             [NSURLSessionConfiguration defaultSessionConfiguration]];
-    
-    //Request 객체 생성
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",BASE_URL,POST_URL]];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    request.HTTPMethod = @"POST";
-    [request setValue:[self tokenValue] forHTTPHeaderField:TOKEN_KEY];
-    
-    /****************************Multipart Data**************************/
-    NSString *boundary = @"------------0x0x0x0x0x0x0x0x";
-    NSMutableData *body = [NSMutableData data];
-    //start boundary
-    ///////////타이틀 정보
-    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"title\"\r\n\r\n%@", title] dataUsingEncoding:NSUTF8StringEncoding]];
-    ///////////컨텐츠  정보
-    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"content\"\r\n\r\n%@", content] dataUsingEncoding:NSUTF8StringEncoding]];
-    ///////////이미지 정보
-    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"img_cover\"; filename=\"image.jpg\"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:imageData];    
-    //End boundary
-    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    /****************************Multipart Data End**************************/
-    
-    //body에 셋팅
-    request.HTTPBody = body;
-    NSString* multiPartContentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
-    [request setValue:multiPartContentType forHTTPHeaderField: @"Content-Type"];
-    
-    //request
-    NSURLSessionUploadTask *task = [session uploadTaskWithRequest:request
-                                                         fromData:nil
-                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                    
-                                                    if (error == nil) {
-                                                        NSDictionary *responsData =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-                                                        NSLog(@"%@",responsData);
-                                                        completion(YES,responsData);
-                                                    }else
-                                                    {
-                                                        completion(NO,error);
-                                                    }
-                                                }];
-    
-    [task resume];
-    
-}
-
 - (void)postListRequestWithPage:(NSNumber *)page completion:(CompletionBlock)completion
 {
     //session 생성
@@ -304,34 +247,32 @@ static NSString *const TOKEN_KEY = @"Authorization";
 }
 
 
-- (void)postRegisterCreate:(CompletionBlock)completion
+- (void)postRegisterCreateWithLocationPK:(NSUInteger)locationPK
+                            studentLevel:(NSUInteger)studentLevel
+                  studentExperienceMonth:(NSUInteger)studentExperienceMonth
+                          messageToTutor:(NSString*)messageToTutor
+                              completion:(CompletionBlock)completion
 {
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@/",BASE_URL,POST_REGISTER_CREATE]];
-    NSLog(@"URL: %@", URL);
-    //NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",BASE_URL,POST_REGISTER_CREATE]];
+    
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
-    
-    //Data 생성
-    //NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
-    
-    NSUInteger locationPk = 5;
-    NSUInteger studentLevel = 1;
-    NSString *messageToTutor = @"반갑습니다.";
-    
-    NSString *body = [NSString stringWithFormat:@"location_pk=%lu&studuent_level=%lu&message_to_tutor=%@", locationPk, studentLevel, messageToTutor];
+  
+//    NSString *body = [NSString stringWithFormat:@"location_pk=%lu&studuent_level=%lu&message_to_tutor=%@&experience_length=%lu", locationPK, studentLevel, messageToTutor,studentExperienceMonth];
+    NSString *body = [self setTalenRegisterDataParam:locationPK studentLevel:studentLevel messageToTutor:messageToTutor studentExperienceMonth:studentExperienceMonth];
     [request setHTTPMethod:@"POST"];
     
     NSString *loginToken = [[GODataCenter2 sharedInstance] getMyLoginToken];
     
     // 헤더 세팅
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:[NSString stringWithFormat:@"token %@", loginToken] forHTTPHeaderField:@"Authorization"];
     [request setHTTPBody: [body dataUsingEncoding:NSUTF8StringEncoding]];
 
-    
+   // NSLog(@"URL logintoken and body: %@ %@", loginToken, body);
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         if (error) {
             completion(NO,responseObject);
@@ -350,6 +291,10 @@ static NSString *const TOKEN_KEY = @"Authorization";
             else if(statusCode == 400) {
                 completion(NO,responseObject);
                 NSLog(@"-----------------------response : %@", response);
+            }
+            else if(statusCode == 500) {
+                completion(NO,responseObject);
+                NSLog(@"----------------500-------response : %@", response);
             }
         }
     }];
@@ -406,5 +351,10 @@ static NSString *const TOKEN_KEY = @"Authorization";
                                                     }
                                                 }];
     [task resume];    
+}
+
+//locationPK studentLevel:studentLevel messageToTutor:messageToTutor studentExperienceMonth:studentExperienceMonth
+- (NSString*)setTalenRegisterDataParam:(NSUInteger)locationPK studentLevel:(NSUInteger)studentLevel messageToTutor:(NSString *)messageToTutor studentExperienceMonth:(NSUInteger)studentExperienceMonth{
+    return [NSString stringWithFormat:@"{\"location_pk\":\"%lu\",\"student_level\":\"%lu\",\"message_to_tutor\":\"%@\",\"experience_length\":\"%lu\"}",locationPK,studentLevel,messageToTutor,studentExperienceMonth];
 }
 @end

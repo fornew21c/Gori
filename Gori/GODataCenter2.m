@@ -114,11 +114,7 @@
     }];
 }
 
-////포스트 생성
-- (void)creatPostWithTitle:(NSString *)title content:(NSString *)content image:(NSData *)imageData completion:(CompletionBlock)completion
-{
-    [self.nManager postRequestWithTitle:title content:content image:imageData completion:completion];
-}
+
 
 //포스트 리스트 불러오기
 - (void)postListWithPage:(NSInteger)page completion:(CompletionBlock)completion
@@ -177,10 +173,14 @@
     return [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
 }
 
-//포스트 디테일 보기
-- (void)registerCreate:(CompletionBlock)completion
+//수업신청하기
+- (void)registerCreateWithLocationPK:(NSUInteger)locationPK
+                        studentLevel:(NSUInteger)studentLevel
+               studentExperienceMonth:(NSUInteger)studentExperienceMonth
+                       messageToTutor:(NSString*)messageToTutor
+                          completion:(CompletionBlock)completion
 {
-    [self.nManager postRegisterCreate:completion];
+    [self.nManager postRegisterCreateWithLocationPK:locationPK studentLevel:studentLevel studentExperienceMonth:studentExperienceMonth messageToTutor:messageToTutor completion:completion];
 }
 
 - (void)loginWithFacebookid:(NSString*)facebookToken completion:(CompletionBlock)completion
