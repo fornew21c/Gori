@@ -60,6 +60,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [GODataCenter2 sharedInstance].seletedRegionIndex = 0;
+    [GODataCenter2 sharedInstance].seletedDayIndex = 0;
+    
     // Do any additional setup after loading the view.
     self.imageScrollView.pagingEnabled = YES;
     self.imageScrollView.delegate = self;
@@ -320,6 +323,7 @@
     self.selectedRegionResult = [self.selectedModel.regionsResult objectAtIndex:sender.tag];
     [GODataCenter2 sharedInstance].locationPK = [[[self.selectedRegionResult objectAtIndex:0] objectForKey:@"pk" ] integerValue]; //지역만 선택한 경우 locationPK에 지역의 첫번째 요일의 locationPK 세팅
     [GODataCenter2 sharedInstance].locationSelectedBefore = YES;
+    [GODataCenter2 sharedInstance].seletedRegionIndex = sender.tag;
     NSLog(@"selectedRegionResult: %@", self.selectedRegionResult);
     self.canSelectButtons = [[NSMutableArray alloc] init];
     for(NSUInteger i = 0; i < self.locationButtons.count; i++) {
@@ -413,6 +417,7 @@
     self.time.text = timeStr;
     [GODataCenter2 sharedInstance].locationPK = [[[self.selectedRegionResult objectAtIndex:sender.tag] objectForKey:@"pk" ] integerValue];
     [GODataCenter2 sharedInstance].locationSelectedBefore = YES;
+    [GODataCenter2 sharedInstance].seletedDayIndex = sender.tag;
     NSLog(@"region pk: %lu", [GODataCenter2 sharedInstance].locationPK );
     //self.time.text = [[self.selectedRegionResult objectAtIndex:sender.tag] objectForKey:@"time"];
 }

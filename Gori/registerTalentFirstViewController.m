@@ -53,7 +53,7 @@
         
         [button setTitle:[[self.selectedModel.locations objectAtIndex:i] objectForKey:@"region"] forState:UIControlStateNormal];
         
-        if(i == 0) {
+        if(i == [GODataCenter2 sharedInstance].seletedRegionIndex) {
             [button setTitleColor:mainColor forState:UIControlStateNormal];
         }
         else {
@@ -103,10 +103,10 @@
     [self buttonInit];
     NSLog(@"setDayButtonsetDayButton");
     self.canSelectButtons = [[NSMutableArray alloc] init];
-    self.selectedRegionResult = [self.selectedModel.regionsResult objectAtIndex:0];
-    [GODataCenter2 sharedInstance].locationPK = [[[self.selectedRegionResult objectAtIndex:0] objectForKey:@"pk" ] integerValue]; //아무것도 선택안하고 갈경우 default location pk 지정
+    self.selectedRegionResult = [self.selectedModel.regionsResult objectAtIndex:[GODataCenter2 sharedInstance].seletedRegionIndex];
+    [GODataCenter2 sharedInstance].locationPK = [[[self.selectedRegionResult objectAtIndex:[GODataCenter2 sharedInstance].seletedRegionIndex] objectForKey:@"pk" ] integerValue]; //아무것도 선택안하고 갈경우 default location pk 지정
     for(NSUInteger i = 0; i < ((NSMutableArray*)[self.selectedModel.regionsResult objectAtIndex:0]).count; i++) {
-        NSString *whatDay = [[[self.selectedModel.regionsResult objectAtIndex:0] objectAtIndex:i] objectForKey:@"day"];
+        NSString *whatDay = [[[self.selectedModel.regionsResult objectAtIndex:[GODataCenter2 sharedInstance].seletedRegionIndex] objectAtIndex:i] objectForKey:@"day"];
         //NSLog(@"day: %@", [[[self.selectedModel.regionsResult objectAtIndex:0] objectForKey:@"region"] objectForKey:@"day"]);
         
         if([whatDay isEqualToString:@"월"]) {
@@ -160,10 +160,10 @@
         [self.canSelectButtons objectAtIndex:i].tag = i;
         [[self.canSelectButtons objectAtIndex:i] addTarget:self action:@selector(dayButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
     }
-    [self.canSelectButtons objectAtIndex:0].backgroundColor = [UIColor whiteColor];
+    [self.canSelectButtons objectAtIndex:[GODataCenter2 sharedInstance].seletedDayIndex].backgroundColor = [UIColor whiteColor];
     
-    NSLog(@"time: %@", [[[self.selectedModel.regionsResult objectAtIndex:0] objectAtIndex:0] objectForKey:@"time" ]);
-    NSMutableArray *times = [[[self.selectedModel.regionsResult objectAtIndex:0] objectAtIndex:0] objectForKey:@"time" ];
+    NSLog(@"time: %@", [[[self.selectedModel.regionsResult objectAtIndex:[GODataCenter2 sharedInstance].seletedRegionIndex] objectAtIndex:[GODataCenter2 sharedInstance].seletedDayIndex] objectForKey:@"time" ]);
+    NSMutableArray *times = [[[self.selectedModel.regionsResult objectAtIndex:[GODataCenter2 sharedInstance].seletedRegionIndex] objectAtIndex:[GODataCenter2 sharedInstance].seletedDayIndex] objectForKey:@"time" ];
     NSString *timeStr = @"";
     for(NSUInteger i = 0; i < times.count; i++) {
         timeStr = [[timeStr stringByAppendingString:[times objectAtIndex:i]] stringByAppendingString:@" "];

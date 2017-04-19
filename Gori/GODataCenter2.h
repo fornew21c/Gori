@@ -16,6 +16,8 @@
 @property  GOTalentDetailModel *selectedModel;
 
 //수업등록시 사용할 데이터
+@property NSUInteger seletedRegionIndex;
+@property NSUInteger seletedDayIndex;
 @property BOOL locationSelectedBefore;
 @property NSUInteger locationPK;
 @property NSUInteger studentLevel;
