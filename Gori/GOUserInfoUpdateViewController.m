@@ -39,7 +39,7 @@
     self.cameraController.allowsEditing = NO;
     self.cameraController.delegate = self;
     
-    self.updateUserPictureDataButton.layer.cornerRadius = 30;
+    self.updateUserPictureDataButton.layer.cornerRadius = 50;
     self.updateUserPictureDataButton.layer.masksToBounds = YES;
     self.updateUserPictureDataButton.clipsToBounds = YES;
     

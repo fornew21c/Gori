@@ -34,9 +34,10 @@ typedef void(^CompletionBlock)(BOOL isSuccess, id respons);
 @property (nonatomic) NSArray *schoolLocationArray;
 @property (nonatomic) NSArray *districtLoactionArray;
 
-/**************** temporary Array for LocationViewController Setting ***********************/
+/**************** temporary Array for LocationViewController and CategoryViewController Setting ***********************/
 @property (nonatomic) NSArray *districtLocationImageArray;
 @property (nonatomic) NSArray *schoolLocationImageArray;
+@property (nonatomic) NSArray *categoryImageArray;
 
 /**************** Deprecated. currentRow is replaced by networkDataArray ***********************/
 //@property (nonatomic) NSInteger currentRow;
@@ -50,6 +51,7 @@ typedef void(^CompletionBlock)(BOOL isSuccess, id respons);
 - (NSArray *)settingDistrictLocationArray;
 - (NSArray *)settingDistrictLocationImageArray;
 - (NSArray *)settingSchoolLocationImageArray;
+- (NSArray *)settingCategoryImageArray;
 
 - (void)receiveServerDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock;
 - (void)receiveServerUserDetailDataWithCompletionBlock:(void (^)(BOOL isSuccess))completionBlock;

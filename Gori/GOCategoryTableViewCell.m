@@ -19,7 +19,7 @@
     
     UIImageView *titleImageView = [[UIImageView alloc]init];
     self.titleImageView = titleImageView;
-    self.titleImageView.image = [UIImage imageNamed:@"bodyImage1.jpg"];
+//    self.titleImageView.image = [UIImage imageNamed:@"bodyImage1.jpg"];
     [self.mainView addSubview:self.titleImageView];
     
     

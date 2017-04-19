@@ -45,6 +45,7 @@
         cell = [[GOCategoryTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     cell.titleLabel.text = [[GODataCenter sharedInstance].categoryArray objectAtIndex:indexPath.row];
+    cell.titleImageView.image = [UIImage imageNamed:[[GODataCenter sharedInstance].categoryImageArray objectAtIndex:indexPath.row]];
     return cell;
 }
 

@@ -230,6 +230,8 @@ GODataCenter
     return  self.categoryArray;
 }
 
+
+
 //- (NSArray *)settingCategoryDetailArray{
 //    /**************** temporary Array for collectionviewCell Setting ********************************/
 //    NSArray *categoryDetailArray = @[@"", @"헬스PT, 필라테스, 요가, 메이크업", @"외국어시험, 영어회화, 중국어", @"프로그래밍, 엑셀, 피피티", @"기타, 피아노, 미술", @"방송댄스, 구기운동, 스케이트보드", @"주식투자, 자기소개서, 학과전공", @"사진, 캘리그래피, 바둑"];
@@ -259,11 +261,16 @@ GODataCenter
 }
 
 - (NSArray *)settingSchoolLocationImageArray{
-    NSArray *schoolLocationImageArray = @[@"School_All.jpeg", @"School_Kou.png", @"School_Snu.png", @"School_You.png", @"School_Hou.png", @"School_Ewwu.png", @"School_Bsu.png", @"School_Jau.png", @"School_Ggu.png", @"School_Hyu.png"];
+    NSArray *schoolLocationImageArray = @[@"School_All.jpeg", @"School_Kou.png", @"School_Snu.png", @"School_You.png", @"School_Hou.png", @"School_Ewwu.png", @"School_Bsu.png", @"School_Jau.png", @"School_Ggu.png", @"School_hyu.jpg"];
     self.schoolLocationImageArray = schoolLocationImageArray;
     return self.schoolLocationImageArray;
 }
 
+- (NSArray *)settingCategoryImageArray{
+    NSArray *categoryImageArray = @[@"Category_All", @"Category_Heath_Beauty", @"Category_Language", @"Category_Computer", @"Category_Arts", @"Category_Sports", @"Category_JobStudy", @"Category_UniqueHobby", @"Category_ETC"];
+    self.categoryImageArray = categoryImageArray;
+    return self.categoryImageArray;
+}
 
 
 
