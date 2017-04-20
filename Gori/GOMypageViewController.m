@@ -58,13 +58,13 @@
 }
 
 - (IBAction)goClassListView:(UIButton *)sender {
-    [UIView animateWithDuration:1.5 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         self.classListView.alpha = 1.0f;
         self.wishListView.alpha = 0.0f;
     }];
 }
 - (IBAction)goWishListView:(UIButton *)sender {
-    [UIView animateWithDuration:1.5 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         self.classListView.alpha = 0.0f;
         self.wishListView.alpha = 1.0f;
     }];

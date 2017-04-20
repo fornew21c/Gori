@@ -90,6 +90,8 @@
 		916CDFEE1EA5D05800165EC4 /* GOUserInfoDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 916CDFED1EA5D05800165EC4 /* GOUserInfoDataModel.m */; };
 		9178CAD71E9575540054B7FB /* SignIn_SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9178CAD61E9575540054B7FB /* SignIn_SignUp.storyboard */; };
 		917AF8751EA8832C007CEC6C /* tuteeCountIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 917AF8741EA8832C007CEC6C /* tuteeCountIcon.png */; };
+		91879F8E1EA88AED00453595 /* GOClassListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91879F8D1EA88AED00453595 /* GOClassListTableViewCell.m */; };
+		91879F911EA88C2E00453595 /* GOWishListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91879F901EA88C2E00453595 /* GOWishListTableViewCell.m */; };
 		919864421EA60D0E00DDAB35 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 9198643F1EA60D0E00DDAB35 /* search.png */; };
 		919864431EA60D0E00DDAB35 /* search@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 919864401EA60D0E00DDAB35 /* search@3x.png */; };
 		919864441EA60D0E00DDAB35 /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 919864411EA60D0E00DDAB35 /* search@2x.png */; };
@@ -238,6 +240,10 @@
 		916CDFED1EA5D05800165EC4 /* GOUserInfoDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOUserInfoDataModel.m; sourceTree = "<group>"; };
 		9178CAD61E9575540054B7FB /* SignIn_SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn_SignUp.storyboard; sourceTree = "<group>"; };
 		917AF8741EA8832C007CEC6C /* tuteeCountIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tuteeCountIcon.png; sourceTree = "<group>"; };
+		91879F8C1EA88AED00453595 /* GOClassListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOClassListTableViewCell.h; sourceTree = "<group>"; };
+		91879F8D1EA88AED00453595 /* GOClassListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOClassListTableViewCell.m; sourceTree = "<group>"; };
+		91879F8F1EA88C2E00453595 /* GOWishListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOWishListTableViewCell.h; sourceTree = "<group>"; };
+		91879F901EA88C2E00453595 /* GOWishListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOWishListTableViewCell.m; sourceTree = "<group>"; };
 		9198643F1EA60D0E00DDAB35 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
 		919864401EA60D0E00DDAB35 /* search@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@3x.png"; sourceTree = "<group>"; };
 		919864411EA60D0E00DDAB35 /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
@@ -551,8 +557,12 @@
 				919B6F2A1E9CE56000AE8CA5 /* GOMypageViewController.m */,
 				919B6F271E9CE56000AE8CA5 /* GOClassListViewController.h */,
 				919B6F281E9CE56000AE8CA5 /* GOClassListViewController.m */,
+				91879F8C1EA88AED00453595 /* GOClassListTableViewCell.h */,
+				91879F8D1EA88AED00453595 /* GOClassListTableViewCell.m */,
 				919B6F2D1E9CE56000AE8CA5 /* GOWishListViewController.h */,
 				919B6F2E1E9CE56000AE8CA5 /* GOWishListViewController.m */,
+				91879F8F1EA88C2E00453595 /* GOWishListTableViewCell.h */,
+				91879F901EA88C2E00453595 /* GOWishListTableViewCell.m */,
 				910E642F1EA3619500B90B7E /* GOUserInfoUpdateViewController.h */,
 				910E64301EA3619500B90B7E /* GOUserInfoUpdateViewController.m */,
 			);
@@ -798,6 +808,7 @@
 				4153EE911E92393C001EFF70 /* GOCategoryTableViewCell.m in Sources */,
 				4153EE901E92393C001EFF70 /* GODistrictLocationTableViewCell.m in Sources */,
 				919B6F321E9CE56000AE8CA5 /* GOWishListViewController.m in Sources */,
+				91879F911EA88C2E00453595 /* GOWishListTableViewCell.m in Sources */,
 				41C299B41EA48B35004D130F /* registerGuideViewController.m in Sources */,
 				91641F261E927B8800DC5B43 /* GOLocationViewController.m in Sources */,
 				4135A8A71E973F040043E0ED /* NetworkModule.m in Sources */,
@@ -816,6 +827,7 @@
 				4135A8A31E973EB70043E0ED /* GODataCenter2.m in Sources */,
 				41C299B51EA48B35004D130F /* registerTalentFirstViewController.m in Sources */,
 				919A8A0B1E95820300E8EA22 /* GOSignupViewController.m in Sources */,
+				91879F8E1EA88AED00453595 /* GOClassListTableViewCell.m in Sources */,
 				4153EE841E9238FD001EFF70 /* GODataCenter.m in Sources */,
 				91641F231E92798600DC5B43 /* GOSchoolLocationTableViewCell.m in Sources */,
 				91641F201E92796400DC5B43 /* GOSchoolLocationViewController.m in Sources */,

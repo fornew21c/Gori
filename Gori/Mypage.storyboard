@@ -173,16 +173,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="347"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="수강목록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJh-7O-nUX">
-                                <rect key="frame" x="68" y="44" width="80" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8fN-F2-LR6">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="347"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="tnH-gk-vgd" id="zfl-m3-hbi"/>
+                                    <outlet property="delegate" destination="tnH-gk-vgd" id="cBi-0u-CMJ"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="8fN-F2-LR6" secondAttribute="bottom" id="CuE-Lf-76H"/>
+                            <constraint firstAttribute="trailing" secondItem="8fN-F2-LR6" secondAttribute="trailing" id="H7W-aX-wCh"/>
+                            <constraint firstItem="8fN-F2-LR6" firstAttribute="leading" secondItem="tSd-ia-sea" secondAttribute="leading" id="MQk-nR-IwJ"/>
+                            <constraint firstItem="8fN-F2-LR6" firstAttribute="top" secondItem="VKX-ha-YMJ" secondAttribute="bottom" id="kxN-IX-Qy1"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainTableView" destination="8fN-F2-LR6" id="03D-ab-h5W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="02X-O3-bvD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -332,16 +342,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="347"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="위시리스트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aik-d6-GM7">
-                                <rect key="frame" x="86" y="55" width="80" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tKo-PA-XDK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="347"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Z8q-tz-ayV" id="43j-YO-Eks"/>
+                                    <outlet property="delegate" destination="Z8q-tz-ayV" id="Qbe-n1-N3G"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="tKo-PA-XDK" secondAttribute="bottom" id="640-e5-jGt"/>
+                            <constraint firstAttribute="trailing" secondItem="tKo-PA-XDK" secondAttribute="trailing" id="IDB-gD-32i"/>
+                            <constraint firstItem="tKo-PA-XDK" firstAttribute="top" secondItem="EkB-ax-99B" secondAttribute="top" id="fZ9-cV-wMp"/>
+                            <constraint firstItem="tKo-PA-XDK" firstAttribute="leading" secondItem="EkB-ax-99B" secondAttribute="leading" id="oeE-gQ-3pq"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainTableView" destination="tKo-PA-XDK" id="4U9-69-WmN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yl6-vE-aer" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
