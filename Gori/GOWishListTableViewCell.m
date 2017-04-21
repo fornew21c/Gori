@@ -1,21 +1,14 @@
 //
-//  MainTableViewCell.m
+//  GOWishListTableViewCell.m
 //  Gori
 //
-//  Created by ji jun young on 2017. 3. 27..
-//  Copyright © 2017년 Fastcampus. All rights reserved.
+//  Created by ji jun young on 2017. 4. 20..
+//  Copyright © 2017년 fornew21c. All rights reserved.
 //
 
-#import "GOMainTableViewCell.h"
-#import "GOMainViewController.h"
-#import "GODataCenter.h"
+#import "GOWishListTableViewCell.h"
 
-@interface GOMainTableViewCell ()
-
-
-@end
-
-@implementation GOMainTableViewCell
+@implementation GOWishListTableViewCell
 
 - (void)makingCustomCellObject{
     
@@ -39,7 +32,7 @@
     self.profileImageView.layer.masksToBounds = YES;
     self.profileImageView.clipsToBounds = YES;
     [self.titleImageView addSubview:self.profileImageView];
-
+    
     UILabel *titleLabel = [[UILabel alloc]init];
     self.titleLabel = titleLabel;
     self.textLabel.textColor = [UIColor blackColor];
@@ -50,7 +43,7 @@
     self.tutorNameLabel = tutorNameLabel;
     self.tutorNameLabel.font = [UIFont systemFontOfSize:14.0f];
     [self.titleImageView addSubview:self.tutorNameLabel];
- 
+    
     UIView *tuteeCountView = [[UIView alloc]init];
     self.tuteeCountView = tuteeCountView;
     self.tuteeCountView.backgroundColor= [UIColor whiteColor];
@@ -66,7 +59,7 @@
     self.tuteeCountIconImageView = tuteeCountIconImageView;
     [self.tuteeCountView addSubview:self.tuteeCountIconImageView];
     
-
+    
 }
 
 - (void)settingCustomCellObject{
@@ -135,7 +128,7 @@
     if (self) {
         [self makingCustomCellObject];
         [self settingCustomCellObject];
-//        [self settingCustomCellObjectColor];
+        //        [self settingCustomCellObjectColor];
     }
     return self;
 }
@@ -149,6 +142,8 @@
     
 }
 
+
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
@@ -156,11 +151,8 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-    
+
     // Configure the view for the selected state
 }
-
-
-
 
 @end

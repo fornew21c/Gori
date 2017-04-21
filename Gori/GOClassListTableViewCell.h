@@ -1,14 +1,14 @@
 //
-//  MainTableViewCell.h
+//  GOClassListTableViewCell.h
 //  Gori
 //
-//  Created by ji jun young on 2017. 3. 27..
-//  Copyright © 2017년 Fastcampus. All rights reserved.
+//  Created by ji jun young on 2017. 4. 20..
+//  Copyright © 2017년 fornew21c. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface GOMainTableViewCell : UITableViewCell
+@interface GOClassListTableViewCell : UITableViewCell
 
 @property (nonatomic, weak) UIView *mainView;
 
@@ -27,6 +27,7 @@
 @property (nonatomic, weak) UILabel *tuteeCountNumberLabel;
 
 @property (nonatomic, weak) UIImageView *tuteeCountIconImageView;
+
 
 
 @end
