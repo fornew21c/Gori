@@ -149,6 +149,8 @@
             model.locationMessage = @"";
         }
         
+        model.userDetail = [data objectForKey:@"user"];
+        NSLog(@"userdetail: %@", model.userDetail);
        
     }
     

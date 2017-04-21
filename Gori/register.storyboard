@@ -41,16 +41,28 @@
                                     <segue destination="yCa-RU-WNo" kind="show" identifier="registerFirstStep" id="t7Q-NP-l9t"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQk-qe-f0f">
+                                <rect key="frame" x="80" y="254" width="213" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="malpoongsun3.png" translatesAutoresizingMaskIntoConstraints="NO" id="aHZ-CZ-cgq">
+                                <rect key="frame" x="67" y="226" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="introduceLabel" destination="PQk-qe-f0f" id="0JH-br-zZW"/>
                         <outlet property="tutorImage" destination="Jl6-ar-8HG" id="obY-Wu-Pxb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QiG-UZ-a9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1532" y="-341"/>
+            <point key="canvasLocation" x="-1532" y="-341.37931034482762"/>
         </scene>
         <!--Register Talent First View Controller-->
         <scene sceneID="IOx-Pi-WPs">
@@ -200,6 +212,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uXs-Rg-8AE">
+                                <rect key="frame" x="0.0" y="205" width="375" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="malpoongsun5.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Kc-Bh-MS7">
+                                        <rect key="frame" x="91" y="9" width="276" height="74"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="신청 전에 원하시는 수업 장소와 가능한 시간을 한번 더 확인해주세요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBo-hQ-ZLf">
+                                        <rect key="frame" x="111" y="20" width="241" height="49"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nlB-x0-foH">
+                                        <rect key="frame" x="8" y="9" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.89476326579999999" green="0.89476326579999999" blue="0.89476326579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -215,12 +249,13 @@
                         <outlet property="time" destination="fAu-2x-BMw" id="kzr-px-x0D"/>
                         <outlet property="tueBtn" destination="E7E-GU-aNY" id="Qrw-tH-xJ4"/>
                         <outlet property="tutorImage3" destination="6qM-nN-vuP" id="bGo-Te-KgZ"/>
+                        <outlet property="tutorImage4" destination="nlB-x0-foH" id="SYW-f0-LiI"/>
                         <outlet property="wedBtn" destination="L9w-qN-IyI" id="Yep-sQ-Mho"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBy-nl-cLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-695.20000000000005" y="-341.37931034482762"/>
+            <point key="canvasLocation" x="-762.39999999999998" y="-341.37931034482762"/>
         </scene>
         <!--Register Talent Second View Controller-->
         <scene sceneID="spz-oq-XeJ">
@@ -305,6 +340,28 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lGw-zs-Hw1">
+                                                <rect key="frame" x="0.0" y="142" width="375" height="104"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="malpoongsun5.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vy9-cn-hAt">
+                                                        <rect key="frame" x="91" y="9" width="276" height="74"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="수업 준비를 위해 아래의 항목들에 대해 미리 말씀해 주세요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZl-4j-peN">
+                                                        <rect key="frame" x="111" y="20" width="241" height="49"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gCP-Ud-Kfz">
+                                                        <rect key="frame" x="8" y="9" width="60" height="60"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.89476326579999999" green="0.89476326579999999" blue="0.89476326579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -345,12 +402,13 @@
                         <outlet property="scrollView" destination="JPs-hV-n8n" id="dU7-mz-Pgo"/>
                         <outlet property="studentExperienceMonth" destination="i0H-eL-2su" id="7Dk-9e-fYV"/>
                         <outlet property="studentLevel" destination="sud-sW-Mna" id="M37-C5-jHc"/>
+                        <outlet property="tutorImage5" destination="gCP-Ud-Kfz" id="qpb-V4-8Gc"/>
                         <segue destination="2cc-Mm-Qf8" kind="show" identifier="registerThirdStep" id="qXJ-ug-hCG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b0Y-eS-AAC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="124" y="-349"/>
+            <point key="canvasLocation" x="-36" y="-341"/>
         </scene>
         <!--Register Talent Third View Controller-->
         <scene sceneID="Z8q-XX-Q62">
@@ -484,6 +542,8 @@
         <image name="confirmation2.png" width="1536" height="505"/>
         <image name="locationConfirm.png" width="1536" height="506"/>
         <image name="malpoongsun2.png" width="412" height="186"/>
+        <image name="malpoongsun3.png" width="405" height="213"/>
+        <image name="malpoongsun5.png" width="408" height="103"/>
         <image name="pay1.png" width="1536" height="505"/>
         <image name="registerGuide.png" width="806" height="370"/>
     </resources>

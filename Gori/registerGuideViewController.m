@@ -12,6 +12,7 @@
 
 @interface registerGuideViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *tutorImage;
+@property (weak, nonatomic) IBOutlet UILabel *introduceLabel;
 @end
 
 @implementation registerGuideViewController

@@ -31,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *tutorImage3;
 @property (weak, nonatomic) IBOutlet UILabel *locationMessage;
 
+@property (weak, nonatomic) IBOutlet UIImageView *tutorImage4;
 
 @end
 
@@ -42,6 +43,10 @@
     self.tutorImage3.layer.masksToBounds = YES;
     self.tutorImage3.layer.cornerRadius =  roundf(self.tutorImage3.frame.size.width/2.0);;
     self.tutorImage3.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.selectedModel.tutorImgURL]];
+    
+    self.tutorImage4.layer.masksToBounds = YES;
+    self.tutorImage4.layer.cornerRadius =  roundf(self.tutorImage3.frame.size.width/2.0);;
+    self.tutorImage4.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.selectedModel.tutorImgURL]];
     self.locationMessage.text = [GODataCenter2 sharedInstance].selectedModel.locationMessage;
     NSLog(@"self.selectedModel.locations.count: %lu", self.selectedModel.locations.count);
     NSUInteger buttonWidth = self.locationButtonStackView.frame.size.width / self.selectedModel.locations.count;

@@ -10,6 +10,9 @@
 		1F7A41A51EA723A100563FB0 /* registerTalentThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7A41A41EA723A100563FB0 /* registerTalentThirdViewController.m */; };
 		1F7A41A81EA723BC00563FB0 /* registerTalentFourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7A41A71EA723BC00563FB0 /* registerTalentFourthViewController.m */; };
 		1F7A41AB1EA723D400563FB0 /* registerTalentFifthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7A41AA1EA723D400563FB0 /* registerTalentFifthViewController.m */; };
+		1F7A41AF1EA75FEA00563FB0 /* malpoongsun5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F7A41AC1EA75FEA00563FB0 /* malpoongsun5.png */; };
+		1F7A41B01EA75FEA00563FB0 /* malpoongsun4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F7A41AD1EA75FEA00563FB0 /* malpoongsun4.png */; };
+		1F7A41B11EA75FEA00563FB0 /* malpoongsun3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F7A41AE1EA75FEA00563FB0 /* malpoongsun3.png */; };
 		25A48385E4D3A342AFBED138 /* libPods-Gori.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1585AE216C18B713828536EC /* libPods-Gori.a */; };
 		4135A8A31E973EB70043E0ED /* GODataCenter2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4135A8A21E973EB70043E0ED /* GODataCenter2.m */; };
 		4135A8A71E973F040043E0ED /* NetworkModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4135A8A61E973F040043E0ED /* NetworkModule.m */; };
@@ -113,6 +116,9 @@
 		1F7A41A71EA723BC00563FB0 /* registerTalentFourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = registerTalentFourthViewController.m; sourceTree = "<group>"; };
 		1F7A41A91EA723D400563FB0 /* registerTalentFifthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = registerTalentFifthViewController.h; sourceTree = "<group>"; };
 		1F7A41AA1EA723D400563FB0 /* registerTalentFifthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = registerTalentFifthViewController.m; sourceTree = "<group>"; };
+		1F7A41AC1EA75FEA00563FB0 /* malpoongsun5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = malpoongsun5.png; sourceTree = "<group>"; };
+		1F7A41AD1EA75FEA00563FB0 /* malpoongsun4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = malpoongsun4.png; sourceTree = "<group>"; };
+		1F7A41AE1EA75FEA00563FB0 /* malpoongsun3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = malpoongsun3.png; sourceTree = "<group>"; };
 		411E653B51DD087BF5BC23C3 /* Pods-Gori.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gori.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gori/Pods-Gori.debug.xcconfig"; sourceTree = "<group>"; };
 		4135A8A11E973EB70043E0ED /* GODataCenter2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GODataCenter2.h; sourceTree = "<group>"; };
 		4135A8A21E973EB70043E0ED /* GODataCenter2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GODataCenter2.m; sourceTree = "<group>"; };
@@ -367,6 +373,9 @@
 				4153EE9E1E9239AC001EFF70 /* Category_Location_Storyboard.storyboard */,
 				41C299AB1EA48B19004D130F /* register.storyboard */,
 				4185840B1E91EDF70053EF40 /* Assets.xcassets */,
+				1F7A41AC1EA75FEA00563FB0 /* malpoongsun5.png */,
+				1F7A41AD1EA75FEA00563FB0 /* malpoongsun4.png */,
+				1F7A41AE1EA75FEA00563FB0 /* malpoongsun3.png */,
 				41C299C81EA5D334004D130F /* pay1.png */,
 				41C299C91EA5D334004D130F /* pay2.png */,
 				41C299CC1EA5D4D7004D130F /* registerGuide.png */,
@@ -623,8 +632,10 @@
 				912696971EA0A0F30067C331 /* menu.png in Resources */,
 				916254231EA4FC9F0014BE21 /* School_Jau.png in Resources */,
 				911555031EA0C2A300CAFF7D /* District_Yongsan.jpeg in Resources */,
+				1F7A41B11EA75FEA00563FB0 /* malpoongsun3.png in Resources */,
 				916254201EA4FC9F0014BE21 /* School_Snu.png in Resources */,
 				4153EE9F1E9239AC001EFF70 /* Category_Location_Storyboard.storyboard in Resources */,
+				1F7A41AF1EA75FEA00563FB0 /* malpoongsun5.png in Resources */,
 				911555071EA0C2A300CAFF7D /* District_Sadang.jpg in Resources */,
 				911555061EA0C2A300CAFF7D /* District_Hapjung.png in Resources */,
 				41C299F21EA64530004D130F /* malpoongsun2.png in Resources */,
@@ -637,6 +648,7 @@
 				4185840F1E91EDF70053EF40 /* LaunchScreen.storyboard in Resources */,
 				41C299B91EA48B6B004D130F /* confirmation1.png in Resources */,
 				4153EEA11E923A49001EFF70 /* Main.storyboard in Resources */,
+				1F7A41B01EA75FEA00563FB0 /* malpoongsun4.png in Resources */,
 				4185845B1E91F1770053EF40 /* icon-menu@2x.png in Resources */,
 				919864441EA60D0E00DDAB35 /* search@2x.png in Resources */,
 				912696991EA0A0F30067C331 /* menu@3x.png in Resources */,

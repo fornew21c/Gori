@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *studentLevel;
 @property (weak, nonatomic) IBOutlet UITextField *studentExperienceMonth;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *tutorImage5;
  
 
 @property (weak, nonatomic) IBOutlet UITextView *messageToTutor;
@@ -26,6 +27,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tutorImage5.layer.masksToBounds = YES;
+    self.tutorImage5.layer.cornerRadius =  roundf(self.tutorImage5.frame.size.width/2.0);;
+    self.tutorImage5.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[GODataCenter2 sharedInstance].selectedModel.tutorImgURL]];
+    
     [GODataCenter2 sharedInstance].studentLevel = 1;
     // Do any additional setup after loading the view.
     self.experienceView.layer.borderWidth = 1;
