@@ -214,7 +214,13 @@ static NSString *const TOKEN_KEY = @"Authorization";
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
     NSString *loginToken = [[GODataCenter2 sharedInstance] getMyLoginToken];
     // 헤더 세팅
-    [request setValue:[NSString stringWithFormat:@"token %@", loginToken] forHTTPHeaderField:@"Authorization"];
+    NSLog(@"loginToken : %@", loginToken);
+    if(loginToken == (NSString *)[NSNull null] || [loginToken length]==0 || [loginToken isEqualToString:@""]) {
+
+    }
+    else {
+        [request setValue:[NSString stringWithFormat:@"token %@", loginToken] forHTTPHeaderField:@"Authorization"];
+    }
     
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         if (error) {

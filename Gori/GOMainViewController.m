@@ -319,5 +319,10 @@
     
 }
 
+-(IBAction)unwindSegue:(UIStoryboardSegue *) sender {
+    
+    NSLog(@"등록 완료");
+}
+
 
 @end

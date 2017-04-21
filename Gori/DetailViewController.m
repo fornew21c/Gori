@@ -18,7 +18,7 @@
 #import "GOTalentDetailModel.h"
 #import "registerGuideViewController.h"
 #import "testViewController.h"
-
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface DetailViewController ()
 <UIScrollViewDelegate>
@@ -111,7 +111,9 @@
         tmpRegion = [[tmpRegion stringByAppendingString:[self.selectedModel.region objectAtIndex:i]] stringByAppendingString:@" "];
     }
     self.talentRegion.text =  tmpRegion;
-    self.coverImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.selectedModel.img_cover_url]];
+//    self.coverImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.selectedModel.img_cover_url]];
+    
+    [self.coverImage sd_setImageWithURL:self.selectedModel.img_cover_url];
     self.hoursPerClass.text = [self.selectedModel.hoursPerClass stringValue];
     
     NSString *temp = @" 누적인원: ";
@@ -242,7 +244,9 @@
     [self buttonInit];
     NSLog(@"setDayButtonsetDayButton");
     self.canSelectButtons = [[NSMutableArray alloc] init];
-    self.selectedRegionResult = [self.selectedModel.regionsResult objectAtIndex:0];
+    if(self.selectedModel.regionsResult.count != 0 ) {
+        self.selectedRegionResult = [self.selectedModel.regionsResult objectAtIndex:0];
+    }
     [GODataCenter2 sharedInstance].locationPK = [[[self.selectedRegionResult objectAtIndex:0] objectForKey:@"pk" ] integerValue]; //아무것도 선택안하고 갈경우 default location pk 지정
     for(NSUInteger i = 0; i < ((NSMutableArray*)[self.selectedModel.regionsResult objectAtIndex:0]).count; i++) {
         NSString *whatDay = [[[self.selectedModel.regionsResult objectAtIndex:0] objectAtIndex:i] objectForKey:@"day"];
@@ -430,7 +434,27 @@
     // [self performSegueWithIdentifier:@"testSegue" sender:sender];
     NSLog(@"region pk: %lu", [GODataCenter2 sharedInstance].locationPK );
 
-    [self performSegueWithIdentifier:@"registerSegue" sender:sender];
+    NSString *loginToken = [[GODataCenter2 sharedInstance] getMyLoginToken];
+    if(loginToken == (NSString *)[NSNull null] || [loginToken length]==0 || [loginToken isEqualToString:@""])  {
+        NSLog(@"로그인안됨");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"수업신청안내" message:@"수업신청하기 위해서는 로그인하셔야 합니다. 로그인하시겠습니까?" preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
+                [self performSegueWithIdentifier:@"loginViewSegue" sender:nil];
+
+            }];
+            
+             UIAlertAction *calcelAction = [UIAlertAction actionWithTitle:@"취소" style:UIAlertActionStyleDefault handler:nil];
+            
+            [alertController addAction:okAction];
+            [alertController addAction:calcelAction];
+            [self presentViewController:alertController animated:YES completion:nil];
+        });
+    }
+    else {
+        [self performSegueWithIdentifier:@"registerSegue" sender:sender];
+    }
  
 }
 
