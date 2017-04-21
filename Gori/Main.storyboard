@@ -392,10 +392,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUF-Ju-yuv">
-                                <rect key="frame" x="0.0" y="20" width="187.5" height="30"/>
+                                <rect key="frame" x="0.0" y="64" width="187.5" height="50"/>
                                 <color key="backgroundColor" red="0.90980392156862744" green="0.1764705882352941" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Tmo-nK-Es1"/>
+                                    <constraint firstAttribute="height" constant="50" id="Tmo-nK-Es1"/>
                                 </constraints>
                                 <state key="normal" title="전체 지역">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -405,14 +405,14 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ort-Qo-vMU">
-                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJ5-y2-2dX">
-                                <rect key="frame" x="187" y="20" width="187.5" height="30"/>
+                                <rect key="frame" x="187" y="64" width="187.5" height="50"/>
                                 <color key="backgroundColor" red="0.90980392156862744" green="0.1764705882352941" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="KzW-VA-GNo"/>
+                                    <constraint firstAttribute="height" constant="50" id="KzW-VA-GNo"/>
                                 </constraints>
                                 <state key="normal" title="전체 카테고리">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -567,7 +567,7 @@
                                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </view>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4T-bB-17U">
-                                                                        <rect key="frame" x="32" y="138" width="138" height="21"/>
+                                                                        <rect key="frame" x="25" y="138" width="138" height="21"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
@@ -581,7 +581,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LzN-uL-SEN">
-                                                                        <rect key="frame" x="203" y="264" width="86" height="21"/>
+                                                                        <rect key="frame" x="200" y="264" width="86" height="21"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <color key="textColor" red="0.90980392160000001" green="0.1764705882" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -595,7 +595,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="/시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouo-we-Mr4">
-                                                                        <rect key="frame" x="294" y="264" width="42" height="21"/>
+                                                                        <rect key="frame" x="291" y="264" width="42" height="21"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
@@ -1056,7 +1056,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nkc-b9-1bg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5551.1999999999998" y="-908.54572713643188"/>
+            <point key="canvasLocation" x="6519" y="-1135"/>
         </scene>
         <!--Curriculum View Controller-->
         <scene sceneID="9Xx-P2-zSZ">
@@ -1087,7 +1087,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1e-Y8-xKn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6951.1999999999998" y="-336.88155922038982"/>
+            <point key="canvasLocation" x="7417" y="-334"/>
         </scene>
         <!--register-->
         <scene sceneID="rWh-ND-GxS">
@@ -1095,7 +1095,7 @@
                 <viewControllerPlaceholder storyboardName="register" id="oGW-Ga-BEz" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DM0-56-PDW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5830" y="-1393"/>
+            <point key="canvasLocation" x="7484" y="-1447"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="WfT-j4-A3i">
@@ -1267,6 +1267,9 @@
                                         <state key="normal" title="로그인">
                                             <color key="titleColor" red="1" green="0.15849831170000001" blue="0.18944462819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="hs0-d4-0f8" kind="show" id="f88-U3-R7t"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93c-3A-szw">
                                         <rect key="frame" x="96" y="374" width="135" height="30"/>
@@ -1459,7 +1462,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIe-c5-tFc">
                                 <rect key="frame" x="139" y="549" width="94" height="30"/>
-                                <state key="normal" title="비밀번호 찾기">
+                                <state key="normal">
                                     <color key="titleColor" red="0.90980392160000001" green="0.1764705882" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
@@ -1468,6 +1471,9 @@
                                 <state key="normal" title="당장 가입">
                                     <color key="titleColor" red="0.90980392160000001" green="0.1764705882" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="BOv-Ay-CP6" kind="show" id="7vF-rB-vfR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLE-1R-DW0">
                                 <rect key="frame" x="89" y="593" width="135" height="30"/>
@@ -1568,8 +1574,9 @@
         <image name="sign.png" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="br3-Nz-hQ0"/>
-        <segue reference="Fjc-8S-uYf"/>
+        <segue reference="f88-U3-R7t"/>
+        <segue reference="7vF-rB-vfR"/>
+        <segue reference="ZTz-Dv-kBt"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.90980392160000001" green="0.1764705882" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>
