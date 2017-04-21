@@ -13,7 +13,6 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface GOWishListViewController ()
-<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 
 @end
@@ -23,8 +22,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.mainTableView.delegate = self;
-    self.mainTableView.dataSource = self;
 }
 
 /**************** tableviewDelegate ********************************/
@@ -36,7 +33,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return ([GODataCenter sharedInstance].userWishListArray.count);
+    return ([GODataCenter sharedInstance].networkDataArray.count);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -51,17 +48,17 @@
     
     
     /**************** changing cell image with networkDataArray ********************************/
-    NSDictionary *temp = [[GODataCenter sharedInstance].userWishListArray objectAtIndex:indexPath.row];
+    NSDictionary *temp = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:indexPath.row];
     NSURL *titleURL = [NSURL URLWithString:[temp objectForKey:@"cover_image"]];
-//    NSURL *profileURL = [NSURL URLWithString:[[temp objectForKey:@"tutor"] objectForKey:@"profile_image"]];
+    NSURL *profileURL = [NSURL URLWithString:[[temp objectForKey:@"tutor"] objectForKey:@"profile_image"]];
     //    cell.titleImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:titleURL];
     //    cell.profileImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL];
     //SDWebImage로 교체
     [cell.titleImageView sd_setImageWithURL:titleURL];
-//    [cell.profileImageView sd_setImageWithURL:profileURL];
+    [cell.profileImageView sd_setImageWithURL:profileURL];
     
     cell.tuteeCountIconImageView.image = [UIImage imageNamed:@"tuteeCountIcon.png"];
-//    cell.tutorNameLabel.text = [[temp objectForKey:@"tutor"] objectForKey:@"name"];
+    cell.tutorNameLabel.text = [[temp objectForKey:@"tutor"] objectForKey:@"name"];
     cell.titleLabel.text = [temp objectForKey:@"title"];
     cell.tuteeCountNumberLabel.text = [[NSString stringWithFormat:@"%@", [temp objectForKey:@"registration_count"]] stringByAppendingString:@"명 참여"];
     return cell;

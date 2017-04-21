@@ -25,8 +25,6 @@ typedef void(^CompletionBlock)(BOOL isSuccess, id respons);
 @property (nonatomic) NSArray *networkDataArray;
 @property (nonatomic) NSDictionary *networkUserDetailDictionary;
 @property (nonatomic) NSArray *districtLocationFilteredArray;
-@property (nonatomic) NSArray *userRegistrationArray;
-@property (nonatomic) NSArray *userWishListArray;
 
 /**************** temporary Array for tableviewCell Setting ********************************/
 @property (nonatomic) NSArray *titleArray;

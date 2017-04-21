@@ -19,7 +19,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface GOMainViewController ()
-<UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
+<UITableViewDelegate, UITableViewDataSource/* UISearchResultsUpdating*/>
 
 @property (nonatomic) IBOutlet UIButton *locationButton;
 @property (nonatomic) IBOutlet UIButton *categoryButton;
@@ -87,8 +87,6 @@
     self.searchTextField = [[UITextField alloc]initWithFrame:CGRectMake(5, 160, self.view.frame.size.width - 50, 40)];
     self.searchTextField.placeholder = @"강의명을 검색해보세요";
     self.searchTextField.borderStyle = UITextBorderStyleNone;
-    self.searchTextField.delegate = self;
-    self.searchTextField.tag = 100;
     [self.mainTableView.tableHeaderView addSubview:self.searchTextField];
     
     UIButton *searchTitleButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -130,7 +128,6 @@
 
 - (void)showTitleDetailResult:(UIButton*)sender{
     NSString *titleKey = [NSString stringWithFormat:@"?title=%@", self.searchTextField.text];
-    [self.searchTextField resignFirstResponder];
     [GODataCenter sharedInstance].filterTitleYN = YES;
     [GODataCenter sharedInstance].filterSchoolLocationYN = NO;
     [GODataCenter sharedInstance].filterCategoryYN = NO;
@@ -208,22 +205,6 @@
     [self performSegueWithIdentifier:@"detailSegue" sender:nil];
 
 }
-
-/**************** textFieldDelegate ********************************/
-
-//- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-//    if(textField.tag != 100) {
-//        [self.searchTextField resignFirstResponder];
-//    }
-//    
-//    
-//    return YES;
-//}
-
-//- (void)textFieldDidEndEditing:(UITextField *)textField reason:(UITextFieldDidEndEditingReason)reason{
-//    
-//    [self.searchTextField resignFirstResponder];
-//}
 
 
 #pragma mark - Navigation
