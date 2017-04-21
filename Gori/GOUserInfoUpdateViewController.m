@@ -13,7 +13,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface GOUserInfoUpdateViewController ()
-<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nickNameTextField;
@@ -31,6 +31,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    ////////////////////////* settingTextFieldTag *//////////////////
+    self.nameTextField.tag = 100;
+    self.nameTextField.delegate = self;
+    self.nickNameTextField.tag = 200;
+    self.nickNameTextField.delegate = self;
+    self.cellPhoneTextField.tag = 300;
+    self.cellPhoneTextField.delegate = self;
     
     
     ////////////////////////* settingImagePickerController *//////////////////
@@ -69,7 +77,7 @@
     
 }
 
-/////////////////////*이미지 피커 컨트롤러 델리게이트의 작성 */////////////////////////
+/////////////////////*Setting ImagePicker Delegate*/////////////////////////
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
 
@@ -84,14 +92,14 @@
         [[GODataCenter sharedInstance] updatingUserDetailImage:data completion:^(BOOL isSuccess, id respons) {
             if (isSuccess) {
                 NSLog(@"유저인포컨트롤러 이미지피커 활성화");
+                [self.updateUserPictureDataButton setBackgroundImage:image forState:UIControlStateNormal];
+                [picker dismissViewControllerAnimated:YES completion:nil];
                 
             }else{
                 NSLog(@"유저인포컨트롤러 이미지피커 활성화 안됨");
             }
             
-            [self.updateUserPictureDataButton setBackgroundImage:image forState:UIControlStateNormal];
             
-            [self dismissViewControllerAnimated:YES completion:nil];
         }];
         //    NSString *name = @"UploadedImage.png";
 
@@ -139,6 +147,35 @@
         }
     }];
     
+}
+
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self.view setFrame:CGRectMake(0, -80, self.view.frame.size.width, self.view.frame.size.height)];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if(textField.tag == 100) {
+        
+        [self.nickNameTextField becomeFirstResponder];
+        [self.cellPhoneTextField resignFirstResponder];
+    }
+    else if(textField.tag == 200) {
+        [self.nameTextField resignFirstResponder];
+        [self.cellPhoneTextField becomeFirstResponder];
+    }else if (textField.tag == 300){
+        [self.nameTextField resignFirstResponder];
+        [self.nickNameTextField resignFirstResponder];
+        [self.cellPhoneTextField resignFirstResponder];
+        
+    }
+
+    return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField reason:(UITextFieldDidEndEditingReason)reason{
+    [self.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
 }
 
 

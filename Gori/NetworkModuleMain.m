@@ -119,6 +119,7 @@ static NSString *const TOKEN_KEY = @"Authorization";
                   completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
                       if (error == nil) {
                           NSLog(@"%@ %@", response, responseObject);
+                          completion(YES, response);
                       } else {
                           NSLog(@"Error: %@", error);
                       }

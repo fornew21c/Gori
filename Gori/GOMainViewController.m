@@ -128,6 +128,7 @@
 
 - (void)showTitleDetailResult:(UIButton*)sender{
     NSString *titleKey = [NSString stringWithFormat:@"?title=%@", self.searchTextField.text];
+    [self.searchTextField resignFirstResponder];
     [GODataCenter sharedInstance].filterTitleYN = YES;
     [GODataCenter sharedInstance].filterSchoolLocationYN = NO;
     [GODataCenter sharedInstance].filterCategoryYN = NO;
