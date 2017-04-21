@@ -92,13 +92,14 @@
         [[GODataCenter sharedInstance] updatingUserDetailImage:data completion:^(BOOL isSuccess, id respons) {
             if (isSuccess) {
                 NSLog(@"유저인포컨트롤러 이미지피커 활성화");
+                [self.updateUserPictureDataButton setBackgroundImage:image forState:UIControlStateNormal];
+                [picker dismissViewControllerAnimated:YES completion:nil];
                 
             }else{
                 NSLog(@"유저인포컨트롤러 이미지피커 활성화 안됨");
             }
             
-            [self.updateUserPictureDataButton setBackgroundImage:image forState:UIControlStateNormal];
-            [picker dismissViewControllerAnimated:YES completion:nil];
+            
         }];
         //    NSString *name = @"UploadedImage.png";
 
