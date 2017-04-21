@@ -40,6 +40,36 @@ GODataCenter
         return self;
     
 }
+
+- (void)receiveUserWishListDataWithCompletionBlock:(CompletionBlock)completion{
+    [NetworkModuleMain getUserWishListWithCompletionBlock:^(BOOL isSuccess, id respons) {
+        if (isSuccess) {
+            NSArray *networkDataArray = [respons objectForKey:@"results"];
+            self.networkDataArray = networkDataArray;
+            completion(YES, respons);
+        }else{
+            nil;
+        }
+    }];
+    
+    
+}
+
+
+- (void)receiveUserEnrollmentDataWithCompletionBlock:(CompletionBlock)completion{
+    [NetworkModuleMain getUserEnrollmentWithCompletionBlock:^(BOOL isSuccess, id respons) {
+        if (isSuccess) {
+            NSArray *networkDataArray = [respons objectForKey:@"results"];
+            self.networkDataArray = networkDataArray;
+            completion(YES, respons);
+        }else{
+            nil;
+        }
+    }];
+    
+    
+}
+
 /**************** updating myPageUserTextData with NetworkModule********************************/
 
 - (void)updatingUserDetailImage:(NSData *)data completion:(CompletionBlock)completion{
@@ -74,8 +104,6 @@ GODataCenter
             self.networkDataArray = networkDataArray;
             completionBlock(YES);
         }else{
-            NSLog(@"깃 커밋 0417");
-            NSLog(@"깃 커밋 0417-2");
             nil;
         }
     }];

@@ -54,9 +54,7 @@
     // Do any additional setup after loading the view.
     
     /***************** Setting DataCenter *****************/
-    //    [[GODataCenter sharedInstance] settingTitleArray];
-    //    [[GODataCenter sharedInstance] settingTutorNameArray];
-    //    [[GODataCenter sharedInstance] settingCategoryDetailArray];
+
     [[GODataCenter sharedInstance] settingCategoryArray];
     [[GODataCenter sharedInstance] settingSchoolLocationArray];
     [[GODataCenter sharedInstance] settingDistrictLocationArray];
@@ -67,10 +65,6 @@
     
     /***************** Setting Tableview *****************/
     
-//    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 95, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
-//    self.mainTableView = tableView;
-//    [self.view addSubview:self.mainTableView];
-//    
     self.mainTableView.delegate = self;
     self.mainTableView.dataSource = self;
   
@@ -91,24 +85,16 @@
     
     /*************** searchTextField Setting *******************************/
     self.searchTextField = [[UITextField alloc]initWithFrame:CGRectMake(5, 160, self.view.frame.size.width - 50, 40)];
-//    searchTextField.backgroundColor = [UIColor redColor];
     self.searchTextField.placeholder = @"강의명을 검색해보세요";
     self.searchTextField.borderStyle = UITextBorderStyleNone;
-//    UISearchController *searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
-//    self.searchController = searchController;
-//        self.searchController.searchResultsUpdater = self;
     [self.mainTableView.tableHeaderView addSubview:self.searchTextField];
     
     UIButton *searchTitleButton = [UIButton buttonWithType:UIButtonTypeCustom];
     searchTitleButton.frame = CGRectMake(self.view.frame.size.width - 40, 165, 35, 35);
-//    [searchTitleButton setBackgroundColor:[UIColor greenColor]];
-//    [searchTitleButton.imageView setBackgroundColor:[UIColor purpleColor]];
     
     [searchTitleButton setBackgroundImage:[UIImage imageNamed:@"search"] forState:UIControlStateNormal];
-//    [searchTitleButton.imageView setContentMode:UIViewContentModeScaleAspectFill];
     [searchTitleButton addTarget:self action:@selector(showTitleDetailResult:) forControlEvents:UIControlEventTouchUpInside];
     [self.mainTableView.tableHeaderView addSubview:searchTitleButton];
-//    [searchControllerView addSubview:self.searchController.searchBar];
     
     
     /**************** navigationBar Logo Setting ********************************/
@@ -195,6 +181,7 @@
     [cell.titleImageView sd_setImageWithURL:titleURL];
     [cell.profileImageView sd_setImageWithURL:profileURL];
 
+    cell.tuteeCountIconImageView.image = [UIImage imageNamed:@"tuteeCountIcon.png"];
     cell.tutorNameLabel.text = [[temp objectForKey:@"tutor"] objectForKey:@"name"];
     cell.titleLabel.text = [temp objectForKey:@"title"];
     cell.tuteeCountNumberLabel.text = [[NSString stringWithFormat:@"%@", [temp objectForKey:@"registration_count"]] stringByAppendingString:@"명 참여"];
@@ -205,27 +192,6 @@
 
     return 200;
 }
-
-/**************** searchController Protocol ********************************/
-
-//- (void)checkingText:(NSString *)string{
-////    self.searchDataResult = [self.searchDataSetTitle mutableCopy];
-//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF == %@", string];
-//    self.searchDataTutorNameResult = [self.searchDataSetTutorName filteredArrayUsingPredicate:predicate];
-//            NSLog(@"체크 텍스트 메소드 서치데이터 튜터 네임 : %@", self.searchDataSetTutorName);
-//    self.searchDataTitleNameResult = [self.searchDataSetTitleName filteredArrayUsingPredicate:predicate];
-//
-//    NSLog(@"체크 텍스트 메소드 서치데이터 타이틀 네임 : %@", self.searchDataSetTitleName);
-//    
-//    [self.mainTableView reloadData];
-//}
-//
-//- (void)updateSearchResultsForSearchController:(UISearchController *)searchController{
-//    
-//    [self checkingText:searchController.searchBar.text];
-//    
-//}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

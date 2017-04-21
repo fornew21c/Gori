@@ -60,6 +60,8 @@ typedef void(^CompletionBlock)(BOOL isSuccess, id respons);
 - (void)receiveTitleFilteredDataWithCompletionBlock:(NSString *)titleKey completion:(CompletionBlock)completion;
 - (void)updatingUserDetailText:(NSString *)name nickName:(NSString *)nickName cellPhone:(NSString *)cellPhone completion:(CompletionBlock)completion;
 - (void)updatingUserDetailImage:(NSData *)data completion:(CompletionBlock)completion;
+- (void)receiveUserEnrollmentDataWithCompletionBlock:(CompletionBlock)completion;
+- (void)receiveUserWishListDataWithCompletionBlock:(CompletionBlock)completion;
 
 + (void)setUserTokenWithString:(NSString *)tokenString;
 + (NSString *)getUserToken;
