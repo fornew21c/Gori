@@ -34,7 +34,7 @@
     self.classListView.alpha = 1.0f;
     self.wishListView.alpha = 0.0f;
     
-    self.userInfoSettingButton.layer.cornerRadius = 30;
+    self.userInfoSettingButton.layer.cornerRadius = 40;
     self.userInfoSettingButton.layer.masksToBounds = YES;
     self.userInfoSettingButton.clipsToBounds = YES;
     

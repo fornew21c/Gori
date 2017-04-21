@@ -21,10 +21,10 @@
 @interface GOMainViewController ()
 <UITableViewDelegate, UITableViewDataSource/* UISearchResultsUpdating*/>
 
-@property (weak, nonatomic) IBOutlet UIButton *locationButton;
-@property (weak, nonatomic) IBOutlet UIButton *categoryButton;
+@property (nonatomic) IBOutlet UIButton *locationButton;
+@property (nonatomic) IBOutlet UIButton *categoryButton;
 @property (weak, nonatomic) IBOutlet UIButton *titleButton;
-@property (weak, nonatomic) IBOutlet UITableView *mainTableView;
+@property (nonatomic) IBOutlet UITableView *mainTableView;
 @property (weak, nonatomic) UIImageView *headerImageView;
 @property (nonatomic, strong) UISearchController *searchController;
 @property (nonatomic, strong) NSArray *searchDataSetTutorName;
@@ -62,11 +62,18 @@
     [[GODataCenter sharedInstance] settingDistrictLocationArray];
     [[GODataCenter sharedInstance] settingDistrictLocationImageArray];
     [[GODataCenter sharedInstance] settingSchoolLocationImageArray];
-
+    [[GODataCenter sharedInstance] settingCategoryImageArray];
     
+    
+    /***************** Setting Tableview *****************/
+    
+//    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 95, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+//    self.mainTableView = tableView;
+//    [self.view addSubview:self.mainTableView];
+//    
     self.mainTableView.delegate = self;
     self.mainTableView.dataSource = self;
-    
+  
     /**************** tableViewHeader Footer Setting ********************************/
     UIView *tableViewHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
     self.mainTableView.tableHeaderView = tableViewHeaderView;
