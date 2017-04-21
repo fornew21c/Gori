@@ -98,8 +98,7 @@
             }
             
             [self.updateUserPictureDataButton setBackgroundImage:image forState:UIControlStateNormal];
-            
-            [self dismissViewControllerAnimated:YES completion:nil];
+            [picker dismissViewControllerAnimated:YES completion:nil];
         }];
         //    NSString *name = @"UploadedImage.png";
 

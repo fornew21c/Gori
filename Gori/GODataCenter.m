@@ -35,6 +35,8 @@ GODataCenter
             self.networkDataArray = [[NSArray alloc] init];
             self.networkUserDetailDictionary = [[NSDictionary alloc]init];
             self.districtLocationFilteredArray = [[NSArray alloc]init];
+            self.userRegistrationArray = [[NSArray alloc]init];
+            self.userWishListArray = [[NSArray alloc]init];
             
         }
         return self;
@@ -44,8 +46,8 @@ GODataCenter
 - (void)receiveUserWishListDataWithCompletionBlock:(CompletionBlock)completion{
     [NetworkModuleMain getUserWishListWithCompletionBlock:^(BOOL isSuccess, id respons) {
         if (isSuccess) {
-            NSArray *networkDataArray = [respons objectForKey:@"results"];
-            self.networkDataArray = networkDataArray;
+            NSArray *userWishListArray = [respons objectForKey:@"results"];
+            self.userWishListArray = userWishListArray;
             completion(YES, respons);
         }else{
             nil;
@@ -59,8 +61,8 @@ GODataCenter
 - (void)receiveUserEnrollmentDataWithCompletionBlock:(CompletionBlock)completion{
     [NetworkModuleMain getUserEnrollmentWithCompletionBlock:^(BOOL isSuccess, id respons) {
         if (isSuccess) {
-            NSArray *networkDataArray = [respons objectForKey:@"results"];
-            self.networkDataArray = networkDataArray;
+            NSArray *userRegistrationArray = [respons objectForKey:@"results"];
+            self.userRegistrationArray = userRegistrationArray;
             completion(YES, respons);
         }else{
             nil;
@@ -75,9 +77,10 @@ GODataCenter
 - (void)updatingUserDetailImage:(NSData *)data completion:(CompletionBlock)completion{
     [self.networkManager updatingUserPictureWithCompletionBlock:data completion:^(BOOL isSuccess, id respons) {
         if (isSuccess) {
-            completion(YES, respons);
+            NSLog(@"datacenter sucessess");
+            completion(isSuccess, respons);
         }else{
-            nil;
+        
         }
     }];
     
