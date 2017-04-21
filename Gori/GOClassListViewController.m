@@ -13,6 +13,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface GOClassListViewController ()
+<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 
 @end
@@ -22,6 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.mainTableView.delegate = self;
+    self.mainTableView.dataSource = self;
+    
 }
 
 /**************** tableviewDelegate ********************************/

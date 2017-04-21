@@ -13,7 +13,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface GOUserInfoUpdateViewController ()
-<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nickNameTextField;
@@ -31,6 +31,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    ////////////////////////* settingTextFieldTag *//////////////////
+    self.nameTextField.tag = 100;
+    self.nameTextField.delegate = self;
+    self.nickNameTextField.tag = 200;
+    self.nickNameTextField.delegate = self;
+    self.cellPhoneTextField.tag = 300;
+    self.cellPhoneTextField.delegate = self;
     
     
     ////////////////////////* settingImagePickerController *//////////////////
@@ -139,6 +147,35 @@
         }
     }];
     
+}
+
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self.view setFrame:CGRectMake(0, -80, self.view.frame.size.width, self.view.frame.size.height)];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if(textField.tag == 100) {
+        
+        [self.nickNameTextField becomeFirstResponder];
+        [self.cellPhoneTextField resignFirstResponder];
+    }
+    else if(textField.tag == 200) {
+        [self.nameTextField resignFirstResponder];
+        [self.cellPhoneTextField becomeFirstResponder];
+    }else if (textField.tag == 300){
+        [self.nameTextField resignFirstResponder];
+        [self.nickNameTextField resignFirstResponder];
+        [self.cellPhoneTextField resignFirstResponder];
+        
+    }
+
+    return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField reason:(UITextFieldDidEndEditingReason)reason{
+    [self.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
 }
 
 
