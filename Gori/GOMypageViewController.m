@@ -93,20 +93,12 @@
         if (isSuccess) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 NSDictionary *temp = [GODataCenter sharedInstance].networkUserDetailDictionary;
-                //                NSLog(@"템프 딕셔너리의 데이터 : %@", temp);
                 self.profileNameLabel.text = [temp objectForKey:@"name"];
                 self.profileEmailLabel.text = [temp objectForKey:@"user_id"];
                 self.profileNickNameLabel.text = [temp objectForKey:@"nickname"];
-                //                NSLog(@"프로파일네임레이블 텍스트 : %@", [temp objectForKey:@"name"]);
-                //                NSLog(@"프로파일이메일레이블 텍스트 : %@", [temp objectForKey:@"user_id"]);
-                
                 NSURL *profileURL = [NSURL URLWithString:[temp objectForKey:@"profile_image"]];
                 [self.userInfoSettingButton setBackgroundImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]] forState:UIControlStateNormal];
                 [self.userInfoSettingButton.imageView sd_setImageWithURL:profileURL];
-                
-//                [cell.titleImageView sd_setImageWithURL:titleURL];
-//                [cell.profileImageView sd_setImageWithURL:profileURL];
-
                 
                 NSLog(@"ReceivingServerData and ReloadingData is Completed");
                 

@@ -61,13 +61,13 @@
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3R-4O-Z94" userLabel="ClassListView">
-                                <rect key="frame" x="0.0" y="320" width="375" height="347"/>
+                                <rect key="frame" x="0.0" y="330" width="375" height="337"/>
                                 <connections>
                                     <segue destination="tnH-gk-vgd" kind="embed" id="ZKf-Z8-5zB"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3nS-gd-vGB" userLabel="WishListView">
-                                <rect key="frame" x="0.0" y="320" width="375" height="347"/>
+                                <rect key="frame" x="0.0" y="330" width="375" height="337"/>
                                 <connections>
                                     <segue destination="Z8q-tz-ayV" kind="embed" id="Jms-hG-4uM"/>
                                 </connections>
@@ -86,10 +86,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFL-lO-Nz1">
-                                <rect key="frame" x="0.0" y="290" width="187.5" height="30"/>
+                                <rect key="frame" x="0.0" y="290" width="187.5" height="40"/>
                                 <color key="backgroundColor" red="0.90980392156862744" green="0.1764705882352941" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="3cV-29-qQ3"/>
+                                    <constraint firstAttribute="height" constant="40" id="3cV-29-qQ3"/>
                                 </constraints>
                                 <state key="normal" title="신청한수업">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -99,7 +99,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWz-p9-7ST">
-                                <rect key="frame" x="187.5" y="290" width="187.5" height="30"/>
+                                <rect key="frame" x="187.5" y="290" width="187.5" height="40"/>
                                 <color key="backgroundColor" red="0.90980392156862744" green="0.1764705882352941" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="위시리스트">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -171,16 +171,12 @@
                         <viewControllerLayoutGuide type="bottom" id="r7V-bP-NqX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tSd-ia-sea">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="347"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="337"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8fN-F2-LR6">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="347"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="337"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="tnH-gk-vgd" id="zfl-m3-hbi"/>
-                                    <outlet property="delegate" destination="tnH-gk-vgd" id="cBi-0u-CMJ"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -340,16 +336,12 @@
                         <viewControllerLayoutGuide type="bottom" id="hzW-Fg-hWe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="EkB-ax-99B">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="347"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="337"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tKo-PA-XDK">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="347"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="337"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="Z8q-tz-ayV" id="43j-YO-Eks"/>
-                                    <outlet property="delegate" destination="Z8q-tz-ayV" id="Qbe-n1-N3G"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

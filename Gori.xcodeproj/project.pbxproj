@@ -59,7 +59,6 @@
 		41C299C71EA4F0DC004D130F /* curriculumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C299C61EA4F0DC004D130F /* curriculumViewController.m */; };
 		41C299CA1EA5D334004D130F /* pay1.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C299C81EA5D334004D130F /* pay1.png */; };
 		41C299CB1EA5D334004D130F /* pay2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C299C91EA5D334004D130F /* pay2.png */; };
-		41C299CD1EA5D4D7004D130F /* registerGuide.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C299CC1EA5D4D7004D130F /* registerGuide.png */; };
 		41C299F21EA64530004D130F /* malpoongsun2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C299F11EA64530004D130F /* malpoongsun2.png */; };
 		41C299F71EA9F311004D130F /* presentation.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C299F31EA9F311004D130F /* presentation.png */; };
 		41C299F81EA9F311004D130F /* sign.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C299F41EA9F311004D130F /* sign.png */; };
@@ -83,6 +82,9 @@
 		912696981EA0A0F30067C331 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 912696951EA0A0F30067C331 /* menu@2x.png */; };
 		912696991EA0A0F30067C331 /* menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 912696961EA0A0F30067C331 /* menu@3x.png */; };
 		9132C17C1E92FAC1007C31EC /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9132C17B1E92FAC1007C31EC /* logo.png */; };
+		914108991EA9ECC4001A19F3 /* registerGuide.png in Resources */ = {isa = PBXBuildFile; fileRef = 914108981EA9ECC4001A19F3 /* registerGuide.png */; };
+		9141089C1EA9EEDA001A19F3 /* GOIcon120.png in Resources */ = {isa = PBXBuildFile; fileRef = 9141089A1EA9EEDA001A19F3 /* GOIcon120.png */; };
+		9141089D1EA9EEDA001A19F3 /* GOIcon180.png in Resources */ = {isa = PBXBuildFile; fileRef = 9141089B1EA9EEDA001A19F3 /* GOIcon180.png */; };
 		9162541E1EA4FC9F0014BE21 /* School_Ewwu.png in Resources */ = {isa = PBXBuildFile; fileRef = 916254151EA4FC9F0014BE21 /* School_Ewwu.png */; };
 		9162541F1EA4FC9F0014BE21 /* School_Hou.png in Resources */ = {isa = PBXBuildFile; fileRef = 916254161EA4FC9F0014BE21 /* School_Hou.png */; };
 		916254201EA4FC9F0014BE21 /* School_Snu.png in Resources */ = {isa = PBXBuildFile; fileRef = 916254171EA4FC9F0014BE21 /* School_Snu.png */; };
@@ -212,7 +214,6 @@
 		41C299C61EA4F0DC004D130F /* curriculumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = curriculumViewController.m; sourceTree = "<group>"; };
 		41C299C81EA5D334004D130F /* pay1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pay1.png; sourceTree = "<group>"; };
 		41C299C91EA5D334004D130F /* pay2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pay2.png; sourceTree = "<group>"; };
-		41C299CC1EA5D4D7004D130F /* registerGuide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = registerGuide.png; sourceTree = "<group>"; };
 		41C299F11EA64530004D130F /* malpoongsun2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = malpoongsun2.png; sourceTree = "<group>"; };
 		41C299F31EA9F311004D130F /* presentation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = presentation.png; sourceTree = "<group>"; };
 		41C299F41EA9F311004D130F /* sign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sign.png; sourceTree = "<group>"; };
@@ -237,6 +238,9 @@
 		912696951EA0A0F30067C331 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
 		912696961EA0A0F30067C331 /* menu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@3x.png"; sourceTree = "<group>"; };
 		9132C17B1E92FAC1007C31EC /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		914108981EA9ECC4001A19F3 /* registerGuide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = registerGuide.png; sourceTree = "<group>"; };
+		9141089A1EA9EEDA001A19F3 /* GOIcon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GOIcon120.png; sourceTree = "<group>"; };
+		9141089B1EA9EEDA001A19F3 /* GOIcon180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GOIcon180.png; sourceTree = "<group>"; };
 		916254151EA4FC9F0014BE21 /* School_Ewwu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = School_Ewwu.png; sourceTree = "<group>"; };
 		916254161EA4FC9F0014BE21 /* School_Hou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = School_Hou.png; sourceTree = "<group>"; };
 		916254171EA4FC9F0014BE21 /* School_Snu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = School_Snu.png; sourceTree = "<group>"; };
@@ -425,7 +429,7 @@
 				91BCA8D41EA87EB80088BDFD /* Facebook-icon.png */,
 				41C299C81EA5D334004D130F /* pay1.png */,
 				41C299C91EA5D334004D130F /* pay2.png */,
-				41C299CC1EA5D4D7004D130F /* registerGuide.png */,
+				914108981EA9ECC4001A19F3 /* registerGuide.png */,
 				41C299BB1EA48B7D004D130F /* locationConfirm.png */,
 				41C299B71EA48B6B004D130F /* confirmation1.png */,
 				41C299B81EA48B6B004D130F /* confirmation2.png */,
@@ -511,6 +515,8 @@
 		4185845C1E91F1850053EF40 /* MainViewImage */ = {
 			isa = PBXGroup;
 			children = (
+				9141089A1EA9EEDA001A19F3 /* GOIcon120.png */,
+				9141089B1EA9EEDA001A19F3 /* GOIcon180.png */,
 				91F83E761EA78B57009EFD22 /* bodyImage2.jpg */,
 				91F83E771EA78B57009EFD22 /* bodyImage.jpg */,
 				91F83E781EA78B57009EFD22 /* bodyImage1.jpg */,
@@ -701,6 +707,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41C299FA1EA9F311004D130F /* coins.png in Resources */,
+				9141089C1EA9EEDA001A19F3 /* GOIcon120.png in Resources */,
 				91F83E731EA77512009EFD22 /* dismissViewX.png in Resources */,
 				91F83E8B1EA79118009EFD22 /* Category_Computer.png in Resources */,
 				9178CAD71E9575540054B7FB /* SignIn_SignUp.storyboard in Resources */,
@@ -715,6 +722,7 @@
 				916254201EA4FC9F0014BE21 /* School_Snu.png in Resources */,
 				4153EE9F1E9239AC001EFF70 /* Category_Location_Storyboard.storyboard in Resources */,
 				41C299F71EA9F311004D130F /* presentation.png in Resources */,
+				9141089D1EA9EEDA001A19F3 /* GOIcon180.png in Resources */,
 				1F7A41AF1EA75FEA00563FB0 /* malpoongsun5.png in Resources */,
 				91F83E8C1EA79118009EFD22 /* Category_UniqueHobby.png in Resources */,
 				41C299F81EA9F311004D130F /* sign.png in Resources */,
@@ -736,6 +744,7 @@
 				4185840F1E91EDF70053EF40 /* LaunchScreen.storyboard in Resources */,
 				41C299B91EA48B6B004D130F /* confirmation1.png in Resources */,
 				41C299F91EA9F311004D130F /* clock.png in Resources */,
+				914108991EA9ECC4001A19F3 /* registerGuide.png in Resources */,
 				91F83E7A1EA78B57009EFD22 /* bodyImage.jpg in Resources */,
 				4153EEA11E923A49001EFF70 /* Main.storyboard in Resources */,
 				1F7A41B01EA75FEA00563FB0 /* malpoongsun4.png in Resources */,
@@ -743,7 +752,6 @@
 				919864441EA60D0E00DDAB35 /* search@2x.png in Resources */,
 				912696991EA0A0F30067C331 /* menu@3x.png in Resources */,
 				916254251EA4FC9F0014BE21 /* School_You.png in Resources */,
-				41C299CD1EA5D4D7004D130F /* registerGuide.png in Resources */,
 				916254281EA4FD1F0014BE21 /* School_All.jpeg in Resources */,
 				911555041EA0C2A300CAFF7D /* District_Mokdong.jpg in Resources */,
 				4185840C1E91EDF70053EF40 /* Assets.xcassets in Resources */,

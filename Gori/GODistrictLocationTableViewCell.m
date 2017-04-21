@@ -45,7 +45,7 @@
     self.titleImageView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 150);
     
     self.titleLabel.frame = CGRectMake(0, 0, 100, 10);
-    self.titleLabel.center = CGPointMake(self.titleImageView.frame.size.width / 2, self.titleImageView.frame.size.height / 2);
+    self.titleLabel.center = CGPointMake(self.titleImageView.frame.size.width / 2, self.titleImageView.frame.size.height / 2);/Users/JunYoungJee/Desktop/FastCampus/Git/iOS-Fastcampus_Team5/Gori/Pods/AFNetworking
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
 
 }
