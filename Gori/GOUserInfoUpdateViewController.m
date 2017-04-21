@@ -77,7 +77,7 @@
     
 }
 
-/////////////////////*이미지 피커 컨트롤러 델리게이트의 작성 */////////////////////////
+/////////////////////*Setting ImagePicker Delegate*/////////////////////////
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
 
