@@ -366,4 +366,28 @@ static NSString *const TOKEN_KEY = @"Authorization";
 - (NSString*)setTalenRegisterDataParam:(NSUInteger)locationPK studentLevel:(NSUInteger)studentLevel messageToTutor:(NSString *)messageToTutor studentExperienceMonth:(NSUInteger)studentExperienceMonth{
     return [NSString stringWithFormat:@"{\"location_pk\":\"%lu\",\"student_level\":\"%lu\",\"message_to_tutor\":\"%@\",\"experience_length\":\"%lu\"}",locationPK,studentLevel,messageToTutor,studentExperienceMonth];
 }
+
+- (void)wishToggleWithPK:(NSNumber*)pk completion:(CompletionBlock)completion {
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@%@/",BASE_URL,TALENT,pk,WISH_TOGGLE]];
+    NSLog(@"URL: %@", URL);
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
+    NSString *loginToken = [[GODataCenter2 sharedInstance] getMyLoginToken];
+    // 헤더 세팅
+    [request setValue:[NSString stringWithFormat:@"Token %@", loginToken] forHTTPHeaderField:@"Authorization"];
+
+    
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@", error);
+            completion(NO,error);
+        } else {
+            // NSLog(@"%@ %@", response, responseObject);
+            completion(YES,responseObject);
+        }
+    }];
+    [dataTask resume];
+}
 @end

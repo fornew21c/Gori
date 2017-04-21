@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jl6-ar-8HG">
-                                <rect key="frame" x="137" y="76" width="100" height="100"/>
+                                <rect key="frame" x="136" y="107" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" image="registerGuide.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ztt-cp-DsD">
@@ -41,22 +41,22 @@
                                     <segue destination="yCa-RU-WNo" kind="show" identifier="registerFirstStep" id="t7Q-NP-l9t"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQk-qe-f0f">
-                                <rect key="frame" x="80" y="254" width="213" height="81"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="malpoongsun3.png" translatesAutoresizingMaskIntoConstraints="NO" id="aHZ-CZ-cgq">
                                 <rect key="frame" x="67" y="226" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQk-qe-f0f">
+                                <rect key="frame" x="80" y="254" width="213" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="introduceLabel" destination="PQk-qe-f0f" id="0JH-br-zZW"/>
+                        <outlet property="introduceLabel" destination="PQk-qe-f0f" id="55N-tz-WFq"/>
                         <outlet property="tutorImage" destination="Jl6-ar-8HG" id="obY-Wu-Pxb"/>
                     </connections>
                 </viewController>
@@ -228,7 +228,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nlB-x0-foH">
-                                        <rect key="frame" x="8" y="9" width="60" height="60"/>
+                                        <rect key="frame" x="23" y="14" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -255,7 +255,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBy-nl-cLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-762.39999999999998" y="-341.37931034482762"/>
+            <point key="canvasLocation" x="-778" y="-349"/>
         </scene>
         <!--Register Talent Second View Controller-->
         <scene sceneID="spz-oq-XeJ">
@@ -356,7 +356,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gCP-Ud-Kfz">
-                                                        <rect key="frame" x="8" y="9" width="60" height="60"/>
+                                                        <rect key="frame" x="23" y="14" width="60" height="60"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                 </subviews>
@@ -451,7 +451,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lpf-81-D4V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="834" y="-349"/>
+            <point key="canvasLocation" x="846" y="-349"/>
         </scene>
         <!--Register Talent Fourth View Controller-->
         <scene sceneID="IeE-RG-bmi">
@@ -505,7 +505,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81p-AS-rJr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="cv2-Og-cWK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1548" y="-341"/>
+            <point key="canvasLocation" x="1612" y="-341"/>
         </scene>
         <!--Register Talent Fifth View Controller-->
         <scene sceneID="s4g-Be-vLE">

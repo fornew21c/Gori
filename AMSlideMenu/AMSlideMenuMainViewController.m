@@ -645,6 +645,7 @@ static NSMutableArray *allInstances;
 
 - (void)closeLeftMenu
 {
+    NSLog(@"left hamburger closed");
     [self closeLeftMenuAnimated:YES];
 }
 

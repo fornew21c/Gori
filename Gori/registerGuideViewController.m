@@ -13,6 +13,9 @@
 @interface registerGuideViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *tutorImage;
 @property (weak, nonatomic) IBOutlet UILabel *introduceLabel;
+
+
+
 @end
 
 @implementation registerGuideViewController
@@ -33,7 +36,20 @@
      @{NSForegroundColorAttributeName:[UIColor colorWithRed:232/255.0f green:45/255.0f blue:80/255.0f alpha:1.0f]}];
     
 
+    NSString *introduceStr = @"안녕하세요? ";
+    NSString *userName = [[GODataCenter2 sharedInstance].selectedModel.userDetail objectForKey:@"name"];
+    NSString *tutorName = [GODataCenter2 sharedInstance].selectedModel.tutorName;
+    introduceStr = [[introduceStr stringByAppendingString:userName] stringByAppendingString:@" \n"];
+    introduceStr = [[introduceStr stringByAppendingString:@"튜터 "] stringByAppendingString:tutorName];
+    introduceStr = [introduceStr stringByAppendingString:@" 입니다.\n"];
+    introduceStr = [[introduceStr stringByAppendingString:@"지금부터 수업신청을 도와드릴께요."] stringByAppendingString:@"\n"];
+    introduceStr = [introduceStr stringByAppendingString:@"준비 되셨나요?"];
+    NSLog(@"introduceStr: %@", introduceStr);
 
+    self.introduceLabel.text = introduceStr;
+
+    
+    
     
 }
 

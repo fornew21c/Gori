@@ -188,4 +188,9 @@
     [self.nManager loginRequestWithFacebookid:facebookToken completion:completion];
 }
 
+- (void)wishToggle:(NSNumber*)pk completion:(CompletionBlock)completion {
+    [self.nManager wishToggleWithPK:pk completion:completion];
+
+}
+
 @end

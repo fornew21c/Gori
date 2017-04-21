@@ -7,6 +7,8 @@
 //
 
 #import "GOMypageViewController.h"
+#import "GOMainViewController.h"
+#import "MainVC.h"
 #import "GODataCenter.h"
 #import "GODataCenter2.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
@@ -47,6 +49,19 @@
             FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
             [loginManager logOut];
             [FBSDKAccessToken setCurrentAccessToken:nil];
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"로그아웃" message:@"로그아웃에 성공했습니다." preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
+                //[self performSegueWithIdentifier:@"mainVCSegue" sender:nil];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                   [self performSegueWithIdentifier:@"mainSegue" sender:nil];
+                });
+
+            }];
+            
+            
+            [alertController addAction:okAction];
+            [self presentViewController:alertController animated:YES completion:nil];
         }
         else {
             NSLog(@"로그아웃에 실패했습니다.");

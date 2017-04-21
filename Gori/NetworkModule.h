@@ -20,6 +20,8 @@ static NSString * const POST_URL = @"/post/";               //POST - MULTIPART
 static NSString * const POST_LIST_URL = @"/post/";           //GET
 static NSString * const GET_DETAIL_URL = @"/talent/detail-all/";           //GET 수업 상세보기
 static NSString * const POST_REGISTER_CREATE = @"/talent/add/registration/";     //수업신청하기
+static NSString * const TALENT = @"/talent/";
+static NSString * const WISH_TOGGLE =  @"/wish-list/toggle/"; //wish toggle
 
 
 
@@ -43,5 +45,6 @@ static NSString * const POST_REGISTER_CREATE = @"/talent/add/registration/";    
               studentExperienceMonth:(NSUInteger)studentExperienceMonth
                       messageToTutor:(NSString*)messageToTutor
                           completion:(CompletionBlock)completion;
+- (void)wishToggleWithPK:(NSNumber*)pk completion:(CompletionBlock)completion;
 
 @end

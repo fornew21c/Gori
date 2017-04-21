@@ -20,36 +20,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
 }
 
 - (NSString *)segueIdentifierForIndexPathInLeftMenu:(NSIndexPath *)indexPath
 {
-    NSString *identifier;
+    __block NSString *identifier;
 
     switch (indexPath.row) {
-//        case 0:
-//            identifier = @"mainSegue"; //메인페이지
-//            break;
-//        case 1:
-//            //identifier = @"loginSegue"; //로그인 페이지
-//            //|| [FBSDKAccessToken currentAccessToken]
-//            if( [[GODataCenter2 sharedInstance] getMyLoginToken] ) {
-//                identifier = @"mypageSegue"; //마이 페이지
-//            }
-//            else {
-//                identifier = @"loginSegue"; //로그인 페이지
-//            }
-//            break;
-//        case 2:
-//            NSLog(@"signupSegue");
-//            if( [[GODataCenter2 sharedInstance] getMyLoginToken] ) {
-//                NSLog(@"로그아웃");
-//            }
-//            else {
-//                
-//                identifier = @"signupSegue"; //회원가입 페이지
-//            }
-//            break;
         case 3:
             identifier = @"mainSegue"; //메인페이지
             break;
@@ -64,9 +42,46 @@
             }
             break;
         case 5:
-            NSLog(@"signupSegue");
+           
             if( [[GODataCenter2 sharedInstance] getMyLoginToken] ) {
-                NSLog(@"로그아웃");
+                
+                NSLog(@"여기여기 로그아웃");
+                identifier = @"mainSegue";
+                [[GODataCenter2 sharedInstance] logoutCompletion:^(BOOL isSuccess, id respons) {
+                    if(isSuccess) {
+                        NSLog(@"로그아웃에 성공했습니다.");
+                        AMSlideMenuMainViewController *amslide = [[AMSlideMenuMainViewController alloc] init];
+                        [amslide closeLeftMenu];
+                        FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
+                        [loginManager logOut];
+                        [FBSDKAccessToken setCurrentAccessToken:nil];
+//                        dispatch_async(dispatch_get_main_queue(), ^{
+//                            identifier = @"mainSegue";
+//                        });
+                        
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"로그아웃 성공" message:@"로그아웃 하셨습니다." preferredStyle:UIAlertControllerStyleAlert];
+                            
+                            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
+                                
+                               // dispatch_async(dispatch_get_main_queue(), ^{
+
+                                //});
+                                
+                                
+                            }];
+
+                            
+                            
+                            [alertController addAction:okAction];
+                            [self presentViewController:alertController animated:YES completion:nil];
+                        });
+                    }
+                    else {
+                        NSLog(@"로그아웃에 실패했습니다.");
+                        
+                    }
+                }];
             }
             else {
                 
@@ -74,8 +89,6 @@
             }
             break;
     }
-    
-    NSLog(@"git Test2222");
     return identifier;
 }
 
@@ -135,6 +148,11 @@
 - (BOOL)deepnessForRightMenu
 {
     return YES;
+}
+
+-(IBAction)unwindMainSegue:(UIStoryboardSegue *) sender {
+    
+    NSLog(@"unwindMainSegue 등록 완료");
 }
 
 @end

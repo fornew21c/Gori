@@ -14,6 +14,7 @@
 #define lightGrayColor [UIColor colorWithWhite:0.667f alpha:1.0f]
 #import "DetailViewController.h"
 #import <AFNetworking/AFNetworking.h>
+#import "GODataCenter.h"
 #import "GODataCenter2.h"
 #import "GOTalentDetailModel.h"
 #import "registerGuideViewController.h"
@@ -56,6 +57,9 @@
 @property (nonatomic) NSMutableArray<UIButton*> *canSelectButtons;
 @property (nonatomic) NSMutableArray *selectedRegionResult;
 
+@property (nonatomic) NSMutableArray *wishLists;
+@property (nonatomic) NSUInteger wishListsCount;
+
 @end
 
 @implementation DetailViewController
@@ -78,6 +82,48 @@
   
     self.tutorImage2.layer.masksToBounds = YES;
     self.tutorImage2.layer.cornerRadius =  roundf(self.tutorImage2.frame.size.width/2.0);;
+    
+//    UIImage *heart = [UIImage imageNamed:@"wishHeartDeSelected.png"];
+//    
+////    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] ini:UIBarButtonSystemItemAdd target:self action:@selector(likeButtonTouched:)];
+//    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:heart style:UIBarButtonItemStyleDone target:self action:@selector(likeButtonTouched:)];
+//    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+
+    
+    
+    [[GODataCenter sharedInstance] receiveUserWishListDataWithCompletionBlock:^(BOOL isSuccess, id respons) {
+        if(isSuccess) {
+            self.wishLists = [respons objectForKey:@"results"];
+            self.wishListsCount = [[respons objectForKey:@"count"] integerValue];
+            NSLog(@"self.wishListsCount: %lu", self.wishListsCount);
+            BOOL wishYN = NO;
+            UIButton *button1 = [[UIButton alloc] init];
+            button1.frame=CGRectMake(0,0,30,30);
+            
+            NSLog(@"self.wishLists.count: %lu",  self.wishListsCount);
+            [button1 addTarget:self action:@selector(likeButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
+            for(NSUInteger i = 0; i <  self.wishListsCount; i++){
+                NSLog(@"wish lists pk: %lu", [[[self.wishLists objectAtIndex:i] objectForKey:@"pk"] integerValue]);
+                if([[[self.wishLists objectAtIndex:i] objectForKey:@"pk"] integerValue] == [self.pk integerValue]) {
+                    button1.selected = YES;
+                    wishYN = YES;
+                    [button1 setBackgroundImage:[UIImage imageNamed: @"WishHeartselected.png"] forState:UIControlStateNormal];
+                    break;
+                    
+                }
+            }
+            if(wishYN == NO) {
+                button1.selected = NO;
+                [button1 setBackgroundImage:[UIImage imageNamed: @"WishHeartDeselected.png"] forState:UIControlStateNormal];
+            }
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:button1];
+        }else {
+            
+        }
+    }];
+
+
+
     [[GODataCenter2 sharedInstance] requestPostRetrieveID:self.pk completion:^(BOOL isSuccess, id responseData) {
         
         if(isSuccess)
@@ -96,6 +142,51 @@
  
         }
     }];
+}
+
+- (void) likeButtonTouched:(UIButton*) sender {
+    NSString *loginToken = [[GODataCenter2 sharedInstance] getMyLoginToken];
+    if(loginToken == (NSString *)[NSNull null] || [loginToken length]==0 || [loginToken isEqualToString:@""])  {
+        NSLog(@"로그인안됨");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"좋아요" message:@"좋아요하기위해선 로그인하셔야 합니다. 로그인하시겠습니까?" preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
+                [self performSegueWithIdentifier:@"loginViewSegue" sender:nil];
+                
+            }];
+            
+            UIAlertAction *calcelAction = [UIAlertAction actionWithTitle:@"취소" style:UIAlertActionStyleDefault handler:nil];
+            
+            [alertController addAction:okAction];
+            [alertController addAction:calcelAction];
+            [self presentViewController:alertController animated:YES completion:nil];
+        });
+    }
+    else {
+        NSLog(@"likeButtonTouched sender.selected: %ld", (NSInteger)sender.selected);
+        if(!sender.selected) {
+            [sender setBackgroundImage:[UIImage imageNamed: @"WishHeartselected.png"] forState:UIControlStateNormal];
+            [sender setSelected:YES];
+        }
+        else {
+            [sender setBackgroundImage:[UIImage imageNamed: @"WishHeartDeselected.png"] forState:UIControlStateNormal];
+            [sender setSelected:NO];
+        }
+        [[GODataCenter2 sharedInstance] wishToggle:self.pk completion:^(BOOL isSuccess, id responseData) {
+            
+            if(isSuccess)
+            {
+                // NSLog(@"isSuccess: %lu", isSuccess);
+                NSLog(@"detail: %@", [responseData objectForKey:@"detail"]);
+                
+                
+            }else
+            {
+                
+            }
+        }];
+    }
 }
 
 - (void)setSeletedPk:(NSNumber *)selectedPk {

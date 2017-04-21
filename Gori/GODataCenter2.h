@@ -37,7 +37,7 @@
 - (void)logoutCompletion:(CompletionBlock)completion;
 //post
 - (void)postListWithPage:(NSInteger)page completion:(CompletionBlock)completion;
-- (void)requestPostRetrieveID:(NSNumber*)postID completion:(CompletionBlock)completion;
+- (void)requestPostRetrieveID:(NSNumber*)pk completion:(CompletionBlock)completion;
 
 - (void) setMyLoginToken:(NSString *)newToken;
 - (NSString*) getMyLoginToken;
@@ -51,4 +51,6 @@
 
 //facebook login
 - (void)loginWithFacebookid:(NSString*)facebookToken completion:(CompletionBlock)completion;
+//좋아요
+- (void)wishToggle:(NSNumber*)pk completion:(CompletionBlock)completion;
 @end

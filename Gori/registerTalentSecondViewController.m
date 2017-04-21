@@ -131,7 +131,7 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    [self.scrollView setContentOffset:CGPointMake(0, 30) animated:YES];
+    [self.scrollView setContentOffset:CGPointMake(0, 100) animated:YES];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
@@ -147,6 +147,15 @@
     [self.scrollView setContentOffset:CGPointMake(0, 300) animated:YES];
 }
 
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    
+    if([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+  
+    return YES;
+}
 
 
 @end

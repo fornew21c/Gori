@@ -61,6 +61,12 @@
 		41C299CB1EA5D334004D130F /* pay2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C299C91EA5D334004D130F /* pay2.png */; };
 		41C299CD1EA5D4D7004D130F /* registerGuide.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C299CC1EA5D4D7004D130F /* registerGuide.png */; };
 		41C299F21EA64530004D130F /* malpoongsun2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C299F11EA64530004D130F /* malpoongsun2.png */; };
+		41C299F71EA9F311004D130F /* presentation.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C299F31EA9F311004D130F /* presentation.png */; };
+		41C299F81EA9F311004D130F /* sign.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C299F41EA9F311004D130F /* sign.png */; };
+		41C299F91EA9F311004D130F /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C299F51EA9F311004D130F /* clock.png */; };
+		41C299FA1EA9F311004D130F /* coins.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C299F61EA9F311004D130F /* coins.png */; };
+		41C299FD1EAA130B004D130F /* WishHeartSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C299FB1EAA130B004D130F /* WishHeartSelected.png */; };
+		41C299FE1EAA130B004D130F /* WishHeartDeSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C299FC1EAA130B004D130F /* WishHeartDeSelected.png */; };
 		910E64311EA3619500B90B7E /* GOUserInfoUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910E64301EA3619500B90B7E /* GOUserInfoUpdateViewController.m */; };
 		911555021EA0C2A300CAFF7D /* District_Hyehwa.png in Resources */ = {isa = PBXBuildFile; fileRef = 911554F41EA0C2A300CAFF7D /* District_Hyehwa.png */; };
 		911555031EA0C2A300CAFF7D /* District_Yongsan.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 911554F51EA0C2A300CAFF7D /* District_Yongsan.jpeg */; };
@@ -208,6 +214,12 @@
 		41C299C91EA5D334004D130F /* pay2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pay2.png; sourceTree = "<group>"; };
 		41C299CC1EA5D4D7004D130F /* registerGuide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = registerGuide.png; sourceTree = "<group>"; };
 		41C299F11EA64530004D130F /* malpoongsun2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = malpoongsun2.png; sourceTree = "<group>"; };
+		41C299F31EA9F311004D130F /* presentation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = presentation.png; sourceTree = "<group>"; };
+		41C299F41EA9F311004D130F /* sign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sign.png; sourceTree = "<group>"; };
+		41C299F51EA9F311004D130F /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
+		41C299F61EA9F311004D130F /* coins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coins.png; sourceTree = "<group>"; };
+		41C299FB1EAA130B004D130F /* WishHeartSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WishHeartSelected.png; sourceTree = "<group>"; };
+		41C299FC1EAA130B004D130F /* WishHeartDeSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WishHeartDeSelected.png; sourceTree = "<group>"; };
 		910E642F1EA3619500B90B7E /* GOUserInfoUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOUserInfoUpdateViewController.h; sourceTree = "<group>"; };
 		910E64301EA3619500B90B7E /* GOUserInfoUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOUserInfoUpdateViewController.m; sourceTree = "<group>"; };
 		911554F41EA0C2A300CAFF7D /* District_Hyehwa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = District_Hyehwa.png; sourceTree = "<group>"; };
@@ -401,6 +413,12 @@
 				4153EE9E1E9239AC001EFF70 /* Category_Location_Storyboard.storyboard */,
 				41C299AB1EA48B19004D130F /* register.storyboard */,
 				4185840B1E91EDF70053EF40 /* Assets.xcassets */,
+				41C299FB1EAA130B004D130F /* WishHeartSelected.png */,
+				41C299FC1EAA130B004D130F /* WishHeartDeSelected.png */,
+				41C299F31EA9F311004D130F /* presentation.png */,
+				41C299F41EA9F311004D130F /* sign.png */,
+				41C299F51EA9F311004D130F /* clock.png */,
+				41C299F61EA9F311004D130F /* coins.png */,
 				1F7A41AC1EA75FEA00563FB0 /* malpoongsun5.png */,
 				1F7A41AD1EA75FEA00563FB0 /* malpoongsun4.png */,
 				1F7A41AE1EA75FEA00563FB0 /* malpoongsun3.png */,
@@ -682,6 +700,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41C299FA1EA9F311004D130F /* coins.png in Resources */,
 				91F83E731EA77512009EFD22 /* dismissViewX.png in Resources */,
 				91F83E8B1EA79118009EFD22 /* Category_Computer.png in Resources */,
 				9178CAD71E9575540054B7FB /* SignIn_SignUp.storyboard in Resources */,
@@ -695,9 +714,12 @@
 				1F7A41B11EA75FEA00563FB0 /* malpoongsun3.png in Resources */,
 				916254201EA4FC9F0014BE21 /* School_Snu.png in Resources */,
 				4153EE9F1E9239AC001EFF70 /* Category_Location_Storyboard.storyboard in Resources */,
+				41C299F71EA9F311004D130F /* presentation.png in Resources */,
 				1F7A41AF1EA75FEA00563FB0 /* malpoongsun5.png in Resources */,
 				91F83E8C1EA79118009EFD22 /* Category_UniqueHobby.png in Resources */,
+				41C299F81EA9F311004D130F /* sign.png in Resources */,
 				916254201EA4FC9F0014BE21 /* School_Snu.png in Resources */,
+				41C299FD1EAA130B004D130F /* WishHeartSelected.png in Resources */,
 				4153EE9F1E9239AC001EFF70 /* Category_Location_Storyboard.storyboard in Resources */,
 				91C95B211EA7C89100AA78CC /* myPageHeader.png in Resources */,
 				91F83E791EA78B57009EFD22 /* bodyImage2.jpg in Resources */,
@@ -713,6 +735,7 @@
 				911555081EA0C2A300CAFF7D /* District_Sinchon.jpg in Resources */,
 				4185840F1E91EDF70053EF40 /* LaunchScreen.storyboard in Resources */,
 				41C299B91EA48B6B004D130F /* confirmation1.png in Resources */,
+				41C299F91EA9F311004D130F /* clock.png in Resources */,
 				91F83E7A1EA78B57009EFD22 /* bodyImage.jpg in Resources */,
 				4153EEA11E923A49001EFF70 /* Main.storyboard in Resources */,
 				1F7A41B01EA75FEA00563FB0 /* malpoongsun4.png in Resources */,
@@ -738,6 +761,7 @@
 				9115550D1EA0C2A300CAFF7D /* District_Kangnam.jpg in Resources */,
 				9115550C1EA0C2A300CAFF7D /* District_All.jpg in Resources */,
 				911555021EA0C2A300CAFF7D /* District_Hyehwa.png in Resources */,
+				41C299FE1EAA130B004D130F /* WishHeartDeSelected.png in Resources */,
 				41C299CB1EA5D334004D130F /* pay2.png in Resources */,
 				418584671E91F1A30053EF40 /* footerImage.jpg in Resources */,
 				91BCA8D51EA87EB80088BDFD /* Facebook-icon.png in Resources */,
