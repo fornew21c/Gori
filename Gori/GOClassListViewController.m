@@ -10,11 +10,13 @@
 #import "GODataCenter.h"
 #import "GODataCenter2.h"
 #import "GOClassListTableViewCell.h"
+#import "DetailViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface GOClassListViewController ()
 <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
+@property (weak, nonatomic) NSDictionary *selectedData;
 
 @end
 
@@ -72,6 +74,28 @@
     
     return 200;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.selectedData = [[GODataCenter sharedInstance].userRegistrationArray objectAtIndex:indexPath.row];
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    DetailViewController *DetailViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+    DetailViewController.pk = [[self.selectedData objectForKey:@"talent"] objectForKey:@"pk"];
+    [self presentViewController:DetailViewController animated:YES completion:nil];
+}
+///데이터를 정확하게 뿌려주는 것은 가능, 그러나 "뒤로가기"가 안됨"
+
+
+//
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    // Get the new view controller using [segue destinationViewController].
+//    // Pass the selected object to the new view controller.
+//    if ([segue.identifier isEqualToString:@"detailSegue"]) {
+//        DetailViewController *nextVC = segue.destinationViewController;
+//        //nextVC.pk = [self.selectedData objectForKey:@"pk"];
+//        [nextVC setSeletedPk:[self.selectedData objectForKey:@"pk"]];
+//        NSLog(@"pk: %@", [self.selectedData objectForKey:@"pk"]);
+//    }
+//}
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];

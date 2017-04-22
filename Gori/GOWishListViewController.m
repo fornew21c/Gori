@@ -10,11 +10,13 @@
 #import "GODataCenter.h"
 #import "GODataCenter2.h"
 #import "GOWishListTableViewCell.h"
+#import "DetailViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface GOWishListViewController ()
 <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
+@property (weak, nonatomic) NSDictionary *selectedData;
 
 @end
 
@@ -72,6 +74,15 @@
     
     return 200;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.selectedData = [[GODataCenter sharedInstance].userWishListArray objectAtIndex:indexPath.row];
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    DetailViewController *DetailViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+    DetailViewController.pk = [self.selectedData objectForKey:@"pk"];
+    [self presentViewController:DetailViewController animated:YES completion:nil];
+}
+///데이터를 정확하게 뿌려주는 것은 가능, 그러나 "뒤로가기"가 안됨"
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
