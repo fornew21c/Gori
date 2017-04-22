@@ -150,6 +150,7 @@
         }
         
         model.userDetail = [data objectForKey:@"user"];
+        model.averageRate = [data objectForKey:@"average_rates"];
         NSLog(@"userdetail: %@", model.userDetail);
        
     }

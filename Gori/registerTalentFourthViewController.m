@@ -39,7 +39,7 @@
                     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"수업등록 성공" message:[responseData objectForKey:@"detail"] preferredStyle:UIAlertControllerStyleAlert];
     
                 UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
-                    [self performSegueWithIdentifier:@"unwindMainSegue" sender:nil];
+                    [self performSegueWithIdentifier:@"registerFinalSegue" sender:nil];
                 }];
     
     
@@ -52,7 +52,9 @@
                // dispatch_async(dispatch_get_main_queue(), ^{
                     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"수업등록 실패" message:[responseData objectForKey:@"detail"] preferredStyle:UIAlertControllerStyleAlert];
     
-                    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    [self performSegueWithIdentifier:@"unwindMainSegue" sender:nil];
+                }];
     
     
                     [alertController addAction:okAction];

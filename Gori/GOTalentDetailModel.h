@@ -37,6 +37,7 @@
 @property (nonatomic) NSString *classInfo;
 @property (nonatomic) NSString *locationMessage;
 @property (nonatomic) NSMutableDictionary *userDetail;
+@property (nonatomic) NSMutableDictionary *averageRate;
 
 @property (nonatomic) NSMutableArray *curriculums;
 

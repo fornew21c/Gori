@@ -52,7 +52,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     
-    cell.textLabel.text = [[[GODataCenter2 sharedInstance].selectedModel.curriculums objectAtIndex:indexPath.row] objectForKey:@"information"];
+    NSString *tmp = [[NSString stringWithFormat:@"%ld", indexPath.row+1] stringByAppendingString:@"주차  "];
+    cell.textLabel.text = [tmp stringByAppendingString:[[[GODataCenter2 sharedInstance].selectedModel.curriculums objectAtIndex:indexPath.row] objectForKey:@"information"]];
     
     return cell;
 }

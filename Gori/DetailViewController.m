@@ -20,6 +20,7 @@
 #import "registerGuideViewController.h"
 #import "testViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <HCSStarRatingView/HCSStarRatingView.h>
 
 @interface DetailViewController ()
 <UIScrollViewDelegate>
@@ -59,6 +60,8 @@
 
 @property (nonatomic) NSMutableArray *wishLists;
 @property (nonatomic) NSUInteger wishListsCount;
+@property (weak, nonatomic) IBOutlet HCSStarRatingView *totalReview;
+@property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
 
 @end
 
@@ -66,12 +69,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+//    HCSStarRatingView *starRatingView = [[HCSStarRatingView alloc] initWithFrame:CGRectMake(100, 250, 200, 30)];
+//    starRatingView.maximumValue = 5;
+//    starRatingView.minimumValue = 0;
+//    starRatingView.allowsHalfStars = YES;
+//    starRatingView.value = 3;
+//    starRatingView.tintColor = mainColor;
+//    [starRatingView addTarget:self action:@selector(didChangeValue:) forControlEvents:UIControlEventValueChanged];
+//    [self.view addSubview:starRatingView];
+
     [GODataCenter2 sharedInstance].seletedRegionIndex = 0;
     [GODataCenter2 sharedInstance].seletedDayIndex = 0;
     
     // Do any additional setup after loading the view.
-    self.imageScrollView.pagingEnabled = YES;
-    self.imageScrollView.delegate = self;
+//    self.imageScrollView.pagingEnabled = YES;
+//    self.imageScrollView.delegate = self;
    
     self.joinCntLabel.layer.masksToBounds = YES;
     self.joinCntLabel.layer.cornerRadius = 15;
@@ -144,6 +157,10 @@
     }];
 }
 
+- (IBAction)didChangeValue:(HCSStarRatingView *)sender {
+    NSLog(@"Changed rating to %.1f", sender.value);
+}
+
 - (void) likeButtonTouched:(UIButton*) sender {
     NSString *loginToken = [[GODataCenter2 sharedInstance] getMyLoginToken];
     if(loginToken == (NSString *)[NSNull null] || [loginToken length]==0 || [loginToken isEqualToString:@""])  {
@@ -195,6 +212,9 @@
 
 - (void)layoutDataInView {
     self.talentTitle.text = self.selectedModel.title;
+    self.totalReview.value = [[self.selectedModel.averageRate objectForKey:@"total"] floatValue];
+    NSString *tmp = @"(";
+    self.ratingLabel.text = [[tmp stringByAppendingString:[[self.selectedModel.averageRate objectForKey:@"total"] stringValue]] stringByAppendingString:@")"];
     NSString *tmpRegion = @"";
 
     for(NSUInteger i = 0; i < self.selectedModel.locations.count; i++) {
@@ -333,10 +353,14 @@
 - (void)setDefaultDayButton{
     
     [self buttonInit];
-    NSLog(@"setDayButtonsetDayButton");
+    
     self.canSelectButtons = [[NSMutableArray alloc] init];
+    NSLog(@"setDayButtonsetDayButton self.selectedModel.regionsResult.count: %lu", self.selectedModel.regionsResult.count);
     if(self.selectedModel.regionsResult.count != 0 ) {
         self.selectedRegionResult = [self.selectedModel.regionsResult objectAtIndex:0];
+    }
+    else {
+        return;
     }
     [GODataCenter2 sharedInstance].locationPK = [[[self.selectedRegionResult objectAtIndex:0] objectForKey:@"pk" ] integerValue]; //아무것도 선택안하고 갈경우 default location pk 지정
     for(NSUInteger i = 0; i < ((NSMutableArray*)[self.selectedModel.regionsResult objectAtIndex:0]).count; i++) {

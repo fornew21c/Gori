@@ -23,6 +23,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)confirmBtnTouched:(id)sender {
+   [self performSegueWithIdentifier:@"unwindMainSegue" sender:nil];
+}
 
 /*
 #pragma mark - Navigation

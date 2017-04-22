@@ -6,6 +6,8 @@ target 'Gori' do
   # use_frameworks!
 
   # Pods for Gori
-pod 'AFNetworking', '~> 3.0'
-pod 'SDWebImage', '~>3.8'
+  pod 'AFNetworking', '~> 3.0'
+  pod 'SDWebImage', '~>3.8'
+  pod 'HCSStarRatingView'
+
 end
