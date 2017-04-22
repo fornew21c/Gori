@@ -90,7 +90,7 @@
     offsetX += (self.profileImageView.frame.size.width + MARGIN * 2);
     offsetY += (self.profileImageView.frame.size.height) / 2 + MARGIN;
     
-    self.titleLabel.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 10);
+    self.titleLabel.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 20);
     
     offsetY += MARGIN * 6;
     
