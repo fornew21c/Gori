@@ -118,6 +118,7 @@
 		919B6F321E9CE56000AE8CA5 /* GOWishListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919B6F2E1E9CE56000AE8CA5 /* GOWishListViewController.m */; };
 		91BCA8D51EA87EB80088BDFD /* Facebook-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91BCA8D41EA87EB80088BDFD /* Facebook-icon.png */; };
 		91C95B211EA7C89100AA78CC /* myPageHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C95B201EA7C89100AA78CC /* myPageHeader.png */; };
+		91E00EFA1EAB51890087DA75 /* GOQAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E00EF91EAB51890087DA75 /* GOQAViewController.m */; };
 		91F83E731EA77512009EFD22 /* dismissViewX.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F83E721EA77512009EFD22 /* dismissViewX.png */; };
 		91F83E751EA77DF6009EFD22 /* School_hyu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91F83E741EA77DF6009EFD22 /* School_hyu.jpg */; };
 		91F83E791EA78B57009EFD22 /* bodyImage2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91F83E761EA78B57009EFD22 /* bodyImage2.jpg */; };
@@ -294,6 +295,8 @@
 		919B6F2E1E9CE56000AE8CA5 /* GOWishListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOWishListViewController.m; sourceTree = "<group>"; };
 		91BCA8D41EA87EB80088BDFD /* Facebook-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Facebook-icon.png"; sourceTree = "<group>"; };
 		91C95B201EA7C89100AA78CC /* myPageHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myPageHeader.png; sourceTree = "<group>"; };
+		91E00EF81EAB51890087DA75 /* GOQAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOQAViewController.h; sourceTree = "<group>"; };
+		91E00EF91EAB51890087DA75 /* GOQAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOQAViewController.m; sourceTree = "<group>"; };
 		91F83E721EA77512009EFD22 /* dismissViewX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dismissViewX.png; sourceTree = "<group>"; };
 		91F83E741EA77DF6009EFD22 /* School_hyu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = School_hyu.jpg; sourceTree = "<group>"; };
 		91F83E761EA78B57009EFD22 /* bodyImage2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bodyImage2.jpg; sourceTree = "<group>"; };
@@ -368,6 +371,8 @@
 				413F9DAB1EAB597E00FCB9E8 /* GOReviewTableViewCell.m */,
 				41C29A0F1EAB4527004D130F /* GOReivewRegisterViewController.h */,
 				41C29A101EAB4527004D130F /* GOReivewRegisterViewController.m */,
+				91E00EF81EAB51890087DA75 /* GOQAViewController.h */,
+				91E00EF91EAB51890087DA75 /* GOQAViewController.m */,
 			);
 			name = DetailView;
 			sourceTree = "<group>";
@@ -883,6 +888,7 @@
 				91879F911EA88C2E00453595 /* GOWishListTableViewCell.m in Sources */,
 				41C299B41EA48B35004D130F /* registerGuideViewController.m in Sources */,
 				91641F261E927B8800DC5B43 /* GOLocationViewController.m in Sources */,
+				91E00EFA1EAB51890087DA75 /* GOQAViewController.m in Sources */,
 				4135A8A71E973F040043E0ED /* NetworkModule.m in Sources */,
 				41C29A111EAB4527004D130F /* GOReivewRegisterViewController.m in Sources */,
 				4135A8AA1E9740230043E0ED /* GOTalentDetailModel.m in Sources */,

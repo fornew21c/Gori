@@ -72,7 +72,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 200;
+    return 225;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -80,7 +80,7 @@
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     DetailViewController *DetailViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"DetailViewController"];
     DetailViewController.pk = [self.selectedData objectForKey:@"pk"];
-    [self presentViewController:DetailViewController animated:YES completion:nil];
+    [self.navigationController pushViewController:DetailViewController animated:YES];
 }
 ///데이터를 정확하게 뿌려주는 것은 가능, 그러나 "뒤로가기"가 안됨"
 

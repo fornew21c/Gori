@@ -43,6 +43,20 @@ GODataCenter
     
 }
 
+/**************** updating UserQuestion with NetworkModule********************************/
+
+- (void)updatingUserQuestionText:(NSString *)question talentPK:(NSInteger)pk completion:(CompletionBlock)completion{
+    [self.networkManager updatingUserQuestionWithCompletionBlock:question talentPk:pk completion:^(BOOL isSuccess, id respons) {
+        if (isSuccess) {
+            completion(YES, respons);
+        }else{
+            nil;
+        }
+    }];
+}
+
+/**************** receiving UserWithList and Registation with NetworkModule********************************/
+
 - (void)receiveUserWishListDataWithCompletionBlock:(CompletionBlock)completion{
     [NetworkModuleMain getUserWishListWithCompletionBlock:^(BOOL isSuccess, id respons) {
         if (isSuccess) {
