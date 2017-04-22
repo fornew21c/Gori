@@ -151,8 +151,31 @@
         
         model.userDetail = [data objectForKey:@"user"];
         model.averageRate = [data objectForKey:@"average_rates"];
-        NSLog(@"userdetail: %@", model.userDetail);
-       
+        model.reviews = [data objectForKey:@"reviews"];
+        
+        if (![[data objectForKey:@"user"] isKindOfClass:[NSNull class]]) {
+             model.userDetail = [data objectForKey:@"user"];
+            
+        }else
+        {
+             model.userDetail = nil;
+        }
+        
+        if (![[data objectForKey:@"average_rates"] isKindOfClass:[NSNull class]]) {
+            model.averageRate = [data objectForKey:@"average_rates"];
+            
+        }else
+        {
+            model.averageRate = nil;
+        }
+        
+        if (![[data objectForKey:@"reviews"] isKindOfClass:[NSNull class]]) {
+            model.reviews = [data objectForKey:@"reviews"];
+            
+        }else
+        {
+            model.reviews = nil;
+        }
     }
     
     return model;

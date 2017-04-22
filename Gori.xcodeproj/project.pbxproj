@@ -69,6 +69,9 @@
 		41C29A031EAA484F004D130F /* malpoongsunRefined2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C29A001EAA484F004D130F /* malpoongsunRefined2.png */; };
 		41C29A041EAA484F004D130F /* registerGuide2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C29A011EAA484F004D130F /* registerGuide2.png */; };
 		41C29A051EAA484F004D130F /* learnAndLogo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C29A021EAA484F004D130F /* learnAndLogo2.png */; };
+		41C29A0E1EAB450E004D130F /* GOReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C29A0D1EAB450E004D130F /* GOReviewViewController.m */; };
+		41C29A111EAB4527004D130F /* GOReivewRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C29A101EAB4527004D130F /* GOReivewRegisterViewController.m */; };
+		41C29A131EAB4B0C004D130F /* Qa.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41C29A121EAB4B0C004D130F /* Qa.storyboard */; };
 		910E64311EA3619500B90B7E /* GOUserInfoUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910E64301EA3619500B90B7E /* GOUserInfoUpdateViewController.m */; };
 		911555021EA0C2A300CAFF7D /* District_Hyehwa.png in Resources */ = {isa = PBXBuildFile; fileRef = 911554F41EA0C2A300CAFF7D /* District_Hyehwa.png */; };
 		911555031EA0C2A300CAFF7D /* District_Yongsan.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 911554F51EA0C2A300CAFF7D /* District_Yongsan.jpeg */; };
@@ -224,6 +227,11 @@
 		41C29A001EAA484F004D130F /* malpoongsunRefined2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = malpoongsunRefined2.png; sourceTree = "<group>"; };
 		41C29A011EAA484F004D130F /* registerGuide2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = registerGuide2.png; sourceTree = "<group>"; };
 		41C29A021EAA484F004D130F /* learnAndLogo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = learnAndLogo2.png; sourceTree = "<group>"; };
+		41C29A0C1EAB450E004D130F /* GOReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOReviewViewController.h; sourceTree = "<group>"; };
+		41C29A0D1EAB450E004D130F /* GOReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOReviewViewController.m; sourceTree = "<group>"; };
+		41C29A0F1EAB4527004D130F /* GOReivewRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOReivewRegisterViewController.h; sourceTree = "<group>"; };
+		41C29A101EAB4527004D130F /* GOReivewRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOReivewRegisterViewController.m; sourceTree = "<group>"; };
+		41C29A121EAB4B0C004D130F /* Qa.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Qa.storyboard; sourceTree = "<group>"; };
 		910E642F1EA3619500B90B7E /* GOUserInfoUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOUserInfoUpdateViewController.h; sourceTree = "<group>"; };
 		910E64301EA3619500B90B7E /* GOUserInfoUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOUserInfoUpdateViewController.m; sourceTree = "<group>"; };
 		911554F41EA0C2A300CAFF7D /* District_Hyehwa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = District_Hyehwa.png; sourceTree = "<group>"; };
@@ -348,6 +356,10 @@
 				414848061E935C8400612B3C /* DetailViewController.m */,
 				41C299C51EA4F0DC004D130F /* curriculumViewController.h */,
 				41C299C61EA4F0DC004D130F /* curriculumViewController.m */,
+				41C29A0C1EAB450E004D130F /* GOReviewViewController.h */,
+				41C29A0D1EAB450E004D130F /* GOReviewViewController.m */,
+				41C29A0F1EAB4527004D130F /* GOReivewRegisterViewController.h */,
+				41C29A101EAB4527004D130F /* GOReivewRegisterViewController.m */,
 			);
 			name = DetailView;
 			sourceTree = "<group>";
@@ -416,6 +428,7 @@
 				9178CAD61E9575540054B7FB /* SignIn_SignUp.storyboard */,
 				4153EE9E1E9239AC001EFF70 /* Category_Location_Storyboard.storyboard */,
 				41C299AB1EA48B19004D130F /* register.storyboard */,
+				41C29A121EAB4B0C004D130F /* Qa.storyboard */,
 				4185840B1E91EDF70053EF40 /* Assets.xcassets */,
 				41C29A001EAA484F004D130F /* malpoongsunRefined2.png */,
 				41C29A011EAA484F004D130F /* registerGuide2.png */,
@@ -739,6 +752,7 @@
 				916254261EA4FC9F0014BE21 /* School_Bsu.png in Resources */,
 				91F83E881EA79118009EFD22 /* Category_Arts.png in Resources */,
 				912696981EA0A0F30067C331 /* menu@2x.png in Resources */,
+				41C29A131EAB4B0C004D130F /* Qa.storyboard in Resources */,
 				91F83E8A1EA79118009EFD22 /* Category_JobStudy.png in Resources */,
 				41C299BA1EA48B6B004D130F /* confirmation2.png in Resources */,
 				911555081EA0C2A300CAFF7D /* District_Sinchon.jpg in Resources */,
@@ -850,6 +864,7 @@
 				916CDFEE1EA5D05800165EC4 /* GOUserInfoDataModel.m in Sources */,
 				418584561E91F15E0053EF40 /* MainVC.m in Sources */,
 				4185842F1E91EE9E0053EF40 /* AMSlideMenuContentSegue.m in Sources */,
+				41C29A0E1EAB450E004D130F /* GOReviewViewController.m in Sources */,
 				41C299C71EA4F0DC004D130F /* curriculumViewController.m in Sources */,
 				4153EE911E92393C001EFF70 /* GOCategoryTableViewCell.m in Sources */,
 				4153EE901E92393C001EFF70 /* GODistrictLocationTableViewCell.m in Sources */,
@@ -858,6 +873,7 @@
 				41C299B41EA48B35004D130F /* registerGuideViewController.m in Sources */,
 				91641F261E927B8800DC5B43 /* GOLocationViewController.m in Sources */,
 				4135A8A71E973F040043E0ED /* NetworkModule.m in Sources */,
+				41C29A111EAB4527004D130F /* GOReivewRegisterViewController.m in Sources */,
 				4135A8AA1E9740230043E0ED /* GOTalentDetailModel.m in Sources */,
 				418584351E91EE9E0053EF40 /* UIViewController+AMSlideMenu.m in Sources */,
 				4153EE9A1E92399A001EFF70 /* GOMainViewController.m in Sources */,

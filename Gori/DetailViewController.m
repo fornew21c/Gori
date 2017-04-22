@@ -62,6 +62,13 @@
 @property (nonatomic) NSUInteger wishListsCount;
 @property (weak, nonatomic) IBOutlet HCSStarRatingView *totalReview;
 @property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
+@property (weak, nonatomic) IBOutlet HCSStarRatingView *totalReview2;
+@property (weak, nonatomic) IBOutlet UILabel *ratingLabel2;
+@property (weak, nonatomic) IBOutlet UIImageView *reviewerImage;
+@property (weak, nonatomic) IBOutlet UILabel *reviewerName;
+@property (weak, nonatomic) IBOutlet UITextView *reviewComment;
+@property (weak, nonatomic) IBOutlet UILabel *reviewCreateDate;
+
 
 @end
 
@@ -70,19 +77,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    HCSStarRatingView *starRatingView = [[HCSStarRatingView alloc] initWithFrame:CGRectMake(100, 250, 200, 30)];
-//    starRatingView.maximumValue = 5;
-//    starRatingView.minimumValue = 0;
-//    starRatingView.allowsHalfStars = YES;
-//    starRatingView.value = 3;
-//    starRatingView.tintColor = mainColor;
-//    [starRatingView addTarget:self action:@selector(didChangeValue:) forControlEvents:UIControlEventValueChanged];
-//    [self.view addSubview:starRatingView];
-
+    // Do any additional setup after loading the view.
     [GODataCenter2 sharedInstance].seletedRegionIndex = 0;
     [GODataCenter2 sharedInstance].seletedDayIndex = 0;
     
-    // Do any additional setup after loading the view.
+
 //    self.imageScrollView.pagingEnabled = YES;
 //    self.imageScrollView.delegate = self;
    
@@ -96,14 +95,12 @@
     self.tutorImage2.layer.masksToBounds = YES;
     self.tutorImage2.layer.cornerRadius =  roundf(self.tutorImage2.frame.size.width/2.0);;
     
-//    UIImage *heart = [UIImage imageNamed:@"wishHeartDeSelected.png"];
-//    
-////    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] ini:UIBarButtonSystemItemAdd target:self action:@selector(likeButtonTouched:)];
-//    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:heart style:UIBarButtonItemStyleDone target:self action:@selector(likeButtonTouched:)];
-//    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+    self.reviewerImage.layer.masksToBounds = YES;
+    self.reviewerImage.layer.cornerRadius =  roundf(self.reviewerImage.frame.size.width/2.0);;
+    
 
     
-    
+    //좋아요 호출
     [[GODataCenter sharedInstance] receiveUserWishListDataWithCompletionBlock:^(BOOL isSuccess, id respons) {
         if(isSuccess) {
             self.wishLists = [respons objectForKey:@"results"];
@@ -215,15 +212,14 @@
     self.totalReview.value = [[self.selectedModel.averageRate objectForKey:@"total"] floatValue];
     NSString *tmp = @"(";
     self.ratingLabel.text = [[tmp stringByAppendingString:[[self.selectedModel.averageRate objectForKey:@"total"] stringValue]] stringByAppendingString:@")"];
+    
     NSString *tmpRegion = @"";
-
     for(NSUInteger i = 0; i < self.selectedModel.locations.count; i++) {
         
         tmpRegion = [[tmpRegion stringByAppendingString:[self.selectedModel.region objectAtIndex:i]] stringByAppendingString:@" "];
     }
     self.talentRegion.text =  tmpRegion;
-//    self.coverImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.selectedModel.img_cover_url]];
-    
+
     [self.coverImage sd_setImageWithURL:self.selectedModel.img_cover_url];
     self.hoursPerClass.text = [self.selectedModel.hoursPerClass stringValue];
     
@@ -294,6 +290,17 @@
     [self setDefaultDayButton];
     self.tutorImage2.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.selectedModel.tutorImgURL]];
     self.locationMessage.text = self.selectedModel.locationMessage;
+    
+    //리뷰정보
+    self.totalReview2.value = [[self.selectedModel.averageRate objectForKey:@"total"] floatValue];
+    NSString *tmp2 = @"(";
+    self.ratingLabel2.text = [[tmp2 stringByAppendingString:[[self.selectedModel.averageRate objectForKey:@"total"] stringValue]] stringByAppendingString:@")"];
+    NSMutableDictionary *reviewerUser = [[self.selectedModel.reviews objectAtIndex:0] objectForKey:@"user"];
+    [self.reviewerImage sd_setImageWithURL:[reviewerUser objectForKey:@"profile_image" ] ];
+    self.reviewerName.text = [reviewerUser objectForKey:@"name"];
+    self.reviewComment.text = [[self.selectedModel.reviews objectAtIndex:0] objectForKey:@"comment"];
+    self.reviewCreateDate.text =  [[[self.selectedModel.reviews objectAtIndex:0] objectForKey:@"created_date"] substringToIndex:10];
+    
 }
 
 

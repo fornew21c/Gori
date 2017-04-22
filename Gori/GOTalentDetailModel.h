@@ -38,8 +38,8 @@
 @property (nonatomic) NSString *locationMessage;
 @property (nonatomic) NSMutableDictionary *userDetail;
 @property (nonatomic) NSMutableDictionary *averageRate;
-
 @property (nonatomic) NSMutableArray *curriculums;
+@property (nonatomic) NSMutableArray *reviews;
 
 @property (nonatomic) NSString *test;
 
