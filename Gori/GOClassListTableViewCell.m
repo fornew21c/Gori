@@ -38,6 +38,7 @@
     self.titleLabel = titleLabel;
     self.textLabel.textColor = [UIColor blackColor];
     self.titleLabel.font = [UIFont boldSystemFontOfSize:16.0f];
+    self.titleLabel.numberOfLines = 2;
     [self.titleImageView addSubview:self.titleLabel];
     
     UILabel *tutorNameLabel = [[UILabel alloc]init];
@@ -69,12 +70,12 @@
     CGFloat offsetX = 0.0f;
     CGFloat offsetY = 0.0f;
     
-    self.mainView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 200);
-    self.titleImageView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 200);
+    self.mainView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 225);
+    self.titleImageView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 225);
     
     offsetY = (self.titleImageView.frame.size.height / 2) + (MARGIN *10);
     
-    self.titleFooterView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 50);
+    self.titleFooterView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 65);
     
     offsetX += MARGIN * 2;
     offsetY -= MARGIN * 5;
@@ -84,9 +85,10 @@
     offsetX += (self.profileImageView.frame.size.width + MARGIN * 2);
     offsetY += (self.profileImageView.frame.size.height) / 2 + MARGIN;
     
-    self.titleLabel.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 10);
+    self.titleLabel.frame = CGRectMake(offsetX, offsetY, self.frame.size.width - offsetX, 20);
+    [self.titleLabel sizeToFit];
     
-    offsetY += MARGIN * 6;
+    offsetY += MARGIN * 8;
     
     self.tutorNameLabel.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 10);
     
