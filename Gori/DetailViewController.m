@@ -88,7 +88,6 @@
     self.joinCntLabel.layer.masksToBounds = YES;
     self.joinCntLabel.layer.cornerRadius = 15;
     
-    //self.tutorImage.clipsToBounds = YES;
     self.tutorImage.layer.masksToBounds = YES;
     self.tutorImage.layer.cornerRadius =  roundf(self.tutorImage.frame.size.width/2.0);;
   

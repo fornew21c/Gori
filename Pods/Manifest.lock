@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - HCSStarRatingView (1.4.5)
+  - HCSStarRatingView (1.5)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -26,9 +26,9 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  HCSStarRatingView: bff3f89314d3b5013ce826ea11897d3129ff6b8c
+  HCSStarRatingView: 1d18f79654735514cd6f00e6d90e38cb6320dc31
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
-PODFILE CHECKSUM: 6fa225ff5d330e32ca1cb03b21cbb9837d63fbb3
+PODFILE CHECKSUM: 97e814a8b11177d77b30ac77b76364fbaa9b2931
 
 COCOAPODS: 1.2.0

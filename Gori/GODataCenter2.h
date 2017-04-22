@@ -53,4 +53,15 @@
 - (void)loginWithFacebookid:(NSString*)facebookToken completion:(CompletionBlock)completion;
 //좋아요
 - (void)wishToggle:(NSNumber*)pk completion:(CompletionBlock)completion;
+//리뷰조회
+- (void)reviewList:(NSUInteger)pk completion:(CompletionBlock)completion;
+//리뷰등록
+- (void)registerReviewWithPK:(NSUInteger)pk
+                  curriculum:(NSUInteger)curriculum
+                   readiness:(NSUInteger)readiness
+                  timeliness:(NSUInteger)timeliness
+                    delivery:(NSUInteger)delivery
+                friendliness:(NSUInteger)friendliness
+                     comment:(NSString*)comment
+                  completion:(CompletionBlock)completion;
 @end

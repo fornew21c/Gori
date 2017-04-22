@@ -193,4 +193,19 @@
 
 }
 
+- (void)reviewList:(NSUInteger)pk completion:(CompletionBlock)completion {
+    [self.nManager getReivewListWithPK:pk completion:completion];
+}
+- (void)registerReviewWithPK:(NSUInteger)pk
+                  curriculum:(NSUInteger)curriculum
+                   readiness:(NSUInteger)readiness
+                  timeliness:(NSUInteger)timeliness
+                    delivery:(NSUInteger)delivery
+                friendliness:(NSUInteger)friendliness
+                     comment:(NSString*)comment
+                  completion:(CompletionBlock)completion
+{
+    [self.nManager postReviewCreateWithPK:pk curriculum:curriculum readiness:readiness timeliness:timeliness delivery:delivery friendliness:friendliness comment:comment completion:completion];
+}
+
 @end

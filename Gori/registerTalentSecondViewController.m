@@ -49,7 +49,6 @@
     NSString *placeHolderStr = [[[[tmpStr stringByAppendingString:@"\n"] stringByAppendingString:tmpStr2] stringByAppendingString:@"\n"] stringByAppendingString:tmpStr3];
     
     [self.placeholerLabel setText:placeHolderStr];
-//    [self.placeholerLabel setText:@"튜터님에게 알려주세요. 수업을 듣는 목적은 무엇인가요? 튜더팀의 어떤 점이 마음에 들어 신청하였나요?"];
     [self.placeholerLabel setBackgroundColor:[UIColor clearColor]];
     [self.placeholerLabel setTextColor:[UIColor lightGrayColor]];
     self.messageToTutor.delegate = self;

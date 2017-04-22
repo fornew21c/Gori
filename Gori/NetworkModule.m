@@ -281,6 +281,7 @@ static NSString *const TOKEN_KEY = @"Authorization";
     [request setValue:[NSString stringWithFormat:@"token %@", loginToken] forHTTPHeaderField:@"Authorization"];
     [request setHTTPBody: [body dataUsingEncoding:NSUTF8StringEncoding]];
 
+    NSLog(@"request: %@", request);
    // NSLog(@"URL logintoken and body: %@ %@", loginToken, body);
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         if (error) {
@@ -362,7 +363,6 @@ static NSString *const TOKEN_KEY = @"Authorization";
     [task resume];    
 }
 
-//locationPK studentLevel:studentLevel messageToTutor:messageToTutor studentExperienceMonth:studentExperienceMonth
 - (NSString*)setTalenRegisterDataParam:(NSUInteger)locationPK studentLevel:(NSUInteger)studentLevel messageToTutor:(NSString *)messageToTutor studentExperienceMonth:(NSUInteger)studentExperienceMonth{
     return [NSString stringWithFormat:@"{\"location_pk\":\"%lu\",\"student_level\":\"%lu\",\"message_to_tutor\":\"%@\",\"experience_length\":\"%lu\"}",locationPK,studentLevel,messageToTutor,studentExperienceMonth];
 }
@@ -390,4 +390,90 @@ static NSString *const TOKEN_KEY = @"Authorization";
     }];
     [dataTask resume];
 }
+
+- (void)postReviewCreateWithPK:(NSUInteger)pk
+                    curriculum:(NSUInteger)curriculum
+                     readiness:(NSUInteger)readiness
+                    timeliness:(NSUInteger)timeliness
+                      delivery:(NSUInteger)delivery
+                  friendliness:(NSUInteger)friendliness
+                       comment:(NSString*)comment
+                    completion:(CompletionBlock)completion
+{
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",BASE_URL,REVIEW_REGISTER]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
+    
+    NSString *body = [self setReviewRegisterDataParam:pk curriculum:curriculum readiness:readiness timeliness:timeliness delivery:delivery friendliness:friendliness comment:comment];
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *loginToken = [[GODataCenter2 sharedInstance] getMyLoginToken];
+    
+    // 헤더 세팅
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:[NSString stringWithFormat:@"token %@", loginToken] forHTTPHeaderField:@"Authorization"];
+    [request setHTTPBody: [body dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSLog(@"request: %@", request);
+    // NSLog(@"URL logintoken and body: %@ %@", loginToken, body);
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+        if (error) {
+            completion(NO,responseObject);
+            NSLog(@"리뷰등록 에러");
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+            NSUInteger statusCode = (NSUInteger) [httpResponse statusCode];
+            if(statusCode == 400) {
+                completion(NO,responseObject);
+                NSLog(@"-----------------------response : %@", response);
+            }
+           
+            
+        } else {
+            // NSLog(@"%@ %@", response, responseObject);
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+            NSUInteger statusCode = (NSUInteger) [httpResponse statusCode];
+            NSLog(@"statusCode: %lu", statusCode);
+            if(statusCode == 201) {
+                completion(YES,responseObject);
+            }
+        
+        }
+    }];
+    [dataTask resume];
+}
+
+- (NSString*)setReviewRegisterDataParam:(NSUInteger)pk
+                             curriculum:(NSUInteger)curriculum
+                              readiness:(NSUInteger)readiness
+                             timeliness:(NSUInteger)timeliness
+                               delivery:(NSUInteger)delivery
+                           friendliness:(NSUInteger)friendliness
+                                comment:(NSString *)comment
+{
+    return [NSString stringWithFormat:@"{\"talent_pk\":\"%lu\",\"curriculum\":\"%lu\",\"readiness\":\"%lu\",\"timeliness\":\"%lu\",\"delivery\":\"%lu\",\"friendliness\":\"%lu\",\"comment\":\"%@\"}",pk,curriculum,readiness,timeliness,delivery,friendliness,comment];
+}
+
+- (void)getReivewListWithPK:(NSUInteger)pk completion:(CompletionBlock)completion {
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%lu%@/",BASE_URL,TALENT_DETAIL,pk,REVIEW_LIST]];
+    NSLog(@"URL: %@", URL);
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
+
+    
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@", error);
+            completion(NO,error);
+        } else {
+            // NSLog(@"%@ %@", response, responseObject);
+            completion(YES,responseObject);
+        }
+    }];
+    [dataTask resume];
+}
+
 @end

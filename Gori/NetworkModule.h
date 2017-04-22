@@ -22,8 +22,9 @@ static NSString * const GET_DETAIL_URL = @"/talent/detail-all/";           //GET
 static NSString * const POST_REGISTER_CREATE = @"/talent/add/registration/";     //수업신청하기
 static NSString * const TALENT = @"/talent/";
 static NSString * const WISH_TOGGLE =  @"/wish-list/toggle/"; //wish toggle
-
-
+static NSString * const REVIEW_REGISTER = @"/talent/add/review/"; //리뷰 등록
+static NSString * const TALENT_DETAIL = @"/talent/detail/";
+static NSString * const REVIEW_LIST = @"/review/"; //리뷰 조회
 
 @interface NetworkModule : NSObject
 
@@ -46,5 +47,14 @@ static NSString * const WISH_TOGGLE =  @"/wish-list/toggle/"; //wish toggle
                       messageToTutor:(NSString*)messageToTutor
                           completion:(CompletionBlock)completion;
 - (void)wishToggleWithPK:(NSNumber*)pk completion:(CompletionBlock)completion;
+- (void)getReivewListWithPK:(NSUInteger)pk completion:(CompletionBlock)completion;
+- (void)postReviewCreateWithPK:(NSUInteger)pk
+                  curriculum:(NSUInteger)curriculum
+                   readiness:(NSUInteger)readiness
+                  timeliness:(NSUInteger)timeliness
+                    delivery:(NSUInteger)delivery
+                friendliness:(NSUInteger)friendliness
+                     comment:(NSString*)comment
+                  completion:(CompletionBlock)completion;
 
 @end

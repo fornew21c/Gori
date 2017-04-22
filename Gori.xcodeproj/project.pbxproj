@@ -17,6 +17,8 @@
 		4135A8A31E973EB70043E0ED /* GODataCenter2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4135A8A21E973EB70043E0ED /* GODataCenter2.m */; };
 		4135A8A71E973F040043E0ED /* NetworkModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4135A8A61E973F040043E0ED /* NetworkModule.m */; };
 		4135A8AA1E9740230043E0ED /* GOTalentDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4135A8A91E9740230043E0ED /* GOTalentDetailModel.m */; };
+		413F9DAC1EAB597E00FCB9E8 /* GOReviewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 413F9DAB1EAB597E00FCB9E8 /* GOReviewTableViewCell.m */; };
+		413F9DAF1EAB96EB00FCB9E8 /* GOReviewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 413F9DAE1EAB96EB00FCB9E8 /* GOReviewModel.m */; };
 		4145D0DA1E9F611B00C7141A /* malpoongsuncopy.png in Resources */ = {isa = PBXBuildFile; fileRef = 4145D0D91E9F611B00C7141A /* malpoongsuncopy.png */; };
 		414848071E935C8400612B3C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 414848061E935C8400612B3C /* DetailViewController.m */; };
 		4153EE841E9238FD001EFF70 /* GODataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4153EE831E9238FD001EFF70 /* GODataCenter.m */; };
@@ -150,6 +152,10 @@
 		4135A8A61E973F040043E0ED /* NetworkModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkModule.m; sourceTree = "<group>"; };
 		4135A8A81E9740230043E0ED /* GOTalentDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOTalentDetailModel.h; sourceTree = "<group>"; };
 		4135A8A91E9740230043E0ED /* GOTalentDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOTalentDetailModel.m; sourceTree = "<group>"; };
+		413F9DAA1EAB597E00FCB9E8 /* GOReviewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOReviewTableViewCell.h; sourceTree = "<group>"; };
+		413F9DAB1EAB597E00FCB9E8 /* GOReviewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOReviewTableViewCell.m; sourceTree = "<group>"; };
+		413F9DAD1EAB96EB00FCB9E8 /* GOReviewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOReviewModel.h; sourceTree = "<group>"; };
+		413F9DAE1EAB96EB00FCB9E8 /* GOReviewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOReviewModel.m; sourceTree = "<group>"; };
 		4145D0D91E9F611B00C7141A /* malpoongsuncopy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = malpoongsuncopy.png; sourceTree = "<group>"; };
 		414848051E935C8400612B3C /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		414848061E935C8400612B3C /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
@@ -358,6 +364,8 @@
 				41C299C61EA4F0DC004D130F /* curriculumViewController.m */,
 				41C29A0C1EAB450E004D130F /* GOReviewViewController.h */,
 				41C29A0D1EAB450E004D130F /* GOReviewViewController.m */,
+				413F9DAA1EAB597E00FCB9E8 /* GOReviewTableViewCell.h */,
+				413F9DAB1EAB597E00FCB9E8 /* GOReviewTableViewCell.m */,
 				41C29A0F1EAB4527004D130F /* GOReivewRegisterViewController.h */,
 				41C29A101EAB4527004D130F /* GOReivewRegisterViewController.m */,
 			);
@@ -517,6 +525,8 @@
 			children = (
 				4135A8A81E9740230043E0ED /* GOTalentDetailModel.h */,
 				4135A8A91E9740230043E0ED /* GOTalentDetailModel.m */,
+				413F9DAD1EAB96EB00FCB9E8 /* GOReviewModel.h */,
+				413F9DAE1EAB96EB00FCB9E8 /* GOReviewModel.m */,
 				916CDFEC1EA5D05800165EC4 /* GOUserInfoDataModel.h */,
 				916CDFED1EA5D05800165EC4 /* GOUserInfoDataModel.m */,
 				4153EE821E9238FD001EFF70 /* GODataCenter.h */,
@@ -855,6 +865,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				910E64311EA3619500B90B7E /* GOUserInfoUpdateViewController.m in Sources */,
+				413F9DAF1EAB96EB00FCB9E8 /* GOReviewModel.m in Sources */,
 				418584301E91EE9E0053EF40 /* AMSlideMenuLeftMenuSegue.m in Sources */,
 				919B6F301E9CE56000AE8CA5 /* GOMypageViewController.m in Sources */,
 				418584341E91EE9E0053EF40 /* AMSlideMenuRightTableViewController.m in Sources */,
@@ -884,6 +895,7 @@
 				418584571E91F15E0053EF40 /* LoginViewController.m in Sources */,
 				418584321E91EE9E0053EF40 /* AMSlideMenuMainViewController.m in Sources */,
 				4153EE9B1E92399A001EFF70 /* GOMainTableViewCell.m in Sources */,
+				413F9DAC1EAB597E00FCB9E8 /* GOReviewTableViewCell.m in Sources */,
 				418584331E91EE9E0053EF40 /* AMSlideMenuRightMenuSegue.m in Sources */,
 				4153EE8F1E92393C001EFF70 /* GOCategoryViewController.m in Sources */,
 				4135A8A31E973EB70043E0ED /* GODataCenter2.m in Sources */,
