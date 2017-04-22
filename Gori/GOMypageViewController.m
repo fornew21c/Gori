@@ -18,9 +18,11 @@
 @interface GOMypageViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *classListButton;
 @property (weak, nonatomic) IBOutlet UIButton *wishListButton;
+@property (weak, nonatomic) IBOutlet UIButton *questionListButton;
 @property (weak, nonatomic) IBOutlet UIButton *userInfoSettingButton;
 @property (weak, nonatomic) IBOutlet UIView *classListView;
 @property (weak, nonatomic) IBOutlet UIView *wishListView;
+@property (weak, nonatomic) IBOutlet UIView *questionView;
 @property (weak, nonatomic) IBOutlet UILabel *profileNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *profileNickNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *profileEmailLabel;
@@ -35,6 +37,7 @@
     // Do any additional setup after loading the view.
     self.classListView.alpha = 1.0f;
     self.wishListView.alpha = 0.0f;
+    self.questionView.alpha = 0.0f;
     
     self.userInfoSettingButton.layer.cornerRadius = 40;
     self.userInfoSettingButton.layer.masksToBounds = YES;
@@ -76,13 +79,24 @@
     [UIView animateWithDuration:0.3 animations:^{
         self.classListView.alpha = 1.0f;
         self.wishListView.alpha = 0.0f;
+        self.questionView.alpha = 0.0f;
     }];
 }
 - (IBAction)goWishListView:(UIButton *)sender {
     [UIView animateWithDuration:0.3 animations:^{
         self.classListView.alpha = 0.0f;
         self.wishListView.alpha = 1.0f;
+        self.questionView.alpha = 0.0f;
     }];
+}
+- (IBAction)goQuestionListView:(UIButton *)sender {
+    [UIView animateWithDuration:0.3 animations:^{
+        self.classListView.alpha = 0.0f;
+        self.wishListView.alpha = 0.0f;
+        self.questionView.alpha = 1.0f;
+    }];
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,20 +22,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VYs-Ha-t0a">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VYs-Ha-t0a">
                                 <rect key="frame" x="0.0" y="632" width="375" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="메시지 입력(개인 연락처 입력 불가)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cm3-hN-gFB">
-                                        <rect key="frame" x="8" y="2" width="323" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="메시지 입력(개인 연락처 입력 불가)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cm3-hN-gFB">
+                                        <rect key="frame" x="8" y="2" width="325" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2e3-zy-Saw">
-                                        <rect key="frame" x="329" y="2" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2e3-zy-Saw">
+                                        <rect key="frame" x="335" y="2" width="40" height="30"/>
                                         <state key="normal" title="전송">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -44,9 +42,30 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92156862745098034" green="0.1764705882352941" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="2e3-zy-Saw" secondAttribute="trailing" id="2W3-Zf-nDO"/>
+                                    <constraint firstAttribute="trailing" secondItem="cm3-hN-gFB" secondAttribute="trailing" constant="42" id="CSX-ZA-h2N"/>
+                                    <constraint firstAttribute="height" constant="35" id="OqB-QH-RAd"/>
+                                    <constraint firstItem="cm3-hN-gFB" firstAttribute="leading" secondItem="VYs-Ha-t0a" secondAttribute="leading" constant="8" id="Qnv-G1-U8a"/>
+                                    <constraint firstItem="cm3-hN-gFB" firstAttribute="top" secondItem="VYs-Ha-t0a" secondAttribute="top" constant="2" id="d0w-ve-jjZ"/>
+                                    <constraint firstItem="2e3-zy-Saw" firstAttribute="leading" secondItem="cm3-hN-gFB" secondAttribute="trailing" constant="2" id="in0-is-pst"/>
+                                    <constraint firstItem="2e3-zy-Saw" firstAttribute="top" secondItem="VYs-Ha-t0a" secondAttribute="top" constant="2" id="j3l-cy-TgP"/>
+                                </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="learnAndLogo2.png" translatesAutoresizingMaskIntoConstraints="NO" id="tiD-62-w5W">
+                                <rect key="frame" x="29" y="120" width="316" height="179"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cm3-hN-gFB" firstAttribute="top" secondItem="tiD-62-w5W" secondAttribute="bottom" constant="335" id="735-kL-pw0"/>
+                            <constraint firstItem="tiD-62-w5W" firstAttribute="leading" secondItem="tCn-Z2-B3t" secondAttribute="leadingMargin" constant="13" id="JbZ-YC-RPY"/>
+                            <constraint firstAttribute="trailing" secondItem="VYs-Ha-t0a" secondAttribute="trailing" id="QbN-VV-im2"/>
+                            <constraint firstItem="4tP-1h-31l" firstAttribute="top" secondItem="VYs-Ha-t0a" secondAttribute="bottom" id="Vam-EZ-1fA"/>
+                            <constraint firstItem="VYs-Ha-t0a" firstAttribute="leading" secondItem="tCn-Z2-B3t" secondAttribute="leading" id="oHE-bq-3kJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tiD-62-w5W" secondAttribute="trailing" constant="14" id="saW-b6-KmH"/>
+                            <constraint firstItem="tiD-62-w5W" firstAttribute="top" secondItem="Xk5-li-asS" secondAttribute="bottom" constant="100" id="xV5-ud-Ifd"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="QAInputTextField" destination="cm3-hN-gFB" id="Xpi-pO-VFM"/>
@@ -59,4 +78,7 @@
             <point key="canvasLocation" x="-34.399999999999999" y="-461.01949025487261"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="learnAndLogo2.png" width="433" height="227"/>
+    </resources>
 </document>
