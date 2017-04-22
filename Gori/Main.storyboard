@@ -367,7 +367,7 @@
         <!--Detail View Controller-->
         <scene sceneID="ii3-d5-WrU">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="jqr-xZ-wqy" customClass="DetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" automaticallyAdjustsScrollViewInsets="NO" id="jqr-xZ-wqy" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dlh-9H-UzZ"/>
                         <viewControllerLayoutGuide type="bottom" id="b1a-2p-afp"/>
@@ -885,6 +885,17 @@
                                                                     <constraint firstAttribute="height" constant="400" id="xrQ-s7-2pR"/>
                                                                 </constraints>
                                                             </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adD-73-pnc">
+                                                                <rect key="frame" x="0.0" y="1409" width="375" height="10"/>
+                                                                <color key="backgroundColor" red="0.88123380829999998" green="0.88123380829999998" blue="0.88123380829999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="10" id="4bV-ZL-L2X"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u8w-6o-FO2" userLabel="ReiviewView">
+                                                                <rect key="frame" x="0.0" y="1347" width="375" height="259"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </view>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
@@ -995,7 +1006,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nkc-b9-1bg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6422" y="-1157"/>
+            <point key="canvasLocation" x="6421.6000000000004" y="-1157.7211394302849"/>
         </scene>
         <!--Curriculum View Controller-->
         <scene sceneID="9Xx-P2-zSZ">
