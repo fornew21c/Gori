@@ -26,6 +26,9 @@ typedef void(^CompletionBlock)(BOOL isSuccess, id respons);
 + (void)getUserWishListWithCompletionBlock:(CompletionBlock)completion;
 
 - (void)updatingUserDetailTextDataWithCompletionBlock:(NSString *)name nickName:(NSString *)nickName cellPhone:(NSString *)cellPhone completion:(CompletionBlock)completion;
+
 - (void)updatingUserPictureWithCompletionBlock:(NSData*)data completion:(CompletionBlock)completion;
+
+- (void)updatingUserQuestionWithCompletionBlock:(NSString *)question talentPk:(NSInteger)pk completion:(CompletionBlock)completion;
 
 @end

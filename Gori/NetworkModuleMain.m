@@ -28,6 +28,9 @@ static NSString *const API_USER_DETAIL_UPDATE_URL = @"/member/update/user/";
 static NSString *const API_USER_WISH_LIST_URL = @"/member/wish-list/";
 
 static NSString *const API_USER_REGISTRATION_LIST_URL = @"/member/registrations/";
+
+static NSString *const API_USER_QUESTION_CREATE_URL = @"/talent/add/question/";
+
 //백엔드에서 말하기를 디테일뷰에서 "수업신청"을 하면 Registration에 쌓인다고 한다...즉 Enrollment 데이터를 따로 볼 수 는 없다고 한다 registration에서 수업, 유저 맞춰서 저장하면 수업 등록 가능합니다
 
 static NSString *const TOKEN_KEY = @"Authorization";
@@ -37,6 +40,115 @@ static NSString *const TOKEN_KEY = @"Authorization";
 @end
 
 @implementation NetworkModuleMain
+
+//- (void)updatingUserDetailTextDataWithCompletionBlock:(NSString *)name nickName:(NSString *)nickName cellPhone:(NSString *)cellPhone completion:(CompletionBlock)completion{
+//    //session 생성
+//    NSURLSession *session = [NSURLSession sessionWithConfiguration:
+//                             [NSURLSessionConfiguration defaultSessionConfiguration]];
+//    //Request 객체 생성
+//    NSString *urlStr = [NSString stringWithFormat:@"%@%@",BASE_URL,API_USER_DETAIL_UPDATE_URL] ;
+//    
+//    NSURL *url = [NSURL URLWithString:urlStr];
+//    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+//    NSString *requestData = [self updatingUserInputText:name nickName:nickName cellPhone:cellPhone];
+//    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+//    NSLog(@"네트워크모듈의 리퀘스트 데이터 : %@", requestData);
+//    //body data set
+//    request.HTTPMethod = @"PATCH";
+//    NSString *loginToken = [[GODataCenter2 sharedInstance] getMyLoginToken];
+//    NSLog(@"네트워크모듈 메인의 토큰 : %@",loginToken);
+//    // 헤더 세팅
+//    [request setValue:[NSString stringWithFormat:@"Token %@", loginToken] forHTTPHeaderField:TOKEN_KEY];
+//    NSData *data = [requestData dataUsingEncoding:NSUTF8StringEncoding];
+//    request.HTTPBody = data;
+//    //    NSLog(@"에이치티티피 데이타 : %@", [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+//    
+//    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//        if (error == nil) {
+//            NSDictionary *responseData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+//            NSLog(@"네트워크모듈메인의 데이터 : %@", [[NSString alloc] initWithData: data encoding:NSUTF8StringEncoding]);
+//            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+//            NSUInteger statusCode = (NSUInteger) [httpResponse statusCode];
+//            // 받은 header들을 dictionary형태로 받음
+//            NSDictionary *responseHeaderFields = [(NSHTTPURLResponse *)response allHeaderFields];
+//            NSLog(@"스테이터스 코드 체크 : %lu", statusCode);
+//            NSLog(@"네트워크모듈 메인의 리스폰스 헤더 필드 네임 데이터:%@",[responseHeaderFields objectForKey:@"name"]);
+//            
+//            if(statusCode == 200) {
+//                NSLog(@"마이페이지 텍스트 업데이트 성공");
+//                //                    NSLog(@"key: %@", [responseData objectForKey:@"key"]);;
+//                //                    [[GODataCenter2 sharedInstance] setMyLoginToken:[responseData objectForKey:@"key"]];
+//                completion(YES,responseData);
+//                
+//            }
+//            else if(statusCode == 400) {
+//                NSLog(@"non_field_errors: %@", [responseData objectForKey:@"non_field_errors"]);
+//                completion(NO,responseData);
+//                
+//                
+//            }
+//            
+//        }else
+//        {
+//            NSDictionary *responsData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+//            NSLog(@"%@",responsData);
+//            completion(NO,responsData);
+//        }
+//    }];
+//    [task resume];
+//    
+//}
+
+
+/**************** updating UserQuestion to BackEnd API ***********************/
+- (void)updatingUserQuestionWithCompletionBlock:(NSString *)question talentPk:(NSInteger)pk completion:(CompletionBlock)completion{
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_USER_QUESTION_CREATE_URL]];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
+    
+    NSString *body = [self updatingUserQuestion:question talentPK:pk];
+     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPMethod:@"POST"];
+    NSString *loginToken = [[GODataCenter2 sharedInstance] getMyLoginToken];
+    
+    [request setValue:[NSString stringWithFormat:@"token %@", loginToken] forHTTPHeaderField:TOKEN_KEY];
+    NSData *data = [body dataUsingEncoding:NSUTF8StringEncoding];
+    request.HTTPBody = data;
+    
+    NSLog(@"request: %@", request);
+    
+    // NSLog(@"URL logintoken and body: %@ %@", loginToken, body);
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+        if (error) {
+            completion(NO,responseObject);
+            NSLog(@"에러에러에러에러");
+            NSLog(@"-----------------------response : %@", response);
+            NSLog(@"%@ %@", response, responseObject);
+            
+        } else {
+            // NSLog(@"%@ %@", response, responseObject);
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+            NSUInteger statusCode = (NSUInteger) [httpResponse statusCode];
+            NSLog(@"statusCode: %lu", statusCode);
+            if(statusCode == 201) {
+                completion(YES,responseObject);
+            }
+            else if(statusCode == 400) {
+                completion(NO,responseObject);
+                NSLog(@"-----------------------response : %@", response);
+            }
+            else if(statusCode == 500) {
+                completion(NO,responseObject);
+                NSLog(@"----------------500-------response : %@", response);
+            }
+        }
+    }];
+    [dataTask resume];
+}
+
 
 /**************** gettingUserWishListData from BackEnd API ***********************/
 + (void)getUserWishListWithCompletionBlock:(CompletionBlock)completion{
@@ -220,6 +332,10 @@ static NSString *const TOKEN_KEY = @"Authorization";
     
 }
 
+- (NSString*)updatingUserQuestion:(NSString *)question talentPK:(NSInteger)pk{
+    return [NSString stringWithFormat:@"{\"content\":\"%@\",\"talent_pk\":\"%ld\"}",question, pk];
+//    return [NSString stringWithFormat:@"=%@&nickname=%@&cellphone=%@",name,nickName, cellPhone];
+}
 
 
 - (NSString*)updatingUserInputText:(NSString *)name nickName:(NSString *)nickName cellPhone:(NSString *)cellPhone{

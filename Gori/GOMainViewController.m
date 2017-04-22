@@ -103,8 +103,8 @@
     UIImageView *logoImageView2 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 70, 70)];
     logoImageView2.image = [UIImage imageNamed:@"logo.png"];
     [logoImageView2 setContentMode:UIViewContentModeScaleAspectFit];
-    
     [logoView addSubview:logoImageView2];
+    
     [[GODataCenter2 sharedInstance]getMyLoginToken];
     NSLog(@"뷰디드로드 겟마이토큰 : %@", [[GODataCenter2 sharedInstance]getMyLoginToken]);
 }

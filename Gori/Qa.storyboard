@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="IzE-Q5-mzZ">
             <objects>
-                <viewController id="0Dg-e8-Irc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GOQAViewController" id="0Dg-e8-Irc" customClass="GOQAViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xk5-li-asS"/>
                         <viewControllerLayoutGuide type="bottom" id="4tP-1h-31l"/>
@@ -20,12 +20,43 @@
                     <view key="view" contentMode="scaleToFill" id="tCn-Z2-B3t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VYs-Ha-t0a">
+                                <rect key="frame" x="0.0" y="632" width="375" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="메시지 입력(개인 연락처 입력 불가)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cm3-hN-gFB">
+                                        <rect key="frame" x="8" y="2" width="323" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2e3-zy-Saw">
+                                        <rect key="frame" x="329" y="2" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="전송">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="uploadingQAText:" destination="0Dg-e8-Irc" eventType="touchUpInside" id="5u7-PP-u4C"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.1764705882352941" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="QAInputTextField" destination="cm3-hN-gFB" id="Xpi-pO-VFM"/>
+                        <outlet property="QAInputTextFieldView" destination="VYs-Ha-t0a" id="heQ-Ia-nPL"/>
+                        <outlet property="QAInputTextFteldButton" destination="2e3-zy-Saw" id="Sco-cd-P4a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mz3-SF-SIJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-33" y="-461"/>
+            <point key="canvasLocation" x="-34.399999999999999" y="-461.01949025487261"/>
         </scene>
     </scenes>
 </document>
