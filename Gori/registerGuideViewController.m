@@ -9,6 +9,7 @@
 #import "registerGuideViewController.h"
 #import "registerTalentFirstViewController.h"
 #import "GODataCenter2.h"
+#define mainColor [UIColor colorWithRed:232/255.0f green:45/255.0f blue:80/255.0f alpha:1.0f]
 
 @interface registerGuideViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *tutorImage;
@@ -24,14 +25,17 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,70,70)];
+    titleLabel.font = [UIFont systemFontOfSize:17.0f];
+    titleLabel.textColor = mainColor;
+    titleLabel.text = @"결제 프로세스 안내";
+    self.navigationItem.titleView = titleLabel;
+    
     self.tutorImage.layer.masksToBounds = YES;
     self.tutorImage.layer.cornerRadius =  roundf(self.tutorImage.frame.size.width/2.0);;
     NSLog(@"tutorImgURL: %@", [GODataCenter2 sharedInstance].selectedModel.tutorImgURL);
     self.tutorImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[GODataCenter2 sharedInstance].selectedModel.tutorImgURL]];
-//    UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(leftBtnTouched:)];
-//    self.navigationItem.leftBarButtonItem = leftButtonItem;
-    
-    //self.navigationItem.title = @"";
     [self.navigationController.navigationBar setTitleTextAttributes:
      @{NSForegroundColorAttributeName:[UIColor colorWithRed:232/255.0f green:45/255.0f blue:80/255.0f alpha:1.0f]}];
     

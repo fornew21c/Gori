@@ -8,6 +8,7 @@
 
 #import "registerTalentSecondViewController.h"
 #import "GODataCenter2.h"
+#define mainColor [UIColor colorWithRed:232/255.0f green:45/255.0f blue:80/255.0f alpha:1.0f]
 
 @interface registerTalentSecondViewController ()
 <UITextViewDelegate,UITextFieldDelegate>
@@ -27,6 +28,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,70,70)];
+    titleLabel.font = [UIFont systemFontOfSize:17.0f];
+    titleLabel.textColor = mainColor;
+    titleLabel.text = @"수업신청";
+    self.navigationItem.titleView = titleLabel;
+    
     self.tutorImage5.layer.masksToBounds = YES;
     self.tutorImage5.layer.cornerRadius =  roundf(self.tutorImage5.frame.size.width/2.0);;
     self.tutorImage5.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[GODataCenter2 sharedInstance].selectedModel.tutorImgURL]];

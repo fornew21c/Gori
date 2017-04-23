@@ -40,6 +40,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,70,70)];
+    titleLabel.font = [UIFont systemFontOfSize:17.0f];
+    titleLabel.textColor = mainColor;
+    titleLabel.text = @"수업신청";
+    self.navigationItem.titleView = titleLabel;
+    
     self.tutorImage3.layer.masksToBounds = YES;
     self.tutorImage3.layer.cornerRadius =  roundf(self.tutorImage3.frame.size.width/2.0);;
     self.tutorImage3.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.selectedModel.tutorImgURL]];
