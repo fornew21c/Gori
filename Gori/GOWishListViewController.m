@@ -61,10 +61,13 @@
     cell.tuteeCountNumberLabel.text = [[NSString stringWithFormat:@"%@", [temp objectForKey:@"registration_count"]] stringByAppendingString:@"명 참여"];
     cell.averageStar.value = [[temp objectForKey:@"average_rate"] floatValue];
     cell.reviewCountNumberLabel.text = [NSString stringWithFormat:@"(%@)", [temp objectForKey:@"review_count"]];
-    cell.priceLabel.text = [NSString stringWithFormat:@"￦%@", [temp objectForKey:@"price_per_hour"]];
+    
+    NSNumber *priceNum = [temp objectForKey:@"price_per_hour"];
+    NSString *numberStr = [NSNumberFormatter localizedStringFromNumber:priceNum numberStyle:NSNumberFormatterDecimalStyle];
+    NSString *won = @"￦";
+    cell.priceLabel.text = [won stringByAppendingString:numberStr];
     
     return cell;
-    //데이터 구조가 다름 윗 부분들 수정해야 함
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

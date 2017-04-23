@@ -64,7 +64,11 @@
     cell.tuteeCountNumberLabel.text = [[NSString stringWithFormat:@"%@", [[temp objectForKey:@"talent"] objectForKey:@"registration_count"]] stringByAppendingString:@"명 참여"];
     cell.averageStar.value = [[[temp objectForKey:@"talent"] objectForKey:@"average_rate"] floatValue];
     cell.reviewCountNumberLabel.text = [NSString stringWithFormat:@"(%@)", [[temp objectForKey:@"talent"] objectForKey:@"review_count"]];
-    cell.priceLabel.text = [NSString stringWithFormat:@"￦%@", [[temp objectForKey:@"talent"] objectForKey:@"price_per_hour"]];
+    
+    NSNumber *priceNum = [[temp objectForKey:@"talent"] objectForKey:@"price_per_hour"];
+    NSString *numberStr = [NSNumberFormatter localizedStringFromNumber:priceNum numberStyle:NSNumberFormatterDecimalStyle];
+    NSString *won = @"￦";
+    cell.priceLabel.text = [won stringByAppendingString:numberStr];
     return cell;
 }
 
