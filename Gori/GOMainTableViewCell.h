@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <HCSStarRatingView/HCSStarRatingView.h>
 
 @interface GOMainTableViewCell : UITableViewCell
 
@@ -17,6 +18,12 @@
 @property (nonatomic, weak) UIView *titleFooterView;
 
 @property (nonatomic, weak) UIImageView *profileImageView;
+
+@property (nonatomic, weak) UILabel *priceLabel;
+
+@property (nonatomic, weak) HCSStarRatingView *averageStar;
+
+@property (nonatomic, weak) UILabel *reviewCountNumberLabel;
 
 @property (nonatomic, weak) UILabel *titleLabel;
 

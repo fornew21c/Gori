@@ -26,12 +26,29 @@
     [self.titleFooterView setAlpha:0.7f];
     [self.titleImageView addSubview:self.titleFooterView];
     
-    UIImageView *profileImageView = [[UIImageView alloc]init];
-    self.profileImageView = profileImageView;
-    self.profileImageView.layer.cornerRadius = 25;
-    self.profileImageView.layer.masksToBounds = YES;
-    self.profileImageView.clipsToBounds = YES;
-    [self.titleImageView addSubview:self.profileImageView];
+    HCSStarRatingView *averageStar = [[HCSStarRatingView alloc]init];
+    self.averageStar = averageStar;
+    self.averageStar.maximumValue = 5;
+    self.averageStar.minimumValue = 0;
+    self.averageStar.value = 0;
+    self.averageStar.tintColor = [UIColor colorWithRed:232.0/255.0 green:45.0/255.0 blue:80.0/255.0 alpha:1];
+    self.averageStar.allowsHalfStars = YES;
+    self.averageStar.value = 2.5f;
+    self.averageStar.accurateHalfStars = YES;
+    self.averageStar.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:0];
+    [self.titleImageView addSubview:self.averageStar];
+    
+    UILabel *reviewCountNumberLabel = [[UILabel alloc]init];
+    self.reviewCountNumberLabel = reviewCountNumberLabel;
+    self.reviewCountNumberLabel.textColor = [UIColor colorWithRed:232.0/255.0 green:45.0/255.0 blue:80.0/255.0 alpha:1];
+    self.reviewCountNumberLabel.font = [UIFont systemFontOfSize:14.0f];
+    [self.titleImageView addSubview:self.reviewCountNumberLabel];
+    
+    UILabel *priceLabel = [[UILabel alloc]init];
+    self.priceLabel = priceLabel;
+    self.priceLabel.textColor = [UIColor colorWithRed:232.0/255.0 green:45.0/255.0 blue:80.0/255.0 alpha:1];
+    self.priceLabel.font = [UIFont systemFontOfSize:14.0f];
+    [self.titleImageView addSubview:self.priceLabel];
     
     UILabel *titleLabel = [[UILabel alloc]init];
     self.titleLabel = titleLabel;
@@ -39,11 +56,6 @@
     self.titleLabel.font = [UIFont boldSystemFontOfSize:16.0f];
     self.titleLabel.numberOfLines = 2;
     [self.titleImageView addSubview:self.titleLabel];
-    
-    UILabel *tutorNameLabel = [[UILabel alloc]init];
-    self.tutorNameLabel = tutorNameLabel;
-    self.tutorNameLabel.font = [UIFont systemFontOfSize:14.0f];
-    [self.titleImageView addSubview:self.tutorNameLabel];
     
     UIView *tuteeCountView = [[UIView alloc]init];
     self.tuteeCountView = tuteeCountView;
@@ -77,19 +89,23 @@
     self.titleFooterView.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 65);
     
     offsetX += MARGIN * 2;
-    offsetY -= MARGIN * 5;
-    
-    self.profileImageView.frame = CGRectMake(offsetX, offsetY, 50, 50);
-    
-    offsetX += (self.profileImageView.frame.size.width + MARGIN * 2);
-    offsetY += (self.profileImageView.frame.size.height) / 2 + MARGIN;
+    offsetY += MARGIN * 2;
     
     self.titleLabel.frame = CGRectMake(offsetX, offsetY, self.frame.size.width - offsetX, 20);
     [self.titleLabel sizeToFit];
     
-    offsetY += MARGIN * 8;
+    offsetY += MARGIN * 6;
     
-    self.tutorNameLabel.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 10);
+    self.averageStar.frame = CGRectMake(offsetX, offsetY, 100, 30);
+    
+    offsetX = (MARGIN * 2) + self.averageStar.frame.size.width;
+    offsetY += MARGIN / 2;
+    self.reviewCountNumberLabel.frame = CGRectMake(offsetX, offsetY, 30, 25);
+    
+    offsetX = self.titleLabel.frame.origin.x;
+    offsetY = self.titleLabel.frame.origin.y + self.titleLabel.frame.size.height;
+    self.priceLabel.frame = CGRectMake(offsetX, offsetY, self.averageStar.frame.size.width, 10);
+    [self.priceLabel sizeToFit];
     
     offsetX = 0;
     offsetY = 0;
@@ -102,6 +118,8 @@
     offsetX += MARGIN * 10;
     
     self.tuteeCountNumberLabel.frame = CGRectMake(offsetX, offsetY, 100, 30);
+    
+    
     
 }
 

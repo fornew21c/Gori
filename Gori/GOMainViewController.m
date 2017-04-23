@@ -173,6 +173,10 @@
     cell.tutorNameLabel.text = [[temp objectForKey:@"tutor"] objectForKey:@"name"];
     cell.titleLabel.text = [temp objectForKey:@"title"];
     cell.tuteeCountNumberLabel.text = [[NSString stringWithFormat:@"%@", [temp objectForKey:@"registration_count"]] stringByAppendingString:@"명 참여"];
+    cell.averageStar.value = [[temp objectForKey:@"average_rate"] floatValue];
+    cell.reviewCountNumberLabel.text = [NSString stringWithFormat:@"(%@)", [temp objectForKey:@"review_count"]];
+    cell.priceLabel.text = [NSString stringWithFormat:@"￦%@", [temp objectForKey:@"price_per_hour"]];
+    
     return cell;
 }
 

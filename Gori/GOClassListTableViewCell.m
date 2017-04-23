@@ -13,6 +13,7 @@
 
 - (void)makingCustomCellObject{
     
+    
     UIView *mainView = [[UIView alloc]init];
     self.mainView = mainView;
     [self.contentView addSubview:self.mainView];
@@ -33,6 +34,30 @@
     self.profileImageView.layer.masksToBounds = YES;
     self.profileImageView.clipsToBounds = YES;
     [self.titleImageView addSubview:self.profileImageView];
+    
+    UILabel *priceLabel = [[UILabel alloc]init];
+    self.priceLabel = priceLabel;
+    self.priceLabel.textColor = [UIColor colorWithRed:232.0/255.0 green:45.0/255.0 blue:80.0/255.0 alpha:1];
+    self.priceLabel.font = [UIFont systemFontOfSize:14.0f];
+    [self.titleImageView addSubview:self.priceLabel];
+    
+    HCSStarRatingView *averageStar = [[HCSStarRatingView alloc]init];
+    self.averageStar = averageStar;
+    self.averageStar.maximumValue = 5;
+    self.averageStar.minimumValue = 0;
+    self.averageStar.value = 0;
+    self.averageStar.tintColor = [UIColor colorWithRed:232.0/255.0 green:45.0/255.0 blue:80.0/255.0 alpha:1];
+    self.averageStar.allowsHalfStars = YES;
+    self.averageStar.value = 2.5f;
+    self.averageStar.accurateHalfStars = YES;
+    self.averageStar.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:0];
+    [self.titleImageView addSubview:self.averageStar];
+    
+    UILabel *reviewCountNumberLabel = [[UILabel alloc]init];
+    self.reviewCountNumberLabel = reviewCountNumberLabel;
+    self.reviewCountNumberLabel.textColor = [UIColor colorWithRed:232.0/255.0 green:45.0/255.0 blue:80.0/255.0 alpha:1];
+    self.reviewCountNumberLabel.font = [UIFont systemFontOfSize:14.0f];
+    [self.titleImageView addSubview:self.reviewCountNumberLabel];
     
     UILabel *titleLabel = [[UILabel alloc]init];
     self.titleLabel = titleLabel;
@@ -91,6 +116,14 @@
     offsetY += MARGIN * 8;
     
     self.tutorNameLabel.frame = CGRectMake(offsetX, offsetY, self.frame.size.width, 10);
+    offsetY -= MARGIN * 2;
+    offsetX = self.titleFooterView.frame.size.width - self.averageStar.frame.size.width - (MARGIN * 7);
+    self.averageStar.frame = CGRectMake(offsetX, offsetY, 100, 30);
+    
+    offsetX = self.titleFooterView.frame.size.width -self.reviewCountNumberLabel.frame.size.width;
+    offsetY += MARGIN / 2;
+    
+    self.reviewCountNumberLabel.frame = CGRectMake(offsetX, offsetY, 30, 25);
     
     offsetX = 0;
     offsetY = 0;
@@ -99,10 +132,14 @@
     
     self.tuteeCountView.frame = CGRectMake(offsetX, offsetY, 125, 40);
     self.tuteeCountIconImageView.frame = CGRectMake(offsetX, offsetY, 30, 30);
-    
     offsetX += MARGIN * 10;
     
     self.tuteeCountNumberLabel.frame = CGRectMake(offsetX, offsetY, 100, 30);
+    
+    offsetX = MARGIN;
+    offsetY = self.tutorNameLabel.frame.origin.y - (MARGIN / 2);
+    self.priceLabel.frame = CGRectMake(offsetX, offsetY, self.profileImageView.frame.size.width + 10, 10);
+    [self.priceLabel sizeToFit];
     
 }
 
@@ -125,8 +162,6 @@
     
 }
 
-
-
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
@@ -134,8 +169,11 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
+
+
+
 
 @end

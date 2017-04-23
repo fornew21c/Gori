@@ -54,12 +54,15 @@
     NSDictionary *temp = [[GODataCenter sharedInstance].userWishListArray objectAtIndex:indexPath.row];
     NSURL *titleURL = [NSURL URLWithString:[temp objectForKey:@"cover_image"]];
     [cell.titleImageView sd_setImageWithURL:titleURL];
-//    [cell.profileImageView sd_setImageWithURL:profileURL];
     
     cell.tuteeCountIconImageView.image = [UIImage imageNamed:@"tuteeCountIcon.png"];
 //    cell.tutorNameLabel.text = [[temp objectForKey:@"tutor"] objectForKey:@"name"];
     cell.titleLabel.text = [temp objectForKey:@"title"];
     cell.tuteeCountNumberLabel.text = [[NSString stringWithFormat:@"%@", [temp objectForKey:@"registration_count"]] stringByAppendingString:@"명 참여"];
+    cell.averageStar.value = [[temp objectForKey:@"average_rate"] floatValue];
+    cell.reviewCountNumberLabel.text = [NSString stringWithFormat:@"(%@)", [temp objectForKey:@"review_count"]];
+    cell.priceLabel.text = [NSString stringWithFormat:@"￦%@", [temp objectForKey:@"price_per_hour"]];
+    
     return cell;
     //데이터 구조가 다름 윗 부분들 수정해야 함
 }
