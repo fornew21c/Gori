@@ -55,9 +55,6 @@
     NSDictionary *temp = [[GODataCenter sharedInstance].userRegistrationArray objectAtIndex:indexPath.row];
     NSURL *titleURL = [NSURL URLWithString:[[temp objectForKey:@"talent"] objectForKey:@"cover_image"]];
     NSURL *profileURL = [NSURL URLWithString:[[temp objectForKey:@"tutor_info"]  objectForKey:@"profile_image"]];
-    //    cell.titleImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:titleURL];
-    //    cell.profileImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL];
-    //SDWebImage로 교체
     [cell.titleImageView sd_setImageWithURL:titleURL];
     [cell.profileImageView sd_setImageWithURL:profileURL];
     
@@ -65,7 +62,6 @@
     cell.tutorNameLabel.text = [[temp objectForKey:@"tutor_info"] objectForKey:@"name"];
     cell.titleLabel.text = [[temp objectForKey:@"talent"] objectForKey:@"title"];
     cell.tuteeCountNumberLabel.text = [[NSString stringWithFormat:@"%@", [[temp objectForKey:@"talent"] objectForKey:@"registration_count"]] stringByAppendingString:@"명 참여"];
-    //0번째 데이터는 참여인원을 정확히 불러오는데 1번째 데이터는 참여인원 +1 을 불러온다... 왜지?
     
     return cell;
 }
@@ -82,20 +78,6 @@
     DetailViewController.pk = [[self.selectedData objectForKey:@"talent"] objectForKey:@"pk"];
     [self.navigationController pushViewController:DetailViewController animated:YES];
 }
-///데이터를 정확하게 뿌려주는 것은 가능, 그러나 "뒤로가기"가 안됨"
-
-
-//
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    // Get the new view controller using [segue destinationViewController].
-//    // Pass the selected object to the new view controller.
-//    if ([segue.identifier isEqualToString:@"detailSegue"]) {
-//        DetailViewController *nextVC = segue.destinationViewController;
-//        //nextVC.pk = [self.selectedData objectForKey:@"pk"];
-//        [nextVC setSeletedPk:[self.selectedData objectForKey:@"pk"]];
-//        NSLog(@"pk: %@", [self.selectedData objectForKey:@"pk"]);
-//    }
-//}
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
@@ -105,7 +87,6 @@
                 
                 [self.mainTableView reloadData];
                 [[GODataCenter2 sharedInstance] getMyLoginToken];
-                NSLog(@"ReceivingServerData and ReloadingData is Completed");
             });
         }else{
             

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef void(^CompletionBlock)(BOOL isSuccess, id respons);
 
 @interface GOQAViewController : UIViewController
 

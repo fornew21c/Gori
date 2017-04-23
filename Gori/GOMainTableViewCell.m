@@ -112,32 +112,12 @@
     
 }
 
-//- (void)settingCustomCellObjectColor{
-//    self.titleFooterView.backgroundColor = [UIColor whiteColor];
-//    self.tuteeCountView.backgroundColor= [UIColor whiteColor];
-//}
-
-/**************** Deprecated due to setting tableView Data issue ***********************/
-//- (void)settingText:(NSIndexPath *) indexPath{
-//
-//    NSDictionary *temp = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:indexPath.row];
-//    self.tutorNameLabel.text = [[temp objectForKey:@"tutor"] objectForKey:@"name"];
-//    self.titleLabel.text = [temp objectForKey:@"title"];
-//    self.tuteeCountNumberLabel.text = [temp objectForKey:@"registration_count"];
-//    NSLog(@"tutorNameLabel text : %@",self.tutorNameLabel.text);
-//    NSLog(@"titleLabel text : %@",self.titleLabel.text);
-//    NSLog(@"tuteeCountNumberLabel text : %@",self.tuteeCountNumberLabel.text);
-//
-//}
-
-
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self makingCustomCellObject];
         [self settingCustomCellObject];
-//        [self settingCustomCellObjectColor];
     }
     return self;
 }

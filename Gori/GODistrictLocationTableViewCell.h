@@ -18,7 +18,4 @@
 
 @property (nonatomic, weak) UILabel *titleDetailLabel;
 
-//- (void)settingText;
-
-
 @end

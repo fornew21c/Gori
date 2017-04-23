@@ -35,18 +35,15 @@
     NSInteger userPKInteger = [GODataCenter2 sharedInstance].selectedModel.postID;
     NSString *userQuestionString = self.QAInputTextField.text;
     
-    NSLog(@"PK TEST : %ld", userPKInteger);
-    
     [[GODataCenter sharedInstance]updatingUserQuestionText:userQuestionString talentPK:userPKInteger completion:^(BOOL isSuccess, id respons) {
         if (isSuccess) {
-            NSLog(@"유저 문의사항 등록 Success");
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.QAInputTextField resignFirstResponder];
+                [[NSNotificationCenter defaultCenter] postNotificationName:UIKeyboardWillHideNotification object:nil];
+            });
         }else{
-            NSLog(@"유저 문의사항 등록 Failed");
         }
     }];
-    [self.QAInputTextField resignFirstResponder];
-    [[NSNotificationCenter defaultCenter] postNotificationName:UIKeyboardWillHideNotification object:nil];
-    
 }
 
 

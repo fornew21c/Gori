@@ -66,8 +66,4 @@ typedef void(^CompletionBlock)(BOOL isSuccess, id respons);
 - (void)receiveUserWishListDataWithCompletionBlock:(CompletionBlock)completion;
 - (void)updatingUserQuestionText:(NSString *)question talentPK:(NSInteger)pk completion:(CompletionBlock)completion;
 
-+ (void)setUserTokenWithString:(NSString *)tokenString;
-+ (NSString *)getUserToken;
-+ (void)removeUserToken;
-
 @end

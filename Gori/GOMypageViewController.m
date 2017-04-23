@@ -113,12 +113,9 @@
                 NSURL *profileURL = [NSURL URLWithString:[temp objectForKey:@"profile_image"]];
                 [self.userInfoSettingButton setBackgroundImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]] forState:UIControlStateNormal];
                 [self.userInfoSettingButton.imageView sd_setImageWithURL:profileURL];
-                
-                NSLog(@"ReceivingServerData and ReloadingData is Completed");
-                
+
             });
         }else{
-            NSLog(@"ReceivingServerData and ReloadingData is Failed");
         }
     }];
     

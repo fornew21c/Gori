@@ -50,15 +50,9 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    
-    
     /**************** changing cell image with networkDataArray ********************************/
     NSDictionary *temp = [[GODataCenter sharedInstance].userWishListArray objectAtIndex:indexPath.row];
     NSURL *titleURL = [NSURL URLWithString:[temp objectForKey:@"cover_image"]];
-//    NSURL *profileURL = [NSURL URLWithString:[[temp objectForKey:@"tutor"] objectForKey:@"profile_image"]];
-    //    cell.titleImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:titleURL];
-    //    cell.profileImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL];
-    //SDWebImage로 교체
     [cell.titleImageView sd_setImageWithURL:titleURL];
 //    [cell.profileImageView sd_setImageWithURL:profileURL];
     
@@ -82,7 +76,6 @@
     DetailViewController.pk = [self.selectedData objectForKey:@"pk"];
     [self.navigationController pushViewController:DetailViewController animated:YES];
 }
-///데이터를 정확하게 뿌려주는 것은 가능, 그러나 "뒤로가기"가 안됨"
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
@@ -92,7 +85,6 @@
                 
                 [self.mainTableView reloadData];
                 [[GODataCenter2 sharedInstance] getMyLoginToken];
-                NSLog(@"ReceivingServerData and ReloadingData is Completed");
             });
         }else{
             

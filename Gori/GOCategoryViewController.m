@@ -88,19 +88,8 @@
             break;
         default:
             break;
-    }
-    
-    
-    
-    NSLog(@"didSelectRowAtIndexPath");
-    //디스미스가 느려지는 이유를 찾지 못함...메인큐로 넣으면 빨라지는 것으로 보아, 모르는 곳에서 스레드가 돌 고 있으나 찾기가 어려움...
-    //리팩토링을 해야 한다고 함
-    //또한 메인 뷰컨트롤러의 테이블뷰 델리게이트에서 if,else를 쓰는 것은 의미가 없음...
-    //셀 설력센 스타일을 none으로 설정해 둔 코드를 주석처리하니 디스미스가 다소 빨라짐...
+    }    
     [self dismissViewControllerAnimated:YES completion:nil];
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//       [self dismissViewControllerAnimated:YES completion:nil];
-//    });
 }
 
 /**************** button Action ********************************/

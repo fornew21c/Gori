@@ -19,7 +19,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface GOMainViewController ()
-<UITableViewDelegate, UITableViewDataSource/* UISearchResultsUpdating*/>
+<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic) IBOutlet UIButton *locationButton;
 @property (nonatomic) IBOutlet UIButton *categoryButton;
@@ -106,7 +106,6 @@
     [logoView addSubview:logoImageView2];
     
     [[GODataCenter2 sharedInstance]getMyLoginToken];
-    NSLog(@"뷰디드로드 겟마이토큰 : %@", [[GODataCenter2 sharedInstance]getMyLoginToken]);
 }
 
 
@@ -136,14 +135,10 @@
     [[GODataCenter sharedInstance] receiveTitleFilteredDataWithCompletionBlock:titleKey completion:^(BOOL isSuccess, id respons) {
         if (isSuccess) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                NSLog(@"receiveTitleFilteredDataWithCompletionBlock sucess");
                 [self.mainTableView reloadData];
                 [[GODataCenter2 sharedInstance] getMyLoginToken];
-                NSLog(@"메인 뷰컨트롤러에서 토큰 여부 체크 : %@", [[GODataCenter2 sharedInstance] getMyLoginToken]);
-                NSLog(@"ReceivingServerData and ReloadingData is Completed");
             });
         }else{
-            NSLog(@"ReceivingServerData and ReloadingData is Failed");
         }
     }];
 }
@@ -170,15 +165,10 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    
-    
     /**************** changing cell image with networkDataArray ********************************/
     NSDictionary *temp = [[GODataCenter sharedInstance].networkDataArray objectAtIndex:indexPath.row];
     NSURL *titleURL = [NSURL URLWithString:[temp objectForKey:@"cover_image"]];
     NSURL *profileURL = [NSURL URLWithString:[[temp objectForKey:@"tutor"] objectForKey:@"profile_image"]];
-//    cell.titleImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:titleURL];
-//    cell.profileImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL];
-    //SDWebImage로 교체
     [cell.titleImageView sd_setImageWithURL:titleURL];
     [cell.profileImageView sd_setImageWithURL:profileURL];
 
@@ -223,25 +213,18 @@
 }
 
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    NSLog(@"viewDidAppear");
-    
+- (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
     if ([GODataCenter sharedInstance].filterDistrictLocationYN == YES) {
         
         [[GODataCenter sharedInstance] receiveDistrictLocationFilteredDataWithCompletionBlock:^(BOOL isSuccess) {
             if (isSuccess) {
-                 NSLog(@"receiveDistrictLocationFilteredDataWithCompletionBlock sucess");
                 dispatch_async(dispatch_get_main_queue(), ^{
-                   
                     [self.mainTableView reloadData];
                     [[GODataCenter2 sharedInstance] getMyLoginToken];
-                    NSLog(@"ReceivingServerData and ReloadingData is Completed");
                     });
             }else{
-                NSLog(@"ReceivingServerData and ReloadingData is Failed");
             }
         }];
     }else if ([GODataCenter sharedInstance].filterCategoryYN == YES){
@@ -250,10 +233,8 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.mainTableView reloadData];
                     [[GODataCenter2 sharedInstance] getMyLoginToken];
-                    NSLog(@"ReceivingServerData and ReloadingData is Completed");
                 });
             }else{
-                NSLog(@"ReceivingServerData and ReloadingData is Failed");
             }
         }];
     }else if ([GODataCenter sharedInstance].filterSchoolLocationYN == YES){
@@ -262,10 +243,8 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.mainTableView reloadData];
                     [[GODataCenter2 sharedInstance] getMyLoginToken];
-                    NSLog(@"ReceivingServerData and ReloadingData is Completed");
                 });
             }else{
-                NSLog(@"ReceivingServerData and ReloadingData is Failed");
             }
         }];
     }else{
@@ -274,11 +253,8 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.mainTableView reloadData];
                     [[GODataCenter2 sharedInstance] getMyLoginToken];
-                    NSLog(@"메인 뷰컨트롤러에서 토큰 여부 체크 : %@", [[GODataCenter2 sharedInstance] getMyLoginToken]);
-                    NSLog(@"ReceivingServerData and ReloadingData is Completed");
                 });
             }else{
-                NSLog(@"ReceivingServerData and ReloadingData is Failed");
             }
         }];
     }
@@ -288,7 +264,6 @@
 
 -(IBAction)unwindSegue:(UIStoryboardSegue *) sender {
     
-    NSLog(@"등록 완료");
 }
 
 

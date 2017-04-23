@@ -45,23 +45,12 @@
     
 }
 
-//- (void)settingCustomCellObjectColor{
-//    self.mainView.backgroundColor = [UIColor blackColor];
-//}
-
-
-//- (void)settingText{
-//    self.titleLabel.text = [[GODataCenter sharedInstance].schoolLocationArray objectAtIndex:[GODataCenter sharedInstance].currentRow];
-//}
-
-
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self makingCustomCellObject];
         [self settingCustomCellObject];
-//        [self settingCustomCellObjectColor];
     }
     return self;
 }
