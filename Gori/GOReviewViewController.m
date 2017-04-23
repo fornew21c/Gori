@@ -33,7 +33,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:NO];
-    
+    NSLog(@"viewWillAppear");
     NSUInteger pk = [GODataCenter2 sharedInstance].selectedModel.postID;
     [[GODataCenter2 sharedInstance] reviewList:pk completion:^(BOOL isSuccess, id respons) {
         if(isSuccess)
@@ -50,21 +50,10 @@
     }];
     // Do any additional setup after loading the view.
     
-    NSMutableDictionary *averageRate = [[NSMutableDictionary alloc] init];
-    averageRate = [GODataCenter2 sharedInstance].selectedModel.averageRate;
-    self.curriculumReview.value = [[averageRate objectForKey:@"curriculum"] floatValue];
-    self.readinessReview.value = [[averageRate objectForKey:@"readiness"] floatValue];
-    self.timelinessReview.value = [[averageRate objectForKey:@"timeliness"] floatValue];
-    self.deliveryReview.value = [[averageRate objectForKey:@"timeliness"] floatValue];
-    self.friendlinessReview.value = [[averageRate objectForKey:@"friendliness"] floatValue];
+
     //self.reviews = [GODataCenter2 sharedInstance].selectedModel.reviews;
 
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,70,70)];
-    titleLabel.font = [UIFont systemFontOfSize:17.0f];
-    NSString *tmp = @"리뷰 ";
-    //self.reviews.count
-    titleLabel.text = [[tmp stringByAppendingString:[NSString stringWithFormat:@"%ld", self.reviews.reviewsContents.count]] stringByAppendingString:@"개"];
-    self.navigationItem.titleView = titleLabel;
+
 
 }
 
@@ -77,6 +66,20 @@
     NSLog(@" 리뷰카운트 at makedata: %lu", self.reviews.reviewsContents.count);
     self.reviewsLists = self.reviews.reviewsContents;
     NSLog(@"makeData: %lu", self.reviewsLists.count);
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,70,70)];
+    titleLabel.font = [UIFont systemFontOfSize:17.0f];
+    NSString *tmp = @"리뷰 ";
+    //self.reviews.count
+    titleLabel.text = [[tmp stringByAppendingString:[NSString stringWithFormat:@"%ld", self.reviewsLists.count]] stringByAppendingString:@"개"];
+    self.navigationItem.titleView = titleLabel;
+    
+    NSMutableDictionary *averageRate = [[NSMutableDictionary alloc] init];
+    averageRate = [GODataCenter2 sharedInstance].selectedModel.averageRate;
+    self.curriculumReview.value = [[averageRate objectForKey:@"curriculum"] floatValue];
+    self.readinessReview.value = [[averageRate objectForKey:@"readiness"] floatValue];
+    self.timelinessReview.value = [[averageRate objectForKey:@"timeliness"] floatValue];
+    self.deliveryReview.value = [[averageRate objectForKey:@"timeliness"] floatValue];
+    self.friendlinessReview.value = [[averageRate objectForKey:@"friendliness"] floatValue];
 }
 /*
 #pragma mark - Navigation

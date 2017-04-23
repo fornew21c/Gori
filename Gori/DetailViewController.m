@@ -97,7 +97,13 @@
     self.reviewerImage.layer.masksToBounds = YES;
     self.reviewerImage.layer.cornerRadius =  roundf(self.reviewerImage.frame.size.width/2.0);;
     
-
+    /**************** navigationBar Logo Setting ********************************/
+    UIView *logoView = [[UIView alloc] initWithFrame:CGRectMake(0,0,70,70)];
+    self.navigationItem.titleView = logoView;
+    UIImageView *logoImageView2 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 70, 70)];
+    logoImageView2.image = [UIImage imageNamed:@"logo.png"];
+    [logoImageView2 setContentMode:UIViewContentModeScaleAspectFit];
+    [logoView addSubview:logoImageView2];
     
     //좋아요 호출
     [[GODataCenter sharedInstance] receiveUserWishListDataWithCompletionBlock:^(BOOL isSuccess, id respons) {
@@ -294,11 +300,13 @@
     self.totalReview2.value = [[self.selectedModel.averageRate objectForKey:@"total"] floatValue];
     NSString *tmp2 = @"(";
     self.ratingLabel2.text = [[tmp2 stringByAppendingString:[[self.selectedModel.averageRate objectForKey:@"total"] stringValue]] stringByAppendingString:@")"];
-    NSMutableDictionary *reviewerUser = [[self.selectedModel.reviews objectAtIndex:0] objectForKey:@"user"];
-    [self.reviewerImage sd_setImageWithURL:[reviewerUser objectForKey:@"profile_image" ] ];
-    self.reviewerName.text = [reviewerUser objectForKey:@"name"];
-    self.reviewComment.text = [[self.selectedModel.reviews objectAtIndex:0] objectForKey:@"comment"];
-    self.reviewCreateDate.text =  [[[self.selectedModel.reviews objectAtIndex:0] objectForKey:@"created_date"] substringToIndex:10];
+    if(self.selectedModel.reviews.count != 0) {
+        NSMutableDictionary *reviewerUser = [[self.selectedModel.reviews objectAtIndex:0] objectForKey:@"user"];
+        [self.reviewerImage sd_setImageWithURL:[reviewerUser objectForKey:@"profile_image" ] ];
+        self.reviewerName.text = [reviewerUser objectForKey:@"name"];
+        self.reviewComment.text = [[self.selectedModel.reviews objectAtIndex:0] objectForKey:@"comment"];
+        self.reviewCreateDate.text =  [[[self.selectedModel.reviews objectAtIndex:0] objectForKey:@"created_date"] substringToIndex:10];
+    }
     
 }
 
@@ -429,6 +437,7 @@
     NSLog(@"time: %@", [[[self.selectedModel.regionsResult objectAtIndex:0] objectAtIndex:0] objectForKey:@"time" ]);
     NSMutableArray *times = [[[self.selectedModel.regionsResult objectAtIndex:0] objectAtIndex:0] objectForKey:@"time" ];
     NSString *timeStr = @"";
+    NSLog(@"times.count : %lu", times.count);
     for(NSUInteger i = 0; i < times.count; i++) {
         timeStr = [[timeStr stringByAppendingString:[times objectAtIndex:i]] stringByAppendingString:@" "];
     }

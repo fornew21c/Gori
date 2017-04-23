@@ -139,7 +139,18 @@
               
           }else
           {
-       
+              NSLog(@"%@", [responseData objectForKey:@"detail"]);
+              dispatch_async(dispatch_get_main_queue(), ^{
+                  UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"리뷰등록 실패" message:[responseData objectForKey:@"detail"]preferredStyle:UIAlertControllerStyleAlert];
+                  
+                  UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
+                      [self.navigationController popViewControllerAnimated:YES];
+                  }];
+                  
+                  
+                  [alertController addAction:okAction];
+                  [self presentViewController:alertController animated:YES completion:nil];
+              });
               
           }
       }];
