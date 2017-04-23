@@ -34,16 +34,8 @@
 @property (nonatomic, strong) NSArray *searchDataTitleNameResult;
 @property (nonatomic, strong) NSMutableArray *titleNameMutableArray;
 @property NSDictionary *selectedData;
-
-@property (nonatomic, strong) NSMutableArray *pkMutableArray;
-
-@property (nonatomic, strong) NSDictionary *mainDataDictionary;
-@property (nonatomic, strong) NSMutableArray *tableViewTitleImgURLArray;
-@property (nonatomic, strong) NSMutableArray *tableViewTutorImgURLArray;
-@property (nonatomic, strong) NSMutableArray *tableViewTitleImgArray;
-@property (nonatomic, strong) NSMutableArray *tableViewTutorImgArray;
-
 @property (nonatomic) UITextField *searchTextField;
+
 
 @end
 
@@ -139,6 +131,11 @@
                 [[GODataCenter2 sharedInstance] getMyLoginToken];
             });
         }else{
+            UIAlertController *networkAlert = [UIAlertController alertControllerWithTitle:@"OOPS!" message:@"네트워크 연결 상태를 확인하세요" preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *confirm= [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+            [networkAlert addAction:confirm];
+            [self presentViewController:networkAlert animated:nil completion:nil];
         }
     }];
 }
@@ -225,6 +222,11 @@
                     [[GODataCenter2 sharedInstance] getMyLoginToken];
                     });
             }else{
+                UIAlertController *networkAlert = [UIAlertController alertControllerWithTitle:@"OOPS!" message:@"네트워크 연결 상태를 확인하세요" preferredStyle:UIAlertControllerStyleAlert];
+                
+                UIAlertAction *confirm= [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                [networkAlert addAction:confirm];
+                [self presentViewController:networkAlert animated:nil completion:nil];
             }
         }];
     }else if ([GODataCenter sharedInstance].filterCategoryYN == YES){
@@ -235,6 +237,11 @@
                     [[GODataCenter2 sharedInstance] getMyLoginToken];
                 });
             }else{
+                UIAlertController *networkAlert = [UIAlertController alertControllerWithTitle:@"OOPS!" message:@"네트워크 연결 상태를 확인하세요" preferredStyle:UIAlertControllerStyleAlert];
+                
+                UIAlertAction *confirm= [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                [networkAlert addAction:confirm];
+                [self presentViewController:networkAlert animated:nil completion:nil];
             }
         }];
     }else if ([GODataCenter sharedInstance].filterSchoolLocationYN == YES){
@@ -245,6 +252,11 @@
                     [[GODataCenter2 sharedInstance] getMyLoginToken];
                 });
             }else{
+                UIAlertController *networkAlert = [UIAlertController alertControllerWithTitle:@"OOPS!" message:@"네트워크 연결 상태를 확인하세요" preferredStyle:UIAlertControllerStyleAlert];
+                
+                UIAlertAction *confirm= [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                [networkAlert addAction:confirm];
+                [self presentViewController:networkAlert animated:nil completion:nil];
             }
         }];
     }else{
@@ -255,6 +267,11 @@
                     [[GODataCenter2 sharedInstance] getMyLoginToken];
                 });
             }else{
+                UIAlertController *networkAlert = [UIAlertController alertControllerWithTitle:@"OOPS!" message:@"네트워크 연결 상태를 확인하세요" preferredStyle:UIAlertControllerStyleAlert];
+                
+                UIAlertAction *confirm= [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                [networkAlert addAction:confirm];
+                [self presentViewController:networkAlert animated:nil completion:nil];
             }
         }];
     }

@@ -74,8 +74,12 @@
 
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     NSData *data = UIImageJPEGRepresentation(image, 0.2);
-
     if (data.length >1000000) {
+        UIAlertController *pictureSizeAlert = [UIAlertController alertControllerWithTitle:@"OOPS!" message:@"사진 용량이 너무 큽니다" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *confirm= [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+        [pictureSizeAlert addAction:confirm];
+        [picker presentViewController:pictureSizeAlert animated:nil completion:nil];
     }else{
         [[GODataCenter sharedInstance] updatingUserDetailImage:data completion:^(BOOL isSuccess, id respons) {
             if (isSuccess) {
@@ -85,7 +89,11 @@
                 });
                 
             }else{
+                UIAlertController *networkAlert = [UIAlertController alertControllerWithTitle:@"OOPS!" message:@"네트워크 연결 상태를 확인하세요" preferredStyle:UIAlertControllerStyleAlert];
                 
+                UIAlertAction *confirm= [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                [networkAlert addAction:confirm];
+                [picker presentViewController:networkAlert animated:nil completion:nil];
             }
             
             
@@ -117,7 +125,11 @@
                 [self.updateUserPictureDataButton setBackgroundImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]] forState:UIControlStateNormal];
             });
         }else{
+            UIAlertController *networkAlert = [UIAlertController alertControllerWithTitle:@"OOPS!" message:@"네트워크 연결 상태를 확인하세요" preferredStyle:UIAlertControllerStyleAlert];
             
+            UIAlertAction *confirm= [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+            [networkAlert addAction:confirm];
+            [self presentViewController:networkAlert animated:nil completion:nil];
         }
     }];
     

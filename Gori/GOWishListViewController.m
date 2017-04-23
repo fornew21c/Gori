@@ -87,7 +87,11 @@
                 [[GODataCenter2 sharedInstance] getMyLoginToken];
             });
         }else{
+            UIAlertController *networkAlert = [UIAlertController alertControllerWithTitle:@"OOPS!" message:@"네트워크 연결 상태를 확인하세요" preferredStyle:UIAlertControllerStyleAlert];
             
+            UIAlertAction *confirm= [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+            [networkAlert addAction:confirm];
+            [self presentViewController:networkAlert animated:nil completion:nil];
         }
     }];
     
