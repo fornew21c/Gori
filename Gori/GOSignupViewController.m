@@ -12,7 +12,9 @@
 #define mainColor [UIColor colorWithRed:232/255.0f green:45/255.0f blue:80/255.0f alpha:1.0f]
 
 @interface GOSignupViewController ()
+<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (strong, nonatomic) IBOutlet UIView *contentsView;
 
 @end
 
@@ -21,6 +23,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.nameTF.tag = 1;
+    self.nameTF.delegate = self;
+    
+    self.emailTF.tag = 2;
+    self.emailTF.delegate = self;
+    
+    self.pwTF.tag = 3;
+    self.pwTF.delegate = self;
+    
+    self.rePwTF.tag = 4;
+    self.rePwTF.delegate = self;
+    
+    
     self.pwTF.secureTextEntry = YES;
     self.rePwTF.secureTextEntry = YES;
     
@@ -73,6 +88,30 @@
     }];
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self.contentsView setFrame:CGRectMake(0, -50, self.contentsView.frame.size.width, self.contentsView.frame.size.height)];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if(textField.tag == 1) {
+        [self.nameTF resignFirstResponder];
+        [self.emailTF becomeFirstResponder];
+    }
+    else if(textField.tag == 2) {
+        [self.emailTF resignFirstResponder];
+        [self.pwTF becomeFirstResponder];
+    }
+    else if(textField.tag == 3) {
+        [self.pwTF resignFirstResponder];
+        [self.rePwTF becomeFirstResponder];
+    }
+    else if(textField.tag == 4) {
+        [self.rePwTF resignFirstResponder];
+        [self.contentsView setFrame:CGRectMake(0, 0, self.contentsView.frame.size.width, self.contentsView.frame.size.height)];
+    }
+    return YES;
+}
 
 /*
 #pragma mark - Navigation

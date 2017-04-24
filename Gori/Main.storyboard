@@ -1780,6 +1780,7 @@
                     <navigationItem key="navigationItem" id="WYc-Td-QcA"/>
                     <connections>
                         <outlet property="activityIndicator" destination="Nlq-ai-QOn" id="6Qo-bF-c0I"/>
+                        <outlet property="contentsView" destination="YFH-NZ-rgg" id="lKg-pz-Xet"/>
                         <outlet property="emailTF" destination="gG9-NG-NdW" id="DQo-DT-I35"/>
                         <outlet property="goLoginView" destination="wgi-iB-F8v" id="t8A-lG-qof"/>
                         <outlet property="nameTF" destination="UGI-jf-maU" id="XOV-9w-SdR"/>
@@ -1982,9 +1983,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6ed-Na-bTL"/>
-        <segue reference="ZTz-Dv-kBt"/>
+        <segue reference="F7w-CB-ivT"/>
+        <segue reference="f88-U3-R7t"/>
         <segue reference="7vF-rB-vfR"/>
-        <segue reference="Fjc-8S-uYf"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.90980392160000001" green="0.1764705882" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>
