@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *updateUserPictureDataButton;
 @property (nonatomic) IBOutlet UIImageView *imageView1;
 @property (nonatomic) UIImagePickerController *cameraController;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 
 @end
@@ -50,9 +51,9 @@
     self.updateUserPictureDataButton.layer.cornerRadius = 50;
     self.updateUserPictureDataButton.layer.masksToBounds = YES;
     self.updateUserPictureDataButton.clipsToBounds = YES;
-    
 }
 - (IBAction)updateUserTextDataAction:(UIButton *)sender {
+    [self.activityIndicator startAnimating];
     [[GODataCenter2 sharedInstance]getMyLoginToken];
     NSString *nameString = [NSString stringWithFormat:@"%@", self.nameTextField.text];
     NSString *nickNameString = [NSString stringWithFormat:@"%@", self.nickNameTextField.text];
@@ -61,6 +62,7 @@
     [[GODataCenter sharedInstance]updatingUserDetailText:nameString nickName:nickNameString cellPhone:cellPhoneString completion:^(BOOL isSuccess, id respons) {
         if (isSuccess) {
             dispatch_sync(dispatch_get_main_queue(), ^{
+                [self.activityIndicator stopAnimating];
                 [self dismissViewControllerAnimated:YES completion:nil];
             });
         }else{
@@ -94,6 +96,7 @@
                 UIAlertAction *confirm= [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
                 [networkAlert addAction:confirm];
                 [picker presentViewController:networkAlert animated:nil completion:nil];
+                
             }
             
             
@@ -114,15 +117,15 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
+    [self.activityIndicator startAnimating];
     
     [[GODataCenter sharedInstance]receiveServerUserDetailDataWithCompletionBlock:^(BOOL isSuccess) {
         if (isSuccess) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 NSDictionary *temp = [GODataCenter sharedInstance].networkUserDetailDictionary;
                 NSURL *profileURL = [NSURL URLWithString:[temp objectForKey:@"profile_image"]];
-                
-                
                 [self.updateUserPictureDataButton setBackgroundImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]] forState:UIControlStateNormal];
+                [self.activityIndicator stopAnimating];
             });
         }else{
             UIAlertController *networkAlert = [UIAlertController alertControllerWithTitle:@"OOPS!" message:@"네트워크 연결 상태를 확인하세요" preferredStyle:UIAlertControllerStyleAlert];
@@ -130,6 +133,7 @@
             UIAlertAction *confirm= [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
             [networkAlert addAction:confirm];
             [self presentViewController:networkAlert animated:nil completion:nil];
+            [self.activityIndicator stopAnimating];
         }
     }];
     

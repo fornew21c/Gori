@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *profileNickNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *profileEmailLabel;
 @property (nonatomic, strong) NSMutableArray *pkMutableArray;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -46,6 +47,8 @@
 }
 
 - (IBAction)signoutAction:(UIButton *)sender {
+    [self.activityIndicator startAnimating];
+    
     [[GODataCenter2 sharedInstance] logoutCompletion:^(BOOL isSuccess, id respons) {
         if(isSuccess) {
             NSLog(@"로그아웃에 성공했습니다.");
@@ -57,6 +60,7 @@
             UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
                 //[self performSegueWithIdentifier:@"mainVCSegue" sender:nil];
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.activityIndicator stopAnimating];
                    [self performSegueWithIdentifier:@"mainSegue" sender:nil];
                 });
 
@@ -103,6 +107,8 @@
     [super viewWillAppear:animated];
     
     
+    [self.activityIndicator startAnimating];
+    
     [[GODataCenter sharedInstance]receiveServerUserDetailDataWithCompletionBlock:^(BOOL isSuccess) {
         if (isSuccess) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -113,6 +119,7 @@
                 NSURL *profileURL = [NSURL URLWithString:[temp objectForKey:@"profile_image"]];
                 [self.userInfoSettingButton setBackgroundImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]] forState:UIControlStateNormal];
                 [self.userInfoSettingButton.imageView sd_setImageWithURL:profileURL];
+                [self.activityIndicator stopAnimating];
 
             });
         }else{
@@ -121,8 +128,14 @@
             UIAlertAction *confirm= [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
             [networkAlert addAction:confirm];
             [self presentViewController:networkAlert animated:nil completion:nil];
+            [self.activityIndicator stopAnimating];
         }
+        
+        
+        
     }];
+    
+    
     
 }
 
