@@ -9,6 +9,7 @@
 #import "GOSignupViewController.h"
 #import "GODataCenter2.h"
 #import "GOMainViewController.h"
+#define mainColor [UIColor colorWithRed:232/255.0f green:45/255.0f blue:80/255.0f alpha:1.0f]
 
 @interface GOSignupViewController ()
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
@@ -22,6 +23,13 @@
     // Do any additional setup after loading the view.
     self.pwTF.secureTextEntry = YES;
     self.rePwTF.secureTextEntry = YES;
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,70,70)];
+    titleLabel.font = [UIFont systemFontOfSize:17.0f];
+    titleLabel.textColor = mainColor;
+    titleLabel.text = @"회원가입";
+    self.navigationItem.titleView = titleLabel;
+    
     [self.activityIndicator stopAnimating];
 }
 

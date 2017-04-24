@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "GODataCenter2.h"
+#define mainColor [UIColor colorWithRed:232/255.0f green:45/255.0f blue:80/255.0f alpha:1.0f]
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
@@ -43,6 +44,12 @@
 //            //loginButton.hidden = TRUE;
 //        }
     [self.activityIndicator stopAnimating];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,70,70)];
+    titleLabel.font = [UIFont systemFontOfSize:17.0f];
+    titleLabel.textColor = mainColor;
+    titleLabel.text = @"로그인";
+    self.navigationItem.titleView = titleLabel;
+    
     self.emailTF.delegate = self;
     self.emailTF.tag = 1;
     

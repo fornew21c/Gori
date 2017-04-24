@@ -217,8 +217,8 @@
     }
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self.indicator startAnimating];
     
     if ([GODataCenter sharedInstance].filterDistrictLocationYN == YES) {

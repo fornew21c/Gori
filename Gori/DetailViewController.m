@@ -308,13 +308,9 @@
     
     //location plist
     NSArray *locationLists = [[GODataCenter2 sharedInstance] getSample];
-    //  NSNumber *latitude = [[locationLists objectAtIndex:0] objectForKey:@"latitude"];
-    // NSString *longitude = [[locationLists objectAtIndex:0] objectForKey:@"longitude"];
     NSNumber *latitude;
     NSNumber *longitude;
     
-//    CGFloat LATITUDE2 = 37.534993;
-//    CGFloat LONGITUDE2 = 126.993521;
     CLLocationCoordinate2D coordinate;
     MKCoordinateSpan span = MKCoordinateSpanMake(0.1, 0.1);
     MKCoordinateRegion region;
@@ -334,7 +330,7 @@
         region = MKCoordinateRegionMake(coordinate, span);
         [self.mapKit setRegion:region];
         
-        annotation = [[Annotation alloc]initWithTitle:@"myPosition" AndCoordinate:coordinate];
+        annotation = [[Annotation alloc]initWithTitle:@"수업 위치" AndCoordinate:coordinate];
         [self.mapKit addAnnotation:annotation];
     }
     ///////////////////////////* 지도 만들어 보고 특정 위치 바로 표시해보기 예제 *////////////
