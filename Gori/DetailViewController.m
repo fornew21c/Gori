@@ -80,24 +80,23 @@
 
 @implementation DetailViewController
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:NO];
+- (void)viewDidLoad {
+    [super viewDidLoad];
     
-    [self.indicator startAnimating];
     // Do any additional setup after loading the view.
     [GODataCenter2 sharedInstance].seletedRegionIndex = 0;
     [GODataCenter2 sharedInstance].seletedDayIndex = 0;
     
-
-//    self.imageScrollView.pagingEnabled = YES;
-//    self.imageScrollView.delegate = self;
-   
+    
+    //    self.imageScrollView.pagingEnabled = YES;
+    //    self.imageScrollView.delegate = self;
+    
     self.joinCntLabel.layer.masksToBounds = YES;
     self.joinCntLabel.layer.cornerRadius = 15;
     
     self.tutorImage.layer.masksToBounds = YES;
     self.tutorImage.layer.cornerRadius =  roundf(self.tutorImage.frame.size.width/2.0);;
-  
+    
     self.tutorImage2.layer.masksToBounds = YES;
     self.tutorImage2.layer.cornerRadius =  roundf(self.tutorImage2.frame.size.width/2.0);;
     
@@ -111,6 +110,13 @@
     logoImageView2.image = [UIImage imageNamed:@"logo.png"];
     [logoImageView2 setContentMode:UIViewContentModeScaleAspectFit];
     [logoView addSubview:logoImageView2];
+    
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:NO];
+    
+    [self.indicator startAnimating];
+
     
     //좋아요 호출
     [[GODataCenter sharedInstance] receiveUserWishListDataWithCompletionBlock:^(BOOL isSuccess, id respons) {
@@ -129,14 +135,14 @@
                 if([[[self.wishLists objectAtIndex:i] objectForKey:@"pk"] integerValue] == [self.pk integerValue]) {
                     button1.selected = YES;
                     wishYN = YES;
-                    [button1 setBackgroundImage:[UIImage imageNamed: @"WishHeartselected.png"] forState:UIControlStateNormal];
+                    [button1 setBackgroundImage:[UIImage imageNamed: @"wishHeartSelected.png"] forState:UIControlStateNormal];
                     break;
                     
                 }
             }
             if(wishYN == NO) {
                 button1.selected = NO;
-                [button1 setBackgroundImage:[UIImage imageNamed: @"WishHeartDeselected.png"] forState:UIControlStateNormal];
+                [button1 setBackgroundImage:[UIImage imageNamed: @"wishHeartDeselected.png"] forState:UIControlStateNormal];
             }
             self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:button1];
         }else {

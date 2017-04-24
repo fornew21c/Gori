@@ -870,7 +870,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gyt-Q4-oME">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                                                        <rect key="frame" x="0.0" y="20" width="375" height="180"/>
                                                                     </imageView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1984,7 +1984,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="6ed-Na-bTL"/>
         <segue reference="F7w-CB-ivT"/>
-        <segue reference="f88-U3-R7t"/>
+        <segue reference="Fjc-8S-uYf"/>
         <segue reference="7vF-rB-vfR"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.90980392160000001" green="0.1764705882" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
