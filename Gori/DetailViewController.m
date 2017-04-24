@@ -143,6 +143,7 @@
             if(wishYN == NO) {
                 button1.selected = NO;
                 [button1 setBackgroundImage:[UIImage imageNamed: @"wishHeartDeselected.png"] forState:UIControlStateNormal];
+                
             }
             self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:button1];
         }else {
@@ -201,11 +202,11 @@
     else {
         NSLog(@"likeButtonTouched sender.selected: %ld", (NSInteger)sender.selected);
         if(!sender.selected) {
-            [sender setBackgroundImage:[UIImage imageNamed: @"WishHeartselected.png"] forState:UIControlStateNormal];
+            [sender setBackgroundImage:[UIImage imageNamed: @"wishHeartSelected.png"] forState:UIControlStateNormal];
             [sender setSelected:YES];
         }
         else {
-            [sender setBackgroundImage:[UIImage imageNamed: @"WishHeartDeselected.png"] forState:UIControlStateNormal];
+            [sender setBackgroundImage:[UIImage imageNamed: @"wishHeartDeselected.png"] forState:UIControlStateNormal];
             [sender setSelected:NO];
         }
         [[GODataCenter2 sharedInstance] wishToggle:self.pk completion:^(BOOL isSuccess, id responseData) {
