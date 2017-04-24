@@ -14,6 +14,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#define mainColor [UIColor colorWithRed:232/255.0f green:45/255.0f blue:80/255.0f alpha:1.0f]
 
 @interface GOMypageViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *classListButton;
@@ -39,10 +40,15 @@
     self.classListView.alpha = 1.0f;
     self.wishListView.alpha = 0.0f;
     self.questionView.alpha = 0.0f;
-    
     self.userInfoSettingButton.layer.cornerRadius = 40;
     self.userInfoSettingButton.layer.masksToBounds = YES;
     self.userInfoSettingButton.clipsToBounds = YES;
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,70,70)];
+    titleLabel.font = [UIFont systemFontOfSize:17.0f];
+    titleLabel.textColor = mainColor;
+    titleLabel.text = @"마이페이지";
+    self.navigationItem.titleView = titleLabel;
     
 }
 
