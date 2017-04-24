@@ -108,6 +108,13 @@
                                     <action selector="goWishListView:" destination="2DW-D0-AZx" eventType="touchUpInside" id="0LG-7D-TVV"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="6nY-op-zYK">
+                                <rect key="frame" x="148" y="294" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="BbX-Mc-GSD"/>
+                                    <constraint firstAttribute="width" constant="80" id="WVd-DW-eth"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -130,6 +137,7 @@
                             <constraint firstItem="U7J-3D-Vae" firstAttribute="top" secondItem="evv-u5-JAa" secondAttribute="bottom" constant="5" id="MS1-rd-gm3"/>
                             <constraint firstItem="ADK-gq-Spf" firstAttribute="top" secondItem="5Ax-b0-eb7" secondAttribute="bottom" constant="-38" id="Zac-ZC-mGR"/>
                             <constraint firstItem="IWz-p9-7ST" firstAttribute="height" secondItem="BFL-lO-Nz1" secondAttribute="height" id="d2W-pM-qEi"/>
+                            <constraint firstItem="6nY-op-zYK" firstAttribute="centerY" secondItem="Szd-Dr-lgu" secondAttribute="centerY" id="dda-Wk-lAr"/>
                             <constraint firstItem="i3R-4O-Z94" firstAttribute="leading" secondItem="Szd-Dr-lgu" secondAttribute="leading" id="fRd-iZ-yAl"/>
                             <constraint firstItem="ADK-gq-Spf" firstAttribute="top" secondItem="9bw-b7-b2K" secondAttribute="bottom" constant="-118" id="hgb-tI-XAJ"/>
                             <constraint firstItem="U7J-3D-Vae" firstAttribute="width" secondItem="evv-u5-JAa" secondAttribute="width" id="hkw-yj-0JK"/>
@@ -140,6 +148,7 @@
                             <constraint firstItem="3nS-gd-vGB" firstAttribute="top" secondItem="IWz-p9-7ST" secondAttribute="bottom" id="rU3-pa-ZbI"/>
                             <constraint firstItem="evv-u5-JAa" firstAttribute="top" secondItem="9bw-b7-b2K" secondAttribute="bottom" constant="10" id="ruU-SD-dcN"/>
                             <constraint firstItem="5Ax-b0-eb7" firstAttribute="leading" secondItem="ADK-gq-Spf" secondAttribute="trailing" constant="-74" id="x0M-w5-u6Y"/>
+                            <constraint firstItem="6nY-op-zYK" firstAttribute="centerX" secondItem="Szd-Dr-lgu" secondAttribute="centerX" id="x7O-qG-paW"/>
                             <constraint firstItem="BFL-lO-Nz1" firstAttribute="width" secondItem="Szd-Dr-lgu" secondAttribute="width" multiplier="0.5" id="xh8-EK-cTP"/>
                             <constraint firstItem="9bw-b7-b2K" firstAttribute="centerX" secondItem="ADK-gq-Spf" secondAttribute="centerX" id="ycM-d5-z6G"/>
                             <constraint firstItem="3nS-gd-vGB" firstAttribute="leading" secondItem="Szd-Dr-lgu" secondAttribute="leading" id="zcv-cv-QPi"/>
@@ -147,6 +156,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="G35-wc-mov"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="6nY-op-zYK" id="imm-7D-a4Y"/>
                         <outlet property="classListButton" destination="BFL-lO-Nz1" id="faB-kk-cFI"/>
                         <outlet property="classListView" destination="i3R-4O-Z94" id="h4r-bh-KZ7"/>
                         <outlet property="profileEmailLabel" destination="PBH-uD-rbR" id="ldt-hy-gyb"/>
@@ -294,6 +304,13 @@
                                     <constraint firstAttribute="height" constant="24" id="LIV-YN-WY8"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="FDq-sU-AXc">
+                                <rect key="frame" x="147.5" y="293.5" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="ABS-4I-2zn"/>
+                                    <constraint firstAttribute="width" constant="80" id="nwi-6A-0jL"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -306,6 +323,7 @@
                             <constraint firstItem="dG9-lM-vVO" firstAttribute="width" secondItem="eGH-HD-FGd" secondAttribute="width" id="T2l-s6-KU4"/>
                             <constraint firstItem="VQW-1w-3ic" firstAttribute="leading" secondItem="hfx-78-IxN" secondAttribute="leading" id="WQw-Np-GS1"/>
                             <constraint firstItem="Lab-2n-K6B" firstAttribute="top" secondItem="dG9-lM-vVO" secondAttribute="bottom" constant="50" id="YCL-qk-8UL"/>
+                            <constraint firstItem="FDq-sU-AXc" firstAttribute="centerX" secondItem="hfx-78-IxN" secondAttribute="centerX" id="gwi-K2-0JQ"/>
                             <constraint firstAttribute="trailing" secondItem="VQW-1w-3ic" secondAttribute="trailing" id="j7X-12-X3u"/>
                             <constraint firstItem="yj0-TQ-s9u" firstAttribute="top" secondItem="VQW-1w-3ic" secondAttribute="bottom" constant="51" id="jDw-pL-Wif"/>
                             <constraint firstItem="osj-fM-WfC" firstAttribute="centerX" secondItem="Lab-2n-K6B" secondAttribute="centerX" id="jWJ-Ri-D8I"/>
@@ -315,10 +333,12 @@
                             <constraint firstItem="VQW-1w-3ic" firstAttribute="top" secondItem="hfx-78-IxN" secondAttribute="top" id="qd1-DW-2T2"/>
                             <constraint firstItem="dG9-lM-vVO" firstAttribute="centerX" secondItem="eGH-HD-FGd" secondAttribute="centerX" id="ru4-DL-bRL"/>
                             <constraint firstItem="Lab-2n-K6B" firstAttribute="centerX" secondItem="dG9-lM-vVO" secondAttribute="centerX" id="tuk-I9-BYy"/>
+                            <constraint firstItem="FDq-sU-AXc" firstAttribute="centerY" secondItem="hfx-78-IxN" secondAttribute="centerY" id="uBW-hG-uqQ"/>
                             <constraint firstItem="eGH-HD-FGd" firstAttribute="top" secondItem="yj0-TQ-s9u" secondAttribute="bottom" constant="50" id="uqO-Z7-SFs"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="FDq-sU-AXc" id="iXS-Xm-l6p"/>
                         <outlet property="cellPhoneTextField" destination="Lab-2n-K6B" id="eZL-J1-YzN"/>
                         <outlet property="nameTextField" destination="eGH-HD-FGd" id="IUR-Oh-qse"/>
                         <outlet property="nickNameTextField" destination="dG9-lM-vVO" id="dyS-La-pGj"/>

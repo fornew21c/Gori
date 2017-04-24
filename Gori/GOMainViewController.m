@@ -35,7 +35,7 @@
 @property (nonatomic, strong) NSMutableArray *titleNameMutableArray;
 @property NSDictionary *selectedData;
 @property (nonatomic) UITextField *searchTextField;
-
+@property (nonatomic) UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -282,6 +282,7 @@
                 [self presentViewController:networkAlert animated:nil completion:nil];
             }
         }];
+        
     }
     
     
