@@ -208,4 +208,12 @@
     [self.nManager postReviewCreateWithPK:pk curriculum:curriculum readiness:readiness timeliness:timeliness delivery:delivery friendliness:friendliness comment:comment completion:completion];
 }
 
+//plist 가져오기
+- (NSArray*)getSample {
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"locations" ofType:@"plist"];
+        self.locationList = [NSArray arrayWithContentsOfFile:filePath];
+    
+        return self.locationList;
+
+}
 @end

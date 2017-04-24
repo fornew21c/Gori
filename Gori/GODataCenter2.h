@@ -12,6 +12,10 @@
 
 @interface GODataCenter2 : NSObject
 
+//location plist
+@property NSArray *locationList;
+
+
 @property (nonatomic, readonly) NSMutableArray *postList;
 @property  GOTalentDetailModel *selectedModel;
 
@@ -64,4 +68,6 @@
                 friendliness:(NSUInteger)friendliness
                      comment:(NSString*)comment
                   completion:(CompletionBlock)completion;
+
+- (NSArray*)getSample;
 @end

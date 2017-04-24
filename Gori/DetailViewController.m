@@ -21,9 +21,12 @@
 #import "testViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <HCSStarRatingView/HCSStarRatingView.h>
+#import "Annotation.h"
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface DetailViewController ()
-<UIScrollViewDelegate>
+<UIScrollViewDelegate,MKMapViewDelegate>
 @property (nonatomic, strong) GOTalentDetailModel *viewData;
 @property (weak, nonatomic) IBOutlet UIImageView *coverImage;
 
@@ -58,6 +61,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *sunBtn;
 @property (nonatomic) NSMutableArray<UIButton*> *canSelectButtons;
 @property (nonatomic) NSMutableArray *selectedRegionResult;
+@property (weak, nonatomic) IBOutlet MKMapView *mapKit;
 
 @property (nonatomic) NSMutableArray *wishLists;
 @property (nonatomic) NSUInteger wishListsCount;
@@ -301,6 +305,34 @@
     [self setDefaultDayButton];
     self.tutorImage2.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.selectedModel.tutorImgURL]];
     self.locationMessage.text = self.selectedModel.locationMessage;
+    
+    //location plist
+    NSArray *locationLists = [[GODataCenter2 sharedInstance] getSample];
+    //  NSNumber *latitude = [[locationLists objectAtIndex:0] objectForKey:@"latitude"];
+    // NSString *longitude = [[locationLists objectAtIndex:0] objectForKey:@"longitude"];
+    NSNumber *latitude;
+    NSNumber *longitude;
+    NSLog(@"self.selectedModel.locations.count: %lu", self.selectedModel.locations.count);
+    for(NSInteger i = 0; i < self.selectedModel.locations.count; i++) {
+        for(NSUInteger j = 0; j < locationLists.count; j++) {
+            NSLog(@"%@ ", [[self.selectedModel.locations objectAtIndex:i] objectForKey:@"region"]);
+            if([[[self.selectedModel.locations objectAtIndex:i] objectForKey:@"region"] isEqualToString:[[locationLists objectAtIndex:j] objectForKey:@"location"]]) {
+                latitude = [[locationLists objectAtIndex:j] objectForKey:@"latitude"];
+                longitude = [[locationLists objectAtIndex:j] objectForKey:@"longitude"];
+            }
+        }
+    }
+    ///////////////////////////* 지도 만들어 보고 특정 위치 바로 표시해보기 예제 *////////////
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([latitude floatValue], [longitude floatValue]);
+    MKCoordinateSpan span = MKCoordinateSpanMake(0.05, 0.05);
+    MKCoordinateRegion region = MKCoordinateRegionMake(coordinate, span);
+    self.mapKit.delegate = self;
+    [self.mapKit setRegion:region];
+    
+    
+    //////////////////////////* 맵에 찍힐 핀 만들기 예제 *//////////////////////
+    Annotation *annotationTest = [[Annotation alloc]initWithTitle:@"myPosition" AndCoordinate:coordinate];
+    [self.mapKit addAnnotation:annotationTest];
     
     //리뷰정보
     self.totalReview2.value = [[self.selectedModel.averageRate objectForKey:@"total"] floatValue];

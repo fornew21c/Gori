@@ -74,6 +74,10 @@
 		41C29A0E1EAB450E004D130F /* GOReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C29A0D1EAB450E004D130F /* GOReviewViewController.m */; };
 		41C29A111EAB4527004D130F /* GOReivewRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C29A101EAB4527004D130F /* GOReivewRegisterViewController.m */; };
 		41C29A131EAB4B0C004D130F /* Qa.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41C29A121EAB4B0C004D130F /* Qa.storyboard */; };
+		41FBDEB31EADE4790074167E /* locations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41FBDEB21EADE4790074167E /* locations.plist */; };
+		41FBDEB61EADEE8A0074167E /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FBDEB51EADEE8A0074167E /* Annotation.m */; };
+		41FBDEB81EADF33E0074167E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41FBDEB71EADF33E0074167E /* MapKit.framework */; };
+		41FBDEBA1EADF34D0074167E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41FBDEB91EADF34D0074167E /* CoreLocation.framework */; };
 		910E64311EA3619500B90B7E /* GOUserInfoUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910E64301EA3619500B90B7E /* GOUserInfoUpdateViewController.m */; };
 		911555021EA0C2A300CAFF7D /* District_Hyehwa.png in Resources */ = {isa = PBXBuildFile; fileRef = 911554F41EA0C2A300CAFF7D /* District_Hyehwa.png */; };
 		911555031EA0C2A300CAFF7D /* District_Yongsan.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 911554F51EA0C2A300CAFF7D /* District_Yongsan.jpeg */; };
@@ -239,6 +243,11 @@
 		41C29A0F1EAB4527004D130F /* GOReivewRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOReivewRegisterViewController.h; sourceTree = "<group>"; };
 		41C29A101EAB4527004D130F /* GOReivewRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOReivewRegisterViewController.m; sourceTree = "<group>"; };
 		41C29A121EAB4B0C004D130F /* Qa.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Qa.storyboard; sourceTree = "<group>"; };
+		41FBDEB21EADE4790074167E /* locations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = locations.plist; path = ../locations.plist; sourceTree = "<group>"; };
+		41FBDEB41EADEE8A0074167E /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
+		41FBDEB51EADEE8A0074167E /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
+		41FBDEB71EADF33E0074167E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		41FBDEB91EADF34D0074167E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		910E642F1EA3619500B90B7E /* GOUserInfoUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOUserInfoUpdateViewController.h; sourceTree = "<group>"; };
 		910E64301EA3619500B90B7E /* GOUserInfoUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOUserInfoUpdateViewController.m; sourceTree = "<group>"; };
 		911554F41EA0C2A300CAFF7D /* District_Hyehwa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = District_Hyehwa.png; sourceTree = "<group>"; };
@@ -319,6 +328,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41FBDEBA1EADF34D0074167E /* CoreLocation.framework in Frameworks */,
+				41FBDEB81EADF33E0074167E /* MapKit.framework in Frameworks */,
 				4185841E1E91EE410053EF40 /* FBSDKShareKit.framework in Frameworks */,
 				418584181E91EE1E0053EF40 /* Bolts.framework in Frameworks */,
 				4185841A1E91EE2B0053EF40 /* FBSDKCoreKit.framework in Frameworks */,
@@ -333,6 +344,8 @@
 		224826D5FAFABECE875F748F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				41FBDEB91EADF34D0074167E /* CoreLocation.framework */,
+				41FBDEB71EADF33E0074167E /* MapKit.framework */,
 				1585AE216C18B713828536EC /* libPods-Gori.a */,
 			);
 			name = Frameworks;
@@ -436,6 +449,8 @@
 				418584521E91F15E0053EF40 /* MainVC.m */,
 				418584361E91EEFD0053EF40 /* AppDelegate.h */,
 				418584371E91EEFD0053EF40 /* AppDelegate.m */,
+				41FBDEB41EADEE8A0074167E /* Annotation.h */,
+				41FBDEB51EADEE8A0074167E /* Annotation.m */,
 				919B6F251E9CE4C300AE8CA5 /* Mypage.storyboard */,
 				4153EEA01E923A49001EFF70 /* Main.storyboard */,
 				9178CAD61E9575540054B7FB /* SignIn_SignUp.storyboard */,
@@ -465,6 +480,7 @@
 				41C299F11EA64530004D130F /* malpoongsun2.png */,
 				4185840D1E91EDF70053EF40 /* LaunchScreen.storyboard */,
 				418584101E91EDF70053EF40 /* Info.plist */,
+				41FBDEB21EADE4790074167E /* locations.plist */,
 				418583FF1E91EDF70053EF40 /* Supporting Files */,
 			);
 			path = Gori;
@@ -771,6 +787,7 @@
 				91F83E8A1EA79118009EFD22 /* Category_JobStudy.png in Resources */,
 				41C299BA1EA48B6B004D130F /* confirmation2.png in Resources */,
 				911555081EA0C2A300CAFF7D /* District_Sinchon.jpg in Resources */,
+				41FBDEB31EADE4790074167E /* locations.plist in Resources */,
 				4185840F1E91EDF70053EF40 /* LaunchScreen.storyboard in Resources */,
 				41C299B91EA48B6B004D130F /* confirmation1.png in Resources */,
 				41C299F91EA9F311004D130F /* clock.png in Resources */,
@@ -869,6 +886,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41FBDEB61EADEE8A0074167E /* Annotation.m in Sources */,
 				910E64311EA3619500B90B7E /* GOUserInfoUpdateViewController.m in Sources */,
 				413F9DAF1EAB96EB00FCB9E8 /* GOReviewModel.m in Sources */,
 				418584301E91EE9E0053EF40 /* AMSlideMenuLeftMenuSegue.m in Sources */,
