@@ -36,7 +36,6 @@
 @property NSDictionary *selectedData;
 @property (nonatomic) UITextField *searchTextField;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
-@property (nonatomic) UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -45,7 +44,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     /***************** Setting DataCenter *****************/
 
     [[GODataCenter sharedInstance] settingCategoryArray];
@@ -119,6 +117,7 @@
 }
 
 - (void)showTitleDetailResult:(UIButton*)sender{
+    [self.indicator startAnimating];
     NSString *titleKey = [NSString stringWithFormat:@"?title=%@", self.searchTextField.text];
     [self.searchTextField resignFirstResponder];
     [GODataCenter sharedInstance].filterTitleYN = YES;
@@ -130,6 +129,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.mainTableView reloadData];
                 [[GODataCenter2 sharedInstance] getMyLoginToken];
+                [self.indicator stopAnimating];
             });
         }else{
             UIAlertController *networkAlert = [UIAlertController alertControllerWithTitle:@"OOPS!" message:@"네트워크 연결 상태를 확인하세요" preferredStyle:UIAlertControllerStyleAlert];
@@ -155,7 +155,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     GOMainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
     if (cell == nil) {
@@ -218,11 +217,10 @@
     }
 }
 
-
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    
     [self.indicator startAnimating];
+    
     if ([GODataCenter sharedInstance].filterDistrictLocationYN == YES) {
         
         [[GODataCenter sharedInstance] receiveDistrictLocationFilteredDataWithCompletionBlock:^(BOOL isSuccess) {

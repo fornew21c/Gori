@@ -11,6 +11,7 @@
 #import "GOMainViewController.h"
 
 @interface GOSignupViewController ()
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -21,6 +22,7 @@
     // Do any additional setup after loading the view.
     self.pwTF.secureTextEntry = YES;
     self.rePwTF.secureTextEntry = YES;
+    [self.activityIndicator stopAnimating];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,6 +30,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)signupBtnTouched:(id)sender {
+    [self.activityIndicator startAnimating];
     [[GODataCenter2 sharedInstance] signupWithID:self.nameTF.text email:self.emailTF.text pw:self.pwTF.text repw:self.rePwTF.text completion:^(BOOL isSuccess, id responseData) {
         if (isSuccess) {
            // [self.navigationController dismissViewControllerAnimated:YES completion:nil];
@@ -35,6 +38,7 @@
             
             dispatch_sync(dispatch_get_main_queue(), ^{
                 [self performSegueWithIdentifier:@"mainViewSegue" sender:nil];
+                [self.activityIndicator stopAnimating];
             });
             
             

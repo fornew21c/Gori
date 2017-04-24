@@ -14,6 +14,7 @@
 @interface LoginViewController ()
 <FBSDKGraphRequestConnectionDelegate, FBSDKLoginButtonDelegate, UITextFieldDelegate>
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) IBOutlet UIView *contentsView;
 @end
 
@@ -41,6 +42,7 @@
 //            NSLog(@"login success");
 //            //loginButton.hidden = TRUE;
 //        }
+    [self.activityIndicator stopAnimating];
     self.emailTF.delegate = self;
     self.emailTF.tag = 1;
     
@@ -170,6 +172,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)emailLoginBtnTouched:(id)sender {
+    [self.activityIndicator startAnimating];
     [[GODataCenter2 sharedInstance] loginWithEmail:self.emailTF.text pw:self.pwTF.text completion:^(BOOL isSuccess, id responseData) {
         
         if(isSuccess)
@@ -177,6 +180,7 @@
             NSLog(@"responseData %@",responseData);
             [[GODataCenter2 sharedInstance] setMyLoginToken:[responseData objectForKey:@"key"]];
             dispatch_sync(dispatch_get_main_queue(), ^{
+                [self.activityIndicator stopAnimating];
                 [self performSegueWithIdentifier:@"mainViewSegue" sender:nil];
             });
         }else
