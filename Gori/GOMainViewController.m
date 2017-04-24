@@ -36,6 +36,7 @@
 @property NSDictionary *selectedData;
 @property (nonatomic) UITextField *searchTextField;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
 
 @end
 
@@ -217,12 +218,14 @@
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
+    [self.indicator startAnimating];
     if ([GODataCenter sharedInstance].filterDistrictLocationYN == YES) {
         
         [[GODataCenter sharedInstance] receiveDistrictLocationFilteredDataWithCompletionBlock:^(BOOL isSuccess) {
             if (isSuccess) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.mainTableView reloadData];
+                    [self.indicator stopAnimating];
                     [[GODataCenter2 sharedInstance] getMyLoginToken];
                     });
             }else{
@@ -238,6 +241,7 @@
             if (isSuccess) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.mainTableView reloadData];
+                    [self.indicator stopAnimating];
                     [[GODataCenter2 sharedInstance] getMyLoginToken];
                 });
             }else{
@@ -253,6 +257,7 @@
             if (isSuccess) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.mainTableView reloadData];
+                    [self.indicator stopAnimating];
                     [[GODataCenter2 sharedInstance] getMyLoginToken];
                 });
             }else{
@@ -268,6 +273,7 @@
             if (isSuccess) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.mainTableView reloadData];
+                    [self.indicator stopAnimating];
                     [[GODataCenter2 sharedInstance] getMyLoginToken];
                 });
             }else{

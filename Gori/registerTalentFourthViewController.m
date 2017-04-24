@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *priceInfo;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *remainPriceInfo;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
 
 @end
 
@@ -23,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.indicator stopAnimating];
     // Do any additional setup after loading the view.
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,70,70)];
     titleLabel.font = [UIFont systemFontOfSize:17.0f];
@@ -70,6 +72,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)finishButtonTouched:(id)sender {
+    [self.indicator startAnimating];
     [[GODataCenter2 sharedInstance] registerCreateWithLocationPK:[GODataCenter2 sharedInstance].locationPK
                                                        studentLevel:[GODataCenter2 sharedInstance].studentLevel
                                              studentExperienceMonth:[GODataCenter2 sharedInstance].experienceMonth
@@ -84,6 +87,7 @@
                     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"수업등록 성공" message:[responseData objectForKey:@"detail"] preferredStyle:UIAlertControllerStyleAlert];
     
                 UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
+                    [self.indicator stopAnimating];
                     [self performSegueWithIdentifier:@"registerFinalSegue" sender:nil];
                 }];
     

@@ -40,7 +40,7 @@
         {
             self.reviews = [GOReviewModel modelWithData:respons];
             [self makeData];
-            NSLog(@"count: %@", [[respons objectForKey:@"results"] objectAtIndex:0]);
+            //NSLog(@"count: %@", [[respons objectForKey:@"results"] objectAtIndex:0]);
             [self.reviewTable reloadData];
             
         }else
@@ -78,7 +78,7 @@
     self.curriculumReview.value = [[averageRate objectForKey:@"curriculum"] floatValue];
     self.readinessReview.value = [[averageRate objectForKey:@"readiness"] floatValue];
     self.timelinessReview.value = [[averageRate objectForKey:@"timeliness"] floatValue];
-    self.deliveryReview.value = [[averageRate objectForKey:@"timeliness"] floatValue];
+    self.deliveryReview.value = [[averageRate objectForKey:@"delivery"] floatValue];
     self.friendlinessReview.value = [[averageRate objectForKey:@"friendliness"] floatValue];
 }
 /*
@@ -103,12 +103,14 @@
         cell = [[GOReviewTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     
-   
-    [cell.reviewerImage sd_setImageWithURL: [[[self.reviewsLists objectAtIndex:indexPath.row] objectForKey:@"user"] objectForKey:@"profile_image"]];
-   
-    cell.reviewerName.text = [[[self.reviewsLists objectAtIndex:indexPath.row] objectForKey:@"user"] objectForKey:@"name"];
-    cell.reviewerCreateDate.text = [[[self.reviewsLists objectAtIndex:indexPath.row] objectForKey:@"created_date"]substringToIndex:10];
-    cell.reviewCommnet.text = [[self.reviewsLists objectAtIndex:indexPath.row] objectForKey:@"comment"] ;
+    if(self.reviewsLists.count != 0) {
+       
+        [cell.reviewerImage sd_setImageWithURL: [[[self.reviewsLists objectAtIndex:indexPath.row] objectForKey:@"user"] objectForKey:@"profile_image"]];
+       
+        cell.reviewerName.text = [[[self.reviewsLists objectAtIndex:indexPath.row] objectForKey:@"user"] objectForKey:@"name"];
+        cell.reviewerCreateDate.text = [[[self.reviewsLists objectAtIndex:indexPath.row] objectForKey:@"created_date"]substringToIndex:10];
+        cell.reviewCommnet.text = [[self.reviewsLists objectAtIndex:indexPath.row] objectForKey:@"comment"] ;
+    }
     return cell;
 }
 

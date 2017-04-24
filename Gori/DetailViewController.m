@@ -68,15 +68,17 @@
 @property (weak, nonatomic) IBOutlet UILabel *reviewerName;
 @property (weak, nonatomic) IBOutlet UITextView *reviewComment;
 @property (weak, nonatomic) IBOutlet UILabel *reviewCreateDate;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
 
 
 @end
 
 @implementation DetailViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:NO];
     
+    [self.indicator startAnimating];
     // Do any additional setup after loading the view.
     [GODataCenter2 sharedInstance].seletedRegionIndex = 0;
     [GODataCenter2 sharedInstance].seletedDayIndex = 0;
@@ -151,6 +153,9 @@
             NSLog(@"title: %@", [GODataCenter2 sharedInstance].selectedModel.title);
             NSLog(@"region: %@", [GODataCenter2 sharedInstance].selectedModel.region);
             [self layoutDataInView];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.indicator stopAnimating];
+            });
             
         }else
         {
