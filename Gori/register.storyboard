@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,18 +23,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jl6-ar-8HG">
-                                <rect key="frame" x="136" y="107" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jl6-ar-8HG">
+                                <rect key="frame" x="137" y="98" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="8Si-KD-RaK"/>
+                                    <constraint firstAttribute="width" constant="100" id="Oww-YV-F2K"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" image="registerGuide2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ztt-cp-DsD">
-                                <rect key="frame" x="0.0" y="362" width="375" height="209"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="registerGuide2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ztt-cp-DsD">
+                                <rect key="frame" x="0.0" y="390" width="375" height="196"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="B7q-wN-CZt"/>
+                                    <constraint firstAttribute="height" constant="196" id="JrQ-tQ-yyN"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3L-z3-FVv">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="malpoongsun3.png" translatesAutoresizingMaskIntoConstraints="NO" id="aHZ-CZ-cgq">
+                                <rect key="frame" x="68" y="226" width="239" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="I2t-xf-wgu"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQk-qe-f0f">
+                                <rect key="frame" x="80" y="246" width="215" height="102.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3L-z3-FVv">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90980392160000001" green="0.1764705882" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="IC3-Zf-rVv"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="수업 신청">
                                     <color key="titleColor" red="0.97720271780000001" green="0.98014714400000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -41,19 +63,24 @@
                                     <segue destination="yCa-RU-WNo" kind="show" identifier="registerFirstStep" id="t7Q-NP-l9t"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="malpoongsun3.png" translatesAutoresizingMaskIntoConstraints="NO" id="aHZ-CZ-cgq">
-                                <rect key="frame" x="67" y="226" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQk-qe-f0f">
-                                <rect key="frame" x="80" y="254" width="213" height="81"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="t3L-z3-FVv" firstAttribute="centerX" secondItem="Ztt-cp-DsD" secondAttribute="centerX" id="9RR-MP-KAh"/>
+                            <constraint firstItem="PQk-qe-f0f" firstAttribute="top" secondItem="aHZ-CZ-cgq" secondAttribute="top" constant="20" id="FBd-zv-xw7"/>
+                            <constraint firstItem="t3L-z3-FVv" firstAttribute="width" secondItem="CfN-2N-nWd" secondAttribute="width" id="Le8-tX-G0r"/>
+                            <constraint firstItem="PQk-qe-f0f" firstAttribute="height" secondItem="aHZ-CZ-cgq" secondAttribute="height" multiplier="0.8" id="QDb-Aa-jHN"/>
+                            <constraint firstItem="PQk-qe-f0f" firstAttribute="width" secondItem="aHZ-CZ-cgq" secondAttribute="width" multiplier="0.9" id="VLz-oT-QdC"/>
+                            <constraint firstItem="aHZ-CZ-cgq" firstAttribute="leading" secondItem="CfN-2N-nWd" secondAttribute="leadingMargin" constant="52" id="Vfq-1w-AEx"/>
+                            <constraint firstItem="Ztt-cp-DsD" firstAttribute="centerX" secondItem="PQk-qe-f0f" secondAttribute="centerX" id="aQf-pQ-18z"/>
+                            <constraint firstItem="Ztt-cp-DsD" firstAttribute="top" secondItem="PQk-qe-f0f" secondAttribute="bottom" constant="41.5" id="e4G-cw-Jpw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aHZ-CZ-cgq" secondAttribute="trailing" constant="52" id="f6d-0b-hfT"/>
+                            <constraint firstItem="Jl6-ar-8HG" firstAttribute="top" secondItem="X8z-bn-4XA" secondAttribute="bottom" constant="78" id="fJM-y7-2aK"/>
+                            <constraint firstAttribute="bottom" secondItem="t3L-z3-FVv" secondAttribute="bottom" id="lrz-iU-tTf"/>
+                            <constraint firstItem="aHZ-CZ-cgq" firstAttribute="top" secondItem="Jl6-ar-8HG" secondAttribute="bottom" constant="28" id="rpy-xz-eDc"/>
+                            <constraint firstItem="PQk-qe-f0f" firstAttribute="centerX" secondItem="aHZ-CZ-cgq" secondAttribute="centerX" id="yHK-8G-6Fh"/>
+                            <constraint firstItem="Jl6-ar-8HG" firstAttribute="centerX" secondItem="CfN-2N-nWd" secondAttribute="centerX" id="z4H-zH-toz"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="introduceLabel" destination="PQk-qe-f0f" id="55N-tz-WFq"/>

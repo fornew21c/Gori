@@ -391,7 +391,7 @@
                         <viewControllerLayoutGuide type="bottom" id="SPE-gQ-4P3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Qbg-CL-yxI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="각 항목에 대해 평점을 부여해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFQ-S8-z7Z">
@@ -610,7 +610,7 @@
                         <viewControllerLayoutGuide type="bottom" id="xUp-o1-B79"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XnY-ds-XgY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4qg-Cv-nbt">
@@ -845,6 +845,7 @@
         <!--Detail View Controller-->
         <scene sceneID="ii3-d5-WrU">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nkc-b9-1bg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="DetailViewController" automaticallyAdjustsScrollViewInsets="NO" id="jqr-xZ-wqy" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dlh-9H-UzZ"/>
@@ -869,47 +870,17 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ej3-Nl-fhn" userLabel="Image View">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                                                 <subviews>
-                                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0mD-3h-4Pt">
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gyt-Q4-oME">
                                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
-                                                                        <subviews>
-                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iow-1D-ViZ" userLabel="Contents View">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="750" height="180"/>
-                                                                                <subviews>
-                                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q7Q-8w-1kd">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
-                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                                    </imageView>
-                                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bodyImage2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="nm7-3k-3yW">
-                                                                                        <rect key="frame" x="375" y="0.0" width="375" height="180"/>
-                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                                    </imageView>
-                                                                                </subviews>
-                                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="width" constant="750" id="ETw-S4-dtH"/>
-                                                                                </constraints>
-                                                                            </view>
-                                                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="9F1-hu-iNC">
-                                                                                <rect key="frame" x="168" y="120" width="27" height="37"/>
-                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                            </pageControl>
-                                                                        </subviews>
-                                                                        <constraints>
-                                                                            <constraint firstItem="Iow-1D-ViZ" firstAttribute="leading" secondItem="0mD-3h-4Pt" secondAttribute="leading" id="7GJ-79-GvE"/>
-                                                                            <constraint firstAttribute="trailing" secondItem="Iow-1D-ViZ" secondAttribute="trailing" id="Jyn-rr-Din"/>
-                                                                            <constraint firstAttribute="bottom" secondItem="Iow-1D-ViZ" secondAttribute="bottom" id="N6S-vo-DSW"/>
-                                                                            <constraint firstItem="Iow-1D-ViZ" firstAttribute="height" secondItem="0mD-3h-4Pt" secondAttribute="height" id="weL-kt-GQr"/>
-                                                                            <constraint firstItem="Iow-1D-ViZ" firstAttribute="top" secondItem="0mD-3h-4Pt" secondAttribute="top" id="xgB-um-OON"/>
-                                                                        </constraints>
-                                                                    </scrollView>
+                                                                    </imageView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="0mD-3h-4Pt" firstAttribute="width" secondItem="ej3-Nl-fhn" secondAttribute="width" id="2R0-JZ-02k"/>
                                                                     <constraint firstAttribute="height" constant="180" id="3aI-Rl-4QT"/>
-                                                                    <constraint firstItem="0mD-3h-4Pt" firstAttribute="centerY" secondItem="ej3-Nl-fhn" secondAttribute="centerY" id="ZKG-iL-Qnh"/>
-                                                                    <constraint firstItem="0mD-3h-4Pt" firstAttribute="centerX" secondItem="ej3-Nl-fhn" secondAttribute="centerX" id="cy6-PJ-ozZ"/>
-                                                                    <constraint firstItem="0mD-3h-4Pt" firstAttribute="height" secondItem="ej3-Nl-fhn" secondAttribute="height" id="ymN-I9-yfC"/>
+                                                                    <constraint firstItem="gyt-Q4-oME" firstAttribute="top" secondItem="ej3-Nl-fhn" secondAttribute="top" id="A1A-jH-tjG"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="gyt-Q4-oME" secondAttribute="trailing" id="FAr-tD-O1F"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="gyt-Q4-oME" secondAttribute="bottom" id="HWE-3P-Jtu"/>
+                                                                    <constraint firstItem="gyt-Q4-oME" firstAttribute="leading" secondItem="ej3-Nl-fhn" secondAttribute="leading" id="yd5-o8-HN0"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s5q-Hm-eHN" userLabel="DetailSimpleView">
@@ -951,12 +922,12 @@
                                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="125-a2-QYw">
-                                                                        <rect key="frame" x="185" y="110" width="1" height="90"/>
+                                                                        <rect key="frame" x="187" y="155" width="1" height="90"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Rm-bj-9h5">
-                                                                        <rect key="frame" x="185" y="227" width="1" height="90"/>
+                                                                        <rect key="frame" x="186" y="227" width="2" height="90"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </view>
@@ -1541,12 +1512,11 @@
                     <connections>
                         <outlet property="classInfo" destination="cBz-gx-0Jl" id="N4L-N7-ZXd"/>
                         <outlet property="cntTime" destination="rIj-Zf-TTm" id="xKa-cN-EYv"/>
-                        <outlet property="coverImage" destination="q7Q-8w-1kd" id="I8J-ma-EkR"/>
+                        <outlet property="coverImage" destination="gyt-Q4-oME" id="dwQ-FK-RXu"/>
                         <outlet property="curriculumLabel" destination="v3b-yf-9Qc" id="HDb-Gy-TDD"/>
                         <outlet property="extraFee" destination="Kn1-Ed-gwd" id="IjR-7u-JIb"/>
                         <outlet property="friBtn" destination="dhU-Uh-9gK" id="RdD-X2-1Mb"/>
                         <outlet property="hoursPerClass" destination="FHB-xV-bTS" id="Tfx-Iw-yM4"/>
-                        <outlet property="imageScrollView" destination="0mD-3h-4Pt" id="k8k-9H-kVK"/>
                         <outlet property="imageView" destination="ej3-Nl-fhn" id="GVz-4v-7fP"/>
                         <outlet property="indicator" destination="u4N-at-AJD" id="B2D-kT-Zbe"/>
                         <outlet property="joinCntLabel" destination="lQF-fj-4Xz" id="IrI-yr-rcI"/>
@@ -1554,7 +1524,6 @@
                         <outlet property="locationMessage" destination="G0R-C8-hYx" id="gw4-oe-5bX"/>
                         <outlet property="maxNumber" destination="RHk-zx-xze" id="ia6-8Y-Xe4"/>
                         <outlet property="monBtn" destination="1Fb-o1-W5H" id="0bi-f7-yRw"/>
-                        <outlet property="pageControl" destination="9F1-hu-iNC" id="FY0-Mc-RtV"/>
                         <outlet property="pricePerHour" destination="LzN-uL-SEN" id="bhA-a8-L6V"/>
                         <outlet property="ratingLabel" destination="ibA-vM-zct" id="kS6-pe-Q3d"/>
                         <outlet property="ratingLabel2" destination="Kdq-n9-H1J" id="Tt0-BF-9v9"/>
@@ -1582,9 +1551,8 @@
                         <segue destination="hs0-d4-0f8" kind="show" identifier="loginViewSegue" id="Fjc-8S-uYf"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nkc-b9-1bg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6548" y="-1162"/>
+            <point key="canvasLocation" x="6636" y="-1197.3013493253375"/>
         </scene>
         <!--Curriculum View Controller-->
         <scene sceneID="9Xx-P2-zSZ">
@@ -1992,7 +1960,6 @@
     </scenes>
     <resources>
         <image name="Facebook-icon.png" width="334" height="419"/>
-        <image name="bodyImage2.jpg" width="275" height="183"/>
         <image name="clock.png" width="128" height="128"/>
         <image name="coins.png" width="128" height="128"/>
         <image name="footerImage.jpg" width="401" height="126"/>
@@ -2002,10 +1969,10 @@
         <image name="sign.png" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZTz-Dv-kBt"/>
         <segue reference="7vF-rB-vfR"/>
-        <segue reference="f88-U3-R7t"/>
-        <segue reference="6ed-Na-bTL"/>
+        <segue reference="Fjc-8S-uYf"/>
+        <segue reference="ZTz-Dv-kBt"/>
+        <segue reference="hZf-is-O1p"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.90980392160000001" green="0.1764705882" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>

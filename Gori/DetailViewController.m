@@ -25,9 +25,10 @@
 @interface DetailViewController ()
 <UIScrollViewDelegate>
 @property (nonatomic, strong) GOTalentDetailModel *viewData;
+@property (weak, nonatomic) IBOutlet UIImageView *coverImage;
 
 @property (weak, nonatomic) IBOutlet UILabel *talentRegion;
-@property (weak, nonatomic) IBOutlet UIImageView *coverImage;
+
 @property (weak, nonatomic) IBOutlet UILabel *hoursPerClass;
 @property (weak, nonatomic) IBOutlet UILabel *joinCntLabel;
 @property (weak, nonatomic) IBOutlet UILabel *talentTitle;
