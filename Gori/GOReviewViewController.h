@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GODataCenter2.h"
 
 @interface GOReviewViewController : UIViewController
 
+@property GOTalentDetailModel *selectedModel;
 @end

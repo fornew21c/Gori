@@ -18,6 +18,7 @@
 @interface GOTalentDetailModel : NSObject
 
 @property (nonatomic) NSInteger postID;
+@property (nonatomic) NSNumber *pk;
 @property (nonatomic) NSString *title;
 @property (nonatomic) NSURL *img_cover_url;
 @property (nonatomic) NSMutableArray *locations;

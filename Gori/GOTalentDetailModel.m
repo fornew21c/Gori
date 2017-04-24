@@ -16,6 +16,7 @@
     
     if (data != nil) {
        model.postID = [[data objectForKey:@"pk"] integerValue];
+       model.pk = [data objectForKey:@"pk"];
        model.title = [data objectForKey:@"title"];
        model.locations = [data objectForKey:@"locations"];
        //model.curriculums = [data objectForKey:@"curriculums"];

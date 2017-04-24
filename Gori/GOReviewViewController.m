@@ -5,7 +5,9 @@
 //  Created by Woncheol on 2017. 4. 22..
 //  Copyright © 2017년 fornew21c. All rights reserved.
 //
-
+#ifndef IB_DESIGNABLE
+#define IB_DESIGNABLE
+#endif
 #import "GOReviewViewController.h"
 #import "GODataCenter2.h"
 #import "GOReviewTableViewCell.h"
@@ -48,8 +50,23 @@
             
         }
     }];
-    // Do any additional setup after loading the view.
     
+    NSNumber *pk2 = [GODataCenter2 sharedInstance].selectedModel.pk;
+    [[GODataCenter2 sharedInstance] requestPostRetrieveID:pk2 completion:^(BOOL isSuccess, id responseData) {
+        
+        if(isSuccess)
+        {
+            // NSLog(@"isSuccess: %lu", isSuccess);
+            //NSLog(@"title: %@", [responseData objectForKey:@"title"]);
+            
+            self.selectedModel = [GOTalentDetailModel modelWithData:responseData];
+            [GODataCenter2 sharedInstance].selectedModel = self.selectedModel;
+            [self makeReviewData];
+        }else
+        {
+            
+        }
+    }];
 
     //self.reviews = [GODataCenter2 sharedInstance].selectedModel.reviews;
 
@@ -72,9 +89,12 @@
     //self.reviews.count
     titleLabel.text = [[tmp stringByAppendingString:[NSString stringWithFormat:@"%ld", self.reviewsLists.count]] stringByAppendingString:@"개"];
     self.navigationItem.titleView = titleLabel;
-    
-    NSMutableDictionary *averageRate = [[NSMutableDictionary alloc] init];
-    averageRate = [GODataCenter2 sharedInstance].selectedModel.averageRate;
+
+}
+
+- (void)makeReviewData {
+  //  NSMutableDictionary *averageRate = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *averageRate = self.selectedModel.averageRate;
     self.curriculumReview.value = [[averageRate objectForKey:@"curriculum"] floatValue];
     self.readinessReview.value = [[averageRate objectForKey:@"readiness"] floatValue];
     self.timelinessReview.value = [[averageRate objectForKey:@"timeliness"] floatValue];

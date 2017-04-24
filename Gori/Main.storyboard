@@ -391,7 +391,7 @@
                         <viewControllerLayoutGuide type="bottom" id="SPE-gQ-4P3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Qbg-CL-yxI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="각 항목에 대해 평점을 부여해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFQ-S8-z7Z">
@@ -610,7 +610,7 @@
                         <viewControllerLayoutGuide type="bottom" id="xUp-o1-B79"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XnY-ds-XgY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4qg-Cv-nbt">
@@ -786,7 +786,7 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zdx-yz-xf0">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdx-yz-xf0">
                                                     <rect key="frame" x="91" y="63" width="276" height="137"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -845,7 +845,6 @@
         <!--Detail View Controller-->
         <scene sceneID="ii3-d5-WrU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nkc-b9-1bg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="DetailViewController" automaticallyAdjustsScrollViewInsets="NO" id="jqr-xZ-wqy" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dlh-9H-UzZ"/>
@@ -862,10 +861,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="3430"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QNq-kU-lq1" userLabel="Contents View">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="3139"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="3439"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sCE-Dm-hh1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="3139"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="3439"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ej3-Nl-fhn" userLabel="Image View">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
@@ -1208,7 +1207,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RID-KY-5uZ" userLabel="LocationSimpleView">
-                                                                <rect key="frame" x="0.0" y="2429" width="375" height="400"/>
+                                                                <rect key="frame" x="0.0" y="2429" width="375" height="700"/>
                                                                 <subviews>
                                                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oNs-0c-Vtv">
                                                                         <rect key="frame" x="0.0" y="61" width="375" height="218"/>
@@ -1351,14 +1350,14 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adD-73-pnc">
-                                                                <rect key="frame" x="0.0" y="2829" width="375" height="10"/>
+                                                                <rect key="frame" x="0.0" y="3129" width="375" height="10"/>
                                                                 <color key="backgroundColor" red="0.88123380829999998" green="0.88123380829999998" blue="0.88123380829999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="10" id="4bV-ZL-L2X"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u8w-6o-FO2" userLabel="ReiviewView">
-                                                                <rect key="frame" x="0.0" y="2839" width="375" height="300"/>
+                                                                <rect key="frame" x="0.0" y="3139" width="375" height="300"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="리뷰" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJg-9a-dGy">
                                                                         <rect key="frame" x="136" y="9" width="103" height="30"/>
@@ -1563,6 +1562,7 @@
                         <segue destination="hs0-d4-0f8" kind="show" identifier="loginViewSegue" id="Fjc-8S-uYf"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nkc-b9-1bg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6636" y="-1197.3013493253375"/>
         </scene>
@@ -1984,7 +1984,7 @@
         <segue reference="7vF-rB-vfR"/>
         <segue reference="Fjc-8S-uYf"/>
         <segue reference="ZTz-Dv-kBt"/>
-        <segue reference="6ed-Na-bTL"/>
+        <segue reference="hZf-is-O1p"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.90980392160000001" green="0.1764705882" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>

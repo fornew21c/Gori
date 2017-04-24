@@ -312,28 +312,43 @@
     // NSString *longitude = [[locationLists objectAtIndex:0] objectForKey:@"longitude"];
     NSNumber *latitude;
     NSNumber *longitude;
+    
+//    CGFloat LATITUDE2 = 37.534993;
+//    CGFloat LONGITUDE2 = 126.993521;
+    CLLocationCoordinate2D coordinate;
+    MKCoordinateSpan span = MKCoordinateSpanMake(0.1, 0.1);
+    MKCoordinateRegion region;
+    self.mapKit.delegate = self;
+    
+    Annotation *annotation;
+   
     NSLog(@"self.selectedModel.locations.count: %lu", self.selectedModel.locations.count);
     for(NSInteger i = 0; i < self.selectedModel.locations.count; i++) {
         for(NSUInteger j = 0; j < locationLists.count; j++) {
-            NSLog(@"%@ ", [[self.selectedModel.locations objectAtIndex:i] objectForKey:@"region"]);
             if([[[self.selectedModel.locations objectAtIndex:i] objectForKey:@"region"] isEqualToString:[[locationLists objectAtIndex:j] objectForKey:@"location"]]) {
                 latitude = [[locationLists objectAtIndex:j] objectForKey:@"latitude"];
                 longitude = [[locationLists objectAtIndex:j] objectForKey:@"longitude"];
             }
         }
+        coordinate = CLLocationCoordinate2DMake([latitude floatValue], [longitude floatValue]);
+        region = MKCoordinateRegionMake(coordinate, span);
+        [self.mapKit setRegion:region];
+        
+        annotation = [[Annotation alloc]initWithTitle:@"myPosition" AndCoordinate:coordinate];
+        [self.mapKit addAnnotation:annotation];
     }
     ///////////////////////////* 지도 만들어 보고 특정 위치 바로 표시해보기 예제 *////////////
-    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([latitude floatValue], [longitude floatValue]);
-    MKCoordinateSpan span = MKCoordinateSpanMake(0.05, 0.05);
-    MKCoordinateRegion region = MKCoordinateRegionMake(coordinate, span);
-    self.mapKit.delegate = self;
-    [self.mapKit setRegion:region];
+
     
-    
-    //////////////////////////* 맵에 찍힐 핀 만들기 예제 *//////////////////////
-    Annotation *annotationTest = [[Annotation alloc]initWithTitle:@"myPosition" AndCoordinate:coordinate];
-    [self.mapKit addAnnotation:annotationTest];
-    
+//    CLLocationCoordinate2D coordinate2 = CLLocationCoordinate2DMake(LATITUDE2, LONGITUDE2);
+//    MKCoordinateRegion region2 = MKCoordinateRegionMake(coordinate2, span);
+//    [self.mapKit setRegion:region2];
+//    //////////////////////////* 맵에 찍힐 핀 만들기 예제 *//////////////////////
+//    Annotation *annotationTest = [[Annotation alloc]initWithTitle:@"myPosition" AndCoordinate:coordinate];
+//    [self.mapKit addAnnotation:annotationTest];
+//    
+//    Annotation *annotationTest2 = [[Annotation alloc]initWithTitle:@"myPosition" AndCoordinate:coordinate2];
+//    [self.mapKit addAnnotation:annotationTest2];
     //리뷰정보
     self.totalReview2.value = [[self.selectedModel.averageRate objectForKey:@"total"] floatValue];
     NSString *tmp2 = @"(";
