@@ -1,4 +1,4 @@
-<img src = "">
+<img src = "https://github.com/fornew21c/Gori/blob/master/README_Images/GoriLogoIosTeam.png">
 --
 이 레포지토리는 FastCampus iOS 스쿨의 팀프로젝트 'GORI'의 리모트 레포지토리 입니다.    
 'GORI'는 "튜터와 튜티의 손쉬운 연결"이라는 기본 콘셉트 하에 구현되었으며, 
