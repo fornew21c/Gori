@@ -9,11 +9,11 @@
 [고리 풀영상 보러가기](https://youtu.be/DIdv1zhVxNU)
 
 #스크린샷#    
-![이미지1](링크주소)
-![이미지2](링크주소)
-![이미지3](링크주소)
-![이미지4](링크주소)
-![이미지5](링크주소)
+![이미지1](https://github.com/fornew21c/Gori/blob/master/README_Images/IMG_1587.PNG)
+![이미지2](https://github.com/fornew21c/Gori/blob/master/README_Images/IMG_1588.PNG)
+![이미지3](https://github.com/fornew21c/Gori/blob/master/README_Images/IMG_1589.PNG)
+![이미지4](https://github.com/fornew21c/Gori/blob/master/README_Images/IMG_1590.PNG)
+![이미지5](https://github.com/fornew21c/Gori/blob/master/README_Images/IMG_1591.PNG)
 
 #주요기능   
 - 회원가입, 로그인, 페이스북 로그인, 로그아웃
