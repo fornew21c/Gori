@@ -13,12 +13,13 @@
 		1F7A41AF1EA75FEA00563FB0 /* malpoongsun5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F7A41AC1EA75FEA00563FB0 /* malpoongsun5.png */; };
 		1F7A41B01EA75FEA00563FB0 /* malpoongsun4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F7A41AD1EA75FEA00563FB0 /* malpoongsun4.png */; };
 		1F7A41B11EA75FEA00563FB0 /* malpoongsun3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F7A41AE1EA75FEA00563FB0 /* malpoongsun3.png */; };
-		25A48385E4D3A342AFBED138 /* libPods-Gori.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1585AE216C18B713828536EC /* libPods-Gori.a */; };
+		24D2785651F3178DE49DC996 /* Pods_Gori.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F71DA98446CC0FA261296DF /* Pods_Gori.framework */; };
 		4135A8A31E973EB70043E0ED /* GODataCenter2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4135A8A21E973EB70043E0ED /* GODataCenter2.m */; };
 		4135A8A71E973F040043E0ED /* NetworkModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4135A8A61E973F040043E0ED /* NetworkModule.m */; };
 		4135A8AA1E9740230043E0ED /* GOTalentDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4135A8A91E9740230043E0ED /* GOTalentDetailModel.m */; };
 		413F9DAC1EAB597E00FCB9E8 /* GOReviewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 413F9DAB1EAB597E00FCB9E8 /* GOReviewTableViewCell.m */; };
 		413F9DAF1EAB96EB00FCB9E8 /* GOReviewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 413F9DAE1EAB96EB00FCB9E8 /* GOReviewModel.m */; };
+		4141E25C1EB080C70066E899 /* ratingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4141E25B1EB080C70066E899 /* ratingView.m */; };
 		4145D0DA1E9F611B00C7141A /* malpoongsuncopy.png in Resources */ = {isa = PBXBuildFile; fileRef = 4145D0D91E9F611B00C7141A /* malpoongsuncopy.png */; };
 		414848071E935C8400612B3C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 414848061E935C8400612B3C /* DetailViewController.m */; };
 		4153EE841E9238FD001EFF70 /* GODataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4153EE831E9238FD001EFF70 /* GODataCenter.m */; };
@@ -140,7 +141,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1585AE216C18B713828536EC /* libPods-Gori.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Gori.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F7A41A31EA723A100563FB0 /* registerTalentThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = registerTalentThirdViewController.h; sourceTree = "<group>"; };
 		1F7A41A41EA723A100563FB0 /* registerTalentThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = registerTalentThirdViewController.m; sourceTree = "<group>"; };
 		1F7A41A61EA723BC00563FB0 /* registerTalentFourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = registerTalentFourthViewController.h; sourceTree = "<group>"; };
@@ -161,6 +161,8 @@
 		413F9DAB1EAB597E00FCB9E8 /* GOReviewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOReviewTableViewCell.m; sourceTree = "<group>"; };
 		413F9DAD1EAB96EB00FCB9E8 /* GOReviewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOReviewModel.h; sourceTree = "<group>"; };
 		413F9DAE1EAB96EB00FCB9E8 /* GOReviewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOReviewModel.m; sourceTree = "<group>"; };
+		4141E25A1EB080C70066E899 /* ratingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ratingView.h; sourceTree = "<group>"; };
+		4141E25B1EB080C70066E899 /* ratingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ratingView.m; sourceTree = "<group>"; };
 		4145D0D91E9F611B00C7141A /* malpoongsuncopy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = malpoongsuncopy.png; sourceTree = "<group>"; };
 		414848051E935C8400612B3C /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		414848061E935C8400612B3C /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 		41FBDEB51EADEE8A0074167E /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
 		41FBDEB71EADF33E0074167E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		41FBDEB91EADF34D0074167E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5F71DA98446CC0FA261296DF /* Pods_Gori.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gori.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		910E642F1EA3619500B90B7E /* GOUserInfoUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GOUserInfoUpdateViewController.h; sourceTree = "<group>"; };
 		910E64301EA3619500B90B7E /* GOUserInfoUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GOUserInfoUpdateViewController.m; sourceTree = "<group>"; };
 		911554F41EA0C2A300CAFF7D /* District_Hyehwa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = District_Hyehwa.png; sourceTree = "<group>"; };
@@ -334,7 +337,7 @@
 				418584181E91EE1E0053EF40 /* Bolts.framework in Frameworks */,
 				4185841A1E91EE2B0053EF40 /* FBSDKCoreKit.framework in Frameworks */,
 				4185841C1E91EE350053EF40 /* FBSDKLoginKit.framework in Frameworks */,
-				25A48385E4D3A342AFBED138 /* libPods-Gori.a in Frameworks */,
+				24D2785651F3178DE49DC996 /* Pods_Gori.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +349,7 @@
 			children = (
 				41FBDEB91EADF34D0074167E /* CoreLocation.framework */,
 				41FBDEB71EADF33E0074167E /* MapKit.framework */,
-				1585AE216C18B713828536EC /* libPods-Gori.a */,
+				5F71DA98446CC0FA261296DF /* Pods_Gori.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -457,6 +460,8 @@
 				4153EE9E1E9239AC001EFF70 /* Category_Location_Storyboard.storyboard */,
 				41C299AB1EA48B19004D130F /* register.storyboard */,
 				41C29A121EAB4B0C004D130F /* Qa.storyboard */,
+				4141E25A1EB080C70066E899 /* ratingView.h */,
+				4141E25B1EB080C70066E899 /* ratingView.m */,
 				4185840B1E91EDF70053EF40 /* Assets.xcassets */,
 				41C29A001EAA484F004D130F /* malpoongsunRefined2.png */,
 				41C29A011EAA484F004D130F /* registerGuide2.png */,
@@ -892,6 +897,7 @@
 				919B6F301E9CE56000AE8CA5 /* GOMypageViewController.m in Sources */,
 				418584341E91EE9E0053EF40 /* AMSlideMenuRightTableViewController.m in Sources */,
 				4185843A1E91EEFD0053EF40 /* AppDelegate.m in Sources */,
+				4141E25C1EB080C70066E899 /* ratingView.m in Sources */,
 				41C299B61EA48B35004D130F /* registerTalentSecondViewController.m in Sources */,
 				1F7A41AB1EA723D400563FB0 /* registerTalentFifthViewController.m in Sources */,
 				916CDFEE1EA5D05800165EC4 /* GOUserInfoDataModel.m in Sources */,

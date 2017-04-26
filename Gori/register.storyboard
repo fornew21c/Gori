@@ -691,13 +691,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pay2.png" translatesAutoresizingMaskIntoConstraints="NO" id="x3S-OH-EiT">
-                                <rect key="frame" x="0.0" y="44" width="375" height="145"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pay2.png" translatesAutoresizingMaskIntoConstraints="NO" id="x3S-OH-EiT">
+                                <rect key="frame" x="0.0" y="20" width="375" height="169"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L3D-hb-c8e">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L3D-hb-c8e">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90980392160000001" green="0.1764705882" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title=" 확인">
@@ -707,12 +705,25 @@
                                     <action selector="confirmBtnTouched:" destination="hVt-8M-5uK" eventType="touchUpInside" id="FHT-hB-rgj"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="learnAndLogo2.png" translatesAutoresizingMaskIntoConstraints="NO" id="4sE-0k-KTC">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="learnAndLogo2.png" translatesAutoresizingMaskIntoConstraints="NO" id="4sE-0k-KTC">
                                 <rect key="frame" x="0.0" y="334" width="375" height="207"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="L3D-hb-c8e" secondAttribute="trailing" id="7mH-TT-ERc"/>
+                            <constraint firstItem="4sE-0k-KTC" firstAttribute="top" secondItem="x3S-OH-EiT" secondAttribute="bottom" constant="145" id="CjP-u7-Tfs"/>
+                            <constraint firstAttribute="trailing" secondItem="4sE-0k-KTC" secondAttribute="trailing" id="EMN-4o-Ru3"/>
+                            <constraint firstItem="L3D-hb-c8e" firstAttribute="leading" secondItem="Fen-v7-Nta" secondAttribute="leading" id="Htd-HS-Fwc"/>
+                            <constraint firstItem="x3S-OH-EiT" firstAttribute="top" secondItem="phg-5d-w3J" secondAttribute="bottom" id="Kdc-4u-Nwp"/>
+                            <constraint firstItem="L3D-hb-c8e" firstAttribute="top" secondItem="4sE-0k-KTC" secondAttribute="bottom" constant="76" id="bsg-Px-7Yz"/>
+                            <constraint firstItem="x3S-OH-EiT" firstAttribute="leading" secondItem="Fen-v7-Nta" secondAttribute="leading" id="i8m-0e-6oe"/>
+                            <constraint firstItem="1Hi-n5-H1q" firstAttribute="top" secondItem="x3S-OH-EiT" secondAttribute="bottom" constant="478" id="iSZ-Fr-8QJ"/>
+                            <constraint firstItem="4sE-0k-KTC" firstAttribute="leading" secondItem="Fen-v7-Nta" secondAttribute="leading" id="l5C-aH-Fpm"/>
+                            <constraint firstAttribute="bottom" secondItem="4sE-0k-KTC" secondAttribute="bottom" constant="126" id="qn8-ga-sF2"/>
+                            <constraint firstItem="1Hi-n5-H1q" firstAttribute="top" secondItem="L3D-hb-c8e" secondAttribute="bottom" id="tB2-DA-M6Z"/>
+                            <constraint firstAttribute="trailing" secondItem="x3S-OH-EiT" secondAttribute="trailing" id="tRF-ON-ndX"/>
+                        </constraints>
                     </view>
                     <connections>
                         <segue destination="UxM-ZE-yXX" kind="unwind" identifier="unwindMainSegue" unwindAction="unwindSegue:" id="MAs-kt-jKv"/>
