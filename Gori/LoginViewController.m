@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "GODataCenter2.h"
+#import "DetailViewController.h"
 #define mainColor [UIColor colorWithRed:232/255.0f green:45/255.0f blue:80/255.0f alpha:1.0f]
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
@@ -148,9 +149,19 @@
             {
                 NSLog(@"responseData objectForKey: %@",[responseData objectForKey:@"key"]);
                 [[GODataCenter2 sharedInstance] setMyLoginToken:[responseData objectForKey:@"key"]];
-                dispatch_sync(dispatch_get_main_queue(), ^{
-                    [self performSegueWithIdentifier:@"mainViewSegue" sender:nil];
-                });
+                if([GODataCenter2 sharedInstance].selectedModel.alreadyDetailViewInYN) {
+                    dispatch_sync(dispatch_get_main_queue(), ^{
+                        UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                        DetailViewController *DetailViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+                        DetailViewController.pk = [GODataCenter2 sharedInstance].selectedModel.pk;
+                        [self.navigationController pushViewController:DetailViewController animated:YES];
+                    });
+                }
+                else {
+                    dispatch_sync(dispatch_get_main_queue(), ^{
+                        [self performSegueWithIdentifier:@"mainViewSegue" sender:nil];
+                    });
+                }
             }else
             {
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -185,11 +196,22 @@
         if(isSuccess)
         {
             NSLog(@"responseData %@",responseData);
+            
             [[GODataCenter2 sharedInstance] setMyLoginToken:[responseData objectForKey:@"key"]];
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                [self.activityIndicator stopAnimating];
-                [self performSegueWithIdentifier:@"mainViewSegue" sender:nil];
-            });
+            if([GODataCenter2 sharedInstance].selectedModel.alreadyDetailViewInYN) {
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                    DetailViewController *DetailViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+                    DetailViewController.pk = [GODataCenter2 sharedInstance].selectedModel.pk;
+                    [self.navigationController pushViewController:DetailViewController animated:YES];
+                });
+            }
+            else {
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                   
+                    [self performSegueWithIdentifier:@"mainViewSegue" sender:nil];
+                });
+            }
         }else
         {
             dispatch_async(dispatch_get_main_queue(), ^{

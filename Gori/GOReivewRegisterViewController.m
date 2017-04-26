@@ -126,6 +126,7 @@
           {
               NSLog(@"%@", [responseData objectForKey:@"detail"]);
               dispatch_async(dispatch_get_main_queue(), ^{
+                  [GODataCenter2 sharedInstance].selectedModel.newReviewRegisterYN = YES;
                   UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"리뷰등록 성공" message:[responseData objectForKey:@"detail"]preferredStyle:UIAlertControllerStyleAlert];
                   
                   UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){

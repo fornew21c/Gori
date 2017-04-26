@@ -110,13 +110,9 @@
     logoImageView2.image = [UIImage imageNamed:@"logo.png"];
     [logoImageView2 setContentMode:UIViewContentModeScaleAspectFit];
     [logoView addSubview:logoImageView2];
-    
-}
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:NO];
-    
-    [self.indicator startAnimating];
 
+    [self.indicator startAnimating];
+    
     
     //좋아요 호출
     [[GODataCenter sharedInstance] receiveUserWishListDataWithCompletionBlock:^(BOOL isSuccess, id respons) {
@@ -150,14 +146,14 @@
             
         }
     }];
-
-
-
+    
+    
+    
     [[GODataCenter2 sharedInstance] requestPostRetrieveID:self.pk completion:^(BOOL isSuccess, id responseData) {
         
         if(isSuccess)
         {
-           // NSLog(@"isSuccess: %lu", isSuccess);
+            // NSLog(@"isSuccess: %lu", isSuccess);
             //NSLog(@"title: %@", [responseData objectForKey:@"title"]);
             
             self.selectedModel = [GOTalentDetailModel modelWithData:responseData];
@@ -171,9 +167,35 @@
             
         }else
         {
- 
+            
         }
     }];
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:NO];
+    
+    if([GODataCenter2 sharedInstance].selectedModel.newReviewRegisterYN) {
+        [[GODataCenter2 sharedInstance] requestPostRetrieveID:self.pk completion:^(BOOL isSuccess, id responseData) {
+            if(isSuccess)
+            {
+                // NSLog(@"isSuccess: %lu", isSuccess);
+                //NSLog(@"title: %@", [responseData objectForKey:@"title"]);
+                
+                self.selectedModel = [GOTalentDetailModel modelWithData:responseData];
+                [GODataCenter2 sharedInstance].selectedModel = self.selectedModel;
+                [self layoutDataInView];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.indicator stopAnimating];
+                });
+                
+            }else
+            {
+                
+            }
+        }];
+    }
+    
+
 }
 
 - (IBAction)didChangeValue:(HCSStarRatingView *)sender {
@@ -623,6 +645,8 @@
     NSString *loginToken = [[GODataCenter2 sharedInstance] getMyLoginToken];
     if(loginToken == (NSString *)[NSNull null] || [loginToken length]==0 || [loginToken isEqualToString:@""])  {
         NSLog(@"로그인안됨");
+        self.selectedModel.alreadyDetailViewInYN = YES;
+        [GODataCenter2 sharedInstance].selectedModel = self.selectedModel;
         dispatch_async(dispatch_get_main_queue(), ^{
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"수업신청안내" message:@"수업신청하기 위해서는 로그인하셔야 합니다. 로그인하시겠습니까?" preferredStyle:UIAlertControllerStyleAlert];
             

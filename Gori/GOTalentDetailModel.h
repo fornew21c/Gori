@@ -17,6 +17,8 @@
 
 @interface GOTalentDetailModel : NSObject
 
+@property (nonatomic) BOOL alreadyDetailViewInYN; //수업신청하기위해 로그인한 경우 바로 디테일뷰 화면으로 가기위한 BOOL변수
+@property (nonatomic) BOOL newReviewRegisterYN;
 @property (nonatomic) NSInteger postID;
 @property (nonatomic) NSNumber *pk;
 @property (nonatomic) NSString *title;
