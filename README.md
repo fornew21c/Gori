@@ -10,8 +10,10 @@
 [고리 풀영상 보러가기](https://youtu.be/DIdv1zhVxNU)
 
  #스크린샷    
-![이미지1](https://github.com/fornew21c/Gori/blob/master/README_Images/samplepage1.png)
-![이미지2](https://github.com/fornew21c/Gori/blob/master/README_Images/samplepage2.png)
+![이미지1](https://github.com/fornew21c/Gori/blob/master/README_Images/samplepage1.png)   
+--
+![이미지2](https://github.com/fornew21c/Gori/blob/master/README_Images/samplepage2.png)   
+--
 
 
  #주요기능   
