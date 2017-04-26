@@ -1209,9 +1209,8 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RID-KY-5uZ" userLabel="LocationSimpleView">
                                                                 <rect key="frame" x="0.0" y="2429" width="375" height="650"/>
                                                                 <subviews>
-                                                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oNs-0c-Vtv">
+                                                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oNs-0c-Vtv">
                                                                         <rect key="frame" x="0.0" y="61" width="375" height="218"/>
-                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     </mapView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="leY-KJ-oeP">
                                                                         <rect key="frame" x="0.0" y="285" width="375" height="50"/>
@@ -1346,6 +1345,10 @@
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
+                                                                    <constraint firstItem="oNs-0c-Vtv" firstAttribute="top" secondItem="RID-KY-5uZ" secondAttribute="top" constant="61" id="FEZ-MW-O2i"/>
+                                                                    <constraint firstItem="oNs-0c-Vtv" firstAttribute="leading" secondItem="RID-KY-5uZ" secondAttribute="leading" id="XDg-SU-w3G"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="oNs-0c-Vtv" secondAttribute="bottom" constant="371" id="p7d-ZW-d56"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="oNs-0c-Vtv" secondAttribute="trailing" id="uUx-7O-Re0"/>
                                                                     <constraint firstAttribute="height" constant="650" id="xrQ-s7-2pR"/>
                                                                 </constraints>
                                                             </view>
@@ -1982,9 +1985,9 @@
         <image name="sign.png" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="F7w-CB-ivT"/>
         <segue reference="Fjc-8S-uYf"/>
-        <segue reference="hZf-is-O1p"/>
+        <segue reference="F7w-CB-ivT"/>
+        <segue reference="6ed-Na-bTL"/>
         <segue reference="7vF-rB-vfR"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.90980392160000001" green="0.1764705882" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
