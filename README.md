@@ -9,12 +9,12 @@
 
 [고리 풀영상 보러가기](https://youtu.be/DIdv1zhVxNU)
 
-#스크린샷    
-![이미지1](https://github.com/fornew21c/Gori/blob/master/README_Images/IMG_1587.PNG)
-![이미지2](https://github.com/fornew21c/Gori/blob/master/README_Images/IMG_1588.PNG)
+ #스크린샷    
+![이미지1](https://github.com/fornew21c/Gori/blob/master/README_Images/samplepage1.png)
+![이미지2](https://github.com/fornew21c/Gori/blob/master/README_Images/samplepage2.png)
 
 
-#주요기능   
+ #주요기능   
 - 회원가입, 로그인, 페이스북 로그인, 로그아웃
 - 회원 개인정보 수정 (이름, 닉네임, 프로필 사진 수정)
 - 강좌 검색 및 학교, 지역구, 카테고리 필터링
@@ -23,7 +23,7 @@
 
 
 
-#사용기술  
+ #사용기술  
 - **네트워크 구축** : 강좌정보 불러오기, 회원가입, 필터링 등에 필요한 정보를 BackEnd Restful-API를 통해 가져오기 위한 네트워크 모듈을 생성하였습니다.  
 코드 간소화, 기술 트렌드 Follow Up을 위하여 FastCampus에서 배운 일반적인 방법 이외에도, **AFNetwork**를 CocoaPod을 통해 설치하여 활용했습니다.
 
@@ -46,7 +46,7 @@ BackEnd 서버로 데이터를 보낼 때도 데이터센터는 뷰컨트롤러�
 
 - **사진보정** : FastCampus에서 제공한 UI파일에 없는 이미지를 편집하고자, 별도의 이미지 편집 프로그램인 **Pixelmator**를 활용해 프로젝트에 활용되는 이미지들을 편집하였습니다.
 
-#사용 프로그램 및 오픈소스  
+ #사용 프로그램 및 오픈소스  
 - **Xcode** : 코드 작성 및 스토리보드의 오토레이아웃 활용
 - **Sketch** : FastCampus에서 제공한 UI파일 오픈 및 필요한 아이콘의 Export를 위하여 활용
 - **Zeplin** : Sketch에서 Import한 파일의 다운로드, 스토리보드의 오토레이아웃 위한 간격
@@ -58,13 +58,13 @@ BackEnd 서버로 데이터를 보낼 때도 데이터센터는 뷰컨트롤러�
 - **Pixelmator** : UI파일에 없는 이미지의 크기 수정, 특정부분 삭제에 활용
 - **Git** : 프로젝트 버전관리에 활용
 
-#참고
+ #참고
 - **Taling** Mobile WebPage
 - **Taling** iOS App
 - **Zikto** iOS App
 - **UI Sample** From **FastCampus**
 
-#팀원
+ #팀원
 
 |이름|이메일|전화번호|
 |:--:|:--:|:--:|
