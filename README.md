@@ -1,19 +1,18 @@
 <img src = "https://github.com/fornew21c/Gori/blob/master/README_Images/GoriLogoIosTeam.png">
         
 이 레포지토리는 FastCampus iOS 스쿨의 팀프로젝트 'GORI'의 리모트 레포지토리 입니다.    
-'GORI'는 "튜터와 튜티의 손쉬운 연결"이라는 기본 콘셉트 하에 구현되었으며, 
+'GORI'는 "튜터와 튜티의 손쉬운 연결"이라는 기본 콘셉트 하에 구현되었습니다.  
+사용자는 필터 및 검색을 통해 자신이 원하는 강좌를 찾아서 신청할 수 있습니다.
 
 - 기간 : 2017.03.27 ~ 2017.04.26    
 - 역할 : iOS 개발자
 
 [고리 풀영상 보러가기](https://youtu.be/DIdv1zhVxNU)
 
-#스크린샷#    
+#스크린샷    
 ![이미지1](https://github.com/fornew21c/Gori/blob/master/README_Images/IMG_1587.PNG)
 ![이미지2](https://github.com/fornew21c/Gori/blob/master/README_Images/IMG_1588.PNG)
-![이미지3](https://github.com/fornew21c/Gori/blob/master/README_Images/IMG_1589.PNG)
-![이미지4](https://github.com/fornew21c/Gori/blob/master/README_Images/IMG_1590.PNG)
-![이미지5](https://github.com/fornew21c/Gori/blob/master/README_Images/IMG_1591.PNG)
+
 
 #주요기능   
 - 회원가입, 로그인, 페이스북 로그인, 로그아웃
