@@ -11,9 +11,9 @@
 
 ## 스크린샷    
 ![이미지1](https://github.com/fornew21c/Gori/blob/master/README_Images/samplepage1.png)  
- 
+-- 
 ![이미지2](https://github.com/fornew21c/Gori/blob/master/README_Images/samplepage2.png)   
-
+--
 
 ## 주요기능   
 - 회원가입, 로그인, 페이스북 로그인, 로그아웃
@@ -48,7 +48,7 @@ BackEnd 서버로 데이터를 보낼 때도 데이터센터는 뷰컨트롤러�
 - **사진보정** : FastCampus에서 제공한 UI파일에 없는 이미지를 편집하고자, 별도의 이미지 편집 프로그램인 **Pixelmator**를 활용해 프로젝트에 활용되는 이미지들을 편집하였습니다.
 
 ## 사용 프로그램 및 오픈소스  
->>>>>>> 2b08e5ff3a36c9859670d4358784d4e54a00d8d8
+
 - **Xcode** : 코드 작성 및 스토리보드의 오토레이아웃 활용
 - **Sketch** : UI9에서 다운받은 iOS 디자인 이미지파일 오픈 및 필요한 아이콘의 Export를 위하여 활용
 - **Zeplin** : Sketch에서 Import한 파일의 다운로드, 스토리보드의 오토레이아웃 위한 간격
