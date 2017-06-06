@@ -9,6 +9,12 @@
 
 [고리 풀영상 보러가기](https://youtu.be/DIdv1zhVxNU)
 
+
+[고리 데일리 스크럼](https://docs.google.com/spreadsheets/d/1Xz3Y67Dp2GSDnU4oL4q2VxOasSA0J17iP3byT3TJbdw/edit#gid=1901183771)
+
+
+[고리 스크럼 보드](https://docs.google.com/spreadsheets/d/1teDkt6MyGfqshqUrBuswHba2CvnGEyg4uuFDxcygIsg/edit#gid=0)
+
 ## 스크린샷    
 ![이미지1](https://github.com/fornew21c/Gori/blob/master/README_Images/samplepage1.png)  
 -- 
