@@ -727,7 +727,7 @@
 				TargetAttributes = {
 					418583FB1E91EDF70053EF40 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = NN7QXHC8A3;
+						DevelopmentTeam = PDF8XXXYH9;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1050,7 +1050,8 @@
 			baseConfigurationReference = 411E653B51DD087BF5BC23C3 /* Pods-Gori.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NN7QXHC8A3;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = PDF8XXXYH9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1058,8 +1059,9 @@
 				INFOPLIST_FILE = Gori/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fornew21c.Gori;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gelb2.Gori;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -1068,7 +1070,8 @@
 			baseConfigurationReference = D73FD04D81D1C5D0908138EC /* Pods-Gori.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NN7QXHC8A3;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = PDF8XXXYH9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1076,8 +1079,9 @@
 				INFOPLIST_FILE = Gori/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fornew21c.Gori;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gelb2.Gori;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
